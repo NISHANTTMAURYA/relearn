@@ -98,6 +98,9 @@ def run_validation():
         "reference_materials/textbooks/jesc111.pdf",
         "reference_materials/textbooks/jesc112.pdf",
         "reference_materials/textbooks/jesc113.pdf",
+        "reference_materials/textbooks/iesc108.pdf",
+        "reference_materials/textbooks/iesc109.pdf",
+        "reference_materials/textbooks/iesc110.pdf",
         "reference_materials/cbse_official_papers/CBSE_Class10_Science_SQP_2024.pdf",
         "reference_materials/cbse_official_papers/CBSE_Class10_Science_MS_2024.pdf",
         "reference_materials/research_papers/NeurIPS_2020_Education_Challenge_Eedi.pdf"

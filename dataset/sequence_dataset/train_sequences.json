@@ -1,0 +1,1220 @@
+[
+  {
+    "sequence_id": "SEQ-001",
+    "student_id": "STU_200",
+    "grade_level": "Class 9",
+    "topic": "Motion: Kinematics Operations",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Distance = 100 m; time = 5 s. Find speed.",
+        "response": "500 m/s; multiplied distance by time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Distance = 300 m; time = 15 s. Find speed.",
+        "response": "4500 m/s; speed = distance * time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Athlete runs 200 m in 25 s. Find speed.",
+        "response": "5000 m/s; distance * time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-002",
+    "student_id": "STU_201",
+    "grade_level": "Class 9",
+    "topic": "Motion: Speed vs Acceleration",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Constant speed 20 m/s for 10 s. What is acceleration?",
+        "response": "20 m/s^2 because it is moving fast",
+        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Train moves at uniform 72 km/h. What is acceleration?",
+        "response": "72 km/h^2 because high speed means acceleration",
+        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
+        "confidence": 0.97
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-003",
+    "student_id": "STU_202",
+    "grade_level": "Class 9",
+    "topic": "Force & Laws of Motion: Inertia",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Puck on frictionless ice at 5 m/s. Required forward force?",
+        "response": "Requires continuous force, otherwise it stops",
+        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Spacecraft in vacuum with engines off. What keeps it moving?",
+        "response": "Forward force must push it",
+        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-004",
+    "student_id": "STU_203",
+    "grade_level": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "10 kg ball vs 1 kg ball dropped in vacuum.",
+        "response": "10 kg ball hits first because heavier falls faster",
+        "diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET gravity simulation with feather and bowling ball in vacuum.",
+        "response": "Both fall at exact same rate g = 9.8 m/s^2! Mass cancels out in a = F/m.",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: 100 kg anvil vs 10 g coin on the Moon.",
+        "response": "Both hit lunar surface simultaneously because acceleration g is independent of mass.",
+        "diagnosis": "CORRECT: Scientifically Accurate Response",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-005",
+    "student_id": "STU_204",
+    "grade_level": "Class 10",
+    "topic": "Electricity: Current Conservation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Two bulbs in series",
+        "response": "Bulb 1 consumes current so Bulb 2 gets less",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Three resistors in series",
+        "response": "Current drops after each resistor because it is consumed",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Swapped order probe",
+        "response": "The first resistor in line always gets more current",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-006",
+    "student_id": "STU_205",
+    "grade_level": "Class 10",
+    "topic": "Electricity: Parallel Circuits",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Adding 3-ohm in parallel to 6-ohm",
+        "response": "Total current stays 2A because battery output is fixed",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.94
+      },
+      {
+        "step": 2,
+        "question": "Adding 5 more branches",
+        "response": "Battery current is constant, just divided",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.96
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-007",
+    "student_id": "STU_206",
+    "grade_level": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Half of convex lens covered",
+        "response": "Bottom half of image disappears from screen",
+        "diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET ray simulation step",
+        "response": "Rays from whole candle still reach open top half! Image is complete and dimmer",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: Center of mirror covered",
+        "response": "Entire image forms unbroken with slightly less brightness",
+        "diagnosis": "CORRECT: Scientifically Accurate Response",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-008",
+    "student_id": "STU_207",
+    "grade_level": "Class 9",
+    "topic": "Motion: Kinematics Operations",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Distance = 100 m; time = 5 s. Find speed.",
+        "response": "500 m/s; multiplied distance by time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Distance = 300 m; time = 15 s. Find speed.",
+        "response": "4500 m/s; speed = distance * time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Athlete runs 200 m in 25 s. Find speed.",
+        "response": "5000 m/s; distance * time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-009",
+    "student_id": "STU_208",
+    "grade_level": "Class 9",
+    "topic": "Motion: Speed vs Acceleration",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Constant speed 20 m/s for 10 s. What is acceleration?",
+        "response": "20 m/s^2 because it is moving fast",
+        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Train moves at uniform 72 km/h. What is acceleration?",
+        "response": "72 km/h^2 because high speed means acceleration",
+        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
+        "confidence": 0.97
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-010",
+    "student_id": "STU_209",
+    "grade_level": "Class 9",
+    "topic": "Force & Laws of Motion: Inertia",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Puck on frictionless ice at 5 m/s. Required forward force?",
+        "response": "Requires continuous force, otherwise it stops",
+        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Spacecraft in vacuum with engines off. What keeps it moving?",
+        "response": "Forward force must push it",
+        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-011",
+    "student_id": "STU_210",
+    "grade_level": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "10 kg ball vs 1 kg ball dropped in vacuum.",
+        "response": "10 kg ball hits first because heavier falls faster",
+        "diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET gravity simulation with feather and bowling ball in vacuum.",
+        "response": "Both fall at exact same rate g = 9.8 m/s^2! Mass cancels out in a = F/m.",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: 100 kg anvil vs 10 g coin on the Moon.",
+        "response": "Both hit lunar surface simultaneously because acceleration g is independent of mass.",
+        "diagnosis": "CORRECT: Scientifically Accurate Response",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-012",
+    "student_id": "STU_211",
+    "grade_level": "Class 10",
+    "topic": "Electricity: Current Conservation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Two bulbs in series",
+        "response": "Bulb 1 consumes current so Bulb 2 gets less",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Three resistors in series",
+        "response": "Current drops after each resistor because it is consumed",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Swapped order probe",
+        "response": "The first resistor in line always gets more current",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-013",
+    "student_id": "STU_212",
+    "grade_level": "Class 10",
+    "topic": "Electricity: Parallel Circuits",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Adding 3-ohm in parallel to 6-ohm",
+        "response": "Total current stays 2A because battery output is fixed",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.94
+      },
+      {
+        "step": 2,
+        "question": "Adding 5 more branches",
+        "response": "Battery current is constant, just divided",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.96
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-014",
+    "student_id": "STU_213",
+    "grade_level": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Half of convex lens covered",
+        "response": "Bottom half of image disappears from screen",
+        "diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET ray simulation step",
+        "response": "Rays from whole candle still reach open top half! Image is complete and dimmer",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: Center of mirror covered",
+        "response": "Entire image forms unbroken with slightly less brightness",
+        "diagnosis": "CORRECT: Scientifically Accurate Response",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-015",
+    "student_id": "STU_214",
+    "grade_level": "Class 9",
+    "topic": "Motion: Kinematics Operations",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Distance = 100 m; time = 5 s. Find speed.",
+        "response": "500 m/s; multiplied distance by time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Distance = 300 m; time = 15 s. Find speed.",
+        "response": "4500 m/s; speed = distance * time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Athlete runs 200 m in 25 s. Find speed.",
+        "response": "5000 m/s; distance * time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-016",
+    "student_id": "STU_215",
+    "grade_level": "Class 9",
+    "topic": "Motion: Speed vs Acceleration",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Constant speed 20 m/s for 10 s. What is acceleration?",
+        "response": "20 m/s^2 because it is moving fast",
+        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Train moves at uniform 72 km/h. What is acceleration?",
+        "response": "72 km/h^2 because high speed means acceleration",
+        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
+        "confidence": 0.97
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-017",
+    "student_id": "STU_216",
+    "grade_level": "Class 9",
+    "topic": "Force & Laws of Motion: Inertia",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Puck on frictionless ice at 5 m/s. Required forward force?",
+        "response": "Requires continuous force, otherwise it stops",
+        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Spacecraft in vacuum with engines off. What keeps it moving?",
+        "response": "Forward force must push it",
+        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-018",
+    "student_id": "STU_217",
+    "grade_level": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "10 kg ball vs 1 kg ball dropped in vacuum.",
+        "response": "10 kg ball hits first because heavier falls faster",
+        "diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET gravity simulation with feather and bowling ball in vacuum.",
+        "response": "Both fall at exact same rate g = 9.8 m/s^2! Mass cancels out in a = F/m.",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: 100 kg anvil vs 10 g coin on the Moon.",
+        "response": "Both hit lunar surface simultaneously because acceleration g is independent of mass.",
+        "diagnosis": "CORRECT: Scientifically Accurate Response",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-019",
+    "student_id": "STU_218",
+    "grade_level": "Class 10",
+    "topic": "Electricity: Current Conservation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Two bulbs in series",
+        "response": "Bulb 1 consumes current so Bulb 2 gets less",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Three resistors in series",
+        "response": "Current drops after each resistor because it is consumed",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Swapped order probe",
+        "response": "The first resistor in line always gets more current",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-020",
+    "student_id": "STU_219",
+    "grade_level": "Class 10",
+    "topic": "Electricity: Parallel Circuits",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Adding 3-ohm in parallel to 6-ohm",
+        "response": "Total current stays 2A because battery output is fixed",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.94
+      },
+      {
+        "step": 2,
+        "question": "Adding 5 more branches",
+        "response": "Battery current is constant, just divided",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.96
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-021",
+    "student_id": "STU_220",
+    "grade_level": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Half of convex lens covered",
+        "response": "Bottom half of image disappears from screen",
+        "diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET ray simulation step",
+        "response": "Rays from whole candle still reach open top half! Image is complete and dimmer",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: Center of mirror covered",
+        "response": "Entire image forms unbroken with slightly less brightness",
+        "diagnosis": "CORRECT: Scientifically Accurate Response",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-022",
+    "student_id": "STU_221",
+    "grade_level": "Class 9",
+    "topic": "Motion: Kinematics Operations",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Distance = 100 m; time = 5 s. Find speed.",
+        "response": "500 m/s; multiplied distance by time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Distance = 300 m; time = 15 s. Find speed.",
+        "response": "4500 m/s; speed = distance * time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Athlete runs 200 m in 25 s. Find speed.",
+        "response": "5000 m/s; distance * time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-023",
+    "student_id": "STU_222",
+    "grade_level": "Class 9",
+    "topic": "Motion: Speed vs Acceleration",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Constant speed 20 m/s for 10 s. What is acceleration?",
+        "response": "20 m/s^2 because it is moving fast",
+        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Train moves at uniform 72 km/h. What is acceleration?",
+        "response": "72 km/h^2 because high speed means acceleration",
+        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
+        "confidence": 0.97
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-024",
+    "student_id": "STU_223",
+    "grade_level": "Class 9",
+    "topic": "Force & Laws of Motion: Inertia",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Puck on frictionless ice at 5 m/s. Required forward force?",
+        "response": "Requires continuous force, otherwise it stops",
+        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Spacecraft in vacuum with engines off. What keeps it moving?",
+        "response": "Forward force must push it",
+        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-025",
+    "student_id": "STU_224",
+    "grade_level": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "10 kg ball vs 1 kg ball dropped in vacuum.",
+        "response": "10 kg ball hits first because heavier falls faster",
+        "diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET gravity simulation with feather and bowling ball in vacuum.",
+        "response": "Both fall at exact same rate g = 9.8 m/s^2! Mass cancels out in a = F/m.",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: 100 kg anvil vs 10 g coin on the Moon.",
+        "response": "Both hit lunar surface simultaneously because acceleration g is independent of mass.",
+        "diagnosis": "CORRECT: Scientifically Accurate Response",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-026",
+    "student_id": "STU_225",
+    "grade_level": "Class 10",
+    "topic": "Electricity: Current Conservation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Two bulbs in series",
+        "response": "Bulb 1 consumes current so Bulb 2 gets less",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Three resistors in series",
+        "response": "Current drops after each resistor because it is consumed",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Swapped order probe",
+        "response": "The first resistor in line always gets more current",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-027",
+    "student_id": "STU_226",
+    "grade_level": "Class 10",
+    "topic": "Electricity: Parallel Circuits",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Adding 3-ohm in parallel to 6-ohm",
+        "response": "Total current stays 2A because battery output is fixed",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.94
+      },
+      {
+        "step": 2,
+        "question": "Adding 5 more branches",
+        "response": "Battery current is constant, just divided",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.96
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-028",
+    "student_id": "STU_227",
+    "grade_level": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Half of convex lens covered",
+        "response": "Bottom half of image disappears from screen",
+        "diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET ray simulation step",
+        "response": "Rays from whole candle still reach open top half! Image is complete and dimmer",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: Center of mirror covered",
+        "response": "Entire image forms unbroken with slightly less brightness",
+        "diagnosis": "CORRECT: Scientifically Accurate Response",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-029",
+    "student_id": "STU_228",
+    "grade_level": "Class 9",
+    "topic": "Motion: Kinematics Operations",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Distance = 100 m; time = 5 s. Find speed.",
+        "response": "500 m/s; multiplied distance by time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Distance = 300 m; time = 15 s. Find speed.",
+        "response": "4500 m/s; speed = distance * time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Athlete runs 200 m in 25 s. Find speed.",
+        "response": "5000 m/s; distance * time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-030",
+    "student_id": "STU_229",
+    "grade_level": "Class 9",
+    "topic": "Motion: Speed vs Acceleration",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Constant speed 20 m/s for 10 s. What is acceleration?",
+        "response": "20 m/s^2 because it is moving fast",
+        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Train moves at uniform 72 km/h. What is acceleration?",
+        "response": "72 km/h^2 because high speed means acceleration",
+        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
+        "confidence": 0.97
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-031",
+    "student_id": "STU_230",
+    "grade_level": "Class 9",
+    "topic": "Force & Laws of Motion: Inertia",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Puck on frictionless ice at 5 m/s. Required forward force?",
+        "response": "Requires continuous force, otherwise it stops",
+        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Spacecraft in vacuum with engines off. What keeps it moving?",
+        "response": "Forward force must push it",
+        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-032",
+    "student_id": "STU_231",
+    "grade_level": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "10 kg ball vs 1 kg ball dropped in vacuum.",
+        "response": "10 kg ball hits first because heavier falls faster",
+        "diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET gravity simulation with feather and bowling ball in vacuum.",
+        "response": "Both fall at exact same rate g = 9.8 m/s^2! Mass cancels out in a = F/m.",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: 100 kg anvil vs 10 g coin on the Moon.",
+        "response": "Both hit lunar surface simultaneously because acceleration g is independent of mass.",
+        "diagnosis": "CORRECT: Scientifically Accurate Response",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-033",
+    "student_id": "STU_232",
+    "grade_level": "Class 10",
+    "topic": "Electricity: Current Conservation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Two bulbs in series",
+        "response": "Bulb 1 consumes current so Bulb 2 gets less",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Three resistors in series",
+        "response": "Current drops after each resistor because it is consumed",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Swapped order probe",
+        "response": "The first resistor in line always gets more current",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-034",
+    "student_id": "STU_233",
+    "grade_level": "Class 10",
+    "topic": "Electricity: Parallel Circuits",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Adding 3-ohm in parallel to 6-ohm",
+        "response": "Total current stays 2A because battery output is fixed",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.94
+      },
+      {
+        "step": 2,
+        "question": "Adding 5 more branches",
+        "response": "Battery current is constant, just divided",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.96
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-035",
+    "student_id": "STU_234",
+    "grade_level": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Half of convex lens covered",
+        "response": "Bottom half of image disappears from screen",
+        "diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET ray simulation step",
+        "response": "Rays from whole candle still reach open top half! Image is complete and dimmer",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: Center of mirror covered",
+        "response": "Entire image forms unbroken with slightly less brightness",
+        "diagnosis": "CORRECT: Scientifically Accurate Response",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-036",
+    "student_id": "STU_235",
+    "grade_level": "Class 9",
+    "topic": "Motion: Kinematics Operations",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Distance = 100 m; time = 5 s. Find speed.",
+        "response": "500 m/s; multiplied distance by time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Distance = 300 m; time = 15 s. Find speed.",
+        "response": "4500 m/s; speed = distance * time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Athlete runs 200 m in 25 s. Find speed.",
+        "response": "5000 m/s; distance * time",
+        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-037",
+    "student_id": "STU_236",
+    "grade_level": "Class 9",
+    "topic": "Motion: Speed vs Acceleration",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Constant speed 20 m/s for 10 s. What is acceleration?",
+        "response": "20 m/s^2 because it is moving fast",
+        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Train moves at uniform 72 km/h. What is acceleration?",
+        "response": "72 km/h^2 because high speed means acceleration",
+        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
+        "confidence": 0.97
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-038",
+    "student_id": "STU_237",
+    "grade_level": "Class 9",
+    "topic": "Force & Laws of Motion: Inertia",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Puck on frictionless ice at 5 m/s. Required forward force?",
+        "response": "Requires continuous force, otherwise it stops",
+        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Spacecraft in vacuum with engines off. What keeps it moving?",
+        "response": "Forward force must push it",
+        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-039",
+    "student_id": "STU_238",
+    "grade_level": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "10 kg ball vs 1 kg ball dropped in vacuum.",
+        "response": "10 kg ball hits first because heavier falls faster",
+        "diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET gravity simulation with feather and bowling ball in vacuum.",
+        "response": "Both fall at exact same rate g = 9.8 m/s^2! Mass cancels out in a = F/m.",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: 100 kg anvil vs 10 g coin on the Moon.",
+        "response": "Both hit lunar surface simultaneously because acceleration g is independent of mass.",
+        "diagnosis": "CORRECT: Scientifically Accurate Response",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-040",
+    "student_id": "STU_239",
+    "grade_level": "Class 10",
+    "topic": "Electricity: Current Conservation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Two bulbs in series",
+        "response": "Bulb 1 consumes current so Bulb 2 gets less",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Three resistors in series",
+        "response": "Current drops after each resistor because it is consumed",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Swapped order probe",
+        "response": "The first resistor in line always gets more current",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-041",
+    "student_id": "STU_240",
+    "grade_level": "Class 10",
+    "topic": "Electricity: Parallel Circuits",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Adding 3-ohm in parallel to 6-ohm",
+        "response": "Total current stays 2A because battery output is fixed",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.94
+      },
+      {
+        "step": 2,
+        "question": "Adding 5 more branches",
+        "response": "Battery current is constant, just divided",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.96
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-042",
+    "student_id": "STU_241",
+    "grade_level": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Half of convex lens covered",
+        "response": "Bottom half of image disappears from screen",
+        "diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET ray simulation step",
+        "response": "Rays from whole candle still reach open top half! Image is complete and dimmer",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: Center of mirror covered",
+        "response": "Entire image forms unbroken with slightly less brightness",
+        "diagnosis": "CORRECT: Scientifically Accurate Response",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  }
+]

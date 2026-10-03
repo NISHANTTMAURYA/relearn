@@ -2,13 +2,14 @@ import os
 import json
 from collections import Counter
 
-BASE_DIR = r"d:\relearn\dataset\training_ready_datasets\sequence_dataset"
+BASE_DIR = r"d:\relearn\dataset\sequence_dataset"
+MODEL_DIR = r"d:\relearn\dataset\models_and_baselines"
 
 class SequencePatternAnalyzer:
     """
     Re:Learn Model B: Sequence & Pattern Analysis Component.
     Analyzes ordered attempts across a student quiz/learning session to identify:
-    1. Recurrent single misconceptions (e.g. repeated current attenuation)
+    1. Recurrent single misconceptions (e.g. repeated current attenuation, speed-acceleration conflation)
     2. Misconception shifts or cascades
     3. Transient calculation slips vs genuine misconceptions
     4. Successful resolution after multimodal intervention
@@ -19,7 +20,11 @@ class SequencePatternAnalyzer:
             "MISC-ELEC-002": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
             "MISC-OPT-001": "RECURRENT_HALF_LENS_BLOCKING_PATTERN",
             "MISC-OPT-004": "PERVASIVE_SIGN_CONVENTION_INVERSION",
-            "MISC-MAG-001": "RECURRENT_MAGNETIC_ELECTROSTATIC_CONFLATION"
+            "MISC-MAG-001": "RECURRENT_MAGNETIC_ELECTROSTATIC_CONFLATION",
+            "MISC-MOT-001": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
+            "MISC-MOT-002": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
+            "MISC-FOR-001": "RECURRENT_IMPETUS_THEORY_PATTERN",
+            "MISC-GRAV-001": "RECURRENT_HEAVIER_FALLS_FASTER_PATTERN"
         }
 
     def analyze_sequence(self, sequence_record):

@@ -3,7 +3,7 @@ import os
 import re
 import pandas as pd
 
-BASE_DIR = r"d:\relearn\dataset\training_ready_datasets"
+BASE_DIR = r"d:\relearn\dataset"
 INDIV_DIR = os.path.join(BASE_DIR, "individual_response_dataset")
 SEQ_DIR = os.path.join(BASE_DIR, "sequence_dataset")
 

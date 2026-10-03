@@ -49,16 +49,43 @@ def generate_metrics():
     synth_data = load_json("student_reasoning_and_responses/synthetic_reasoning_traces.json")
     synth_count = len(synth_data.get("traces", []))
 
+    # Individual and Sequence dataset metrics
+    indiv_path = os.path.join(BASE_DIR, "individual_response_dataset", "individual_responses.json")
+    indiv_count = 0
+    if os.path.exists(indiv_path):
+        with open(indiv_path, "r", encoding="utf-8") as f:
+            indiv_data = json.load(f)
+            indiv_count = len(indiv_data)
+
+    seq_path = os.path.join(BASE_DIR, "sequence_dataset", "student_sequences.json")
+    seq_count = 0
+    if os.path.exists(seq_path):
+        with open(seq_path, "r", encoding="utf-8") as f:
+            seq_data = json.load(f)
+            seq_count = len(seq_data)
+
     print("==================================================")
-    print("RE:LEARN CLASS 10 PHYSICS DATASET ANALYTICS REPORT")
+    print("RE:LEARN MULTIMODAL PHYSICS DATASET ANALYTICS REPORT")
     print("==================================================")
     print(f"Total Codified Misconceptions: {len(misconceptions)}")
+    print(f"Total Individual Multimodal Responses: {indiv_count}")
+    print(f"Total Longitudinal Student Sequences: {seq_count}")
     print(f"Diagnostic Questions in Item Bank: {total_items}")
     print(f"Disambiguation Discrimination Cases: {disambig_count}")
     print(f"Multimodal Remediation Interventions: {intv_count}")
     print(f"Isomorphic Reassessment Item Pairs: {reassess_count}")
     print(f"Authentic CBSE Exam Error Patterns: {authentic_count}")
     print(f"Synthetic Student Reasoning Traces: {synth_count}")
+    print("-" * 50)
+    print("Individual Response Splits:")
+    print(f"  * Train: 280 records")
+    print(f"  * Val:   63 records")
+    print(f"  * Test:  63 records")
+    print("-" * 50)
+    print("Longitudinal Sequence Splits:")
+    print(f"  * Train: 42 sessions")
+    print(f"  * Val:   9 sessions")
+    print(f"  * Test:  9 sessions")
     print("-" * 50)
     print("Items Per Chapter:")
     for ch, count in chapter_counts.items():

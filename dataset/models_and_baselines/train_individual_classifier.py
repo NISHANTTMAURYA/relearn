@@ -7,7 +7,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import classification_report, accuracy_score
 
-BASE_DIR = r"d:\relearn\dataset\training_ready_datasets\individual_response_dataset"
+BASE_DIR = r"d:\relearn\dataset\individual_response_dataset"
 MODEL_DIR = r"d:\relearn\dataset\models_and_baselines"
 
 def train_and_evaluate():

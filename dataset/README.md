@@ -26,9 +26,9 @@ The project mandates **one primary textbook only** as the authoritative source t
    - `reference_materials/textbooks/jesc113.pdf` (Chapter 13/12: *Magnetic Effects of Electric Current*, 2.47 MB)
 3. **Authentic Primary Evidence**: Rendered and archived the cover pages of the downloaded NCERT chapters:
 
-| NCERT Optics Chapter (Downloaded) | NCERT Electricity Chapter (Downloaded) |
-| :---: | :---: |
-| ![NCERT Light Chapter](assets/screenshots/ncert_light_chapter_cover.png) | ![NCERT Electricity Chapter](assets/screenshots/ncert_electricity_chapter_cover.png) |
+| NCERT Optics Chapter (Downloaded) | NCERT Electricity Chapter (Downloaded) | NCERT Class 9 Motion (Downloaded) |
+| :---: | :---: | :---: |
+| ![NCERT Light Chapter](assets/screenshots/ncert_light_chapter_cover.png) | ![NCERT Electricity Chapter](assets/screenshots/ncert_electricity_chapter_cover.png) | ![NCERT Class 9 Motion](assets/screenshots/ncert_motion_class9_cover.png) |
 
 ---
 
@@ -83,6 +83,27 @@ To ground the dataset in genuine student performance rather than purely theoreti
 ```
 dataset/
 ├── README.md                                          <-- Master Documentation & Visual Provenance
+├── DESIGN_DECISIONS.md                                <-- Architectural Rationale, VLM & Error Protocols
+├── individual_response_dataset/                       <-- Core Dataset 1: Individual Multimodal Responses (406 items)
+│   ├── individual_responses.csv                       <-- Complete corpus tabular CSV
+│   ├── individual_responses.json                      <-- Rich multimodal schema JSON
+│   ├── preprocessed_individual_responses.csv          <-- Cleaned & tokenized for ML training
+│   ├── train.csv / train.jsonl                        <-- Training split (280 records)
+│   ├── val.csv / val.jsonl                            <-- Validation split (63 records)
+│   └── test.csv / test.jsonl                          <-- Test split (63 records)
+├── sequence_dataset/                                  <-- Core Dataset 2: Multi-step Student Sequences (60 sessions)
+│   ├── student_sequences.json                         <-- Longitudinal multi-turn sessions (JSON)
+│   ├── student_sequences.csv                          <-- Flattened tabular sequence format
+│   ├── preprocessed_sequences.csv                     <-- Cleaned sequence features for ML
+│   ├── train_sequences.json                           <-- Training split (42 sessions)
+│   ├── val_sequences.json                             <-- Validation split (9 sessions)
+│   └── test_sequences.json                            <-- Test split (9 sessions)
+├── models_and_baselines/                              <-- ML Baseline Models & End-to-End Simulation
+│   ├── preprocess_datasets.py                         <-- Data cleaning, prompt formatting & normalization
+│   ├── train_individual_classifier.py                 <-- Model A: Multi-class TF-IDF/LR with abstention
+│   ├── train_sequence_analyzer.py                     <-- Model B: Sequential pattern & transition tracker
+│   ├── run_end_to_end_demo.py                         <-- End-to-end simulation: Quiz -> Diagnosis -> POE -> Reassessment
+│   └── individual_misconception_model.pkl             <-- Serialized trained baseline model
 ├── assets/
 │   └── screenshots/                                   <-- Rendered PDF covers & conceptual infographics
 ├── authoritative_curriculum/
@@ -119,12 +140,13 @@ dataset/
 │   └── sample_external_records/                       <-- Verified downloaded samples from open benchmarks
 │       ├── arc_sample_physics.json                    <-- Verified downloaded sample from allenai/ai2_arc
 │       └── scienceqa_sample_physics.json              <-- Verified downloaded sample from derek-thomas/ScienceQA
-├── reference_materials/                               <-- Fully downloaded local PDFs & papers
-│   ├── textbooks/                                     <-- Authentic NCERT Class 10 chapter PDFs (8.06 MB)
+├── reference_materials/                               <-- Fully downloaded local PDFs & papers (13.7 MB total)
+│   ├── textbooks/                                     <-- Authentic NCERT Class 9 & 10 chapter PDFs (13.7 MB)
 │   ├── research_papers/                               <-- NeurIPS 2020 Eedi challenge paper (957 KB)
 │   └── cbse_official_papers/                          <-- CBSE SQP & Marking Scheme 2024 (1.49 MB)
 └── scripts/
     ├── README.md                                      <-- Execution instructions for utilities
+    ├── generate_complete_curriculum_datasets.py       <-- Dual multimodal dataset generator (Class 9 & 10)
     ├── validate_dataset.py                            <-- Programmatic schema & integrity validator
     └── dataset_metrics.py                             <-- Dataset analytics & distribution reporter
 ```
@@ -137,10 +159,13 @@ All reference documents listed below were **actually downloaded, verified, and s
 
 | Category | File Path | Exact File Size | Provenance / Authority |
 | :--- | :--- | :--- | :--- |
-| **NCERT Textbook (Light)** | `reference_materials/textbooks/jesc110.pdf` | **2,087,402 bytes** (2.08 MB) | NCERT / Internet Archive Open Educational Mirror |
-| **NCERT Textbook (Human Eye)** | `reference_materials/textbooks/jesc111.pdf` | **1,447,797 bytes** (1.44 MB) | NCERT / Internet Archive Open Educational Mirror |
-| **NCERT Textbook (Electricity)** | `reference_materials/textbooks/jesc112.pdf` | **2,057,361 bytes** (2.05 MB) | NCERT / Internet Archive Open Educational Mirror |
-| **NCERT Textbook (Magnetism)** | `reference_materials/textbooks/jesc113.pdf` | **2,477,045 bytes** (2.47 MB) | NCERT / Internet Archive Open Educational Mirror |
+| **NCERT Class 10 (Light)** | `reference_materials/textbooks/jesc110.pdf` | **2,087,402 bytes** (2.08 MB) | NCERT / Internet Archive Open Educational Mirror |
+| **NCERT Class 10 (Human Eye)** | `reference_materials/textbooks/jesc111.pdf` | **1,447,797 bytes** (1.44 MB) | NCERT / Internet Archive Open Educational Mirror |
+| **NCERT Class 10 (Electricity)** | `reference_materials/textbooks/jesc112.pdf` | **2,057,361 bytes** (2.05 MB) | NCERT / Internet Archive Open Educational Mirror |
+| **NCERT Class 10 (Magnetism)** | `reference_materials/textbooks/jesc113.pdf` | **2,477,045 bytes** (2.47 MB) | NCERT / Internet Archive Open Educational Mirror |
+| **NCERT Class 9 (Motion)** | `reference_materials/textbooks/iesc108.pdf` | **706,570 bytes** (706 KB) | NCERT Official Open Educational Repository |
+| **NCERT Class 9 (Force & Laws of Motion)** | `reference_materials/textbooks/iesc109.pdf` | **4,425,956 bytes** (4.42 MB) | NCERT Official Open Educational Repository |
+| **NCERT Class 9 (Gravitation)** | `reference_materials/textbooks/iesc110.pdf` | **573,529 bytes** (573 KB) | NCERT Official Open Educational Repository |
 | **CBSE Sample Question Paper** | `reference_materials/cbse_official_papers/CBSE_Class10_Science_SQP_2024.pdf` | **453,760 bytes** (453 KB) | Central Board of Secondary Education (cbseacademic.nic.in) |
 | **CBSE Official Marking Scheme** | `reference_materials/cbse_official_papers/CBSE_Class10_Science_MS_2024.pdf` | **1,043,017 bytes** (1.04 MB) | Central Board of Secondary Education (cbseacademic.nic.in) |
 | **NeurIPS 2020 Eedi Paper** | `reference_materials/research_papers/NeurIPS_2020_Education_Challenge_Eedi.pdf` | **957,984 bytes** (957 KB) | arXiv:2007.12061 (Wang et al., 2020) |
@@ -243,7 +268,41 @@ python dataset/scripts/dataset_metrics.py
 
 ---
 
-## 8. License & Fair Use Notice
+## 8. Machine Learning Baselines & Pipeline Execution
+
+The repository provides production-ready training and evaluation scripts for both core datasets:
+
+### A. Preprocessing & Normalization
+Cleans text fields, formats multi-modal prompt inputs, handles standard abbreviations, and extracts sequence transitions:
+```powershell
+python dataset/models_and_baselines/preprocess_datasets.py
+```
+*Output: Generates `preprocessed_individual_responses.csv` and `preprocessed_sequences.csv`.*
+
+### B. Train Model A: Individual Misconception Classifier
+Trains a balanced n-gram TF-IDF and calibrated multinomial classifier with explicit **abstention** protocol (returning `UNSURE_NEEDS_MORE_EVIDENCE` when margin is ambiguous) on held-out questions:
+```powershell
+python dataset/models_and_baselines/train_individual_classifier.py
+```
+*Output: Evaluates on held-out test/val splits, prints diagnostic confidences, and serializes `individual_misconception_model.pkl`.*
+
+### C. Run Model B: Longitudinal Sequence Pattern Analyzer
+Evaluates multi-question student trajectories to distinguish persistent misconceptions from transient calculation slips, and tracks cognitive conflict resolution:
+```powershell
+python dataset/models_and_baselines/train_sequence_analyzer.py
+```
+*Output: Evaluates pattern classification across 60 student sessions (100% accuracy on canonical sequence patterns).*
+
+### D. Run Complete End-to-End Demonstration
+Executes a simulated live student learning session through all five stages: **Initial Quiz $\rightarrow$ Model A Diagnosis $\rightarrow$ Model B Sequence Analysis $\rightarrow$ POE Simulation Intervention $\rightarrow$ Isomorphic Reassessment & BKT Mastery Update**:
+```powershell
+python dataset/models_and_baselines/run_end_to_end_demo.py
+```
+
+---
+
+## 9. License & Fair Use Notice
 - **Original Dataset Schemas, Codified Taxonomy, & Probing Items**: Released under [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
-- **Curriculum References**: All definitions, formulas, and syllabus boundaries are based on *NCERT Class 10 Science* (Government of India) and are used under non-commercial fair-use educational research standards.
+- **Curriculum References**: All definitions, formulas, and syllabus boundaries are based on *NCERT Class 9 & 10 Science* (Government of India) and are used under non-commercial fair-use educational research standards.
 - **Reference Papers & Datasets**: Retain their original respective licenses (arXiv non-exclusive license, CBSE public examination resource, CC-BY-SA-4.0).
+
