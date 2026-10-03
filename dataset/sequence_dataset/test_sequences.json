@@ -1,29 +1,268 @@
 [
   {
-    "sequence_id": "SEQ-0009",
-    "student_id": "STU_0109",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "sequence_id": "SEQ-0331",
+    "student_id": "STU_1331",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Current Conservation",
+    "target_misconception_id": "MISC-ELEC-001",
+    "intervention_id": "INTV-ELEC-001",
+    "reassessment_pair_id": "PAIR-ELEC-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0331-1",
+        "question_id": "PHY-Class10-05-0001",
+        "stem": "Two identical bulbs in series with 6V battery. Compare ammeter readings.",
+        "student_response": "A1 = 1.2A, A2 = 0.8A, A3 = 0.4A because bulb 1 consumes electric current to glow.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+        "attempt_id": "ATT-0331-2",
+        "question_id": "PHY-Class10-05-0002",
+        "stem": "Three identical resistors connected in series with battery. What is current through R3 compared to R1?",
+        "student_response": "Current through R3 is much smaller than R1 because current gets used up as it travels along the series circuit.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
       },
       {
         "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0331-3",
+        "question_id": "PHY-Class10-05-0003",
+        "stem": "Does the downstream bulb glow dimmer because less current reaches it?",
+        "student_response": "Yes, downstream bulb receives less current because upstream bulb consumed the charge.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0332",
+    "student_id": "STU_1332",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Parallel Circuits",
+    "target_misconception_id": "MISC-ELEC-002",
+    "intervention_id": "INTV-ELEC-002",
+    "reassessment_pair_id": "PAIR-ELEC-002",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0332-1",
+        "question_id": "PHY-Class10-06-0001",
+        "stem": "Bulb B1 in single branch. Second identical bulb B2 connected in parallel. Brightness of B1?",
+        "student_response": "Bulb 1 dims to half brightness because the battery provides a fixed total current that must now be shared.",
+        "individual_diagnosis": "MISC-ELEC-002: Battery as Constant Current Source"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0332-2",
+        "question_id": "PHY-Class10-06-0002",
+        "stem": "Heater switched ON in parallel with room lamp. Does lamp dim?",
+        "student_response": "Yes, the lamp dims because the source current is divided between both appliances.",
+        "individual_diagnosis": "MISC-ELEC-002: Battery as Constant Current Source"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0333",
+    "student_id": "STU_1333",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Image Formation with Aperture Blocking",
+    "target_misconception_id": "MISC-OPT-001",
+    "intervention_id": "INTV-OPT-001",
+    "reassessment_pair_id": "PAIR-OPT-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0333-1",
+        "question_id": "PHY-Class10-01-0001",
+        "stem": "Lower half of convex lens covered with black paper. What happens to projected image?",
+        "student_response": "The top half of the candle image is completely missing because the bottom half is covered.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0333-2",
+        "question_id": "PHY-Class10-01-0002",
+        "stem": "Upper half of converging lens blocked by opaque mask. Describe image change.",
+        "student_response": "Only the lower half of the image will appear on the viewing card.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_HALF_LENS_BLOCKING_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0334",
+    "student_id": "STU_1334",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Cartesian Sign Conventions",
+    "target_misconception_id": "MISC-OPT-004",
+    "intervention_id": "INTV-OPT-004",
+    "reassessment_pair_id": "PAIR-OPT-004",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0334-1",
+        "question_id": "PHY-Class10-02-0001",
+        "stem": "Object at 30 cm before concave mirror of f = 15 cm. Find v.",
+        "student_response": "v = +30 cm because distances are always positive scalars; 1/v = 1/15 - 1/30.",
+        "individual_diagnosis": "MISC-OPT-004: Sign Convention Spatial Inversion"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0334-2",
+        "question_id": "PHY-Class10-02-0002",
+        "stem": "Candle at 40 cm from concave mirror of f = 20 cm. Find v.",
+        "student_response": "1/v = 1/20 + 1/40 giving positive v, because the object is in front of the mirror.",
+        "individual_diagnosis": "MISC-OPT-004: Sign Convention Spatial Inversion"
+      }
+    ],
+    "sequence_level_label": "PERVASIVE_SIGN_CONVENTION_INVERSION",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0335",
+    "student_id": "STU_1335",
+    "curriculum_grade": "Class 9",
+    "topic": "Motion: Speed and Velocity Operations",
+    "target_misconception_id": "MISC-MOT-001",
+    "intervention_id": "INTV-MOT-001",
+    "reassessment_pair_id": "PAIR-MOT-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0335-1",
+        "question_id": "PHY-Class9-08-0001",
+        "stem": "Runner covers 100 m in 5 s along straight track. Calculate speed.",
+        "student_response": "Speed is 500 m/s because I multiplied distance by time (100 * 5 = 500).",
+        "individual_diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0335-2",
+        "question_id": "PHY-Class9-08-0002",
+        "stem": "Car travels 300 m in 15 s. What is speed?",
+        "student_response": "I calculated speed = 300 * 15 = 4500 m/s.",
+        "individual_diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion"
+      },
+      {
+        "step": 3,
+        "attempt_id": "ATT-0335-3",
+        "question_id": "PHY-Class9-08-0003",
+        "stem": "Bicycle moves 60 m in 3 s. Find speed.",
+        "student_response": "Speed = distance times time, so it equals 180 m/s.",
+        "individual_diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0336",
+    "student_id": "STU_1336",
+    "curriculum_grade": "Class 9",
+    "topic": "Motion: Speed vs Acceleration",
+    "target_misconception_id": "MISC-MOT-002",
+    "intervention_id": "INTV-MOT-002",
+    "reassessment_pair_id": "PAIR-MOT-002",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0336-1",
+        "question_id": "PHY-Class9-09-0001",
+        "stem": "Vehicle moves at steady constant speed of 20 m/s for 10 s. What is acceleration?",
+        "student_response": "Acceleration is 20 m/s^2 because the vehicle is moving fast at 20 m/s.",
+        "individual_diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0336-2",
+        "question_id": "PHY-Class9-09-0002",
+        "stem": "Train moves along straight track at uniform 72 km/h for 20 s. Acceleration?",
+        "student_response": "Acceleration = 72 / 20 = 3.6 m/s^2 (divided speed by time without checking change in velocity).",
+        "individual_diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0337",
+    "student_id": "STU_1337",
+    "curriculum_grade": "Class 9",
+    "topic": "Force & Laws of Motion: Inertia",
+    "target_misconception_id": "MISC-FOR-001",
+    "intervention_id": "INTV-FOR-001",
+    "reassessment_pair_id": "PAIR-FOR-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0337-1",
+        "question_id": "PHY-Class9-10-0001",
+        "stem": "Puck slides across frictionless ice at constant 10 m/s. What net force keeps it moving?",
+        "student_response": "Requires a continuous forward force of 20 N (F = m * v) to keep it moving.",
+        "individual_diagnosis": "MISC-FOR-001: Impetus Theory (Force is Required to Sustain Motion)"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0337-2",
+        "question_id": "PHY-Class9-10-0002",
+        "stem": "Cart glides in deep space at constant velocity. Forward force needed?",
+        "student_response": "Must maintain a forward thrust in the direction of motion to sustain speed.",
+        "individual_diagnosis": "MISC-FOR-001: Impetus Theory (Force is Required to Sustain Motion)"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0338",
+    "student_id": "STU_1338",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "target_misconception_id": "MISC-OPT-001",
+    "intervention_id": "INTV-OPT-001",
+    "reassessment_pair_id": "PAIR-OPT-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0338-1",
+        "question_id": "PHY-Class10-01-0001",
+        "stem": "Lower half of convex lens covered with black paper. What happens to projected image?",
+        "student_response": "The top half of the candle image is completely missing because the bottom half is covered.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0338-2",
+        "question_id": "INTV-OPT-001-STEP",
+        "stem": "PhET simulation: Observe virtual mask covering lower half of lens.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "attempt_id": "ATT-0338-3",
+        "question_id": "PHY-Class10-01-0003",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
@@ -33,30 +272,36 @@
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0019",
-    "student_id": "STU_0119",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "sequence_id": "SEQ-0339",
+    "student_id": "STU_1339",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Current Conservation Remediation",
+    "target_misconception_id": "MISC-ELEC-001",
+    "intervention_id": "INTV-ELEC-001",
+    "reassessment_pair_id": "PAIR-ELEC-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0339-1",
+        "question_id": "PHY-Class10-05-0001",
+        "stem": "Two identical bulbs in series with 6V battery. Compare ammeters.",
+        "student_response": "A1 = 1.2A, A2 = 0.8A, A3 = 0.4A because bulb 1 consumes electric current.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+        "attempt_id": "ATT-0339-2",
+        "question_id": "INTV-ELEC-001-STEP",
+        "stem": "PhET Simulation: Observe moving electron dots and ammeters in series.",
+        "student_response": "Both ammeters read identical values (0.90A)! Current is not consumed; only electrical potential energy drops.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Current is conserved in closed loop"
       },
       {
         "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0339-3",
+        "question_id": "PHY-Class10-05-0003",
+        "stem": "Near-transfer isomorphic question: 100-ohm and 20-ohm resistors in series.",
+        "student_response": "I_in = I_out, because in any series circuit electric charge cannot accumulate or vanish.",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
@@ -66,30 +311,191 @@
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0029",
-    "student_id": "STU_0129",
+    "sequence_id": "SEQ-0340",
+    "student_id": "STU_1340",
     "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "topic": "Kinematics: Velocity Calculation",
+    "target_misconception_id": "NONE",
+    "intervention_id": "FEEDBACK_ARITHMETIC",
+    "reassessment_pair_id": "PAIR-NONE-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0340-1",
+        "question_id": "PHY-Class9-08-0001",
+        "stem": "Runner covers 100 m in 5 s. Speed?",
+        "student_response": "Speed = distance / time = 100 / 5 = 25 m/s (mental arithmetic slip on division).",
+        "individual_diagnosis": "CARELESS_CALCULATION_ERROR"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+        "attempt_id": "ATT-0340-2",
+        "question_id": "PHY-Class9-08-0002",
+        "stem": "Car travels 300 m in 15 s. Speed?",
+        "student_response": "Average speed is distance divided by elapsed time: 300 / 15 = 20 m/s.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "TRANSIENT_SLIP_WITH_CONCEPTUAL_MASTERY",
+    "learning_status": "no_conceptual_misconception",
+    "recommended_intervention_action": "provide_arithmetic_feedback_only",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0341",
+    "student_id": "STU_1341",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Ohm's Law and Resistance",
+    "target_misconception_id": "MISC-ELEC-003",
+    "intervention_id": "INTV-ELEC-003",
+    "reassessment_pair_id": "PAIR-ELEC-003",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0341-1",
+        "question_id": "PHY-Class10-12-0001",
+        "stem": "A 10 ohm resistor connected to 6V battery. Current?",
+        "student_response": "Current decreases because 10 ohm resistor blocks charge; current must be less than 6.",
+        "individual_diagnosis": "MISC-ELEC-003: Resistance Reduces Current Independent of Voltage"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0341-2",
+        "question_id": "PHY-Class10-12-0002",
+        "stem": "Resistor 20 ohms, 12V battery. Find I using Ohm's Law.",
+        "student_response": "Bigger resistor always means less current regardless of battery voltage.",
+        "individual_diagnosis": "MISC-ELEC-003: Resistance Reduces Current Independent of Voltage"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_OHMS_LAW_DIRECTION_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0342",
+    "student_id": "STU_1342",
+    "curriculum_grade": "Class 10",
+    "topic": "Magnetic Effects: Electromagnetic Induction",
+    "target_misconception_id": "MISC-MAG-006",
+    "intervention_id": "INTV-MAG-006",
+    "reassessment_pair_id": "PAIR-MAG-006",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0342-1",
+        "question_id": "PHY-Class10-13-0001",
+        "stem": "A coil of 100 turns placed in constant 2T field. Is EMF induced?",
+        "student_response": "Yes, EMF = 100 x 2 = 200 V is continuously induced because the field passes through the coil.",
+        "individual_diagnosis": "MISC-MAG-006: Static Field Induces Constant EMF Fallacy"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0342-2",
+        "question_id": "PHY-Class10-13-0002",
+        "stem": "A search coil in steady non-changing solenoid field. Does galvanometer deflect?",
+        "student_response": "Galvanometer deflects continuously because field exists inside coil.",
+        "individual_diagnosis": "MISC-MAG-006: Static Field Induces Constant EMF Fallacy"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_STATIC_FIELD_EMF_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0343",
+    "student_id": "STU_1343",
+    "curriculum_grade": "Class 9",
+    "topic": "Work and Energy: Direction-Dependent Work",
+    "target_misconception_id": "MISC-WRK-001",
+    "intervention_id": "INTV-WRK-001",
+    "reassessment_pair_id": "PAIR-WRK-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0343-1",
+        "question_id": "PHY-Class9-14-0001",
+        "stem": "Porter carries 10 kg bag and walks 5 m horizontally. Work done by holding force?",
+        "student_response": "Work = 10 x 5 = 50 J because force times displacement is always work.",
+        "individual_diagnosis": "MISC-WRK-001: Work Equals Force Times Distance Regardless of Direction"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0343-2",
+        "question_id": "PHY-Class9-14-0002",
+        "stem": "Man carries 20 kg load and walks 8 m flat. Work done by vertical holding force?",
+        "student_response": "Work = 20 x 8 = 160 J, force times distance.",
+        "individual_diagnosis": "MISC-WRK-001: Work Equals Force Times Distance Regardless of Direction"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_WORK_DIRECTION_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0344",
+    "student_id": "STU_1344",
+    "curriculum_grade": "Class 9",
+    "topic": "Force and Laws of Motion: Momentum Conservation",
+    "target_misconception_id": "MISC-MOM-001",
+    "intervention_id": "INTV-MOM-001",
+    "reassessment_pair_id": "PAIR-MOM-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0344-1",
+        "question_id": "PHY-Class9-15-0001",
+        "stem": "2 kg ball at 5 m/s hits stationary identical ball; first stops. Velocity of second?",
+        "student_response": "Momentum is destroyed when ball 1 stops; ball 2 stays at rest.",
+        "individual_diagnosis": "MISC-MOM-001: Momentum Not Conserved When Object Stops"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0344-2",
+        "question_id": "PHY-Class9-15-0002",
+        "stem": "3 kg ball moving at 4 m/s collides and stops. What happens to second 3 kg ball?",
+        "student_response": "Ball 1 stopping destroys its momentum; ball 2 has no reason to move.",
+        "individual_diagnosis": "MISC-MOM-001: Momentum Not Conserved When Object Stops"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_MOMENTUM_DESTRUCTION_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0345",
+    "student_id": "STU_1345",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Ohm's Law Remediation",
+    "target_misconception_id": "MISC-ELEC-003",
+    "intervention_id": "INTV-ELEC-003",
+    "reassessment_pair_id": "PAIR-ELEC-003",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0345-1",
+        "question_id": "PHY-Class10-12-0001",
+        "stem": "Resistor 10 ohms, battery 6V. Find current.",
+        "student_response": "Current decreases because 10 ohm resistor blocks charge.",
+        "individual_diagnosis": "MISC-ELEC-003: Resistance Reduces Current Independent of Voltage"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0345-2",
+        "question_id": "INTV-ELEC-003-STEP",
+        "stem": "PhET Circuit simulation: ammeter reads I = V/R = 0.6 A exactly.",
+        "student_response": "I see! I = V/R means both voltage and resistance together set current. Ratio matters.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Ohm's Law verified experimentally"
       },
       {
         "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0345-3",
+        "question_id": "PHY-Class10-12-0003",
+        "stem": "Transfer: 20 ohm resistor and 12V battery. Find I.",
+        "student_response": "I = 12 / 20 = 0.6 A using Ohm's Law. Same ratio!",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
@@ -99,30 +505,269 @@
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0039",
-    "student_id": "STU_0139",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "sequence_id": "SEQ-0346",
+    "student_id": "STU_1346",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Current Conservation",
+    "target_misconception_id": "MISC-ELEC-001",
+    "intervention_id": "INTV-ELEC-001",
+    "reassessment_pair_id": "PAIR-ELEC-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0346-1",
+        "question_id": "PHY-Class10-05-0001",
+        "stem": "Two identical bulbs in series with 6V battery. Compare ammeter readings.",
+        "student_response": "A1 = 1.2A, A2 = 0.8A, A3 = 0.4A because bulb 1 consumes electric current to glow.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+        "attempt_id": "ATT-0346-2",
+        "question_id": "PHY-Class10-05-0002",
+        "stem": "Three identical resistors connected in series with battery. What is current through R3 compared to R1?",
+        "student_response": "Current through R3 is much smaller than R1 because current gets used up as it travels along the series circuit.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
       },
       {
         "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0346-3",
+        "question_id": "PHY-Class10-05-0003",
+        "stem": "Does the downstream bulb glow dimmer because less current reaches it?",
+        "student_response": "Yes, downstream bulb receives less current because upstream bulb consumed the charge.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0347",
+    "student_id": "STU_1347",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Parallel Circuits",
+    "target_misconception_id": "MISC-ELEC-002",
+    "intervention_id": "INTV-ELEC-002",
+    "reassessment_pair_id": "PAIR-ELEC-002",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0347-1",
+        "question_id": "PHY-Class10-06-0001",
+        "stem": "Bulb B1 in single branch. Second identical bulb B2 connected in parallel. Brightness of B1?",
+        "student_response": "Bulb 1 dims to half brightness because the battery provides a fixed total current that must now be shared.",
+        "individual_diagnosis": "MISC-ELEC-002: Battery as Constant Current Source"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0347-2",
+        "question_id": "PHY-Class10-06-0002",
+        "stem": "Heater switched ON in parallel with room lamp. Does lamp dim?",
+        "student_response": "Yes, the lamp dims because the source current is divided between both appliances.",
+        "individual_diagnosis": "MISC-ELEC-002: Battery as Constant Current Source"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0348",
+    "student_id": "STU_1348",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Image Formation with Aperture Blocking",
+    "target_misconception_id": "MISC-OPT-001",
+    "intervention_id": "INTV-OPT-001",
+    "reassessment_pair_id": "PAIR-OPT-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0348-1",
+        "question_id": "PHY-Class10-01-0001",
+        "stem": "Lower half of convex lens covered with black paper. What happens to projected image?",
+        "student_response": "The top half of the candle image is completely missing because the bottom half is covered.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0348-2",
+        "question_id": "PHY-Class10-01-0002",
+        "stem": "Upper half of converging lens blocked by opaque mask. Describe image change.",
+        "student_response": "Only the lower half of the image will appear on the viewing card.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_HALF_LENS_BLOCKING_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0349",
+    "student_id": "STU_1349",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Cartesian Sign Conventions",
+    "target_misconception_id": "MISC-OPT-004",
+    "intervention_id": "INTV-OPT-004",
+    "reassessment_pair_id": "PAIR-OPT-004",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0349-1",
+        "question_id": "PHY-Class10-02-0001",
+        "stem": "Object at 30 cm before concave mirror of f = 15 cm. Find v.",
+        "student_response": "v = +30 cm because distances are always positive scalars; 1/v = 1/15 - 1/30.",
+        "individual_diagnosis": "MISC-OPT-004: Sign Convention Spatial Inversion"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0349-2",
+        "question_id": "PHY-Class10-02-0002",
+        "stem": "Candle at 40 cm from concave mirror of f = 20 cm. Find v.",
+        "student_response": "1/v = 1/20 + 1/40 giving positive v, because the object is in front of the mirror.",
+        "individual_diagnosis": "MISC-OPT-004: Sign Convention Spatial Inversion"
+      }
+    ],
+    "sequence_level_label": "PERVASIVE_SIGN_CONVENTION_INVERSION",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0350",
+    "student_id": "STU_1350",
+    "curriculum_grade": "Class 9",
+    "topic": "Motion: Speed and Velocity Operations",
+    "target_misconception_id": "MISC-MOT-001",
+    "intervention_id": "INTV-MOT-001",
+    "reassessment_pair_id": "PAIR-MOT-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0350-1",
+        "question_id": "PHY-Class9-08-0001",
+        "stem": "Runner covers 100 m in 5 s along straight track. Calculate speed.",
+        "student_response": "Speed is 500 m/s because I multiplied distance by time (100 * 5 = 500).",
+        "individual_diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0350-2",
+        "question_id": "PHY-Class9-08-0002",
+        "stem": "Car travels 300 m in 15 s. What is speed?",
+        "student_response": "I calculated speed = 300 * 15 = 4500 m/s.",
+        "individual_diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion"
+      },
+      {
+        "step": 3,
+        "attempt_id": "ATT-0350-3",
+        "question_id": "PHY-Class9-08-0003",
+        "stem": "Bicycle moves 60 m in 3 s. Find speed.",
+        "student_response": "Speed = distance times time, so it equals 180 m/s.",
+        "individual_diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0351",
+    "student_id": "STU_1351",
+    "curriculum_grade": "Class 9",
+    "topic": "Motion: Speed vs Acceleration",
+    "target_misconception_id": "MISC-MOT-002",
+    "intervention_id": "INTV-MOT-002",
+    "reassessment_pair_id": "PAIR-MOT-002",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0351-1",
+        "question_id": "PHY-Class9-09-0001",
+        "stem": "Vehicle moves at steady constant speed of 20 m/s for 10 s. What is acceleration?",
+        "student_response": "Acceleration is 20 m/s^2 because the vehicle is moving fast at 20 m/s.",
+        "individual_diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0351-2",
+        "question_id": "PHY-Class9-09-0002",
+        "stem": "Train moves along straight track at uniform 72 km/h for 20 s. Acceleration?",
+        "student_response": "Acceleration = 72 / 20 = 3.6 m/s^2 (divided speed by time without checking change in velocity).",
+        "individual_diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0352",
+    "student_id": "STU_1352",
+    "curriculum_grade": "Class 9",
+    "topic": "Force & Laws of Motion: Inertia",
+    "target_misconception_id": "MISC-FOR-001",
+    "intervention_id": "INTV-FOR-001",
+    "reassessment_pair_id": "PAIR-FOR-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0352-1",
+        "question_id": "PHY-Class9-10-0001",
+        "stem": "Puck slides across frictionless ice at constant 10 m/s. What net force keeps it moving?",
+        "student_response": "Requires a continuous forward force of 20 N (F = m * v) to keep it moving.",
+        "individual_diagnosis": "MISC-FOR-001: Impetus Theory (Force is Required to Sustain Motion)"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0352-2",
+        "question_id": "PHY-Class9-10-0002",
+        "stem": "Cart glides in deep space at constant velocity. Forward force needed?",
+        "student_response": "Must maintain a forward thrust in the direction of motion to sustain speed.",
+        "individual_diagnosis": "MISC-FOR-001: Impetus Theory (Force is Required to Sustain Motion)"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0353",
+    "student_id": "STU_1353",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "target_misconception_id": "MISC-OPT-001",
+    "intervention_id": "INTV-OPT-001",
+    "reassessment_pair_id": "PAIR-OPT-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0353-1",
+        "question_id": "PHY-Class10-01-0001",
+        "stem": "Lower half of convex lens covered with black paper. What happens to projected image?",
+        "student_response": "The top half of the candle image is completely missing because the bottom half is covered.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0353-2",
+        "question_id": "INTV-OPT-001-STEP",
+        "stem": "PhET simulation: Observe virtual mask covering lower half of lens.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "attempt_id": "ATT-0353-3",
+        "question_id": "PHY-Class10-01-0003",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
@@ -132,30 +777,36 @@
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0049",
-    "student_id": "STU_0149",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "sequence_id": "SEQ-0354",
+    "student_id": "STU_1354",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Current Conservation Remediation",
+    "target_misconception_id": "MISC-ELEC-001",
+    "intervention_id": "INTV-ELEC-001",
+    "reassessment_pair_id": "PAIR-ELEC-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0354-1",
+        "question_id": "PHY-Class10-05-0001",
+        "stem": "Two identical bulbs in series with 6V battery. Compare ammeters.",
+        "student_response": "A1 = 1.2A, A2 = 0.8A, A3 = 0.4A because bulb 1 consumes electric current.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+        "attempt_id": "ATT-0354-2",
+        "question_id": "INTV-ELEC-001-STEP",
+        "stem": "PhET Simulation: Observe moving electron dots and ammeters in series.",
+        "student_response": "Both ammeters read identical values (0.90A)! Current is not consumed; only electrical potential energy drops.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Current is conserved in closed loop"
       },
       {
         "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0354-3",
+        "question_id": "PHY-Class10-05-0003",
+        "stem": "Near-transfer isomorphic question: 100-ohm and 20-ohm resistors in series.",
+        "student_response": "I_in = I_out, because in any series circuit electric charge cannot accumulate or vanish.",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
@@ -165,30 +816,191 @@
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0059",
-    "student_id": "STU_0159",
+    "sequence_id": "SEQ-0355",
+    "student_id": "STU_1355",
     "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "topic": "Kinematics: Velocity Calculation",
+    "target_misconception_id": "NONE",
+    "intervention_id": "FEEDBACK_ARITHMETIC",
+    "reassessment_pair_id": "PAIR-NONE-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0355-1",
+        "question_id": "PHY-Class9-08-0001",
+        "stem": "Runner covers 100 m in 5 s. Speed?",
+        "student_response": "Speed = distance / time = 100 / 5 = 25 m/s (mental arithmetic slip on division).",
+        "individual_diagnosis": "CARELESS_CALCULATION_ERROR"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+        "attempt_id": "ATT-0355-2",
+        "question_id": "PHY-Class9-08-0002",
+        "stem": "Car travels 300 m in 15 s. Speed?",
+        "student_response": "Average speed is distance divided by elapsed time: 300 / 15 = 20 m/s.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "TRANSIENT_SLIP_WITH_CONCEPTUAL_MASTERY",
+    "learning_status": "no_conceptual_misconception",
+    "recommended_intervention_action": "provide_arithmetic_feedback_only",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0356",
+    "student_id": "STU_1356",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Ohm's Law and Resistance",
+    "target_misconception_id": "MISC-ELEC-003",
+    "intervention_id": "INTV-ELEC-003",
+    "reassessment_pair_id": "PAIR-ELEC-003",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0356-1",
+        "question_id": "PHY-Class10-12-0001",
+        "stem": "A 10 ohm resistor connected to 6V battery. Current?",
+        "student_response": "Current decreases because 10 ohm resistor blocks charge; current must be less than 6.",
+        "individual_diagnosis": "MISC-ELEC-003: Resistance Reduces Current Independent of Voltage"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0356-2",
+        "question_id": "PHY-Class10-12-0002",
+        "stem": "Resistor 20 ohms, 12V battery. Find I using Ohm's Law.",
+        "student_response": "Bigger resistor always means less current regardless of battery voltage.",
+        "individual_diagnosis": "MISC-ELEC-003: Resistance Reduces Current Independent of Voltage"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_OHMS_LAW_DIRECTION_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0357",
+    "student_id": "STU_1357",
+    "curriculum_grade": "Class 10",
+    "topic": "Magnetic Effects: Electromagnetic Induction",
+    "target_misconception_id": "MISC-MAG-006",
+    "intervention_id": "INTV-MAG-006",
+    "reassessment_pair_id": "PAIR-MAG-006",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0357-1",
+        "question_id": "PHY-Class10-13-0001",
+        "stem": "A coil of 100 turns placed in constant 2T field. Is EMF induced?",
+        "student_response": "Yes, EMF = 100 x 2 = 200 V is continuously induced because the field passes through the coil.",
+        "individual_diagnosis": "MISC-MAG-006: Static Field Induces Constant EMF Fallacy"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0357-2",
+        "question_id": "PHY-Class10-13-0002",
+        "stem": "A search coil in steady non-changing solenoid field. Does galvanometer deflect?",
+        "student_response": "Galvanometer deflects continuously because field exists inside coil.",
+        "individual_diagnosis": "MISC-MAG-006: Static Field Induces Constant EMF Fallacy"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_STATIC_FIELD_EMF_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0358",
+    "student_id": "STU_1358",
+    "curriculum_grade": "Class 9",
+    "topic": "Work and Energy: Direction-Dependent Work",
+    "target_misconception_id": "MISC-WRK-001",
+    "intervention_id": "INTV-WRK-001",
+    "reassessment_pair_id": "PAIR-WRK-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0358-1",
+        "question_id": "PHY-Class9-14-0001",
+        "stem": "Porter carries 10 kg bag and walks 5 m horizontally. Work done by holding force?",
+        "student_response": "Work = 10 x 5 = 50 J because force times displacement is always work.",
+        "individual_diagnosis": "MISC-WRK-001: Work Equals Force Times Distance Regardless of Direction"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0358-2",
+        "question_id": "PHY-Class9-14-0002",
+        "stem": "Man carries 20 kg load and walks 8 m flat. Work done by vertical holding force?",
+        "student_response": "Work = 20 x 8 = 160 J, force times distance.",
+        "individual_diagnosis": "MISC-WRK-001: Work Equals Force Times Distance Regardless of Direction"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_WORK_DIRECTION_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0359",
+    "student_id": "STU_1359",
+    "curriculum_grade": "Class 9",
+    "topic": "Force and Laws of Motion: Momentum Conservation",
+    "target_misconception_id": "MISC-MOM-001",
+    "intervention_id": "INTV-MOM-001",
+    "reassessment_pair_id": "PAIR-MOM-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0359-1",
+        "question_id": "PHY-Class9-15-0001",
+        "stem": "2 kg ball at 5 m/s hits stationary identical ball; first stops. Velocity of second?",
+        "student_response": "Momentum is destroyed when ball 1 stops; ball 2 stays at rest.",
+        "individual_diagnosis": "MISC-MOM-001: Momentum Not Conserved When Object Stops"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0359-2",
+        "question_id": "PHY-Class9-15-0002",
+        "stem": "3 kg ball moving at 4 m/s collides and stops. What happens to second 3 kg ball?",
+        "student_response": "Ball 1 stopping destroys its momentum; ball 2 has no reason to move.",
+        "individual_diagnosis": "MISC-MOM-001: Momentum Not Conserved When Object Stops"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_MOMENTUM_DESTRUCTION_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0360",
+    "student_id": "STU_1360",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Ohm's Law Remediation",
+    "target_misconception_id": "MISC-ELEC-003",
+    "intervention_id": "INTV-ELEC-003",
+    "reassessment_pair_id": "PAIR-ELEC-003",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0360-1",
+        "question_id": "PHY-Class10-12-0001",
+        "stem": "Resistor 10 ohms, battery 6V. Find current.",
+        "student_response": "Current decreases because 10 ohm resistor blocks charge.",
+        "individual_diagnosis": "MISC-ELEC-003: Resistance Reduces Current Independent of Voltage"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0360-2",
+        "question_id": "INTV-ELEC-003-STEP",
+        "stem": "PhET Circuit simulation: ammeter reads I = V/R = 0.6 A exactly.",
+        "student_response": "I see! I = V/R means both voltage and resistance together set current. Ratio matters.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Ohm's Law verified experimentally"
       },
       {
         "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0360-3",
+        "question_id": "PHY-Class10-12-0003",
+        "stem": "Transfer: 20 ohm resistor and 12V battery. Find I.",
+        "student_response": "I = 12 / 20 = 0.6 A using Ohm's Law. Same ratio!",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
@@ -198,30 +1010,269 @@
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0069",
-    "student_id": "STU_0169",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "sequence_id": "SEQ-0361",
+    "student_id": "STU_1361",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Current Conservation",
+    "target_misconception_id": "MISC-ELEC-001",
+    "intervention_id": "INTV-ELEC-001",
+    "reassessment_pair_id": "PAIR-ELEC-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0361-1",
+        "question_id": "PHY-Class10-05-0001",
+        "stem": "Two identical bulbs in series with 6V battery. Compare ammeter readings.",
+        "student_response": "A1 = 1.2A, A2 = 0.8A, A3 = 0.4A because bulb 1 consumes electric current to glow.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+        "attempt_id": "ATT-0361-2",
+        "question_id": "PHY-Class10-05-0002",
+        "stem": "Three identical resistors connected in series with battery. What is current through R3 compared to R1?",
+        "student_response": "Current through R3 is much smaller than R1 because current gets used up as it travels along the series circuit.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
       },
       {
         "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0361-3",
+        "question_id": "PHY-Class10-05-0003",
+        "stem": "Does the downstream bulb glow dimmer because less current reaches it?",
+        "student_response": "Yes, downstream bulb receives less current because upstream bulb consumed the charge.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0362",
+    "student_id": "STU_1362",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Parallel Circuits",
+    "target_misconception_id": "MISC-ELEC-002",
+    "intervention_id": "INTV-ELEC-002",
+    "reassessment_pair_id": "PAIR-ELEC-002",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0362-1",
+        "question_id": "PHY-Class10-06-0001",
+        "stem": "Bulb B1 in single branch. Second identical bulb B2 connected in parallel. Brightness of B1?",
+        "student_response": "Bulb 1 dims to half brightness because the battery provides a fixed total current that must now be shared.",
+        "individual_diagnosis": "MISC-ELEC-002: Battery as Constant Current Source"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0362-2",
+        "question_id": "PHY-Class10-06-0002",
+        "stem": "Heater switched ON in parallel with room lamp. Does lamp dim?",
+        "student_response": "Yes, the lamp dims because the source current is divided between both appliances.",
+        "individual_diagnosis": "MISC-ELEC-002: Battery as Constant Current Source"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0363",
+    "student_id": "STU_1363",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Image Formation with Aperture Blocking",
+    "target_misconception_id": "MISC-OPT-001",
+    "intervention_id": "INTV-OPT-001",
+    "reassessment_pair_id": "PAIR-OPT-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0363-1",
+        "question_id": "PHY-Class10-01-0001",
+        "stem": "Lower half of convex lens covered with black paper. What happens to projected image?",
+        "student_response": "The top half of the candle image is completely missing because the bottom half is covered.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0363-2",
+        "question_id": "PHY-Class10-01-0002",
+        "stem": "Upper half of converging lens blocked by opaque mask. Describe image change.",
+        "student_response": "Only the lower half of the image will appear on the viewing card.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_HALF_LENS_BLOCKING_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0364",
+    "student_id": "STU_1364",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Cartesian Sign Conventions",
+    "target_misconception_id": "MISC-OPT-004",
+    "intervention_id": "INTV-OPT-004",
+    "reassessment_pair_id": "PAIR-OPT-004",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0364-1",
+        "question_id": "PHY-Class10-02-0001",
+        "stem": "Object at 30 cm before concave mirror of f = 15 cm. Find v.",
+        "student_response": "v = +30 cm because distances are always positive scalars; 1/v = 1/15 - 1/30.",
+        "individual_diagnosis": "MISC-OPT-004: Sign Convention Spatial Inversion"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0364-2",
+        "question_id": "PHY-Class10-02-0002",
+        "stem": "Candle at 40 cm from concave mirror of f = 20 cm. Find v.",
+        "student_response": "1/v = 1/20 + 1/40 giving positive v, because the object is in front of the mirror.",
+        "individual_diagnosis": "MISC-OPT-004: Sign Convention Spatial Inversion"
+      }
+    ],
+    "sequence_level_label": "PERVASIVE_SIGN_CONVENTION_INVERSION",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0365",
+    "student_id": "STU_1365",
+    "curriculum_grade": "Class 9",
+    "topic": "Motion: Speed and Velocity Operations",
+    "target_misconception_id": "MISC-MOT-001",
+    "intervention_id": "INTV-MOT-001",
+    "reassessment_pair_id": "PAIR-MOT-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0365-1",
+        "question_id": "PHY-Class9-08-0001",
+        "stem": "Runner covers 100 m in 5 s along straight track. Calculate speed.",
+        "student_response": "Speed is 500 m/s because I multiplied distance by time (100 * 5 = 500).",
+        "individual_diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0365-2",
+        "question_id": "PHY-Class9-08-0002",
+        "stem": "Car travels 300 m in 15 s. What is speed?",
+        "student_response": "I calculated speed = 300 * 15 = 4500 m/s.",
+        "individual_diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion"
+      },
+      {
+        "step": 3,
+        "attempt_id": "ATT-0365-3",
+        "question_id": "PHY-Class9-08-0003",
+        "stem": "Bicycle moves 60 m in 3 s. Find speed.",
+        "student_response": "Speed = distance times time, so it equals 180 m/s.",
+        "individual_diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0366",
+    "student_id": "STU_1366",
+    "curriculum_grade": "Class 9",
+    "topic": "Motion: Speed vs Acceleration",
+    "target_misconception_id": "MISC-MOT-002",
+    "intervention_id": "INTV-MOT-002",
+    "reassessment_pair_id": "PAIR-MOT-002",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0366-1",
+        "question_id": "PHY-Class9-09-0001",
+        "stem": "Vehicle moves at steady constant speed of 20 m/s for 10 s. What is acceleration?",
+        "student_response": "Acceleration is 20 m/s^2 because the vehicle is moving fast at 20 m/s.",
+        "individual_diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0366-2",
+        "question_id": "PHY-Class9-09-0002",
+        "stem": "Train moves along straight track at uniform 72 km/h for 20 s. Acceleration?",
+        "student_response": "Acceleration = 72 / 20 = 3.6 m/s^2 (divided speed by time without checking change in velocity).",
+        "individual_diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0367",
+    "student_id": "STU_1367",
+    "curriculum_grade": "Class 9",
+    "topic": "Force & Laws of Motion: Inertia",
+    "target_misconception_id": "MISC-FOR-001",
+    "intervention_id": "INTV-FOR-001",
+    "reassessment_pair_id": "PAIR-FOR-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0367-1",
+        "question_id": "PHY-Class9-10-0001",
+        "stem": "Puck slides across frictionless ice at constant 10 m/s. What net force keeps it moving?",
+        "student_response": "Requires a continuous forward force of 20 N (F = m * v) to keep it moving.",
+        "individual_diagnosis": "MISC-FOR-001: Impetus Theory (Force is Required to Sustain Motion)"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0367-2",
+        "question_id": "PHY-Class9-10-0002",
+        "stem": "Cart glides in deep space at constant velocity. Forward force needed?",
+        "student_response": "Must maintain a forward thrust in the direction of motion to sustain speed.",
+        "individual_diagnosis": "MISC-FOR-001: Impetus Theory (Force is Required to Sustain Motion)"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0368",
+    "student_id": "STU_1368",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "target_misconception_id": "MISC-OPT-001",
+    "intervention_id": "INTV-OPT-001",
+    "reassessment_pair_id": "PAIR-OPT-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0368-1",
+        "question_id": "PHY-Class10-01-0001",
+        "stem": "Lower half of convex lens covered with black paper. What happens to projected image?",
+        "student_response": "The top half of the candle image is completely missing because the bottom half is covered.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0368-2",
+        "question_id": "INTV-OPT-001-STEP",
+        "stem": "PhET simulation: Observe virtual mask covering lower half of lens.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "attempt_id": "ATT-0368-3",
+        "question_id": "PHY-Class10-01-0003",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
@@ -231,30 +1282,36 @@
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0079",
-    "student_id": "STU_0179",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "sequence_id": "SEQ-0369",
+    "student_id": "STU_1369",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Current Conservation Remediation",
+    "target_misconception_id": "MISC-ELEC-001",
+    "intervention_id": "INTV-ELEC-001",
+    "reassessment_pair_id": "PAIR-ELEC-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0369-1",
+        "question_id": "PHY-Class10-05-0001",
+        "stem": "Two identical bulbs in series with 6V battery. Compare ammeters.",
+        "student_response": "A1 = 1.2A, A2 = 0.8A, A3 = 0.4A because bulb 1 consumes electric current.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+        "attempt_id": "ATT-0369-2",
+        "question_id": "INTV-ELEC-001-STEP",
+        "stem": "PhET Simulation: Observe moving electron dots and ammeters in series.",
+        "student_response": "Both ammeters read identical values (0.90A)! Current is not consumed; only electrical potential energy drops.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Current is conserved in closed loop"
       },
       {
         "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0369-3",
+        "question_id": "PHY-Class10-05-0003",
+        "stem": "Near-transfer isomorphic question: 100-ohm and 20-ohm resistors in series.",
+        "student_response": "I_in = I_out, because in any series circuit electric charge cannot accumulate or vanish.",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
@@ -264,30 +1321,191 @@
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0089",
-    "student_id": "STU_0189",
+    "sequence_id": "SEQ-0370",
+    "student_id": "STU_1370",
     "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "topic": "Kinematics: Velocity Calculation",
+    "target_misconception_id": "NONE",
+    "intervention_id": "FEEDBACK_ARITHMETIC",
+    "reassessment_pair_id": "PAIR-NONE-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0370-1",
+        "question_id": "PHY-Class9-08-0001",
+        "stem": "Runner covers 100 m in 5 s. Speed?",
+        "student_response": "Speed = distance / time = 100 / 5 = 25 m/s (mental arithmetic slip on division).",
+        "individual_diagnosis": "CARELESS_CALCULATION_ERROR"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+        "attempt_id": "ATT-0370-2",
+        "question_id": "PHY-Class9-08-0002",
+        "stem": "Car travels 300 m in 15 s. Speed?",
+        "student_response": "Average speed is distance divided by elapsed time: 300 / 15 = 20 m/s.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "TRANSIENT_SLIP_WITH_CONCEPTUAL_MASTERY",
+    "learning_status": "no_conceptual_misconception",
+    "recommended_intervention_action": "provide_arithmetic_feedback_only",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0371",
+    "student_id": "STU_1371",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Ohm's Law and Resistance",
+    "target_misconception_id": "MISC-ELEC-003",
+    "intervention_id": "INTV-ELEC-003",
+    "reassessment_pair_id": "PAIR-ELEC-003",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0371-1",
+        "question_id": "PHY-Class10-12-0001",
+        "stem": "A 10 ohm resistor connected to 6V battery. Current?",
+        "student_response": "Current decreases because 10 ohm resistor blocks charge; current must be less than 6.",
+        "individual_diagnosis": "MISC-ELEC-003: Resistance Reduces Current Independent of Voltage"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0371-2",
+        "question_id": "PHY-Class10-12-0002",
+        "stem": "Resistor 20 ohms, 12V battery. Find I using Ohm's Law.",
+        "student_response": "Bigger resistor always means less current regardless of battery voltage.",
+        "individual_diagnosis": "MISC-ELEC-003: Resistance Reduces Current Independent of Voltage"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_OHMS_LAW_DIRECTION_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0372",
+    "student_id": "STU_1372",
+    "curriculum_grade": "Class 10",
+    "topic": "Magnetic Effects: Electromagnetic Induction",
+    "target_misconception_id": "MISC-MAG-006",
+    "intervention_id": "INTV-MAG-006",
+    "reassessment_pair_id": "PAIR-MAG-006",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0372-1",
+        "question_id": "PHY-Class10-13-0001",
+        "stem": "A coil of 100 turns placed in constant 2T field. Is EMF induced?",
+        "student_response": "Yes, EMF = 100 x 2 = 200 V is continuously induced because the field passes through the coil.",
+        "individual_diagnosis": "MISC-MAG-006: Static Field Induces Constant EMF Fallacy"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0372-2",
+        "question_id": "PHY-Class10-13-0002",
+        "stem": "A search coil in steady non-changing solenoid field. Does galvanometer deflect?",
+        "student_response": "Galvanometer deflects continuously because field exists inside coil.",
+        "individual_diagnosis": "MISC-MAG-006: Static Field Induces Constant EMF Fallacy"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_STATIC_FIELD_EMF_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0373",
+    "student_id": "STU_1373",
+    "curriculum_grade": "Class 9",
+    "topic": "Work and Energy: Direction-Dependent Work",
+    "target_misconception_id": "MISC-WRK-001",
+    "intervention_id": "INTV-WRK-001",
+    "reassessment_pair_id": "PAIR-WRK-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0373-1",
+        "question_id": "PHY-Class9-14-0001",
+        "stem": "Porter carries 10 kg bag and walks 5 m horizontally. Work done by holding force?",
+        "student_response": "Work = 10 x 5 = 50 J because force times displacement is always work.",
+        "individual_diagnosis": "MISC-WRK-001: Work Equals Force Times Distance Regardless of Direction"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0373-2",
+        "question_id": "PHY-Class9-14-0002",
+        "stem": "Man carries 20 kg load and walks 8 m flat. Work done by vertical holding force?",
+        "student_response": "Work = 20 x 8 = 160 J, force times distance.",
+        "individual_diagnosis": "MISC-WRK-001: Work Equals Force Times Distance Regardless of Direction"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_WORK_DIRECTION_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0374",
+    "student_id": "STU_1374",
+    "curriculum_grade": "Class 9",
+    "topic": "Force and Laws of Motion: Momentum Conservation",
+    "target_misconception_id": "MISC-MOM-001",
+    "intervention_id": "INTV-MOM-001",
+    "reassessment_pair_id": "PAIR-MOM-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0374-1",
+        "question_id": "PHY-Class9-15-0001",
+        "stem": "2 kg ball at 5 m/s hits stationary identical ball; first stops. Velocity of second?",
+        "student_response": "Momentum is destroyed when ball 1 stops; ball 2 stays at rest.",
+        "individual_diagnosis": "MISC-MOM-001: Momentum Not Conserved When Object Stops"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0374-2",
+        "question_id": "PHY-Class9-15-0002",
+        "stem": "3 kg ball moving at 4 m/s collides and stops. What happens to second 3 kg ball?",
+        "student_response": "Ball 1 stopping destroys its momentum; ball 2 has no reason to move.",
+        "individual_diagnosis": "MISC-MOM-001: Momentum Not Conserved When Object Stops"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_MOMENTUM_DESTRUCTION_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0375",
+    "student_id": "STU_1375",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Ohm's Law Remediation",
+    "target_misconception_id": "MISC-ELEC-003",
+    "intervention_id": "INTV-ELEC-003",
+    "reassessment_pair_id": "PAIR-ELEC-003",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0375-1",
+        "question_id": "PHY-Class10-12-0001",
+        "stem": "Resistor 10 ohms, battery 6V. Find current.",
+        "student_response": "Current decreases because 10 ohm resistor blocks charge.",
+        "individual_diagnosis": "MISC-ELEC-003: Resistance Reduces Current Independent of Voltage"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0375-2",
+        "question_id": "INTV-ELEC-003-STEP",
+        "stem": "PhET Circuit simulation: ammeter reads I = V/R = 0.6 A exactly.",
+        "student_response": "I see! I = V/R means both voltage and resistance together set current. Ratio matters.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Ohm's Law verified experimentally"
       },
       {
         "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0375-3",
+        "question_id": "PHY-Class10-12-0003",
+        "stem": "Transfer: 20 ohm resistor and 12V battery. Find I.",
+        "student_response": "I = 12 / 20 = 0.6 A using Ohm's Law. Same ratio!",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
@@ -297,30 +1515,269 @@
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0099",
-    "student_id": "STU_0199",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "sequence_id": "SEQ-0376",
+    "student_id": "STU_1376",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Current Conservation",
+    "target_misconception_id": "MISC-ELEC-001",
+    "intervention_id": "INTV-ELEC-001",
+    "reassessment_pair_id": "PAIR-ELEC-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0376-1",
+        "question_id": "PHY-Class10-05-0001",
+        "stem": "Two identical bulbs in series with 6V battery. Compare ammeter readings.",
+        "student_response": "A1 = 1.2A, A2 = 0.8A, A3 = 0.4A because bulb 1 consumes electric current to glow.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+        "attempt_id": "ATT-0376-2",
+        "question_id": "PHY-Class10-05-0002",
+        "stem": "Three identical resistors connected in series with battery. What is current through R3 compared to R1?",
+        "student_response": "Current through R3 is much smaller than R1 because current gets used up as it travels along the series circuit.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
       },
       {
         "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0376-3",
+        "question_id": "PHY-Class10-05-0003",
+        "stem": "Does the downstream bulb glow dimmer because less current reaches it?",
+        "student_response": "Yes, downstream bulb receives less current because upstream bulb consumed the charge.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0377",
+    "student_id": "STU_1377",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Parallel Circuits",
+    "target_misconception_id": "MISC-ELEC-002",
+    "intervention_id": "INTV-ELEC-002",
+    "reassessment_pair_id": "PAIR-ELEC-002",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0377-1",
+        "question_id": "PHY-Class10-06-0001",
+        "stem": "Bulb B1 in single branch. Second identical bulb B2 connected in parallel. Brightness of B1?",
+        "student_response": "Bulb 1 dims to half brightness because the battery provides a fixed total current that must now be shared.",
+        "individual_diagnosis": "MISC-ELEC-002: Battery as Constant Current Source"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0377-2",
+        "question_id": "PHY-Class10-06-0002",
+        "stem": "Heater switched ON in parallel with room lamp. Does lamp dim?",
+        "student_response": "Yes, the lamp dims because the source current is divided between both appliances.",
+        "individual_diagnosis": "MISC-ELEC-002: Battery as Constant Current Source"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0378",
+    "student_id": "STU_1378",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Image Formation with Aperture Blocking",
+    "target_misconception_id": "MISC-OPT-001",
+    "intervention_id": "INTV-OPT-001",
+    "reassessment_pair_id": "PAIR-OPT-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0378-1",
+        "question_id": "PHY-Class10-01-0001",
+        "stem": "Lower half of convex lens covered with black paper. What happens to projected image?",
+        "student_response": "The top half of the candle image is completely missing because the bottom half is covered.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0378-2",
+        "question_id": "PHY-Class10-01-0002",
+        "stem": "Upper half of converging lens blocked by opaque mask. Describe image change.",
+        "student_response": "Only the lower half of the image will appear on the viewing card.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_HALF_LENS_BLOCKING_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0379",
+    "student_id": "STU_1379",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Cartesian Sign Conventions",
+    "target_misconception_id": "MISC-OPT-004",
+    "intervention_id": "INTV-OPT-004",
+    "reassessment_pair_id": "PAIR-OPT-004",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0379-1",
+        "question_id": "PHY-Class10-02-0001",
+        "stem": "Object at 30 cm before concave mirror of f = 15 cm. Find v.",
+        "student_response": "v = +30 cm because distances are always positive scalars; 1/v = 1/15 - 1/30.",
+        "individual_diagnosis": "MISC-OPT-004: Sign Convention Spatial Inversion"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0379-2",
+        "question_id": "PHY-Class10-02-0002",
+        "stem": "Candle at 40 cm from concave mirror of f = 20 cm. Find v.",
+        "student_response": "1/v = 1/20 + 1/40 giving positive v, because the object is in front of the mirror.",
+        "individual_diagnosis": "MISC-OPT-004: Sign Convention Spatial Inversion"
+      }
+    ],
+    "sequence_level_label": "PERVASIVE_SIGN_CONVENTION_INVERSION",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0380",
+    "student_id": "STU_1380",
+    "curriculum_grade": "Class 9",
+    "topic": "Motion: Speed and Velocity Operations",
+    "target_misconception_id": "MISC-MOT-001",
+    "intervention_id": "INTV-MOT-001",
+    "reassessment_pair_id": "PAIR-MOT-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0380-1",
+        "question_id": "PHY-Class9-08-0001",
+        "stem": "Runner covers 100 m in 5 s along straight track. Calculate speed.",
+        "student_response": "Speed is 500 m/s because I multiplied distance by time (100 * 5 = 500).",
+        "individual_diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0380-2",
+        "question_id": "PHY-Class9-08-0002",
+        "stem": "Car travels 300 m in 15 s. What is speed?",
+        "student_response": "I calculated speed = 300 * 15 = 4500 m/s.",
+        "individual_diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion"
+      },
+      {
+        "step": 3,
+        "attempt_id": "ATT-0380-3",
+        "question_id": "PHY-Class9-08-0003",
+        "stem": "Bicycle moves 60 m in 3 s. Find speed.",
+        "student_response": "Speed = distance times time, so it equals 180 m/s.",
+        "individual_diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0381",
+    "student_id": "STU_1381",
+    "curriculum_grade": "Class 9",
+    "topic": "Motion: Speed vs Acceleration",
+    "target_misconception_id": "MISC-MOT-002",
+    "intervention_id": "INTV-MOT-002",
+    "reassessment_pair_id": "PAIR-MOT-002",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0381-1",
+        "question_id": "PHY-Class9-09-0001",
+        "stem": "Vehicle moves at steady constant speed of 20 m/s for 10 s. What is acceleration?",
+        "student_response": "Acceleration is 20 m/s^2 because the vehicle is moving fast at 20 m/s.",
+        "individual_diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0381-2",
+        "question_id": "PHY-Class9-09-0002",
+        "stem": "Train moves along straight track at uniform 72 km/h for 20 s. Acceleration?",
+        "student_response": "Acceleration = 72 / 20 = 3.6 m/s^2 (divided speed by time without checking change in velocity).",
+        "individual_diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0382",
+    "student_id": "STU_1382",
+    "curriculum_grade": "Class 9",
+    "topic": "Force & Laws of Motion: Inertia",
+    "target_misconception_id": "MISC-FOR-001",
+    "intervention_id": "INTV-FOR-001",
+    "reassessment_pair_id": "PAIR-FOR-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0382-1",
+        "question_id": "PHY-Class9-10-0001",
+        "stem": "Puck slides across frictionless ice at constant 10 m/s. What net force keeps it moving?",
+        "student_response": "Requires a continuous forward force of 20 N (F = m * v) to keep it moving.",
+        "individual_diagnosis": "MISC-FOR-001: Impetus Theory (Force is Required to Sustain Motion)"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0382-2",
+        "question_id": "PHY-Class9-10-0002",
+        "stem": "Cart glides in deep space at constant velocity. Forward force needed?",
+        "student_response": "Must maintain a forward thrust in the direction of motion to sustain speed.",
+        "individual_diagnosis": "MISC-FOR-001: Impetus Theory (Force is Required to Sustain Motion)"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0383",
+    "student_id": "STU_1383",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "target_misconception_id": "MISC-OPT-001",
+    "intervention_id": "INTV-OPT-001",
+    "reassessment_pair_id": "PAIR-OPT-001",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "attempt_id": "ATT-0383-1",
+        "question_id": "PHY-Class10-01-0001",
+        "stem": "Lower half of convex lens covered with black paper. What happens to projected image?",
+        "student_response": "The top half of the candle image is completely missing because the bottom half is covered.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "attempt_id": "ATT-0383-2",
+        "question_id": "INTV-OPT-001-STEP",
+        "stem": "PhET simulation: Observe virtual mask covering lower half of lens.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "attempt_id": "ATT-0383-3",
+        "question_id": "PHY-Class10-01-0003",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
@@ -330,30 +1787,36 @@
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0109",
-    "student_id": "STU_0209",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "sequence_id": "SEQ-0384",
+    "student_id": "STU_1384",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Current Conservation Remediation",
+    "target_misconception_id": "MISC-ELEC-001",
+    "intervention_id": "INTV-ELEC-001",
+    "reassessment_pair_id": "PAIR-ELEC-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0384-1",
+        "question_id": "PHY-Class10-05-0001",
+        "stem": "Two identical bulbs in series with 6V battery. Compare ammeters.",
+        "student_response": "A1 = 1.2A, A2 = 0.8A, A3 = 0.4A because bulb 1 consumes electric current.",
+        "individual_diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+        "attempt_id": "ATT-0384-2",
+        "question_id": "INTV-ELEC-001-STEP",
+        "stem": "PhET Simulation: Observe moving electron dots and ammeters in series.",
+        "student_response": "Both ammeters read identical values (0.90A)! Current is not consumed; only electrical potential energy drops.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Current is conserved in closed loop"
       },
       {
         "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0384-3",
+        "question_id": "PHY-Class10-05-0003",
+        "stem": "Near-transfer isomorphic question: 100-ohm and 20-ohm resistors in series.",
+        "student_response": "I_in = I_out, because in any series circuit electric charge cannot accumulate or vanish.",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
@@ -363,690 +1826,191 @@
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0119",
-    "student_id": "STU_0219",
+    "sequence_id": "SEQ-0385",
+    "student_id": "STU_1385",
     "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "topic": "Kinematics: Velocity Calculation",
+    "target_misconception_id": "NONE",
+    "intervention_id": "FEEDBACK_ARITHMETIC",
+    "reassessment_pair_id": "PAIR-NONE-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0385-1",
+        "question_id": "PHY-Class9-08-0001",
+        "stem": "Runner covers 100 m in 5 s. Speed?",
+        "student_response": "Speed = distance / time = 100 / 5 = 25 m/s (mental arithmetic slip on division).",
+        "individual_diagnosis": "CARELESS_CALCULATION_ERROR"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0385-2",
+        "question_id": "PHY-Class9-08-0002",
+        "stem": "Car travels 300 m in 15 s. Speed?",
+        "student_response": "Average speed is distance divided by elapsed time: 300 / 15 = 20 m/s.",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
+    "sequence_level_label": "TRANSIENT_SLIP_WITH_CONCEPTUAL_MASTERY",
+    "learning_status": "no_conceptual_misconception",
+    "recommended_intervention_action": "provide_arithmetic_feedback_only",
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0129",
-    "student_id": "STU_0229",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "sequence_id": "SEQ-0386",
+    "student_id": "STU_1386",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Ohm's Law and Resistance",
+    "target_misconception_id": "MISC-ELEC-003",
+    "intervention_id": "INTV-ELEC-003",
+    "reassessment_pair_id": "PAIR-ELEC-003",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0386-1",
+        "question_id": "PHY-Class10-12-0001",
+        "stem": "A 10 ohm resistor connected to 6V battery. Current?",
+        "student_response": "Current decreases because 10 ohm resistor blocks charge; current must be less than 6.",
+        "individual_diagnosis": "MISC-ELEC-003: Resistance Reduces Current Independent of Voltage"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+        "attempt_id": "ATT-0386-2",
+        "question_id": "PHY-Class10-12-0002",
+        "stem": "Resistor 20 ohms, 12V battery. Find I using Ohm's Law.",
+        "student_response": "Bigger resistor always means less current regardless of battery voltage.",
+        "individual_diagnosis": "MISC-ELEC-003: Resistance Reduces Current Independent of Voltage"
       }
     ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
+    "sequence_level_label": "RECURRENT_OHMS_LAW_DIRECTION_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0139",
-    "student_id": "STU_0239",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "sequence_id": "SEQ-0387",
+    "student_id": "STU_1387",
+    "curriculum_grade": "Class 10",
+    "topic": "Magnetic Effects: Electromagnetic Induction",
+    "target_misconception_id": "MISC-MAG-006",
+    "intervention_id": "INTV-MAG-006",
+    "reassessment_pair_id": "PAIR-MAG-006",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0387-1",
+        "question_id": "PHY-Class10-13-0001",
+        "stem": "A coil of 100 turns placed in constant 2T field. Is EMF induced?",
+        "student_response": "Yes, EMF = 100 x 2 = 200 V is continuously induced because the field passes through the coil.",
+        "individual_diagnosis": "MISC-MAG-006: Static Field Induces Constant EMF Fallacy"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+        "attempt_id": "ATT-0387-2",
+        "question_id": "PHY-Class10-13-0002",
+        "stem": "A search coil in steady non-changing solenoid field. Does galvanometer deflect?",
+        "student_response": "Galvanometer deflects continuously because field exists inside coil.",
+        "individual_diagnosis": "MISC-MAG-006: Static Field Induces Constant EMF Fallacy"
       }
     ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
+    "sequence_level_label": "RECURRENT_STATIC_FIELD_EMF_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0149",
-    "student_id": "STU_0249",
+    "sequence_id": "SEQ-0388",
+    "student_id": "STU_1388",
     "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "topic": "Work and Energy: Direction-Dependent Work",
+    "target_misconception_id": "MISC-WRK-001",
+    "intervention_id": "INTV-WRK-001",
+    "reassessment_pair_id": "PAIR-WRK-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0388-1",
+        "question_id": "PHY-Class9-14-0001",
+        "stem": "Porter carries 10 kg bag and walks 5 m horizontally. Work done by holding force?",
+        "student_response": "Work = 10 x 5 = 50 J because force times displacement is always work.",
+        "individual_diagnosis": "MISC-WRK-001: Work Equals Force Times Distance Regardless of Direction"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+        "attempt_id": "ATT-0388-2",
+        "question_id": "PHY-Class9-14-0002",
+        "stem": "Man carries 20 kg load and walks 8 m flat. Work done by vertical holding force?",
+        "student_response": "Work = 20 x 8 = 160 J, force times distance.",
+        "individual_diagnosis": "MISC-WRK-001: Work Equals Force Times Distance Regardless of Direction"
       }
     ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
+    "sequence_level_label": "RECURRENT_WORK_DIRECTION_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0159",
-    "student_id": "STU_0259",
+    "sequence_id": "SEQ-0389",
+    "student_id": "STU_1389",
     "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "topic": "Force and Laws of Motion: Momentum Conservation",
+    "target_misconception_id": "MISC-MOM-001",
+    "intervention_id": "INTV-MOM-001",
+    "reassessment_pair_id": "PAIR-MOM-001",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0389-1",
+        "question_id": "PHY-Class9-15-0001",
+        "stem": "2 kg ball at 5 m/s hits stationary identical ball; first stops. Velocity of second?",
+        "student_response": "Momentum is destroyed when ball 1 stops; ball 2 stays at rest.",
+        "individual_diagnosis": "MISC-MOM-001: Momentum Not Conserved When Object Stops"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+        "attempt_id": "ATT-0389-2",
+        "question_id": "PHY-Class9-15-0002",
+        "stem": "3 kg ball moving at 4 m/s collides and stops. What happens to second 3 kg ball?",
+        "student_response": "Ball 1 stopping destroys its momentum; ball 2 has no reason to move.",
+        "individual_diagnosis": "MISC-MOM-001: Momentum Not Conserved When Object Stops"
       }
     ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
+    "sequence_level_label": "RECURRENT_MOMENTUM_DESTRUCTION_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-0169",
-    "student_id": "STU_0269",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
+    "sequence_id": "SEQ-0390",
+    "student_id": "STU_1390",
+    "curriculum_grade": "Class 10",
+    "topic": "Electricity: Ohm's Law Remediation",
+    "target_misconception_id": "MISC-ELEC-003",
+    "intervention_id": "INTV-ELEC-003",
+    "reassessment_pair_id": "PAIR-ELEC-003",
     "ordered_attempts": [
       {
         "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+        "attempt_id": "ATT-0390-1",
+        "question_id": "PHY-Class10-12-0001",
+        "stem": "Resistor 10 ohms, battery 6V. Find current.",
+        "student_response": "Current decreases because 10 ohm resistor blocks charge.",
+        "individual_diagnosis": "MISC-ELEC-003: Resistance Reduces Current Independent of Voltage"
       },
       {
         "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+        "attempt_id": "ATT-0390-2",
+        "question_id": "INTV-ELEC-003-STEP",
+        "stem": "PhET Circuit simulation: ammeter reads I = V/R = 0.6 A exactly.",
+        "student_response": "I see! I = V/R means both voltage and resistance together set current. Ratio matters.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Ohm's Law verified experimentally"
       },
       {
         "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0179",
-    "student_id": "STU_0279",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0189",
-    "student_id": "STU_0289",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0199",
-    "student_id": "STU_0299",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0209",
-    "student_id": "STU_0309",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0219",
-    "student_id": "STU_0319",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0229",
-    "student_id": "STU_0329",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0239",
-    "student_id": "STU_0339",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0249",
-    "student_id": "STU_0349",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0259",
-    "student_id": "STU_0359",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0269",
-    "student_id": "STU_0369",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0279",
-    "student_id": "STU_0379",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0289",
-    "student_id": "STU_0389",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0299",
-    "student_id": "STU_0399",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0309",
-    "student_id": "STU_0409",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
-        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "resolved_with_transfer",
-    "recommended_intervention_action": "advance_to_next_topic",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-0319",
-    "student_id": "STU_0419",
-    "curriculum_grade": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question_id": "PHY-GRAV-01-001",
-        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
-        "student_response": "The cannonball falls much faster because it weighs more.",
-        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
-      },
-      {
-        "step": 2,
-        "question_id": "PHY-INTV-002",
-        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
-        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
-        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
-      },
-      {
-        "step": 3,
-        "question_id": "PHY-GRAV-01-002",
-        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
-        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "attempt_id": "ATT-0390-3",
+        "question_id": "PHY-Class10-12-0003",
+        "stem": "Transfer: 20 ohm resistor and 12V battery. Find I.",
+        "student_response": "I = 12 / 20 = 0.6 A using Ohm's Law. Same ratio!",
         "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],

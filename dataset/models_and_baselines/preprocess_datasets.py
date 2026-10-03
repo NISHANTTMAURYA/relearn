@@ -23,10 +23,9 @@ def preprocess_individual_dataset():
     df["clean_response"] = df["student_response"].apply(clean_text)
     df["clean_correct"] = df["correct_answer_and_steps"].apply(clean_text)
     
-    # Combined model input: context + question + student response
+    # Combined model input: question + student response (clean, without topic label leakage)
     df["model_input_text"] = (
-        "Topic: " + df["topic_concept"].astype(str) + 
-        " | Question: " + df["clean_question"] + 
+        "Question: " + df["clean_question"] + 
         " | Student Response: " + df["clean_response"]
     )
     

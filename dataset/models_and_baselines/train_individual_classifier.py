@@ -36,7 +36,27 @@ def train_and_evaluate():
         ("clf", LogisticRegression(max_iter=1000, class_weight="balanced", C=3.0))
     ])
 
+    print("\nFitting Logistic Regression TF-IDF Pipeline...")
     pipeline.fit(X_train, y_train)
+
+    train_preds = pipeline.predict(X_train)
+    train_acc = accuracy_score(y_train, train_preds)
+    print(f"Training Set Accuracy: {train_acc * 100:.2f}%")
+
+    val_df = df[df["split"] == "val"]
+    test_df = df[df["split"] == "test"]
+
+    print("\n--- VALIDATION SET EVALUATION (121 items) ---")
+    val_preds = pipeline.predict(val_df["model_input_text"])
+    val_acc = accuracy_score(val_df["target_label"], val_preds)
+    print(f"Validation Accuracy: {val_acc * 100:.2f}%")
+    print(classification_report(val_df["target_label"], val_preds, zero_division=0))
+
+    print("\n--- TEST SET EVALUATION (110 items) ---")
+    test_preds = pipeline.predict(test_df["model_input_text"])
+    test_acc = accuracy_score(test_df["target_label"], test_preds)
+    print(f"Test Accuracy: {test_acc * 100:.2f}%")
+    print(classification_report(test_df["target_label"], test_preds, zero_division=0))
 
     probs = pipeline.predict_proba(X_eval)
     classes = pipeline.classes_
@@ -45,7 +65,7 @@ def train_and_evaluate():
     top2_hypotheses = []
     confidences = []
 
-    # Calibrated confidence for 24 classes: uniform random is 1/24 = 0.0416
+    # Calibrated confidence: uniform random chance
     CHANCE_LEVEL = 1.0 / len(classes)
 
     for row_probs in probs:
@@ -56,7 +76,6 @@ def train_and_evaluate():
         top1_prob = row_probs[top1_idx]
         top2_prob = row_probs[top2_idx]
 
-        # Normalized confidence relative to runner-up
         margin = top1_prob - top2_prob
         normalized_conf = min(0.99, max(0.20, (top1_prob / (top1_prob + top2_prob))))
 
@@ -70,7 +89,7 @@ def train_and_evaluate():
             predictions.append(classes[top1_idx])
 
     acc = accuracy_score(y_eval, predictions)
-    print(f"\nHeld-Out Exact Accuracy: {acc * 100:.2f}%")
+    print(f"\nOverall Held-Out (Val+Test) Exact Accuracy with Abstention: {acc * 100:.2f}%")
     print(f"Average Normalized Confidence: {np.mean(confidences) * 100:.2f}%")
 
     print("\nSample Held-out Predictions with Diagnostic Confidence & Alternative Hypotheses:")
