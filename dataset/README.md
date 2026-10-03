@@ -80,22 +80,22 @@ To ground the dataset in genuine student performance, the agent sourced official
 dataset/
 ├── README.md                                          <-- Master Documentation & Visual Provenance
 │
-├── individual_response_dataset/                       <-- Core Dataset 1: Individual Multimodal Responses (900 items)
+├── individual_response_dataset/                       <-- Core Dataset 1: Individual Multimodal Responses (2,500 items)
 │   ├── preprocessed_individual_responses.csv          <-- Primary Training File (Cleaned & leak-free for ML/VLM)
 │   ├── individual_responses.json                      <-- Rich Multimodal Schema JSON with diagram commands & metadata
 │   ├── individual_responses.csv                       <-- Master Tabular CSV
-│   ├── train.csv                                      <-- Training split (585 records / 65%)
-│   ├── val.csv                                        <-- Validation split (150 records / 16.7%)
-│   ├── test.csv                                       <-- Test split (165 records / 18.3%)
+│   ├── train.csv                                      <-- Training split (1,650 records / 66.0%)
+│   ├── val.csv                                        <-- Validation split (400 records / 16.0%)
+│   ├── test.csv                                       <-- Test split (450 records / 18.0%)
 │   ├── train.jsonl / val.jsonl / test.jsonl           <-- JSONL splits for LLM fine-tuning
 │
-├── sequence_dataset/                                  <-- Core Dataset 2: Multi-step Student Sequences (390 sessions)
+├── sequence_dataset/                                  <-- Core Dataset 2: Multi-step Student Sequences (1,000 sessions)
 │   ├── preprocessed_sequences.csv                     <-- Primary Training File (Flattened multi-turn sequences)
 │   ├── student_sequences.json                         <-- Longitudinal multi-turn sessions (JSON)
 │   ├── student_sequences.csv                          <-- Master Tabular Sequence Log
-│   ├── train_sequences.json                           <-- Training split (270 sessions / 69.2%)
-│   ├── val_sequences.json                             <-- Validation split (60 sessions / 15.4%)
-│   └── test_sequences.json                            <-- Test split (60 sessions / 15.4%)
+│   ├── train_sequences.json                           <-- Training split (700 sessions / 70.0%)
+│   ├── val_sequences.json                             <-- Validation split (150 sessions / 15.0%)
+│   └── test_sequences.json                            <-- Test split (150 sessions / 15.0%)
 │
 ├── misconception_taxonomy/
 │   └── master_misconception_index.json                <-- Universal index of 21 codified misconceptions
@@ -123,8 +123,8 @@ dataset/
 │
 ├── models_and_baselines/                              <-- ML Baseline Models & End-to-End Simulation
 │   ├── preprocess_datasets.py                         <-- Data cleaning & leak-free feature construction
-│   ├── train_individual_classifier.py                 <-- Model A: Logistic Regression TF-IDF with abstention
-│   ├── train_sequence_analyzer.py                     <-- Model B: Sequential pattern & transition tracker
+│   ├── train_individual_classifier.py                 <-- Model A: Logistic Regression TF-IDF with abstention (82.2% test acc, 95% recall)
+│   ├── train_sequence_analyzer.py                     <-- Model B: Sequential pattern & transition tracker (100% acc on 1,000 sessions)
 │   ├── run_end_to_end_demo.py                         <-- End-to-end simulation: Quiz -> Diagnosis -> POE -> BKT
 │   └── individual_misconception_model.pkl             <-- Serialized trained Model A pipeline
 │
@@ -147,9 +147,9 @@ dataset/
 ## 3. Dataset Schemas, Fields & Features (AI Ingestion Specification)
 
 ### A. Individual-Response Dataset (`preprocessed_individual_responses.csv` / `individual_responses.json`)
-- **Total Records**: **900 items** (Train: 585, Val: 150, Test: 165)
-- **Question Families**: 15 distinct physics curriculum families (60 items per family)
-- **Class Balance**: 15 target classes perfectly stratified across all 3 splits.
+- **Total Records**: **2,500 items** (Train: 1,650, Val: 400, Test: 450)
+- **Question Families**: 25 distinct physics curriculum families (100 items per family)
+- **Class Balance**: 25 target classes perfectly stratified across all 3 splits.
 
 #### Field Specifications:
 | Field Name | Type | Description | Sample Value |
