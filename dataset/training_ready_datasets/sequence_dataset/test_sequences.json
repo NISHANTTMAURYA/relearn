@@ -1,0 +1,64 @@
+[
+  {
+    "sequence_id": "SEQ-004",
+    "student_id": "STU_104",
+    "topic": "Magnetism: Magnetic Forces on Charges",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-MAG-001",
+        "question_stem": "Stationary proton placed between North and South poles of magnet.",
+        "student_response": "Proton is attracted to South pole because positive attracts negative.",
+        "individual_diagnosis": "MISC-MAG-001: Magnetic Pole = Electrostatic Charge Equivalence Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question_id": "PROBE-MAG-001",
+        "question_stem": "What if an electron at rest is placed near the North pole?",
+        "student_response": "Electron will be attracted to the positive North pole.",
+        "individual_diagnosis": "MISC-MAG-001: Magnetic Pole = Electrostatic Charge Equivalence Fallacy",
+        "confidence": 0.97
+      }
+    ],
+    "sequence_level_label": "RECURRENT_MAGNETIC_ELECTROSTATIC_CONFLATION",
+    "evidence_summary": [
+      "Q1: Equates South pole with negative charge",
+      "Q2: Reaffirms North pole with positive charge for electron"
+    ],
+    "confidence": "High",
+    "status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-007",
+    "student_id": "STU_107",
+    "topic": "Optics: Sign Convention Consistency across Mirrors and Lenses",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-002",
+        "question_stem": "Concave mirror u = 20cm, f = 15cm. Find v.",
+        "student_response": "1/15 = 1/v + 1/20 => v = +60cm, virtual image.",
+        "individual_diagnosis": "MISC-OPT-004: Cartesian Sign Convention Spatial Inversion",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-OPT-002-LENS",
+        "question_stem": "Convex lens u = 20cm, f = 15cm. Find v.",
+        "student_response": "1/15 = 1/v - 1/20 => v = +8.57cm.",
+        "individual_diagnosis": "MISC-OPT-004: Cartesian Sign Convention Spatial Inversion",
+        "confidence": 0.95
+      }
+    ],
+    "sequence_level_label": "PERVASIVE_SIGN_CONVENTION_INVERSION",
+    "evidence_summary": [
+      "Q1: Plugged scalar positive u = 20 into mirror formula",
+      "Q2: Plugged scalar positive u = 20 into lens formula without coordinate origin"
+    ],
+    "confidence": "High",
+    "status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "test"
+  }
+]

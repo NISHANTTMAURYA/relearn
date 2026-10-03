@@ -1,0 +1,167 @@
+[
+  {
+    "sequence_id": "SEQ-001",
+    "student_id": "STU_101",
+    "topic": "Electricity: Series Circuits",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Two bulbs in series",
+        "response": "Bulb 1 uses up current so Bulb 2 gets less",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "Three resistors in series",
+        "response": "Current through R3 is smaller than R1 because current is consumed",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.98
+      },
+      {
+        "step": 3,
+        "question": "Swapped order probe",
+        "response": "The first resistor in line always gets more current",
+        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-002",
+    "student_id": "STU_102",
+    "topic": "Electricity: Parallel Circuits",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Adding 3-ohm in parallel to 6-ohm",
+        "response": "Total current stays 2A because battery output is fixed",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.94
+      },
+      {
+        "step": 2,
+        "question": "Adding 5 more branches",
+        "response": "Battery current is constant, just divided",
+        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
+        "confidence": 0.96
+      }
+    ],
+    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-003",
+    "student_id": "STU_103",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Half of convex lens covered",
+        "response": "Bottom half of image disappears from screen",
+        "diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy",
+        "confidence": 0.95
+      },
+      {
+        "step": 2,
+        "question": "PhET ray simulation step",
+        "response": "Rays from whole candle still reach open top half! Image is complete and dimmer",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.92
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: Center of mirror covered",
+        "response": "Entire image forms unbroken with slightly less brightness",
+        "diagnosis": "CORRECT",
+        "confidence": 0.98
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-004",
+    "student_id": "STU_104",
+    "topic": "Magnetism: Static Charges",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Proton near North pole",
+        "response": "Proton repelled because North pole is positive charge",
+        "diagnosis": "MISC-MAG-001: Magnetic Pole = Electrostatic Charge Fallacy",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Electron near South pole",
+        "response": "Electron repelled because South pole is negative charge",
+        "diagnosis": "MISC-MAG-001: Magnetic Pole = Electrostatic Charge Fallacy",
+        "confidence": 0.97
+      }
+    ],
+    "sequence_level_label": "RECURRENT_MAGNETIC_ELECTROSTATIC_CONFLATION",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-005",
+    "student_id": "STU_105",
+    "topic": "Human Eye: Vision Defect Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Cannot see blackboard at 5m",
+        "response": "Myopia, needs convex lens to magnify distant objects",
+        "diagnosis": "MISC-EYE-001: Vision Defect Corrective Lens Inversion",
+        "confidence": 0.93
+      },
+      {
+        "step": 2,
+        "question": "POE ray trace simulation",
+        "response": "Eye lens is over-converging in front of retina, convex lens makes it worse. Needs concave lens!",
+        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
+        "confidence": 0.91
+      },
+      {
+        "step": 3,
+        "question": "Reassessment: Far point 1.5m",
+        "response": "Prescribe concave lens of focal length -1.5m",
+        "diagnosis": "CORRECT",
+        "confidence": 0.99
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "split": "train"
+  },
+  {
+    "sequence_id": "SEQ-006",
+    "student_id": "STU_106",
+    "topic": "Optics: Sign Convention Consistency",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question": "Concave mirror u = 20, f = 15",
+        "response": "u = 20, f = 15 gives v = +60cm virtual image",
+        "diagnosis": "MISC-OPT-004: Cartesian Sign Convention Spatial Inversion",
+        "confidence": 0.96
+      },
+      {
+        "step": 2,
+        "question": "Convex lens u = 30, f = 10",
+        "response": "u = +30cm because distance is positive length",
+        "diagnosis": "MISC-OPT-004: Cartesian Sign Convention Spatial Inversion",
+        "confidence": 0.95
+      }
+    ],
+    "sequence_level_label": "PERVASIVE_SIGN_CONVENTION_INVERSION",
+    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "split": "test"
+  }
+]
