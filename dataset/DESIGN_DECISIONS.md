@@ -22,31 +22,33 @@ As specified on **Page 2** of the project documentation:
 
 ### Implementation in Re:Learn:
 1. **`dataset/individual_response_dataset/`**:
-   - Total Records: **406 multimodal samples** across Class 9 and Class 10 Physics
-   - Splits: **Train (280)**, **Validation (63)**, **Test (63)**
+   - Total Records: **2,240 multimodal samples** across Class 9, 10, 11, and 12 Physics (2.29 MB CSV, 4.42 MB JSON, 4.54 MB preprocessed CSV)
+   - Splits: **Train (1,580 records)**, **Validation (440 records)**, **Test (220 records)**
    - Formats: Tabular CSV (`individual_responses.csv`, `train.csv`, `val.csv`, `test.csv`), structured JSON (`individual_responses.json`), and preprocessed ML-ready files (`preprocessed_individual_responses.csv`, `train.jsonl`, `val.jsonl`, `test.jsonl`).
    - Unit of Observation: A single student answer, including their scratchpad calculation, written explanation, and multimodal diagram context.
    - Model Target: Trains **Model A (Individual Misconception Classifier)** to predict the root cause from a single response.
 2. **`dataset/sequence_dataset/`**:
-   - Total Records: **60 complete student sessions** (180+ ordered steps)
-   - Splits: **Train (42 sessions)**, **Validation (9 sessions)**, **Test (9 sessions)**
+   - Total Records: **320 complete student sessions** (~1,000 ordered steps)
+   - Splits: **Train (224 sessions)**, **Validation (64 sessions)**, **Test (32 sessions)**
    - Formats: Structured JSON (`student_sequences.json`, `train_sequences.json`, `val_sequences.json`, `test_sequences.json`), CSV (`student_sequences.csv`), and preprocessed ML-ready file (`preprocessed_sequences.csv`).
    - Unit of Observation: An ordered sequence of questions ($Q_1 \rightarrow Q_2 \rightarrow Q_3$) answered by the same student during a learning session.
    - Model Target: Trains **Model B (Sequence / Pattern Analyzer)** to distinguish between an isolated slip and a deeply held persistent misconception.
 
 ---
 
-## 2. Decision 2: Single Authoritative Textbook Baseline (NCERT Class 9 & Class 10 Science)
+## 2. Decision 2: Single Authoritative Textbook Baseline (NCERT Secondary & Senior Secondary Physics)
 
 ### Rationale:
 The project guidelines require using **one primary textbook only** as the authoritative source.
 - Mixing textbooks across different educational boards (e.g. US AP Physics vs. UK GCSE vs. Indian NCERT) introduces severe contradictions in sign conventions (such as Cartesian vs. "Real-is-Positive" conventions in optics) and symbol standards.
-- NCERT Science (*Class 9 and Class 10*, published by NCERT, Government of India) serves as the unified national curriculum benchmark, ensuring complete internal consistency in definitions, formulas, and diagrams across high school physics.
+- NCERT Science & Physics (*Classes 9, 10, 11, and 12*, published by NCERT, Government of India) serves as the unified national curriculum benchmark, ensuring complete internal consistency in definitions, formulas, and diagrams across all secondary and higher secondary physics tiers.
 
 ### Artifacts Downloaded & Preserved:
-The complete original chapter PDFs are stored in `reference_materials/textbooks/`:
+The complete original chapter PDFs are stored in `reference_materials/textbooks/` (21.9 MB total):
+- **Class 9 Physics**: `iesc108.pdf` (Motion, 706 KB), `iesc109.pdf` (Force & Laws, 4.42 MB), `iesc110.pdf` (Gravitation, 573 KB).
 - **Class 10 Physics**: `jesc110.pdf` (Light, 2.08 MB), `jesc111.pdf` (Human Eye, 1.44 MB), `jesc112.pdf` (Electricity, 2.05 MB), `jesc113.pdf` (Magnetism, 2.47 MB).
-- **Class 9 Physics**: `iesc108.pdf` (Motion, 706 KB), `iesc109.pdf` (Force & Laws of Motion, 4.42 MB), `iesc110.pdf` (Gravitation, 573 KB).
+- **Class 11 Physics**: `keph102_class11_kinematics.pdf` (1.39 MB), `keph104_class11_work_energy.pdf` (2.06 MB), `keph107_class11_gravitation.pdf` (1.76 MB).
+- **Class 12 Physics**: `leph103_class12_current_elec.pdf` (2.11 MB), `leph201_class12_ray_optics.pdf` (3.31 MB).
 
 ---
 

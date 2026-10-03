@@ -1,262 +1,1890 @@
 [
   {
-    "sequence_id": "SEQ-043",
-    "student_id": "STU_242",
-    "grade_level": "Class 9",
-    "topic": "Motion: Kinematics Operations",
+    "sequence_id": "SEQ-0007",
+    "student_id": "STU_0107",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
     "ordered_attempts": [
       {
         "step": 1,
-        "question": "Distance = 100 m; time = 5 s. Find speed.",
-        "response": "500 m/s; multiplied distance by time",
-        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
-        "confidence": 0.96
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
       },
       {
         "step": 2,
-        "question": "Distance = 300 m; time = 15 s. Find speed.",
-        "response": "4500 m/s; speed = distance * time",
-        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
-        "confidence": 0.98
-      },
-      {
-        "step": 3,
-        "question": "Athlete runs 200 m in 25 s. Find speed.",
-        "response": "5000 m/s; distance * time",
-        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
-        "confidence": 0.99
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
       }
     ],
-    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
     "split": "val"
   },
   {
-    "sequence_id": "SEQ-044",
-    "student_id": "STU_243",
-    "grade_level": "Class 9",
-    "topic": "Motion: Speed vs Acceleration",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question": "Constant speed 20 m/s for 10 s. What is acceleration?",
-        "response": "20 m/s^2 because it is moving fast",
-        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
-        "confidence": 0.95
-      },
-      {
-        "step": 2,
-        "question": "Train moves at uniform 72 km/h. What is acceleration?",
-        "response": "72 km/h^2 because high speed means acceleration",
-        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
-        "confidence": 0.97
-      }
-    ],
-    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
-    "split": "val"
-  },
-  {
-    "sequence_id": "SEQ-045",
-    "student_id": "STU_244",
-    "grade_level": "Class 9",
-    "topic": "Force & Laws of Motion: Inertia",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question": "Puck on frictionless ice at 5 m/s. Required forward force?",
-        "response": "Requires continuous force, otherwise it stops",
-        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
-        "confidence": 0.96
-      },
-      {
-        "step": 2,
-        "question": "Spacecraft in vacuum with engines off. What keeps it moving?",
-        "response": "Forward force must push it",
-        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
-        "confidence": 0.98
-      }
-    ],
-    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
-    "split": "val"
-  },
-  {
-    "sequence_id": "SEQ-046",
-    "student_id": "STU_245",
-    "grade_level": "Class 9",
-    "topic": "Gravitation: Free Fall Mass Independence",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question": "10 kg ball vs 1 kg ball dropped in vacuum.",
-        "response": "10 kg ball hits first because heavier falls faster",
-        "diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy",
-        "confidence": 0.95
-      },
-      {
-        "step": 2,
-        "question": "PhET gravity simulation with feather and bowling ball in vacuum.",
-        "response": "Both fall at exact same rate g = 9.8 m/s^2! Mass cancels out in a = F/m.",
-        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
-        "confidence": 0.92
-      },
-      {
-        "step": 3,
-        "question": "Reassessment: 100 kg anvil vs 10 g coin on the Moon.",
-        "response": "Both hit lunar surface simultaneously because acceleration g is independent of mass.",
-        "diagnosis": "CORRECT: Scientifically Accurate Response",
-        "confidence": 0.99
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
-    "split": "val"
-  },
-  {
-    "sequence_id": "SEQ-047",
-    "student_id": "STU_246",
-    "grade_level": "Class 10",
-    "topic": "Electricity: Current Conservation",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question": "Two bulbs in series",
-        "response": "Bulb 1 consumes current so Bulb 2 gets less",
-        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
-        "confidence": 0.95
-      },
-      {
-        "step": 2,
-        "question": "Three resistors in series",
-        "response": "Current drops after each resistor because it is consumed",
-        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
-        "confidence": 0.98
-      },
-      {
-        "step": 3,
-        "question": "Swapped order probe",
-        "response": "The first resistor in line always gets more current",
-        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
-        "confidence": 0.99
-      }
-    ],
-    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
-    "split": "val"
-  },
-  {
-    "sequence_id": "SEQ-048",
-    "student_id": "STU_247",
-    "grade_level": "Class 10",
-    "topic": "Electricity: Parallel Circuits",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question": "Adding 3-ohm in parallel to 6-ohm",
-        "response": "Total current stays 2A because battery output is fixed",
-        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
-        "confidence": 0.94
-      },
-      {
-        "step": 2,
-        "question": "Adding 5 more branches",
-        "response": "Battery current is constant, just divided",
-        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
-        "confidence": 0.96
-      }
-    ],
-    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
-    "split": "val"
-  },
-  {
-    "sequence_id": "SEQ-049",
-    "student_id": "STU_248",
-    "grade_level": "Class 10",
+    "sequence_id": "SEQ-0008",
+    "student_id": "STU_0108",
+    "curriculum_grade": "Class 10",
     "topic": "Optics: Half-Lens Aperture Remediation",
     "ordered_attempts": [
       {
         "step": 1,
-        "question": "Half of convex lens covered",
-        "response": "Bottom half of image disappears from screen",
-        "diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy",
-        "confidence": 0.95
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
       },
       {
         "step": 2,
-        "question": "PhET ray simulation step",
-        "response": "Rays from whole candle still reach open top half! Image is complete and dimmer",
-        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
-        "confidence": 0.92
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
       },
       {
         "step": 3,
-        "question": "Reassessment: Center of mirror covered",
-        "response": "Entire image forms unbroken with slightly less brightness",
-        "diagnosis": "CORRECT: Scientifically Accurate Response",
-        "confidence": 0.98
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
     "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
     "split": "val"
   },
   {
-    "sequence_id": "SEQ-050",
-    "student_id": "STU_249",
-    "grade_level": "Class 9",
-    "topic": "Motion: Kinematics Operations",
+    "sequence_id": "SEQ-0017",
+    "student_id": "STU_0117",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
     "ordered_attempts": [
       {
         "step": 1,
-        "question": "Distance = 100 m; time = 5 s. Find speed.",
-        "response": "500 m/s; multiplied distance by time",
-        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
-        "confidence": 0.96
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
       },
       {
         "step": 2,
-        "question": "Distance = 300 m; time = 15 s. Find speed.",
-        "response": "4500 m/s; speed = distance * time",
-        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
-        "confidence": 0.98
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0018",
+    "student_id": "STU_0118",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
       },
       {
         "step": 3,
-        "question": "Athlete runs 200 m in 25 s. Find speed.",
-        "response": "5000 m/s; distance * time",
-        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
-        "confidence": 0.99
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
-    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
     "split": "val"
   },
   {
-    "sequence_id": "SEQ-051",
-    "student_id": "STU_250",
-    "grade_level": "Class 9",
-    "topic": "Motion: Speed vs Acceleration",
+    "sequence_id": "SEQ-0027",
+    "student_id": "STU_0127",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
     "ordered_attempts": [
       {
         "step": 1,
-        "question": "Constant speed 20 m/s for 10 s. What is acceleration?",
-        "response": "20 m/s^2 because it is moving fast",
-        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
-        "confidence": 0.95
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
       },
       {
         "step": 2,
-        "question": "Train moves at uniform 72 km/h. What is acceleration?",
-        "response": "72 km/h^2 because high speed means acceleration",
-        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
-        "confidence": 0.97
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
       }
     ],
-    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0028",
+    "student_id": "STU_0128",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0037",
+    "student_id": "STU_0137",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0038",
+    "student_id": "STU_0138",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0047",
+    "student_id": "STU_0147",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0048",
+    "student_id": "STU_0148",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0057",
+    "student_id": "STU_0157",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0058",
+    "student_id": "STU_0158",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0067",
+    "student_id": "STU_0167",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0068",
+    "student_id": "STU_0168",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0077",
+    "student_id": "STU_0177",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0078",
+    "student_id": "STU_0178",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0087",
+    "student_id": "STU_0187",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0088",
+    "student_id": "STU_0188",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0097",
+    "student_id": "STU_0197",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0098",
+    "student_id": "STU_0198",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0107",
+    "student_id": "STU_0207",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0108",
+    "student_id": "STU_0208",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0117",
+    "student_id": "STU_0217",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0118",
+    "student_id": "STU_0218",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0127",
+    "student_id": "STU_0227",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0128",
+    "student_id": "STU_0228",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0137",
+    "student_id": "STU_0237",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0138",
+    "student_id": "STU_0238",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0147",
+    "student_id": "STU_0247",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0148",
+    "student_id": "STU_0248",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0157",
+    "student_id": "STU_0257",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0158",
+    "student_id": "STU_0258",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0167",
+    "student_id": "STU_0267",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0168",
+    "student_id": "STU_0268",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0177",
+    "student_id": "STU_0277",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0178",
+    "student_id": "STU_0278",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0187",
+    "student_id": "STU_0287",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0188",
+    "student_id": "STU_0288",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0197",
+    "student_id": "STU_0297",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0198",
+    "student_id": "STU_0298",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0207",
+    "student_id": "STU_0307",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0208",
+    "student_id": "STU_0308",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0217",
+    "student_id": "STU_0317",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0218",
+    "student_id": "STU_0318",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0227",
+    "student_id": "STU_0327",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0228",
+    "student_id": "STU_0328",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0237",
+    "student_id": "STU_0337",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0238",
+    "student_id": "STU_0338",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0247",
+    "student_id": "STU_0347",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0248",
+    "student_id": "STU_0348",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0257",
+    "student_id": "STU_0357",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0258",
+    "student_id": "STU_0358",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0267",
+    "student_id": "STU_0367",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0268",
+    "student_id": "STU_0368",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0277",
+    "student_id": "STU_0377",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0278",
+    "student_id": "STU_0378",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0287",
+    "student_id": "STU_0387",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0288",
+    "student_id": "STU_0388",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0297",
+    "student_id": "STU_0397",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0298",
+    "student_id": "STU_0398",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0307",
+    "student_id": "STU_0407",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0308",
+    "student_id": "STU_0408",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0317",
+    "student_id": "STU_0417",
+    "curriculum_grade": "Class 12",
+    "topic": "Current Electricity: Drift Velocity Scale",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-ELEC-08-001",
+        "stem": "Why does bulb light instantly when switch closes?",
+        "student_response": "Electrons race from the switch to the bulb filament at 300,000 km/s.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-ELEC-08-002",
+        "stem": "Calculate drift velocity of electrons in copper wire.",
+        "student_response": "Drift velocity is close to the speed of light.",
+        "individual_diagnosis": "MISC-ELEC-008: Electrons Race from Battery to Bulb at Light Speed"
+      }
+    ],
+    "sequence_level_label": "RECURRENT_DRIFT_VELOCITY_SPEED_FALLACY",
+    "learning_status": "unresolved_persistent_misconception",
+    "recommended_intervention_action": "trigger_targeted_multimodal_intervention",
+    "split": "val"
+  },
+  {
+    "sequence_id": "SEQ-0318",
+    "student_id": "STU_0418",
+    "curriculum_grade": "Class 10",
+    "topic": "Optics: Half-Lens Aperture Remediation",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-OPT-01-001",
+        "stem": "Cover lower half of convex lens with black cardboard.",
+        "student_response": "The upper half of the image disappears completely.",
+        "individual_diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-001",
+        "stem": "Observe PhET simulation: cover lower half with virtual mask.",
+        "student_response": "Wait, the full image is still formed on the screen, just dimmer! Every point on lens receives light from entire object.",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: Full image persists with 50% brightness"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-OPT-01-002",
+        "stem": "Near-transfer isomorphic question: cover top 30% of lens.",
+        "student_response": "The complete image remains on screen, but brightness is 70% of original.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
     "split": "val"
   }
 ]

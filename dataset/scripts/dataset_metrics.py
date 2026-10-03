@@ -76,16 +76,24 @@ def generate_metrics():
     print(f"Isomorphic Reassessment Item Pairs: {reassess_count}")
     print(f"Authentic CBSE Exam Error Patterns: {authentic_count}")
     print(f"Synthetic Student Reasoning Traces: {synth_count}")
+    train_indiv = sum(1 for _ in open(os.path.join(BASE_DIR, "individual_response_dataset", "train.jsonl"), "r", encoding="utf-8")) if os.path.exists(os.path.join(BASE_DIR, "individual_response_dataset", "train.jsonl")) else 0
+    val_indiv = sum(1 for _ in open(os.path.join(BASE_DIR, "individual_response_dataset", "val.jsonl"), "r", encoding="utf-8")) if os.path.exists(os.path.join(BASE_DIR, "individual_response_dataset", "val.jsonl")) else 0
+    test_indiv = sum(1 for _ in open(os.path.join(BASE_DIR, "individual_response_dataset", "test.jsonl"), "r", encoding="utf-8")) if os.path.exists(os.path.join(BASE_DIR, "individual_response_dataset", "test.jsonl")) else 0
+
+    train_seq = len(json.load(open(os.path.join(BASE_DIR, "sequence_dataset", "train_sequences.json"), "r", encoding="utf-8"))) if os.path.exists(os.path.join(BASE_DIR, "sequence_dataset", "train_sequences.json")) else 0
+    val_seq = len(json.load(open(os.path.join(BASE_DIR, "sequence_dataset", "val_sequences.json"), "r", encoding="utf-8"))) if os.path.exists(os.path.join(BASE_DIR, "sequence_dataset", "val_sequences.json")) else 0
+    test_seq = len(json.load(open(os.path.join(BASE_DIR, "sequence_dataset", "test_sequences.json"), "r", encoding="utf-8"))) if os.path.exists(os.path.join(BASE_DIR, "sequence_dataset", "test_sequences.json")) else 0
+
     print("-" * 50)
     print("Individual Response Splits:")
-    print(f"  * Train: 280 records")
-    print(f"  * Val:   63 records")
-    print(f"  * Test:  63 records")
+    print(f"  * Train: {train_indiv} records")
+    print(f"  * Val:   {val_indiv} records")
+    print(f"  * Test:  {test_indiv} records")
     print("-" * 50)
     print("Longitudinal Sequence Splits:")
-    print(f"  * Train: 42 sessions")
-    print(f"  * Val:   9 sessions")
-    print(f"  * Test:  9 sessions")
+    print(f"  * Train: {train_seq} sessions")
+    print(f"  * Val:   {val_seq} sessions")
+    print(f"  * Test:  {test_seq} sessions")
     print("-" * 50)
     print("Items Per Chapter:")
     for ch, count in chapter_counts.items():

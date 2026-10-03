@@ -1,262 +1,1058 @@
 [
   {
-    "sequence_id": "SEQ-052",
-    "student_id": "STU_251",
-    "grade_level": "Class 9",
-    "topic": "Force & Laws of Motion: Inertia",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question": "Puck on frictionless ice at 5 m/s. Required forward force?",
-        "response": "Requires continuous force, otherwise it stops",
-        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
-        "confidence": 0.96
-      },
-      {
-        "step": 2,
-        "question": "Spacecraft in vacuum with engines off. What keeps it moving?",
-        "response": "Forward force must push it",
-        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
-        "confidence": 0.98
-      }
-    ],
-    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-053",
-    "student_id": "STU_252",
-    "grade_level": "Class 9",
+    "sequence_id": "SEQ-0009",
+    "student_id": "STU_0109",
+    "curriculum_grade": "Class 9",
     "topic": "Gravitation: Free Fall Mass Independence",
     "ordered_attempts": [
       {
         "step": 1,
-        "question": "10 kg ball vs 1 kg ball dropped in vacuum.",
-        "response": "10 kg ball hits first because heavier falls faster",
-        "diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy",
-        "confidence": 0.95
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
       },
       {
         "step": 2,
-        "question": "PhET gravity simulation with feather and bowling ball in vacuum.",
-        "response": "Both fall at exact same rate g = 9.8 m/s^2! Mass cancels out in a = F/m.",
-        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
-        "confidence": 0.92
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
       },
       {
         "step": 3,
-        "question": "Reassessment: 100 kg anvil vs 10 g coin on the Moon.",
-        "response": "Both hit lunar surface simultaneously because acceleration g is independent of mass.",
-        "diagnosis": "CORRECT: Scientifically Accurate Response",
-        "confidence": 0.99
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
     "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
     "split": "test"
   },
   {
-    "sequence_id": "SEQ-054",
-    "student_id": "STU_253",
-    "grade_level": "Class 10",
-    "topic": "Electricity: Current Conservation",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question": "Two bulbs in series",
-        "response": "Bulb 1 consumes current so Bulb 2 gets less",
-        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
-        "confidence": 0.95
-      },
-      {
-        "step": 2,
-        "question": "Three resistors in series",
-        "response": "Current drops after each resistor because it is consumed",
-        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
-        "confidence": 0.98
-      },
-      {
-        "step": 3,
-        "question": "Swapped order probe",
-        "response": "The first resistor in line always gets more current",
-        "diagnosis": "MISC-ELEC-001: Current Attenuation / Consumption Model",
-        "confidence": 0.99
-      }
-    ],
-    "sequence_level_label": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-055",
-    "student_id": "STU_254",
-    "grade_level": "Class 10",
-    "topic": "Electricity: Parallel Circuits",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question": "Adding 3-ohm in parallel to 6-ohm",
-        "response": "Total current stays 2A because battery output is fixed",
-        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
-        "confidence": 0.94
-      },
-      {
-        "step": 2,
-        "question": "Adding 5 more branches",
-        "response": "Battery current is constant, just divided",
-        "diagnosis": "MISC-ELEC-002: Battery as Constant Current Source",
-        "confidence": 0.96
-      }
-    ],
-    "sequence_level_label": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-056",
-    "student_id": "STU_255",
-    "grade_level": "Class 10",
-    "topic": "Optics: Half-Lens Aperture Remediation",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question": "Half of convex lens covered",
-        "response": "Bottom half of image disappears from screen",
-        "diagnosis": "MISC-OPT-001: Half-Lens Blocking Fallacy",
-        "confidence": 0.95
-      },
-      {
-        "step": 2,
-        "question": "PhET ray simulation step",
-        "response": "Rays from whole candle still reach open top half! Image is complete and dimmer",
-        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
-        "confidence": 0.92
-      },
-      {
-        "step": 3,
-        "question": "Reassessment: Center of mirror covered",
-        "response": "Entire image forms unbroken with slightly less brightness",
-        "diagnosis": "CORRECT: Scientifically Accurate Response",
-        "confidence": 0.98
-      }
-    ],
-    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-057",
-    "student_id": "STU_256",
-    "grade_level": "Class 9",
-    "topic": "Motion: Kinematics Operations",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question": "Distance = 100 m; time = 5 s. Find speed.",
-        "response": "500 m/s; multiplied distance by time",
-        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
-        "confidence": 0.96
-      },
-      {
-        "step": 2,
-        "question": "Distance = 300 m; time = 15 s. Find speed.",
-        "response": "4500 m/s; speed = distance * time",
-        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
-        "confidence": 0.98
-      },
-      {
-        "step": 3,
-        "question": "Athlete runs 200 m in 25 s. Find speed.",
-        "response": "5000 m/s; distance * time",
-        "diagnosis": "MISC-MOT-001: Speed Distance Operation Inversion",
-        "confidence": 0.99
-      }
-    ],
-    "sequence_level_label": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-058",
-    "student_id": "STU_257",
-    "grade_level": "Class 9",
-    "topic": "Motion: Speed vs Acceleration",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question": "Constant speed 20 m/s for 10 s. What is acceleration?",
-        "response": "20 m/s^2 because it is moving fast",
-        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
-        "confidence": 0.95
-      },
-      {
-        "step": 2,
-        "question": "Train moves at uniform 72 km/h. What is acceleration?",
-        "response": "72 km/h^2 because high speed means acceleration",
-        "diagnosis": "MISC-MOT-002: Speed-Acceleration Conflation",
-        "confidence": 0.97
-      }
-    ],
-    "sequence_level_label": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-059",
-    "student_id": "STU_258",
-    "grade_level": "Class 9",
-    "topic": "Force & Laws of Motion: Inertia",
-    "ordered_attempts": [
-      {
-        "step": 1,
-        "question": "Puck on frictionless ice at 5 m/s. Required forward force?",
-        "response": "Requires continuous force, otherwise it stops",
-        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
-        "confidence": 0.96
-      },
-      {
-        "step": 2,
-        "question": "Spacecraft in vacuum with engines off. What keeps it moving?",
-        "response": "Forward force must push it",
-        "diagnosis": "MISC-FOR-001: Impetus Theory / Continuous Force Fallacy",
-        "confidence": 0.98
-      }
-    ],
-    "sequence_level_label": "RECURRENT_IMPETUS_THEORY_PATTERN",
-    "learning_status": "UNRESOLVED_PERSISTENT_MISCONCEPTION",
-    "split": "test"
-  },
-  {
-    "sequence_id": "SEQ-060",
-    "student_id": "STU_259",
-    "grade_level": "Class 9",
+    "sequence_id": "SEQ-0019",
+    "student_id": "STU_0119",
+    "curriculum_grade": "Class 9",
     "topic": "Gravitation: Free Fall Mass Independence",
     "ordered_attempts": [
       {
         "step": 1,
-        "question": "10 kg ball vs 1 kg ball dropped in vacuum.",
-        "response": "10 kg ball hits first because heavier falls faster",
-        "diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy",
-        "confidence": 0.95
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
       },
       {
         "step": 2,
-        "question": "PhET gravity simulation with feather and bowling ball in vacuum.",
-        "response": "Both fall at exact same rate g = 9.8 m/s^2! Mass cancels out in a = F/m.",
-        "diagnosis": "COGNITIVE_CONFLICT_RECONCILED",
-        "confidence": 0.92
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
       },
       {
         "step": 3,
-        "question": "Reassessment: 100 kg anvil vs 10 g coin on the Moon.",
-        "response": "Both hit lunar surface simultaneously because acceleration g is independent of mass.",
-        "diagnosis": "CORRECT: Scientifically Accurate Response",
-        "confidence": 0.99
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
       }
     ],
     "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
-    "learning_status": "RESOLVED_MISCONCEPTION_WITH_TRANSFER",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0029",
+    "student_id": "STU_0129",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0039",
+    "student_id": "STU_0139",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0049",
+    "student_id": "STU_0149",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0059",
+    "student_id": "STU_0159",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0069",
+    "student_id": "STU_0169",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0079",
+    "student_id": "STU_0179",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0089",
+    "student_id": "STU_0189",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0099",
+    "student_id": "STU_0199",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0109",
+    "student_id": "STU_0209",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0119",
+    "student_id": "STU_0219",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0129",
+    "student_id": "STU_0229",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0139",
+    "student_id": "STU_0239",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0149",
+    "student_id": "STU_0249",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0159",
+    "student_id": "STU_0259",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0169",
+    "student_id": "STU_0269",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0179",
+    "student_id": "STU_0279",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0189",
+    "student_id": "STU_0289",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0199",
+    "student_id": "STU_0299",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0209",
+    "student_id": "STU_0309",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0219",
+    "student_id": "STU_0319",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0229",
+    "student_id": "STU_0329",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0239",
+    "student_id": "STU_0339",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0249",
+    "student_id": "STU_0349",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0259",
+    "student_id": "STU_0359",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0269",
+    "student_id": "STU_0369",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0279",
+    "student_id": "STU_0379",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0289",
+    "student_id": "STU_0389",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0299",
+    "student_id": "STU_0399",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0309",
+    "student_id": "STU_0409",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
+    "split": "test"
+  },
+  {
+    "sequence_id": "SEQ-0319",
+    "student_id": "STU_0419",
+    "curriculum_grade": "Class 9",
+    "topic": "Gravitation: Free Fall Mass Independence",
+    "ordered_attempts": [
+      {
+        "step": 1,
+        "question_id": "PHY-GRAV-01-001",
+        "stem": "10 kg cannonball vs 50 g feather in vacuum.",
+        "student_response": "The cannonball falls much faster because it weighs more.",
+        "individual_diagnosis": "MISC-GRAV-001: Heavier Objects Fall Faster Fallacy"
+      },
+      {
+        "step": 2,
+        "question_id": "PHY-INTV-002",
+        "stem": "Observe Apollo 15 hammer & feather drop in vacuum.",
+        "student_response": "Both hit the ground simultaneously because g is independent of mass!",
+        "individual_diagnosis": "COGNITIVE_CONFLICT_RECONCILED: a = g for all falling bodies"
+      },
+      {
+        "step": 3,
+        "question_id": "PHY-GRAV-01-002",
+        "stem": "Transfer: 5 kg rock vs 500 g ball dropped on Moon.",
+        "student_response": "Both hit the lunar surface at the exact same instant.",
+        "individual_diagnosis": "CORRECT: Scientifically Accurate Response"
+      }
+    ],
+    "sequence_level_label": "SUCCESSFUL_COGNITIVE_REMEDIATION_SEQUENCE",
+    "learning_status": "resolved_with_transfer",
+    "recommended_intervention_action": "advance_to_next_topic",
     "split": "test"
   }
 ]

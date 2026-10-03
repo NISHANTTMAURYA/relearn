@@ -101,6 +101,11 @@ def run_validation():
         "reference_materials/textbooks/iesc108.pdf",
         "reference_materials/textbooks/iesc109.pdf",
         "reference_materials/textbooks/iesc110.pdf",
+        "reference_materials/textbooks/keph102_class11_kinematics.pdf",
+        "reference_materials/textbooks/keph104_class11_work_energy.pdf",
+        "reference_materials/textbooks/keph107_class11_gravitation.pdf",
+        "reference_materials/textbooks/leph103_class12_current_elec.pdf",
+        "reference_materials/textbooks/leph201_class12_ray_optics.pdf",
         "reference_materials/cbse_official_papers/CBSE_Class10_Science_SQP_2024.pdf",
         "reference_materials/cbse_official_papers/CBSE_Class10_Science_MS_2024.pdf",
         "reference_materials/research_papers/NeurIPS_2020_Education_Challenge_Eedi.pdf"

@@ -84,20 +84,20 @@ To ground the dataset in genuine student performance rather than purely theoreti
 dataset/
 ├── README.md                                          <-- Master Documentation & Visual Provenance
 ├── DESIGN_DECISIONS.md                                <-- Architectural Rationale, VLM & Error Protocols
-├── individual_response_dataset/                       <-- Core Dataset 1: Individual Multimodal Responses (406 items)
-│   ├── individual_responses.csv                       <-- Complete corpus tabular CSV
-│   ├── individual_responses.json                      <-- Rich multimodal schema JSON
-│   ├── preprocessed_individual_responses.csv          <-- Cleaned & tokenized for ML training
-│   ├── train.csv / train.jsonl                        <-- Training split (280 records)
-│   ├── val.csv / val.jsonl                            <-- Validation split (63 records)
-│   └── test.csv / test.jsonl                          <-- Test split (63 records)
-├── sequence_dataset/                                  <-- Core Dataset 2: Multi-step Student Sequences (60 sessions)
-│   ├── student_sequences.json                         <-- Longitudinal multi-turn sessions (JSON)
-│   ├── student_sequences.csv                          <-- Flattened tabular sequence format
-│   ├── preprocessed_sequences.csv                     <-- Cleaned sequence features for ML
-│   ├── train_sequences.json                           <-- Training split (42 sessions)
-│   ├── val_sequences.json                             <-- Validation split (9 sessions)
-│   └── test_sequences.json                            <-- Test split (9 sessions)
+├── individual_response_dataset/                       <-- Core Dataset 1: Individual Multimodal Responses (2,240 items)
+│   ├── individual_responses.csv                       <-- Complete corpus tabular CSV (2.29 MB)
+│   ├── individual_responses.json                      <-- Rich multimodal schema JSON (4.42 MB)
+│   ├── preprocessed_individual_responses.csv          <-- Cleaned & tokenized for ML training (4.54 MB)
+│   ├── train.csv / train.jsonl                        <-- Training split (1,580 records, 2.82 MB)
+│   ├── val.csv / val.jsonl                            <-- Validation split (440 records, 751 KB)
+│   └── test.csv / test.jsonl                          <-- Test split (220 records, 368 KB)
+├── sequence_dataset/                                  <-- Core Dataset 2: Multi-step Student Sequences (320 sessions)
+│   ├── student_sequences.json                         <-- Longitudinal multi-turn sessions (JSON, 388 KB)
+│   ├── student_sequences.csv                          <-- Flattened tabular sequence format (150 KB)
+│   ├── preprocessed_sequences.csv                     <-- Cleaned sequence features for ML (135 KB)
+│   ├── train_sequences.json                           <-- Training split (224 sessions, 260 KB)
+│   ├── val_sequences.json                             <-- Validation split (64 sessions, 84 KB)
+│   └── test_sequences.json                            <-- Test split (32 sessions, 45 KB)
 ├── models_and_baselines/                              <-- ML Baseline Models & End-to-End Simulation
 │   ├── preprocess_datasets.py                         <-- Data cleaning, prompt formatting & normalization
 │   ├── train_individual_classifier.py                 <-- Model A: Multi-class TF-IDF/LR with abstention
@@ -140,13 +140,13 @@ dataset/
 │   └── sample_external_records/                       <-- Verified downloaded samples from open benchmarks
 │       ├── arc_sample_physics.json                    <-- Verified downloaded sample from allenai/ai2_arc
 │       └── scienceqa_sample_physics.json              <-- Verified downloaded sample from derek-thomas/ScienceQA
-├── reference_materials/                               <-- Fully downloaded local PDFs & papers (13.7 MB total)
-│   ├── textbooks/                                     <-- Authentic NCERT Class 9 & 10 chapter PDFs (13.7 MB)
+├── reference_materials/                               <-- Fully downloaded local PDFs & papers (24.3 MB total)
+│   ├── textbooks/                                     <-- Authentic NCERT Class 9, 10, 11 & 12 chapter PDFs (21.9 MB)
 │   ├── research_papers/                               <-- NeurIPS 2020 Eedi challenge paper (957 KB)
 │   └── cbse_official_papers/                          <-- CBSE SQP & Marking Scheme 2024 (1.49 MB)
 └── scripts/
     ├── README.md                                      <-- Execution instructions for utilities
-    ├── generate_complete_curriculum_datasets.py       <-- Dual multimodal dataset generator (Class 9 & 10)
+    ├── generate_complete_curriculum_datasets.py       <-- Dual multimodal dataset generator (Class 9-12)
     ├── validate_dataset.py                            <-- Programmatic schema & integrity validator
     └── dataset_metrics.py                             <-- Dataset analytics & distribution reporter
 ```
@@ -166,6 +166,11 @@ All reference documents listed below were **actually downloaded, verified, and s
 | **NCERT Class 9 (Motion)** | `reference_materials/textbooks/iesc108.pdf` | **706,570 bytes** (706 KB) | NCERT Official Open Educational Repository |
 | **NCERT Class 9 (Force & Laws of Motion)** | `reference_materials/textbooks/iesc109.pdf` | **4,425,956 bytes** (4.42 MB) | NCERT Official Open Educational Repository |
 | **NCERT Class 9 (Gravitation)** | `reference_materials/textbooks/iesc110.pdf` | **573,529 bytes** (573 KB) | NCERT Official Open Educational Repository |
+| **NCERT Class 11 (Kinematics)** | `reference_materials/textbooks/keph102_class11_kinematics.pdf` | **1,428,349 bytes** (1.39 MB) | NCERT Official Open Educational Repository |
+| **NCERT Class 11 (Work & Energy)** | `reference_materials/textbooks/keph104_class11_work_energy.pdf` | **2,107,314 bytes** (2.06 MB) | NCERT Official Open Educational Repository |
+| **NCERT Class 11 (Gravitation)** | `reference_materials/textbooks/keph107_class11_gravitation.pdf` | **1,803,776 bytes** (1.76 MB) | NCERT Official Open Educational Repository |
+| **NCERT Class 12 (Current Electricity)** | `reference_materials/textbooks/leph103_class12_current_elec.pdf` | **2,164,964 bytes** (2.11 MB) | NCERT Official Open Educational Repository |
+| **NCERT Class 12 (Ray Optics)** | `reference_materials/textbooks/leph201_class12_ray_optics.pdf` | **3,392,512 bytes** (3.31 MB) | NCERT Official Open Educational Repository |
 | **CBSE Sample Question Paper** | `reference_materials/cbse_official_papers/CBSE_Class10_Science_SQP_2024.pdf` | **453,760 bytes** (453 KB) | Central Board of Secondary Education (cbseacademic.nic.in) |
 | **CBSE Official Marking Scheme** | `reference_materials/cbse_official_papers/CBSE_Class10_Science_MS_2024.pdf` | **1,043,017 bytes** (1.04 MB) | Central Board of Secondary Education (cbseacademic.nic.in) |
 | **NeurIPS 2020 Eedi Paper** | `reference_materials/research_papers/NeurIPS_2020_Education_Challenge_Eedi.pdf` | **957,984 bytes** (957 KB) | arXiv:2007.12061 (Wang et al., 2020) |
