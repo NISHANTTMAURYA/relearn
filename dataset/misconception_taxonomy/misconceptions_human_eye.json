@@ -1,0 +1,65 @@
+{
+  "domain": "Human Eye & Colourful World",
+  "ncert_chapter": "Chapter 10: The Human Eye and the Colourful World",
+  "misconceptions": [
+    {
+      "misconception_id": "MISC-EYE-001",
+      "name": "Vision Defect Corrective Lens Inversion",
+      "naive_mental_model": "Myopia (near-sightedness) should be corrected with a convex (converging) lens because the student thinks 'they cannot see far away, so they need a magnifying glass to bring it closer'. Conversely, hypermetropia is thought to need a concave lens.",
+      "scientific_ground_truth": "In a myopic eye, the eyeball is elongated or the lens has excessive curvature, causing parallel rays from infinity to converge in front of the retina. A diverging (concave) lens of appropriate focal length must be used to diverge the rays slightly so they focus exactly on the retina. Hypermetropia requires a converging (convex) lens.",
+      "cognitive_trigger": "Associating 'can't see far' with the common experience of magnifying glasses (convex lenses) used to make small distant details bigger.",
+      "distinguishing_signature": "Student prescribes a convex lens for myopia or explains that myopia means the eye lens is 'too weak' (diverging) rather than too strong (over-converging).",
+      "competing_misconceptions": [
+        "MISC-OPT-001"
+      ],
+      "literature_citations": [
+        "NCERT Exemplar Class 10 Science (Chapter 11, Multiple Choice Questions 1-4).",
+        "CBSE Examiners' Analysis of Candidate Performance in Vision Defects."
+      ]
+    },
+    {
+      "misconception_id": "MISC-EYE-002",
+      "name": "Prism Dispersion Speed & Deviation Inversion",
+      "naive_mental_model": "Red light deviates the most in a glass prism because red is the strongest, most energetic visible color; or violet light travels fastest in glass because it has the shortest wavelength.",
+      "scientific_ground_truth": "In optical media such as glass, all colors travel slower than in vacuum (v = c / n). Shorter wavelengths (violet, ~400 nm) interact more strongly with atomic electrons in glass, experiencing a higher refractive index (n_violet > n_red) and lowest speed. Hence, violet light bends (deviates) the most; red light bends the least.",
+      "cognitive_trigger": "Everyday associations of red with danger, strength, high energy, and laser pointers, leading students to invert the wavelength-frequency-deviation relationship.",
+      "distinguishing_signature": "Student selects red at the bottom of the dispersed spectrum (most deviated) or states that red light is slowed down more than violet light in glass.",
+      "competing_misconceptions": [
+        "MISC-EYE-004"
+      ],
+      "literature_citations": [
+        "Driver, R. et al. (1994). Making Sense of Secondary Science (Optics & Colour).",
+        "NCERT Class 10 Science (Chapter 10, Section 10.2: Refraction of Light through a Prism)."
+      ]
+    },
+    {
+      "misconception_id": "MISC-EYE-003",
+      "name": "Star Twinkling Cloud/Emission Artifact Fallacy",
+      "naive_mental_model": "Stars twinkle because they are pulsating or blinking their light emission on and off, or because clouds/dust particles mechanically block the light intermittently.",
+      "scientific_ground_truth": "Stars appear as point sources of light due to immense distance. As their light passes through Earth's turbulent atmosphere, continuous variations in air density and temperature cause local refractive index fluctuations. This continuously shifts the apparent position and intensity of the point-source rays entering the observer's pupil (atmospheric refraction). Planets do not twinkle because they are extended discs consisting of millions of point sources whose fluctuations average out to zero.",
+      "cognitive_trigger": "Everyday intuition that flickering objects are themselves unstable emitters (like a dying candle or neon lamp) or moving obstructions.",
+      "distinguishing_signature": "Student explains star twinkling as intrinsic star combustion bursts, or claims planets would twinkle just as much if placed outside our galaxy.",
+      "competing_misconceptions": [
+        "MISC-OPT-005"
+      ],
+      "literature_citations": [
+        "NCERT Class 10 Science Textbook (Section 10.3: Atmospheric Refraction)."
+      ]
+    },
+    {
+      "misconception_id": "MISC-EYE-004",
+      "name": "Sky Colour Reflection / Long Wavelength Fallacy",
+      "naive_mental_model": "The clear sky is blue because it acts like a mirror reflecting the blue water of Earth's oceans, or because blue light travels in straight lines while red is scattered away.",
+      "scientific_ground_truth": "Clear sky color is caused by Rayleigh scattering: air molecules (N2, O2) have sizes much smaller than visible light wavelengths. The scattering intensity is inversely proportional to the fourth power of wavelength (I ~ 1 / lambda^4). Blue light (short wavelength) is scattered roughly 10 times more effectively than red light in all directions, illuminating the sky.",
+      "cognitive_trigger": "Common folkloric myth taught in early childhood that the sky reflects the sea.",
+      "distinguishing_signature": "Student attributes blue sky to ocean reflection, or asserts that an astronaut on the Moon would still see a blue sky because the Moon's surface would reflect light.",
+      "competing_misconceptions": [
+        "MISC-EYE-002"
+      ],
+      "literature_citations": [
+        "NCERT Class 10 Science Textbook (Section 10.4: Scattering of Light).",
+        "Arons, A. B. (1997). Teaching Introductory Physics. John Wiley & Sons."
+      ]
+    }
+  ]
+}

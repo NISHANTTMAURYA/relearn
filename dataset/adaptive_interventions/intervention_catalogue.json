@@ -1,0 +1,79 @@
+{
+  "interventions_framework": "Re:Learn Adaptive Multimodal Remediation Engine",
+  "pedagogical_modalities": [
+    "Predict-Observe-Explain (POE)",
+    "Cognitive Conflict Induction",
+    "Conceptual Bridging Analogies",
+    "Interactive Dynamic Simulation (PhET)"
+  ],
+  "interventions": [
+    {
+      "intervention_id": "INTV-ELEC-001",
+      "target_misconception_id": "MISC-ELEC-001",
+      "misconception_name": "Current Attenuation / Consumption Model",
+      "pedagogical_strategy": "Predict-Observe-Explain (POE) via Interactive Simulation",
+      "simulation_reference": {
+        "platform": "PhET Interactive Simulations (University of Colorado Boulder)",
+        "simulation_name": "Circuit Construction Kit: DC",
+        "url": "https://phet.colorado.edu/en/simulations/circuit-construction-kit-dc"
+      },
+      "guided_learning_sequence": {
+        "step_1_predict": "Before closing the switch on a two-bulb series circuit, write down what you expect an ammeter placed after Bulb 1 and an ammeter placed after Bulb 2 will read.",
+        "step_2_observe": "In the PhET simulation, place two ammeters in series: one between Bulb 1 and Bulb 2, and another between Bulb 2 and the battery. Observe the digital ammeter readings and watch the speed of the moving blue electron dots along the wire.",
+        "step_3_explain_cognitive_conflict": "Notice that both ammeters read exactly the same value (e.g. 0.90 A)! If current was 'used up' to make Bulb 1 light up, how could the exact same number of electrons pass through Bulb 2 each second?",
+        "step_4_conceptual_bridge": "Understand the difference between charge and energy: Electrons are not fuel; they are the delivery trucks. The trucks (charges) circulate around the closed loop continuously without disappearing. What the trucks unload and deliver to the bulb filament is electrical potential energy, which converts to heat and light. The current (flow rate of trucks) remains constant, but the energy per charge (voltage) decreases across each bulb."
+      }
+    },
+    {
+      "intervention_id": "INTV-OPT-001",
+      "target_misconception_id": "MISC-OPT-001",
+      "misconception_name": "Half-Lens Blocking Fallacy",
+      "pedagogical_strategy": "Cognitive Conflict Induction & Ray Tracing Exploration",
+      "simulation_reference": {
+        "platform": "PhET Interactive Simulations",
+        "simulation_name": "Geometric Optics: Basics",
+        "url": "https://phet.colorado.edu/en/simulations/geometric-optics"
+      },
+      "guided_learning_sequence": {
+        "step_1_predict": "Predict what will happen to the image of an arrow on the screen if a barrier blocks the lower half of the converging lens.",
+        "step_2_observe": "In the optics simulation, turn on 'Many Rays' mode. Observe rays leaving the tip of the arrow. Now drag a virtual opaque card to cover the lower half of the lens.",
+        "step_3_explain_cognitive_conflict": "Observe that rays from the tip of the arrow still reach the upper half of the lens and converge at the exact same image point! The entire arrow is still visible on the screen, just dimmer.",
+        "step_4_conceptual_bridge": "A lens does not behave like a picture window or stencil. Every microscopic point on an illuminated object sends out millions of light rays in all directions toward every part of the lens. The uncovered half of the lens still collects light from every part of the object, ensuring the complete image forms in full."
+      }
+    },
+    {
+      "intervention_id": "INTV-ELEC-002",
+      "target_misconception_id": "MISC-ELEC-002",
+      "misconception_name": "Battery as a Constant Current Source",
+      "pedagogical_strategy": "Variable Load Exploration & Circuit Dynamics",
+      "simulation_reference": {
+        "platform": "PhET Interactive Simulations",
+        "simulation_name": "Circuit Construction Kit: DC",
+        "url": "https://phet.colorado.edu/en/simulations/circuit-construction-kit-dc"
+      },
+      "guided_learning_sequence": {
+        "step_1_predict": "If you connect a second parallel branch with a resistor, will the battery ammeter stay the same or change?",
+        "step_2_observe": "Measure battery current with 1 branch (1 A). Add a second identical branch and observe the battery ammeter jump immediately to 2 A, while the battery voltmeter stays at 9 V.",
+        "step_3_explain_cognitive_conflict": "The battery did not force a constant current. Why did the current double when you added a second pathway?",
+        "step_4_conceptual_bridge": "A battery maintains a constant electrical pressure (potential difference V), like a water pump maintaining constant pressure. When you open a second faucet (parallel path), more total water flows out of the pump because the overall resistance of the system has decreased."
+      }
+    },
+    {
+      "intervention_id": "INTV-MAG-001",
+      "target_misconception_id": "MISC-MAG-001",
+      "misconception_name": "Magnetic Pole = Electrostatic Charge Fallacy",
+      "pedagogical_strategy": "Electrostatic vs Magnetic Force Disambiguation",
+      "simulation_reference": {
+        "platform": "PhET Interactive Simulations",
+        "simulation_name": "Faraday's Electromagnetic Lab",
+        "url": "https://phet.colorado.edu/en/simulations/faradays-electromagnetic-lab"
+      },
+      "guided_learning_sequence": {
+        "step_1_predict": "Does a bar magnet attract a charged plastic comb that was rubbed in dry hair?",
+        "step_2_observe": "Bring a strongly charged static rod near a stationary bar magnet. Notice that the magnetic compass or magnetic poles do not deflect toward the charge unless the charge moves at high speed across the magnetic field.",
+        "step_3_explain_cognitive_conflict": "If North poles were positively charged, why wouldn't a stationary negative charge stick to it?",
+        "step_4_conceptual_bridge": "Electric charges exist as isolated monopoles (+ and -). Magnetic poles never exist as isolated monopoles; breaking a magnet creates two dipoles. A magnetic field exerts force only on charges in motion (F = q * v * B * sin(theta)), whereas an electric field exerts force on all charges regardless of velocity."
+      }
+    }
+  ]
+}

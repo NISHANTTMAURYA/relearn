@@ -1,0 +1,162 @@
+{
+  "chapter": "Chapter 11: Electricity",
+  "authoritative_reference": "NCERT Class 10 Science",
+  "questions": [
+    {
+      "question_id": "DIAG-ELEC-001",
+      "question_type": "conceptual",
+      "cognitive_level": "Analysis",
+      "stem": "A circuit consists of a 6 V battery connected in series with two identical incandescent bulbs, Bulb 1 and Bulb 2. An ammeter A1 is placed between the battery's positive terminal and Bulb 1. An ammeter A2 is placed between Bulb 1 and Bulb 2. An ammeter A3 is placed between Bulb 2 and the negative terminal. Assuming ideal meters and wires, what are the readings of the three ammeters?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A1 > A2 > A3, because each bulb consumes a portion of the electric current to produce light.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-001",
+          "distractor_rationale": "Reflects the Current Attenuation / Consumption model where current is treated as a consumable fuel used up sequentially by circuit loads."
+        },
+        {
+          "key": "B",
+          "text": "A1 = A3 > A2, because current enters and exits the circuit at full strength but slows down between the two bulbs.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-004",
+          "distractor_rationale": "Reflects a hybrid local bottleneck misconception where students imagine current 'clogging' or reducing velocity inside the intermediate path."
+        },
+        {
+          "key": "C",
+          "text": "A1 = A2 = A3, because electric charge is conserved and the rate of charge flow is identical at all points in a single series loop.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct scientific principle: in a steady-state closed series loop, dQ/dt is uniform throughout."
+        },
+        {
+          "key": "D",
+          "text": "A1 = A2 = A3 = 0, because potential difference is entirely used up by the first bulb.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-004",
+          "distractor_rationale": "Conflates potential difference with current flow, assuming voltage exhaustion arrests charge motion."
+        }
+      ],
+      "correct_answer": "C",
+      "authoritative_solution": "In a series circuit, there is only one continuous conducting pathway. By conservation of electric charge, the rate at which charge passes any cross-section per unit time (I = dQ/dt) must be identical everywhere. Bulbs transform electrical potential energy into thermal and radiant energy, resulting in a potential drop (V1 + V2 = V_total), but the net charge entering Bulb 1 equals the net charge leaving Bulb 1 and continuing through Bulb 2. Hence, A1 = A2 = A3.",
+      "source": "Adapted from McDermott & Shaffer (1992) / NCERT Exemplar Science Class X (Electricity Chapter)."
+    },
+    {
+      "question_id": "DIAG-ELEC-002",
+      "question_type": "circuit_analysis",
+      "cognitive_level": "Application",
+      "stem": "A 12 V battery is connected to a 6-ohm resistor R1. A second resistor R2 of 3 ohms is then connected in parallel across R1. What happens to the current supplied by the 12 V battery after R2 is added?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The total current remains 2 A, because the battery delivers a fixed, constant current determined by its initial rating.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-002",
+          "distractor_rationale": "Reflects the Constant Current Battery fallacy, where the student views the power supply as an invariant current source regardless of external load changes."
+        },
+        {
+          "key": "B",
+          "text": "The total current decreases from 2 A to 1.33 A, because adding another resistor increases the total circuit resistance to 9 ohms.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-005",
+          "distractor_rationale": "Reflects the Parallel Resistance Addition fallacy, applying series addition (R_eq = 6 + 3 = 9 ohms) to a parallel branch network."
+        },
+        {
+          "key": "C",
+          "text": "The total current increases from 2 A to 6 A, because adding a parallel branch provides an additional path, reducing total resistance to 2 ohms.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct scientific calculation: R_eq = (6 * 3)/(6 + 3) = 2 ohms; I_total = 12 V / 2 ohms = 6 A."
+        },
+        {
+          "key": "D",
+          "text": "The total current increases to 4 A, because the initial 2 A current is equally split into both branches as 2 A each.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-003",
+          "distractor_rationale": "Reflects the Shared Current / Equal Division fallacy combined with naive branch addition."
+        }
+      ],
+      "correct_answer": "C",
+      "authoritative_solution": "Initially, with only R1 connected: I_initial = V / R1 = 12 V / 6 ohms = 2 A. When R2 = 3 ohms is connected in parallel, the equivalent resistance R_eq is given by 1/R_eq = 1/6 + 1/3 = 3/6 = 1/2, so R_eq = 2 ohms. Since the battery maintains a constant terminal potential difference of 12 V, the total current drawn from the battery becomes I_new = V / R_eq = 12 V / 2 ohms = 6 A. (Current through R1 remains 12/6 = 2 A, and current through R2 is 12/3 = 4 A; total I = 2 + 4 = 6 A).",
+      "source": "DIRECT Test (Engelhardt & Beichner, 2004, Item 18); NCERT Class 10 Section 11.6."
+    },
+    {
+      "question_id": "DIAG-ELEC-003",
+      "question_type": "numerical",
+      "cognitive_level": "Evaluation",
+      "stem": "Two electric bulbs rated '220 V, 100 W' and '220 V, 40 W' are connected in parallel to a 220 V domestic power supply. Which bulb will glow brighter, and what is the ratio of their resistances (R_100 / R_40)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The 40 W bulb glows brighter, and R_100 / R_40 = 2.5, because higher resistance generates more heat and brightness according to P = I^2 * R.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-006",
+          "distractor_rationale": "Reflects Power Formula Mis-selection: blindly applying P = I^2*R to a parallel circuit where voltage is constant rather than current."
+        },
+        {
+          "key": "B",
+          "text": "The 100 W bulb glows brighter, and R_100 / R_40 = 0.4 (i.e. 2/5), because at constant voltage, P = V^2 / R, meaning the 100 W bulb has lower resistance and draws more current.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct application: R = V^2 / P; R_100 = 220^2/100 = 484 ohms; R_40 = 220^2/40 = 1210 ohms; R_100/R_40 = 484/1210 = 0.4."
+        },
+        {
+          "key": "C",
+          "text": "Both bulbs glow with equal brightness, and R_100 / R_40 = 1.0, because in parallel they share the 220 V equally.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-003",
+          "distractor_rationale": "Conflates parallel voltage invariance with equal current/power dissipation."
+        },
+        {
+          "key": "D",
+          "text": "The 100 W bulb glows brighter, but its resistance is higher (R_100 / R_40 = 2.5), because power is directly proportional to resistance in all circuits.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-006",
+          "distractor_rationale": "Assumes P is always directly proportional to R, failing to understand R = V^2/P at rated voltage."
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "From the power formula P = V^2 / R, the resistance of an appliance rated for voltage V is R = V^2 / P. For Bulb 1: R_100 = 220^2 / 100 = 484 ohms. For Bulb 2: R_40 = 220^2 / 40 = 1210 ohms. The ratio R_100 / R_40 = 484 / 1210 = 2/5 = 0.4. When connected in parallel to the 220 V supply, both bulbs experience the full 220 V. The power consumed by each is P = V^2 / R. Therefore, the 100 W bulb consumes 100 W and glows significantly brighter than the 40 W bulb.",
+      "source": "CBSE Class 10 Science Board Examination 2019 (Physics Section) / NCERT Class 10 Exercise Problem 11.14."
+    },
+    {
+      "question_id": "DIAG-ELEC-004",
+      "question_type": "application",
+      "cognitive_level": "Comprehension",
+      "stem": "A cylindrical copper conductor of length L and uniform cross-sectional area A has electrical resistance R. If the wire is stretched uniformly until its length becomes 2L without changing its density, what is the new resistance of the wire?",
+      "options": [
+        {
+          "key": "A",
+          "text": "2R, because resistance is directly proportional to length (R = rho * L / A) and length has doubled.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-004",
+          "distractor_rationale": "Ignores volume conservation: neglects that stretching a wire to double length halves its cross-sectional area."
+        },
+        {
+          "key": "B",
+          "text": "4R, because volume is conserved: doubling length halves cross-sectional area (A' = A/2), so R' = rho * (2L) / (A/2) = 4R.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct physics: Volume V = L * A = constant; if L' = 2L, then A' = A/2; R' = rho * 2L / (A/2) = 4 * (rho * L / A) = 4R."
+        },
+        {
+          "key": "C",
+          "text": "R / 2, because stretching a wire makes it thinner, allowing current to squeeze through faster.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-004",
+          "distractor_rationale": "Intuitive fluid analogy thinking narrower tubes create faster flow, confusing fluid velocity with electrical conductance."
+        },
+        {
+          "key": "D",
+          "text": "R, because resistivity rho is an intrinsic material property of copper and does not change.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-004",
+          "distractor_rationale": "Conflates material resistivity (rho, which is constant) with geometric resistance (R, which depends on L and A)."
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "The initial resistance is R = rho * (L / A). When the wire is stretched uniformly to a new length L' = 2L, its mass and volume remain constant: Volume = L * A = L' * A' = (2L) * A'. Thus, the new cross-sectional area is A' = A / 2. The new resistance is R' = rho * (L' / A') = rho * (2L) / (A / 2) = 4 * [rho * (L / A)] = 4R.",
+      "source": "NCERT Class 10 Science Exemplar Problem 11.3 & CBSE Sample Paper 2023."
+    }
+  ]
+}

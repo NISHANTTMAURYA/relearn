@@ -1,0 +1,113 @@
+{
+  "protocol": "Re:Learn Pre/Post Diagnostic Reassessment Engine",
+  "reassessment_pairs": [
+    {
+      "pair_id": "PAIR-ELEC-001",
+      "target_misconception_id": "MISC-ELEC-001",
+      "pre_intervention_diagnostic_item": {
+        "item_id": "DIAG-ELEC-001",
+        "context": "Two identical bulbs in series with ammeters before, between, and after.",
+        "distractor_revealing_misconception": "Option A (A1 > A2 > A3 due to current consumption)"
+      },
+      "post_intervention_reassessment_item": {
+        "item_id": "REASSESS-ELEC-001",
+        "question_type": "near_transfer_conceptual",
+        "stem": "A circuit contains a 12V battery connected in series with a 100-ohm heating resistor R1 and a 20-ohm resistor R2. A technician measures the current entering R1 as I_in and the current leaving R2 as I_out. How do I_in and I_out compare?",
+        "options": [
+          {
+            "key": "A",
+            "text": "I_in > I_out, because the 100-ohm resistor consumes more electric current than the 20-ohm resistor.",
+            "is_correct": false,
+            "indicates_persistent_misconception": "MISC-ELEC-001"
+          },
+          {
+            "key": "B",
+            "text": "I_in = I_out, because in any series circuit, electric charge cannot accumulate or vanish, so the current flowing into the network must equal the current flowing out.",
+            "is_correct": true,
+            "indicates_persistent_misconception": null
+          },
+          {
+            "key": "C",
+            "text": "I_out > I_in, because the smaller resistor pushes current through faster.",
+            "is_correct": false,
+            "indicates_persistent_misconception": "MISC-ELEC-004"
+          }
+        ],
+        "correct_answer": "B",
+        "reassessment_diagnostic_rule": "If student chooses A, the Current Attenuation misconception persists and requires secondary intervention with mechanical water circuit analog. If student chooses B, the misconception is marked resolved."
+      }
+    },
+    {
+      "pair_id": "PAIR-OPT-001",
+      "target_misconception_id": "MISC-OPT-001",
+      "pre_intervention_diagnostic_item": {
+        "item_id": "DIAG-OPT-001",
+        "context": "Lower half of convex lens covered with black paper.",
+        "distractor_revealing_misconception": "Option A or B (top/bottom half of image disappears)"
+      },
+      "post_intervention_reassessment_item": {
+        "item_id": "REASSESS-OPT-001",
+        "question_type": "isomorphic_transfer",
+        "stem": "A concave mirror forms a clear image of a tree on a distant wall. A circular coin of radius 1 cm is taped directly over the central pole of the concave mirror, covering about 20% of its central reflecting area. What will be observed on the wall?",
+        "options": [
+          {
+            "key": "A",
+            "text": "A circular black hole will appear in the center of the tree's image on the wall.",
+            "is_correct": false,
+            "indicates_persistent_misconception": "MISC-OPT-001"
+          },
+          {
+            "key": "B",
+            "text": "The entire image of the tree will remain complete and unbroken on the wall, but its brightness will be slightly reduced.",
+            "is_correct": true,
+            "indicates_persistent_misconception": null
+          },
+          {
+            "key": "C",
+            "text": "The tree's trunk will disappear, leaving only the leaves visible.",
+            "is_correct": false,
+            "indicates_persistent_misconception": "MISC-OPT-001"
+          }
+        ],
+        "correct_answer": "B",
+        "reassessment_diagnostic_rule": "Selecting A or C indicates persistence of the geometric blocking fallacy across optical reflections. Selecting B confirms generalized transfer to spherical mirrors."
+      }
+    },
+    {
+      "pair_id": "PAIR-MAG-001",
+      "target_misconception_id": "MISC-MAG-001",
+      "pre_intervention_diagnostic_item": {
+        "item_id": "DIAG-MAG-001",
+        "context": "Stationary positive charge near magnetic poles.",
+        "distractor_revealing_misconception": "Option A or B (attractive/repulsive electrostatic force)"
+      },
+      "post_intervention_reassessment_item": {
+        "item_id": "REASSESS-MAG-001",
+        "question_type": "near_transfer_conceptual",
+        "stem": "A stationary negative ion (Cl-) is held at rest right next to the North pole of a neodymium bar magnet in a vacuum chamber. What is the magnetic force acting on the ion?",
+        "options": [
+          {
+            "key": "A",
+            "text": "A strong attractive force pulling the negative ion towards the North pole because North poles attract negative charges.",
+            "is_correct": false,
+            "indicates_persistent_misconception": "MISC-MAG-001"
+          },
+          {
+            "key": "B",
+            "text": "Zero, because static magnetic fields exert no force on stationary charges (v = 0).",
+            "is_correct": true,
+            "indicates_persistent_misconception": null
+          },
+          {
+            "key": "C",
+            "text": "A force perpendicular to the magnet pushing the ion out of the plane.",
+            "is_correct": false,
+            "indicates_persistent_misconception": "MISC-MAG-003"
+          }
+        ],
+        "correct_answer": "B",
+        "reassessment_diagnostic_rule": "Selecting A indicates persistent Pole = Charge equivalence. Selecting B verifies student distinguishes static electrostatics from velocity-dependent magnetic Lorentz interaction."
+      }
+    }
+  ]
+}

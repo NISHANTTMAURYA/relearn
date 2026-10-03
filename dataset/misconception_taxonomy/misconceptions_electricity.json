@@ -1,0 +1,95 @@
+{
+  "domain": "Electricity",
+  "ncert_chapter": "Chapter 11: Electricity",
+  "misconceptions": [
+    {
+      "misconception_id": "MISC-ELEC-001",
+      "name": "Current Attenuation / Consumption Model",
+      "naive_mental_model": "Electric current is a substance or consumable fuel that is 'used up' by resistors, lamps, or components as it travels along the circuit loop. Therefore, current exiting a resistor or bulb is less than the current entering it.",
+      "scientific_ground_truth": "Electric current is the continuous rate of net charge flow (I = Q/t). Charge is strictly conserved; in a single closed series loop, the rate of charge entering any element must equal the rate of charge leaving it. What is dissipated is electrical potential energy (voltage drop), not electric charge or current.",
+      "cognitive_trigger": "Everyday linguistic confusion where people say 'the battery runs out of power/current' or everyday analogies with water flowing through pipes and being absorbed.",
+      "distinguishing_signature": "Student predicts that an ammeter placed after a bulb will read lower than an ammeter placed before the bulb, or that downstream bulbs in series are dimmer solely due to position in sequence.",
+      "competing_misconceptions": [
+        "MISC-ELEC-002",
+        "MISC-ELEC-004"
+      ],
+      "literature_citations": [
+        "McDermott, L. C., & Shaffer, P. S. (1992). Research as a guide for curriculum development: An example from introductory electricity. American Journal of Physics, 60(11), 994-1003.",
+        "Driver, R., Squires, A., Rushworth, P., & Wood-Robinson, V. (1994). Making Sense of Secondary Science: Research into Children's Ideas. Routledge."
+      ]
+    },
+    {
+      "misconception_id": "MISC-ELEC-002",
+      "name": "Battery as a Constant Current Source",
+      "naive_mental_model": "A battery or power cell always outputs a fixed, constant amount of electric current (e.g., 'a 9V battery always outputs 2 Amps') regardless of how many resistors or bulbs are connected, or whether they are arranged in series or parallel.",
+      "scientific_ground_truth": "An ideal battery maintains a constant potential difference (voltage V) across its terminals. The total current supplied by the battery depends inversely on the equivalent resistance of the external circuit: I_total = V / R_eq.",
+      "cognitive_trigger": "Conflating voltage rating with current delivery, treating the battery as a reservoir pumping out liquid at a fixed mechanical speed.",
+      "distinguishing_signature": "Student predicts that adding another resistor in parallel or series does not change the total battery current, or calculates branch currents by dividing battery voltage by individual resistance without updating total load.",
+      "competing_misconceptions": [
+        "MISC-ELEC-001",
+        "MISC-ELEC-003"
+      ],
+      "literature_citations": [
+        "Engelhardt, P. V., & Beichner, R. J. (2004). Students' understanding of direct current resistive electrical circuits. American Journal of Physics, 72(1), 98-115 (DIRECT Test Item 9, 18).",
+        "Cohen, R., Eylon, B., & Ganiel, U. (1983). Potential difference and current in simple electric circuits: A study of students' concepts. American Journal of Physics, 51(5), 407-412."
+      ]
+    },
+    {
+      "misconception_id": "MISC-ELEC-003",
+      "name": "Shared Current / Equal Division Fallacy",
+      "naive_mental_model": "In any parallel circuit, current divides strictly equally among all available branches (e.g., 50%-50% across two branches), completely ignoring differences in branch resistances.",
+      "scientific_ground_truth": "Current divides among parallel branches inversely proportional to their respective branch resistances (I_k = V / R_k). Equal division occurs only when branch resistances are identical.",
+      "cognitive_trigger": "Superficial geometric symmetry intuition: seeing two branches split at a junction and applying a 'fair share' heuristic without Ohm's Law.",
+      "distinguishing_signature": "When presented with a 2-ohm and 10-ohm parallel branch, student computes branch currents by halving total current rather than applying I_1/I_2 = R_2/R_1.",
+      "competing_misconceptions": [
+        "MISC-ELEC-002",
+        "MISC-ELEC-005"
+      ],
+      "literature_citations": [
+        "Liegeois, L., & Mullet, E. (2002). High school students' understanding of resistance in simple series and parallel circuits. International Journal of Science Education, 24(6), 551-564."
+      ]
+    },
+    {
+      "misconception_id": "MISC-ELEC-004",
+      "name": "Voltage-Current Conflation / Voltage as a Flowing Entity",
+      "naive_mental_model": "Voltage and current are interchangeable terms for the same electrical fluid. Voltage is thought to 'flow through' conductors like current, rather than being the potential difference measured between two points.",
+      "scientific_ground_truth": "Current (I) is the flow of electric charge passing through a cross-section per second. Potential difference (V) is the work done per unit charge in moving it between two spatial points (V = W/Q). Current flows through a component; voltage exists across a component.",
+      "cognitive_trigger": "Common media jargon using 'voltage' and 'amperage' interchangeably; failure to understand that zero current can still have non-zero voltage across open terminals.",
+      "distinguishing_signature": "Student states that across an open switch there is 0V because no current flows, or connects a voltmeter in series and an ammeter in parallel.",
+      "competing_misconceptions": [
+        "MISC-ELEC-001"
+      ],
+      "literature_citations": [
+        "Psillos, D., Koumaras, P., & Tiberghien, A. (1988). Voltage presented as a primary concept in an introductory model on DC circuits. International Journal of Science Education, 10(1), 29-43."
+      ]
+    },
+    {
+      "misconception_id": "MISC-ELEC-005",
+      "name": "Parallel Resistance Addition Fallacy",
+      "naive_mental_model": "Adding more resistors to a parallel network increases the total equivalent resistance because 'more resistors must mean more total obstruction to current flow'.",
+      "scientific_ground_truth": "Connecting resistors in parallel provides additional independent pathways for charge to flow, which decreases the total equivalent resistance: 1/R_eq = 1/R1 + 1/R2 + ... + 1/Rn. The equivalent resistance is always strictly less than the smallest individual resistance in the combination.",
+      "cognitive_trigger": "Over-generalization of additive series intuition: associating 'adding components' with 'adding numerical resistance'.",
+      "distinguishing_signature": "Student uses R_eq = R1 + R2 for parallel circuits, or inverts the formula as 1/R_eq = R1 + R2 or R_eq = 1/(R1 + R2).",
+      "competing_misconceptions": [
+        "MISC-ELEC-003"
+      ],
+      "literature_citations": [
+        "Engelhardt, P. V., & Beichner, R. J. (2004). DIRECT Test Item 14."
+      ]
+    },
+    {
+      "misconception_id": "MISC-ELEC-006",
+      "name": "Power Formula Mis-selection in Parallel vs Series",
+      "naive_mental_model": "A resistor with higher resistance always dissipates more electrical power and glows brighter, because P is proportional to R according to P = I^2 * R, even when connected in parallel to a constant voltage supply.",
+      "scientific_ground_truth": "In a parallel connection across a constant voltage supply V, power is governed by P = V^2 / R; thus, smaller resistance draws larger current and dissipates higher power. The relation P = I^2 * R is convenient only when current I is identical (as in a series circuit).",
+      "cognitive_trigger": "Blind formula retrieval without checking circuit boundary conditions (constant V vs constant I).",
+      "distinguishing_signature": "Student incorrectly predicts that a 100W household bulb has higher electrical resistance than a 40W bulb when operating on 220V domestic supply.",
+      "competing_misconceptions": [
+        "MISC-ELEC-004"
+      ],
+      "literature_citations": [
+        "CBSE Class 10 Science Marking Scheme & Common Errors Report (2020-2023)."
+      ]
+    }
+  ]
+}

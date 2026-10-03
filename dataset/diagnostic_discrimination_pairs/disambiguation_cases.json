@@ -1,0 +1,170 @@
+{
+  "framework": "Re:Learn Competing Misconception Disambiguation Protocol",
+  "total_cases": 4,
+  "cases": [
+    {
+      "case_id": "DISAMBIG-001",
+      "domain": "Electricity",
+      "ambiguous_student_response": "Predicts that Bulb 2 glows dimmer than Bulb 1 in a series circuit.",
+      "competing_explanations": [
+        {
+          "misconception_id": "MISC-ELEC-001",
+          "name": "Current Attenuation Model",
+          "hypothesis": "Student believes electric current is physically consumed or depleted as it passes through Bulb 1, so less current reaches Bulb 2."
+        },
+        {
+          "misconception_id": "MISC-ELEC-004",
+          "name": "Voltage Exhaustion / Conflation",
+          "hypothesis": "Student acknowledges charge may be conserved, but believes 'voltage' is an energetic substance carried by current that is entirely spent inside the first resistor."
+        }
+      ],
+      "disambiguation_probe_item": {
+        "probe_question_id": "PROBE-ELEC-001",
+        "stem": "In the same series circuit of two identical bulbs, we now insert two ammeters: Ammeter X immediately before Bulb 1, and Ammeter Y immediately after Bulb 2 (between Bulb 2 and the negative battery terminal). What will the two ammeters read?",
+        "discriminating_options": [
+          {
+            "key": "A",
+            "text": "Ammeter X reads higher than Ammeter Y (e.g. X = 0.6 A, Y = 0.3 A).",
+            "isolates_misconception": "MISC-ELEC-001",
+            "cognitive_inference": "Confirms Current Attenuation: the student explicitly models current loss along the loop."
+          },
+          {
+            "key": "B",
+            "text": "Ammeter X and Ammeter Y show the exact same current reading (X = Y = 0.4 A), but Bulb 2 is dimmer because voltage was used up by Bulb 1.",
+            "isolates_misconception": "MISC-ELEC-004",
+            "cognitive_inference": "Confirms Voltage Exhaustion: the student conserves current but conceptualizes voltage as a consumed substance."
+          },
+          {
+            "key": "C",
+            "text": "Ammeter X and Ammeter Y show identical readings, and both identical bulbs glow with the exact same brightness.",
+            "isolates_misconception": null,
+            "cognitive_inference": "Student possesses correct scientific understanding."
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "DISAMBIG-002",
+      "domain": "Electricity",
+      "ambiguous_student_response": "Predicts that adding a parallel branch reduces the brightness of the first bulb.",
+      "competing_explanations": [
+        {
+          "misconception_id": "MISC-ELEC-002",
+          "name": "Constant Current Battery",
+          "hypothesis": "Student believes the battery delivers a fixed total amperage, which must now be partitioned between two branches."
+        },
+        {
+          "misconception_id": "MISC-ELEC-005",
+          "name": "Parallel Resistance Addition",
+          "hypothesis": "Student believes adding another branch increases total resistance, choking the circuit."
+        }
+      ],
+      "disambiguation_probe_item": {
+        "probe_question_id": "PROBE-ELEC-002",
+        "stem": "A 10 V ideal battery is connected across Bulb 1. We connect Bulb 2 in parallel. An ammeter measures the total current leaving the battery positive terminal. What happens to the total battery current?",
+        "discriminating_options": [
+          {
+            "key": "A",
+            "text": "The total battery current stays exactly the same as before, because a 10 V battery has a fixed current rating that cannot change.",
+            "isolates_misconception": "MISC-ELEC-002",
+            "cognitive_inference": "Isolates Constant Current Battery model."
+          },
+          {
+            "key": "B",
+            "text": "The total battery current decreases, because having two resistors in the circuit creates more resistance to current flow than having only one.",
+            "isolates_misconception": "MISC-ELEC-005",
+            "cognitive_inference": "Isolates Parallel Resistance Addition fallacy."
+          },
+          {
+            "key": "C",
+            "text": "The total battery current increases to twice its original value, while the current through Bulb 1 remains unchanged.",
+            "isolates_misconception": null,
+            "cognitive_inference": "Correct independent branch analysis under constant terminal voltage."
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "DISAMBIG-003",
+      "domain": "Light - Optics",
+      "ambiguous_student_response": "States that an image of a candle flame cannot be seen if a white paper screen is removed from the focus of a convex lens.",
+      "competing_explanations": [
+        {
+          "misconception_id": "MISC-OPT-002",
+          "name": "Screen Reification",
+          "hypothesis": "Student believes light rays only materialize into an image when stopped by an opaque diffusing surface."
+        },
+        {
+          "misconception_id": "MISC-OPT-003",
+          "name": "Virtual Image Ray Convergence Fallacy",
+          "hypothesis": "Student does not understand real vs virtual image definitions, assuming images are purely mental illusions inside the lens."
+        }
+      ],
+      "disambiguation_probe_item": {
+        "probe_question_id": "PROBE-OPT-001",
+        "stem": "The white screen is removed. An observer positions their eye 20 cm further back along the optical axis, looking directly back towards the lens along the path of the converging/diverging rays. What will the observer see?",
+        "discriminating_options": [
+          {
+            "key": "A",
+            "text": "The observer sees nothing at all, because without a screen, light rays continue indefinitely as invisible rays and cannot form an image in empty air.",
+            "isolates_misconception": "MISC-OPT-002",
+            "cognitive_inference": "Isolates Screen Reification: observer cannot conceptualize an aerial real image entering the eye pupil."
+          },
+          {
+            "key": "B",
+            "text": "The observer sees a sharp, inverted, inverted image floating in space at the exact previous position of the screen, because the diverging rays from the real image point enter the observer's eye pupil.",
+            "isolates_misconception": null,
+            "cognitive_inference": "Correct scientific understanding of aerial image propagation."
+          },
+          {
+            "key": "C",
+            "text": "The observer sees an erect virtual image located inside the glass of the lens itself.",
+            "isolates_misconception": "MISC-OPT-003",
+            "cognitive_inference": "Isolates Virtual Image Inversion."
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "DISAMBIG-004",
+      "domain": "Magnetic Effects",
+      "ambiguous_student_response": "Claims that a current-carrying wire placed in a magnetic field experiences zero deflection force.",
+      "competing_explanations": [
+        {
+          "misconception_id": "MISC-MAG-001",
+          "name": "Charge Neutrality Misunderstanding",
+          "hypothesis": "Student reasons that because the wire is electrically neutral overall (equal protons and electrons), a magnet cannot interact with it."
+        },
+        {
+          "misconception_id": "MISC-MAG-003",
+          "name": "Collinear / Orientation Dependence Confusion",
+          "hypothesis": "Student misapplies the vector orientation rule, thinking force is zero because wire is perpendicular, or that force is parallel."
+        }
+      ],
+      "disambiguation_probe_item": {
+        "probe_question_id": "PROBE-MAG-001",
+        "stem": "If the current-carrying wire is now rotated so that it is oriented strictly parallel to the magnetic field lines (angle = 0 degrees), what will happen to the magnetic force?",
+        "discriminating_options": [
+          {
+            "key": "A",
+            "text": "The force becomes maximum, because the current is now aligned directly with the magnetic field lines.",
+            "isolates_misconception": "MISC-MAG-003",
+            "cognitive_inference": "Isolates Collinear Force Fallacy: student assumes parallel alignment produces maximum interaction (like electric fields)."
+          },
+          {
+            "key": "B",
+            "text": "The force remains zero, but for the same reason: an electrically neutral metal wire never experiences magnetic force regardless of orientation.",
+            "isolates_misconception": "MISC-MAG-001",
+            "cognitive_inference": "Isolates Electrostatic Charge Conflation: rejects magnetic force on steady current based on electrostatic neutrality."
+          },
+          {
+            "key": "C",
+            "text": "The force becomes zero because F is proportional to sin(theta), and sin(0 deg) = 0, whereas in the perpendicular position the force was maximum.",
+            "isolates_misconception": null,
+            "cognitive_inference": "Correct vector cross-product understanding (F = I * L * B * sin(theta))."
+          }
+        ]
+      }
+    }
+  ]
+}

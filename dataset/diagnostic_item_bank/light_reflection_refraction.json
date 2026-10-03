@@ -1,0 +1,162 @@
+{
+  "chapter": "Chapter 9: Light – Reflection and Refraction",
+  "authoritative_reference": "NCERT Class 10 Science",
+  "questions": [
+    {
+      "question_id": "DIAG-OPT-001",
+      "question_type": "conceptual",
+      "cognitive_level": "Comprehension",
+      "stem": "A convex lens of focal length 15 cm forms a sharp real image of a burning candle on a white paper screen placed 30 cm on the opposite side. An experimenter covers the lower half of the convex lens completely with an opaque black cardboard sheet. What happens to the image seen on the screen?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The top half of the candle flame image completely disappears from the screen.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-001",
+          "distractor_rationale": "Reflects the Half-Lens Blocking Fallacy: assuming rays map geometrically 1:1 like a photographic stencil or pinhole window."
+        },
+        {
+          "key": "B",
+          "text": "The bottom half of the candle flame image completely disappears from the screen.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-001",
+          "distractor_rationale": "Also reflects the Half-Lens Blocking Fallacy, inverted due to real image inversion."
+        },
+        {
+          "key": "C",
+          "text": "The complete image of the entire candle remains intact at the same position, but its brightness (intensity) is reduced by approximately half.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct wave/ray optics: every point of an object emits light in all directions across the entire aperture. Uncovered aperture refracts a full cone from every object point."
+        },
+        {
+          "key": "D",
+          "text": "The image disappears entirely because light can no longer pass through both standard principal focal points.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-006",
+          "distractor_rationale": "Reflects the Special Ray Exclusivity misconception: believing image formation requires textbook reference rays that pass through the blocked lower half."
+        }
+      ],
+      "correct_answer": "C",
+      "authoritative_solution": "According to geometrical optics, every single point on an illuminated object emits a diverging cone of light rays that intercepts the entire surface of the lens aperture. The unobstructed upper half of the lens intercepts approximately 50% of the light flux from every point of the candle and refracts those rays to converge at their identical conjugate image points in the focal plane. Therefore, a complete image is formed, but with roughly half the luminous intensity (brightness).",
+      "source": "NCERT Class 10 Science Activity 9.9 & Goldberg & McDermott (1987)."
+    },
+    {
+      "question_id": "DIAG-OPT-002",
+      "question_type": "numerical",
+      "cognitive_level": "Application",
+      "stem": "An object of height 5 cm is placed at a distance of 20 cm in front of a concave mirror having a radius of curvature of 30 cm. Using the New Cartesian Sign Convention, calculate the position (v) of the image and state whether it is real or virtual.",
+      "options": [
+        {
+          "key": "A",
+          "text": "v = +60 cm, and the image is virtual and erect.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-004",
+          "distractor_rationale": "Results from sign convention error: substituting u = +20 cm and f = +15 cm into 1/f = 1/v + 1/u, yielding 1/v = 1/15 - 1/20 = 1/60."
+        },
+        {
+          "key": "B",
+          "text": "v = -60 cm, and the image is real and inverted.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct NCERT Cartesian convention: u = -20 cm, f = R/2 = -15 cm; 1/v = 1/(-15) - 1/(-20) = -1/15 + 1/20 = -1/60 => v = -60 cm."
+        },
+        {
+          "key": "C",
+          "text": "v = -8.57 cm, and the image is virtual.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-004",
+          "distractor_rationale": "Results from accidentally using the lens formula 1/f = 1/v - 1/u with concave mirror values: 1/v = 1/f + 1/u = -1/15 - 1/20 = -7/60 => v = -8.57 cm."
+        },
+        {
+          "key": "D",
+          "text": "v = +12 cm, and the image is real.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-004",
+          "distractor_rationale": "Results from taking u = -20 cm but treating concave focal length as positive f = +15 cm: 1/v = 1/15 - 1/(-20) = 1/15 + 1/20 = 7/60 => v = +8.57 cm, or algebraic transposition error."
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "By NCERT New Cartesian Sign Convention: Object is in front of mirror: u = -20 cm. For a concave mirror, focus lies in front: f = R / 2 = -30 cm / 2 = -15 cm. Applying the Mirror Formula: 1/f = 1/v + 1/u => 1/v = 1/f - 1/u = 1/(-15) - 1/(-20) = -1/15 + 1/20 = (-4 + 3)/60 = -1/60. Hence, v = -60 cm. The negative sign signifies that the image is formed in front of the mirror (real and inverted) at a distance of 60 cm from the pole.",
+      "source": "NCERT Class 10 Science Example 9.1 & CBSE Board Examination 2020."
+    },
+    {
+      "question_id": "DIAG-OPT-003",
+      "question_type": "ray_diagram",
+      "cognitive_level": "Analysis",
+      "stem": "A student looks into a flat plane mirror and observes the image of their face. Which statement accurately describes the nature of the image and the physical path of light rays?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The image is real because light rays physically reflect backwards, penetrate through the glass, and converge at a point behind the mirror surface.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-003",
+          "distractor_rationale": "Reflects the Virtual Image Ray Convergence Fallacy: believing light rays physically penetrate and meet behind reflecting barriers."
+        },
+        {
+          "key": "B",
+          "text": "The image is virtual because light rays reflect off the front surface and diverge; when produced backward by the brain, they appear to intersect behind the mirror, where no actual light exists.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct definition of virtual image under NCERT: virtual rays are apparent backward extensions of physically diverging reflected rays."
+        },
+        {
+          "key": "C",
+          "text": "The image is virtual only because no physical screen has been placed behind the mirror; if a photographic film were inserted behind the silvered surface, it would capture the image.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-002",
+          "distractor_rationale": "Reflects Screen Reification: believing virtual/real distinction is merely a technological limitation of screen placement."
+        },
+        {
+          "key": "D",
+          "text": "The image is inverted top-to-bottom and upright left-to-right because reflection always preserves horizontal parity.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-003",
+          "distractor_rationale": "Misunderstands lateral inversion in plane mirrors (front-to-back inversion perceived as lateral inversion)."
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "Light rays from an object strike the plane mirror and reflect strictly according to the law of reflection (angle of incidence = angle of reflection). The reflected rays diverge into the observer's eye. The eye and visual cortex trace these diverging rays straight backward along their lines of sight. They appear to intersect at a point behind the mirror located at the same perpendicular distance as the object in front. Because no light rays actually pass through or emanate from behind the mirror, the image cannot be projected onto a screen and is strictly virtual.",
+      "source": "NCERT Class 10 Science Section 9.1 (Reflection of Light) & Galili & Hazan (2000)."
+    },
+    {
+      "question_id": "DIAG-OPT-004",
+      "question_type": "application",
+      "cognitive_level": "Comprehension",
+      "stem": "A narrow beam of monochromatic yellow light passes obliquely from air into a rectangular parallel-faced glass block of refractive index 1.5. Upon emerging from the opposite parallel face back into air, what are the direction and position of the emergent beam relative to the incident beam?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The emergent beam is permanently bent at an angle towards the normal, deviating angularly by 30 degrees.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-005",
+          "distractor_rationale": "Reflects the Glass Slab Emergent Ray Deviation Fallacy: confusing lateral displacement with angular deviation in prisms."
+        },
+        {
+          "key": "B",
+          "text": "The emergent beam is strictly parallel to the original incident beam, but shifted sideways by a perpendicular distance known as lateral displacement.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct physics: at parallel interfaces, i1 = r2 and r1 = i2, so angle of emergence equals angle of incidence."
+        },
+        {
+          "key": "C",
+          "text": "The emergent beam is dispersed into a spectrum of seven colors because glass always disperses all light.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-002",
+          "distractor_rationale": "Fails to recognize monochromatic light cannot disperse, plus parallel faces recombine even polychromatic components."
+        },
+        {
+          "key": "D",
+          "text": "The emergent beam emerges exactly along the original undeviated path with zero sideways shift.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-005",
+          "distractor_rationale": "Neglects refraction inside the medium entirely, assuming light simply steps through unchanged."
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "When light enters the first face (air-to-glass), it bends towards the normal: n = sin(i) / sin(r). At the second opposing parallel face (glass-to-air), the internal angle of incidence equals r. Light refracts away from the normal into air: 1/n = sin(r) / sin(e). Equating both shows sin(e) = sin(i), so angle of emergence e equals angle of incidence i. Hence, the emergent ray is parallel to the incident ray. The refraction inside the slab creates a parallel sideways shift termed 'lateral displacement' which depends on the thickness of the slab, refractive index, and angle of incidence.",
+      "source": "NCERT Class 10 Science Section 9.3.1 (Refraction through a Rectangular Glass Slab)."
+    }
+  ]
+}

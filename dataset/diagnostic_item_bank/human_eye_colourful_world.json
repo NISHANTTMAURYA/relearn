@@ -1,0 +1,162 @@
+{
+  "chapter": "Chapter 10: The Human Eye and the Colourful World",
+  "authoritative_reference": "NCERT Class 10 Science",
+  "questions": [
+    {
+      "question_id": "DIAG-EYE-001",
+      "question_type": "conceptual",
+      "cognitive_level": "Application",
+      "stem": "A student sitting on the last bench of a classroom can read the letters written in their textbook clearly but cannot read the words written on the blackboard clearly. Which defect of vision does this student have, and what kind of corrective lens must be prescribed?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Hypermetropia (far-sightedness), corrected by a convex lens of suitable focal length.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-001",
+          "distractor_rationale": "Confuses myopia with hypermetropia, mistakenly concluding that because the far blackboard is blurred, the condition is far-sightedness."
+        },
+        {
+          "key": "B",
+          "text": "Myopia (near-sightedness), corrected by a convex lens because a magnifying lens is needed to enlarge distant letters.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-001",
+          "distractor_rationale": "Correctly diagnoses myopia but commits the Lens Inversion Fallacy by prescribing a convex lens to 'magnify' distant targets."
+        },
+        {
+          "key": "C",
+          "text": "Myopia (near-sightedness), corrected by a concave lens of suitable focal length.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct NCERT diagnosis: near objects clear, distant blurred = myopia; eye lens has excessive convergence, requiring a diverging (concave) lens to shift the far point."
+        },
+        {
+          "key": "D",
+          "text": "Presbyopia, corrected by a bifocal lens with upper convex and lower concave segments.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-001",
+          "distractor_rationale": "Conflates student refractive defect with age-related loss of accommodation (presbyopia), with inverted bifocal specification."
+        }
+      ],
+      "correct_answer": "C",
+      "authoritative_solution": "A person who can see nearby objects distinctly (such as a textbook at ~25 cm) but cannot see distant objects clearly (such as the classroom blackboard) has myopia (near-sightedness). In a myopic eye, rays from a distant object are converged in front of the retina rather than on it. To correct this, a concave (diverging) lens is placed in front of the eye. The concave lens diverges the incoming parallel rays slightly, making them appear as if they are originating from the student's myopic far point, allowing the crystalline lens to form a sharp image on the retina.",
+      "source": "NCERT Class 10 Science Section 10.2.1 & NCERT Exemplar Problem 10.2."
+    },
+    {
+      "question_id": "DIAG-EYE-002",
+      "question_type": "conceptual",
+      "cognitive_level": "Analysis",
+      "stem": "When a beam of narrow white light enters a triangular glass prism, it disperses into a band of distinct spectral colors (VIBGYOR). Which color of light suffers the greatest deviation from its initial path, and why?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Red light suffers the greatest deviation because red photons carry the highest momentum and interact most aggressively with the glass matrix.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-002",
+          "distractor_rationale": "Reflects the Prism Dispersion Speed & Deviation Inversion Fallacy: assuming red light deviates most due to colloquial associations of red with high energy/force."
+        },
+        {
+          "key": "B",
+          "text": "Violet light suffers the greatest deviation because it has the shortest wavelength and travels slowest in glass, experiencing the highest refractive index.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct physics: n = c / v. In dispersive media, shorter wavelength lambda corresponds to higher refractive index n, producing maximum angular deviation D."
+        },
+        {
+          "key": "C",
+          "text": "Green light suffers the greatest deviation because it lies exactly in the middle of the visible spectrum and resonates with silica molecules.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-002",
+          "distractor_rationale": "Heuristic error picking the central mean color as the extreme value."
+        },
+        {
+          "key": "D",
+          "text": "All colors suffer identical deviation inside the prism, and the color separation occurs only upon reflection at the second face.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-005",
+          "distractor_rationale": "Fails to grasp that dispersion originates at the very first refracting interface inside the dispersive medium."
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "White light consists of multiple wavelengths. In a vacuum, all colors travel with the same speed c = 3 * 10^8 m/s. However, in a transparent refracting medium like glass, different wavelengths travel with different speeds (v_red > v_violet). Since refractive index n = c / v, the refractive index of glass is greatest for violet light (n_violet > n_red). By Snell's Law and the prism deviation formula, the angle of deviation is greatest for the color with the highest refractive index. Therefore, violet light bends (deviates) the most, and red light bends the least.",
+      "source": "NCERT Class 10 Science Section 10.2 (Dispersion of White Light by a Glass Prism)."
+    },
+    {
+      "question_id": "DIAG-EYE-003",
+      "question_type": "theory_based",
+      "cognitive_level": "Comprehension",
+      "stem": "Why do stars twinkle at night when viewed from the surface of Earth, whereas planets do not twinkle?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Stars periodically pulse their nuclear fusion reactions on and off, whereas planets emit steady unvarying radiation.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-003",
+          "distractor_rationale": "Reflects the Star Twinkling Emission Artifact Fallacy: attributing light intensity variations to intrinsic source fluctuations."
+        },
+        {
+          "key": "B",
+          "text": "Stars are point-sized sources of light situated very far away; turbulent atmospheric temperature and density gradients continuously shift the ray paths, causing flickering. Planets are extended sources where point-source fluctuations average out to zero.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Authoritative NCERT explanation: atmospheric refraction of point source vs disc averaging."
+        },
+        {
+          "key": "C",
+          "text": "Stars twinkle because floating clouds and smog particles mechanically cut off their light beam once every few milliseconds.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-003",
+          "distractor_rationale": "Attributes continuous refraction effect to mechanical macroscopic particulate obstruction."
+        },
+        {
+          "key": "D",
+          "text": "Planets do not twinkle because their light is polarized by solar reflection, rendering them immune to atmospheric refraction.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-003",
+          "distractor_rationale": "Invents pseudo-scientific mechanism (polarization immunity) rather than optical angular aperture size."
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "Stars are extremely distant from Earth and act as effective optical point sources of light. The Earth's atmosphere is non-static; air currents produce continuous fluctuations in local temperature and density, altering the refractive index of air layers along the line of sight. This continuously refracts the narrow beam slightly, causing random variations in apparent star position and luminous intensity entering the eye (twinkling). Planets, being much closer to Earth, subtend larger visual angles and act as extended collections of millions of point sources. The random intensity variations from different points cancel each other out, resulting in a steady, non-twinkling appearance.",
+      "source": "NCERT Class 10 Science Section 10.3 (Atmospheric Refraction)."
+    },
+    {
+      "question_id": "DIAG-EYE-004",
+      "question_type": "application",
+      "cognitive_level": "Analysis",
+      "stem": "To an astronaut standing on the surface of the Moon, what does the daytime sky appear as, and what is the scientific reason?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Bright blue, because the lunar soil reflects sunlight upward into the atmosphere.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-004",
+          "distractor_rationale": "Reflects the Sky Surface Reflection Fallacy: attributing sky illumination to ground reflection rather than particulate scattering."
+        },
+        {
+          "key": "B",
+          "text": "Pitch dark (black), because the Moon has no atmosphere to cause Rayleigh scattering of sunlight into the observer's eyes.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct physics: without an atmosphere containing gas molecules or fine particles, no light is scattered sideways; empty space appears completely black."
+        },
+        {
+          "key": "C",
+          "text": "Deep red, because long wavelengths are the only waves capable of penetrating vacuum across interplanetary distances.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-002",
+          "distractor_rationale": "Conflates sunrise/sunset scattering through dense atmosphere with vacuum transmission."
+        },
+        {
+          "key": "D",
+          "text": "Pure white, because without air to disperse light, white sunlight uniformly illuminates all angles of the sky dome.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-004",
+          "distractor_rationale": "Assumes sunlight naturally 'fills' empty space regardless of scattering scatterers."
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "On Earth, the blue color of the daytime sky is caused by Rayleigh scattering: sunlight interacts with atmospheric gas molecules (N2, O2) that are smaller than the wavelength of visible light, preferentially scattering shorter blue wavelengths in all directions toward an observer. The Moon has no atmosphere. In the absence of an atmosphere, there are no particles or molecules to scatter light from the solar beam into the eyes of an observer looking away from the Sun. Consequently, the daytime sky on the Moon appears completely dark and black, even while the Sun shines brightly.",
+      "source": "NCERT Class 10 Science Section 10.4.2 (Colour of the Sky)."
+    }
+  ]
+}

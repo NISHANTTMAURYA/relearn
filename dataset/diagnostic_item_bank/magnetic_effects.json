@@ -1,0 +1,162 @@
+{
+  "chapter": "Chapter 12: Magnetic Effects of Electric Current",
+  "authoritative_reference": "NCERT Class 10 Science",
+  "questions": [
+    {
+      "question_id": "DIAG-MAG-001",
+      "question_type": "conceptual",
+      "cognitive_level": "Comprehension",
+      "stem": "A stationary positive charge (proton) is placed at rest midway between the North pole and the South pole of a strong permanent horseshoe magnet. What is the magnetic force experienced by the proton?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A strong attractive force directed toward the South pole, because positive charges are attracted to negative magnetic poles.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-001",
+          "distractor_rationale": "Reflects the Magnetic Pole = Electrostatic Charge Fallacy: treating North/South poles as positive/negative electric charges."
+        },
+        {
+          "key": "B",
+          "text": "A strong repulsive force directed away from the North pole.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-001",
+          "distractor_rationale": "Also reflects the Pole = Charge Fallacy, assuming like positive charges repel North poles."
+        },
+        {
+          "key": "C",
+          "text": "Zero, because a static magnetic field exerts force only on moving electric charges (F = q * v * B * sin(theta)), and for a stationary charge v = 0.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Fundamental physics: magnetic force requires relative velocity between charge and magnetic field."
+        },
+        {
+          "key": "D",
+          "text": "A continuous downward rotational torque causing the proton to spin in place indefinitely.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-003",
+          "distractor_rationale": "Conflates macroscopic current loop torque with isolated static point charge behavior."
+        }
+      ],
+      "correct_answer": "C",
+      "authoritative_solution": "A magnetic field does not exert any mechanical force on a stationary electric charge. Magnetic force is described by the Lorentz force equation: F = q * v * B * sin(theta), where q is the charge, v is its speed relative to the magnetic field, and theta is the angle between the velocity vector and magnetic field vector. Since the proton is explicitly at rest, its velocity v = 0 m/s. Consequently, F = q * (0) * B * sin(theta) = 0 N. A magnetic field interacts only with electric charges that are in motion relative to the field.",
+      "source": "Maloney et al. (CSEM, 2001, Item 22); NCERT Class 10 Science Section 12.3."
+    },
+    {
+      "question_id": "DIAG-MAG-002",
+      "question_type": "conceptual",
+      "cognitive_level": "Analysis",
+      "stem": "Which of the following statements correctly describes the properties of magnetic field lines produced by a current-carrying solenoid or bar magnet?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Magnetic field lines can cross each other if the current flowing through the solenoid is made sufficiently large.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-004",
+          "distractor_rationale": "Reflects the Field Line Crossing Fallacy: viewing field lines as tangible physical wires that can collide or cross under high intensity."
+        },
+        {
+          "key": "B",
+          "text": "Magnetic field lines are continuous closed curves; outside the magnet they emerge from North and enter South, while inside they run from South to North. Two field lines never intersect.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Authoritative NCERT field properties: continuous closed loops; non-intersecting."
+        },
+        {
+          "key": "C",
+          "text": "Magnetic field lines originate at the North pole and permanently terminate at the South pole, leaving the interior of a bar magnet completely field-free.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-004",
+          "distractor_rationale": "Treats magnetic field lines like open electrostatic field lines that start on positive and terminate on negative charges."
+        },
+        {
+          "key": "D",
+          "text": "Magnetic field lines are circular outside the magnet and straight parallel lines outside, terminating at infinity.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-004",
+          "distractor_rationale": "Inverts internal and external spatial patterns."
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "By scientific definition, magnetic field lines are continuous closed loops. Outside the magnet, their direction is taken by convention from the North pole to the South pole. Inside the magnet, the field lines point from the South pole to the North pole, completing the closed loop (especially prominent inside a solenoid where field lines are parallel and uniform). Crucially, two field lines can never cross each other. If they did intersect at a given point, a magnetic compass placed at that intersection would simultaneously point in two distinct directions, which is physically impossible.",
+      "source": "NCERT Class 10 Science Section 12.1 (Magnetic Field and Field Lines) & Section 12.2.3."
+    },
+    {
+      "question_id": "DIAG-MAG-003",
+      "question_type": "application",
+      "cognitive_level": "Application",
+      "stem": "An electron enters a uniform magnetic field that is directed vertically downwards. The electron's initial velocity is directed horizontally from West to East. According to Fleming's Left-Hand Rule, in which direction does the magnetic force deflect the electron?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Towards the South.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct application: electron travels West to East, so conventional current is East to West (center finger points West). Field is Downwards (forefinger points Down). Thumb points South."
+        },
+        {
+          "key": "B",
+          "text": "Towards the North.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-005",
+          "distractor_rationale": "Forgets that conventional current is opposite to electron motion: took current as West-to-East, resulting in an inverted North force."
+        },
+        {
+          "key": "C",
+          "text": "Vertically downwards, accelerating along the direction of the magnetic field.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-003",
+          "distractor_rationale": "Reflects the Magnetic Force Collinear / Parallel Fallacy: assuming force acts along field lines."
+        },
+        {
+          "key": "D",
+          "text": "Horizontally forwards from West to East, increasing its forward linear speed.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-003",
+          "distractor_rationale": "Assumes magnetic force pushes charges in the direction of their own velocity."
+        }
+      ],
+      "correct_answer": "A",
+      "authoritative_solution": "Fleming's Left-Hand Rule states that when the forefinger, center finger, and thumb of the left hand are held mutually perpendicular: Forefinger = Magnetic Field (B), Center finger = Current (I, conventional current direction), Thumb = Force / Motion (F). Here, the electron (negatively charged) travels from West to East. Conventional current is defined as the direction of positive charge flow, which is strictly opposite to electron drift: therefore, Current (I) is from East to West. 1. Point the left forefinger downwards (magnetic field B). 2. Orient the left center finger towards the West (current I). 3. The outstretched left thumb points directly towards the South. Thus, the magnetic force acts towards the South.",
+      "source": "NCERT Class 10 Science Example 12.2 & CBSE Board Exam 2022 Question 18."
+    },
+    {
+      "question_id": "DIAG-MAG-004",
+      "question_type": "conceptual",
+      "cognitive_level": "Comprehension",
+      "stem": "A student attempts to pick up various metal objects using a strong neodymium permanent magnet. Which of the following objects will be strongly attracted to the magnet?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A pure copper coin, a pure aluminium soda can, and a silver ring.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-002",
+          "distractor_rationale": "Reflects the Universal Metallic Magnetism Fallacy: believing all metallic electrical conductors are attracted to magnets."
+        },
+        {
+          "key": "B",
+          "text": "An iron nail, a nickel coin, and a steel paperclip.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null,
+          "distractor_rationale": "Correct physics: only ferromagnetic materials (iron, nickel, cobalt, and steel alloys) exhibit strong permanent ferromagnetism at room temperature."
+        },
+        {
+          "key": "C",
+          "text": "Any solid object that can conduct electrical current when placed in a circuit.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-002",
+          "distractor_rationale": "Directly links electrical conductance with magnetic permeability."
+        },
+        {
+          "key": "D",
+          "text": "Only objects that already carry a net static positive or negative electric charge.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-001",
+          "distractor_rationale": "Conflates ferromagnetism with electrostatic induction."
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "Permanent magnets attract ferromagnetic materials due to microscopic magnetic domain alignment. Elements that exhibit strong ferromagnetism at room temperature are iron (Fe), cobalt (Co), nickel (Ni), and alloys like steel. Non-ferromagnetic metals such as pure copper, aluminium, brass, gold, and silver have paired electron spins or lack cooperative exchange interaction; they do not experience perceptible attraction to laboratory magnets. Therefore, iron nails, nickel coins, and steel clips are strongly attracted, while copper, aluminium, and silver objects are not.",
+      "source": "NCERT Class 10 Science Activity 12.1 & Driver et al. (1994)."
+    }
+  ]
+}

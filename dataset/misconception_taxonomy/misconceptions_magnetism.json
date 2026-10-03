@@ -1,0 +1,81 @@
+{
+  "domain": "Magnetism & Electromagnetism",
+  "ncert_chapter": "Chapter 12: Magnetic Effects of Electric Current",
+  "misconceptions": [
+    {
+      "misconception_id": "MISC-MAG-001",
+      "name": "Magnetic Pole = Electrostatic Charge Equivalence Fallacy",
+      "naive_mental_model": "The North pole of a magnet is positively charged (+Q) and the South pole is negatively charged (-Q), meaning a stationary electric charge placed near a bar magnet will experience an electrostatic attraction or repulsion.",
+      "scientific_ground_truth": "Magnetic poles and electric charges are fundamentally different physical entities. A permanent magnet is electrically neutral overall (zero net electrostatic charge). A stationary electric charge (v = 0) placed in a static magnetic field experiences exactly zero magnetic force (F = q * v * B * sin(theta) = 0). Magnetic poles always exist in inseparable dipoles.",
+      "cognitive_trigger": "Superficial linguistic and operational similarity: 'like charges repel / like poles repel', leading students to conflate North/South with positive/negative.",
+      "distinguishing_signature": "Student predicts that an isolated stationary proton will be attracted towards the South pole of a stationary bar magnet.",
+      "competing_misconceptions": [
+        "MISC-MAG-003",
+        "MISC-MAG-004"
+      ],
+      "literature_citations": [
+        "Maloney, D. P., O'Kuma, T. L., Hieggelke, C. J., & Van Heuvelen, A. (2001). Surveying students' conceptual knowledge of electricity and magnetism. American Journal of Physics, 69(S1), S12-S23 (CSEM Test).",
+        "Guisasola, J., Almudí, J. M., & Zubimendi, J. L. (2004). Difficulties in learning the concept of magnetic field in introductory physics courses. Science Education, 88(3), 443-464."
+      ]
+    },
+    {
+      "misconception_id": "MISC-MAG-002",
+      "name": "Universal Metallic Magnetism Fallacy",
+      "naive_mental_model": "All metals (including copper, aluminium, brass, gold, and silver) are naturally attracted to permanent magnets simply because they are metallic and conduct electricity.",
+      "scientific_ground_truth": "Only ferromagnetic materials (such as iron, steel, nickel, cobalt, and specific alloys) exhibit strong spontaneous magnetic attraction to permanent magnets at room temperature. Common conductors such as pure copper and aluminium are non-ferromagnetic (diamagnetic/paramagnetic) and are not visibly attracted to household or laboratory bar magnets.",
+      "cognitive_trigger": "Everyday linguistic generalization where 'metal' and 'magnetic' are used almost synonymously by non-scientists.",
+      "distinguishing_signature": "Student predicts that wrapping a copper wire into a coil makes the copper material itself permanently magnetic, or that a copper coin will stick to a bar magnet.",
+      "competing_misconceptions": [
+        "MISC-MAG-001"
+      ],
+      "literature_citations": [
+        "Driver, R. et al. (1994). Making Sense of Secondary Science (Chapter on Magnetism).",
+        "Open University (2020). Teaching secondary science: Magnetism."
+      ]
+    },
+    {
+      "misconception_id": "MISC-MAG-003",
+      "name": "Magnetic Force Collinear / Parallel Fallacy",
+      "naive_mental_model": "The magnetic force on a moving electric charge or a current-carrying wire acts along (parallel to) the magnetic field lines, just like gravitational force acts along gravity lines or electrostatic force acts along electric field lines.",
+      "scientific_ground_truth": "Magnetic force is an orthogonal cross-product interaction. The Lorentz force vector acts strictly perpendicular to both the direction of the magnetic field (B) and the velocity vector (v) or current vector (I), as determined by Fleming's Left-Hand Rule. If a charge moves parallel to the magnetic field lines (theta = 0 deg or 180 deg), the magnetic force is identically zero.",
+      "cognitive_trigger": "Analogical overextension from gravity (F = mg along g) and electrostatics (F = qE along E).",
+      "distinguishing_signature": "Student predicts that an electron moving parallel along a magnetic field line will accelerate forward or decelerate backward along the line.",
+      "competing_misconceptions": [
+        "MISC-MAG-001",
+        "MISC-MAG-005"
+      ],
+      "literature_citations": [
+        "CSEM Survey (Maloney et al., 2001, Item 22 & 27).",
+        "NCERT Class 10 Science (Chapter 12, Section 12.3: Force on a Current-Carrying Conductor)."
+      ]
+    },
+    {
+      "misconception_id": "MISC-MAG-004",
+      "name": "Magnetic Field Line Crossing / Discontinuous Loop Fallacy",
+      "naive_mental_model": "Magnetic field lines can cross or intersect each other when two strong fields overlap, or field lines start at the North pole and terminate at the South pole (open lines with dead ends).",
+      "scientific_ground_truth": "Magnetic field lines are continuous closed loops. Outside the magnet, they emerge from the North pole and enter the South pole; inside the magnet, they run from South to North. Two field lines can never cross; if they did, a magnetic compass needle placed at the intersection point would have to point simultaneously in two different directions, which is physically impossible.",
+      "cognitive_trigger": "Thinking of field lines as discrete physical threads or strings that can tangle or overlap in space.",
+      "distinguishing_signature": "Student draws overlapping field lines between two like poles, or states that field lines end abruptly at the surface of the South pole.",
+      "competing_misconceptions": [
+        "MISC-MAG-001"
+      ],
+      "literature_citations": [
+        "NCERT Class 10 Science (Chapter 12, Activity 12.2 and Section 12.1: Magnetic Field and Field Lines)."
+      ]
+    },
+    {
+      "misconception_id": "MISC-MAG-005",
+      "name": "Directional Hand Rule Inversion Fallacy",
+      "naive_mental_model": "Applying the Right-Hand Thumb Rule instead of Fleming's Left-Hand Rule to find the direction of magnetic force on a current-carrying wire, or using the left hand for the thumb rule.",
+      "scientific_ground_truth": "The Right-Hand Thumb Rule is exclusively for finding the magnetic field orientation created by an electric current. Fleming's Left-Hand Rule is specifically for finding the mechanical force (motion) experienced by an electric current placed in an external magnetic field (Thumb = Force, Forefinger = Field, Center finger = Current).",
+      "cognitive_trigger": "Overload of multiple hand rules (Right-Hand Thumb, Fleming's Left-Hand, and in older syllabi Fleming's Right-Hand generator rule) causing arbitrary motor execution errors.",
+      "distinguishing_signature": "Student points curled fingers to determine mechanical motion direction, or reports force direction backwards due to hand swapping.",
+      "competing_misconceptions": [
+        "MISC-MAG-003"
+      ],
+      "literature_citations": [
+        "CBSE Class 10 Board Examinations Examiners' Report on Common Candidate Errors (Physics - Magnetic Effects Section, 2021-2023)."
+      ]
+    }
+  ]
+}

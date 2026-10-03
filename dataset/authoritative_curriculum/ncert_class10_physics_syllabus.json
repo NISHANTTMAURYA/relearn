@@ -1,0 +1,142 @@
+{
+  "curriculum_framework": "NCERT Class 10 Science (Rationalised Edition)",
+  "subject": "Physics",
+  "level": "Secondary (Class X, Age 14-16)",
+  "learning_outcomes": [
+    "Differentiate between physical observables and derived mathematical representations",
+    "Apply New Cartesian Sign Convention systematically without relying on spatial intuition",
+    "Distinguish between charge conservation and energy dissipation in electrical networks",
+    "Identify geometric ray behavior at boundaries vs holistic object image formation",
+    "Differentiate magnetic field vectors, force vectors, and current directions using formal orthogonal vector rules"
+  ],
+  "chapters": [
+    {
+      "chapter_id": "CH09_LIGHT",
+      "chapter_title": "Light – Reflection and Refraction",
+      "topics": [
+        {
+          "topic_id": "TOPIC_09_01",
+          "name": "Reflection of Light & Spherical Mirrors",
+          "core_formulas": [
+            "1/f = 1/v + 1/u (Mirror Formula)",
+            "m = h_prime / h = -v / u (Magnification)",
+            "f = R / 2 (Focal length and radius of curvature)"
+          ],
+          "sign_conventions": {
+            "origin": "Pole (P) of the mirror",
+            "incident_light_direction": "Left to right (positive x-axis)",
+            "u": "Always negative for real objects situated in front of mirror",
+            "f_concave": "Negative",
+            "f_convex": "Positive",
+            "real_inverted_image": "v is negative, m is negative, h_prime is negative",
+            "virtual_erect_image": "v is positive, m is positive, h_prime is positive"
+          }
+        },
+        {
+          "topic_id": "TOPIC_09_02",
+          "name": "Refraction of Light & Spherical Lenses",
+          "core_formulas": [
+            "n_21 = v_1 / v_2 = sin(i) / sin(r) (Snell's Law)",
+            "n = c / v (Absolute Refractive Index)",
+            "1/f = 1/v - 1/u (Lens Formula)",
+            "m = h_prime / h = +v / u (Lens Magnification)",
+            "P = 1 / f (in metres), Unit: Dioptre (D)"
+          ],
+          "sign_conventions": {
+            "origin": "Optical Centre (O) of the lens",
+            "f_convex": "Positive (converging)",
+            "f_concave": "Negative (diverging)",
+            "real_inverted_image": "v is positive (formed on opposite side), m is negative",
+            "virtual_erect_image": "v is negative (formed on same side as object), m is positive"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "CH10_HUMAN_EYE",
+      "chapter_title": "The Human Eye and the Colourful World",
+      "topics": [
+        {
+          "topic_id": "TOPIC_10_01",
+          "name": "Human Eye Anatomy and Vision Defects",
+          "core_concepts": [
+            "Power of accommodation: Ciliary muscles alter focal length of crystalline lens",
+            "Near point = 25 cm; Far point = infinity (normal eye)",
+            "Myopia (short-sightedness): Image forms in front of retina; corrected by concave lens",
+            "Hypermetropia (far-sightedness): Image forms behind retina; corrected by convex lens",
+            "Presbyopia: Loss of accommodation due to aging; corrected by bi-focal lenses"
+          ]
+        },
+        {
+          "topic_id": "TOPIC_10_02",
+          "name": "Dispersion, Atmospheric Refraction, and Scattering",
+          "core_concepts": [
+            "Prism dispersion: Different wavelengths travel with different speeds in glass; Violet deviates most, Red deviates least",
+            "Rainbow: Combined dispersion, internal reflection, and refraction in water droplets",
+            "Atmospheric refraction: Continuous refractive index gradient causing apparent star displacement, twinkling, advanced sunrise (2 min) and delayed sunset (2 min)",
+            "Rayleigh Scattering: Intensity proportional to 1 / lambda^4; blue scatters most in clear atmosphere; red scatters least and penetrates haze/fog"
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "CH11_ELECTRICITY",
+      "chapter_title": "Electricity",
+      "topics": [
+        {
+          "topic_id": "TOPIC_11_01",
+          "name": "Current, Potential Difference, and Ohm's Law",
+          "core_formulas": [
+            "I = Q / t (Unit: Ampere, A)",
+            "V = W / Q (Unit: Volt, V)",
+            "V = I * R (Ohm's Law at constant temperature)",
+            "R = rho * (L / A) (Dependence on length, area, resistivity rho)"
+          ],
+          "core_concepts": [
+            "Electric current is the continuous rate of net charge flow through a cross section",
+            "Electrons move from negative to positive; conventional current flows positive to negative",
+            "Resistivity is an intrinsic material property (ohm-metre), independent of dimensions"
+          ]
+        },
+        {
+          "topic_id": "TOPIC_11_02",
+          "name": "Circuit Combinations, Joule Heating, and Power",
+          "core_formulas": [
+            "Series: R_s = R1 + R2 + R3; Current I is constant across all resistors; V_total = V1 + V2 + V3",
+            "Parallel: 1/R_p = 1/R1 + 1/R2 + 1/R3; Voltage V is constant across all branches; I_total = I1 + I2 + I3",
+            "H = I^2 * R * t (Joule's Law of Heating)",
+            "P = V * I = I^2 * R = V^2 / R (Unit: Watt, W)",
+            "Commercial Energy: 1 kWh = 3.6 * 10^6 J"
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "CH12_MAGNETISM",
+      "chapter_title": "Magnetic Effects of Electric Current",
+      "topics": [
+        {
+          "topic_id": "TOPIC_12_01",
+          "name": "Magnetic Fields and Field Lines",
+          "core_concepts": [
+            "Magnetic field is a vector quantity having both magnitude and direction",
+            "Field lines emerge from North pole and enter South pole outside; travel South to North inside (continuous closed loops)",
+            "Field lines never intersect: two lines intersecting would imply two distinct compass deflection directions at a single point, which is physically impossible",
+            "Right-Hand Thumb Rule: Thumb indicates current direction; curled fingers indicate magnetic field line circles"
+          ]
+        },
+        {
+          "topic_id": "TOPIC_12_02",
+          "name": "Solenoid, Lorentz Force, and Fleming's Left-Hand Rule",
+          "core_concepts": [
+            "Solenoid produces uniform parallel magnetic field lines inside, identical to a bar magnet",
+            "Magnetic force F acts on a moving charge or current-carrying wire perpendicular to both field and current",
+            "Fleming's Left-Hand Rule: Forefinger = Field (B), Center finger = Current (I), Thumb = Force/Motion (F)",
+            "Force is zero when conductor is parallel to magnetic field; maximum when perpendicular",
+            "Domestic circuit safety: Live wire (220V, red/brown), Neutral (0V, black/blue), Earth wire (green) protecting metal appliances from leakage current"
+          ]
+        }
+      ]
+    }
+  ]
+}

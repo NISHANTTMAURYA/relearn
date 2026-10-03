@@ -1,0 +1,96 @@
+{
+  "authoritative_source": {
+    "title": "Science: Textbook for Class X",
+    "short_title": "NCERT Class 10 Science",
+    "publisher": "National Council of Educational Research and Training (NCERT)",
+    "publication_location": "Sri Aurobindo Marg, New Delhi 110016, India",
+    "publication_year": "2023-2024 (Rationalised Edition)",
+    "language": "English",
+    "isbn": "978-81-7450-678-8",
+    "book_code": "1064",
+    "status": "Single authoritative syllabus baseline for Re:Learn Class 10 Physics",
+    "licensing_and_access": {
+      "access_model": "Publicly accessible for non-commercial educational use under Government of India open education norms",
+      "official_portal": "https://ncert.nic.in/textbook.php",
+      "copyright_notice": "National Council of Educational Research and Training. All rights reserved for commercial reproduction.",
+      "fair_use_justification": "Curricular concepts, learning outcomes, and formulas used as baseline educational standard for adaptive AI diagnostic modeling in compliance with non-commercial educational research."
+    },
+    "physics_chapters": [
+      {
+        "chapter_number_rationalised": 9,
+        "chapter_number_legacy": 10,
+        "title": "Light – Reflection and Refraction",
+        "page_range": "133-159",
+        "core_domains": [
+          "Spherical mirrors (concave and convex)",
+          "Cartesian sign convention (New Cartesian Sign Convention)",
+          "Mirror formula and linear magnification",
+          "Laws of refraction and absolute refractive index",
+          "Refraction through rectangular glass slab and optical density",
+          "Refraction by spherical lenses (convex and concave)",
+          "Lens formula and magnification",
+          "Power of a lens (dioptres)"
+        ]
+      },
+      {
+        "chapter_number_rationalised": 10,
+        "chapter_number_legacy": 11,
+        "title": "The Human Eye and the Colourful World",
+        "page_range": "160-172",
+        "core_domains": [
+          "Structure and function of human eye and accommodation",
+          "Defects of vision: Myopia, Hypermetropia, Presbyopia and their ray diagram corrections",
+          "Refraction of light through a triangular glass prism",
+          "Dispersion of white light and rainbow formation",
+          "Atmospheric refraction: twinkling of stars, advanced sunrise and delayed sunset",
+          "Scattering of light: Tyndall effect, colour of clear sky, reddish sky at sunrise/sunset"
+        ]
+      },
+      {
+        "chapter_number_rationalised": 11,
+        "chapter_number_legacy": 12,
+        "title": "Electricity",
+        "page_range": "173-195",
+        "core_domains": [
+          "Electric current and circuit definitions (I = Q/t)",
+          "Electric potential and potential difference (V = W/Q)",
+          "Circuit diagram symbols and measurement instruments (Ammeter, Voltmeter)",
+          "Ohm's law (V = IR) and V-I characteristics",
+          "Resistance and factors affecting resistance (R = rho * L / A)",
+          "Resistors in series (R_s = R1 + R2 + R3) and voltage division",
+          "Resistors in parallel (1/R_p = 1/R1 + 1/R2 + 1/R3) and current division",
+          "Heating effect of electric current (Joule's law: H = I^2 R t)",
+          "Electric power (P = VI = I^2 R = V^2 / R) and commercial unit of electrical energy (kWh)"
+        ]
+      },
+      {
+        "chapter_number_rationalised": 12,
+        "chapter_number_legacy": 13,
+        "title": "Magnetic Effects of Electric Current",
+        "page_range": "196-209",
+        "core_domains": [
+          "Magnetic field and field lines properties (closed continuous loops, non-intersecting)",
+          "Oersted's discovery: magnetic field due to current-carrying straight conductor",
+          "Right-Hand Thumb Rule (direction of field lines)",
+          "Magnetic field due to circular loop and cylindrical solenoid",
+          "Electromagnet vs permanent bar magnet",
+          "Force on a current-carrying conductor in a magnetic field",
+          "Fleming's Left-Hand Rule (motor effect: force, field, current)",
+          "Domestic electric circuits (live, neutral, earth wires, grounding, fuse, overloading, short circuiting)"
+        ]
+      }
+    ],
+    "accompanying_authoritative_pedagogical_resources": [
+      {
+        "title": "NCERT Exemplar Problems – Science Class X",
+        "publisher": "NCERT",
+        "description": "Standard pedagogical resource containing multiple-choice diagnostic items, very short answer, short answer, and long answer conceptual problems designed to reveal depth of understanding."
+      },
+      {
+        "title": "CBSE Secondary School Curriculum & Question Paper Marking Schemes",
+        "publisher": "Central Board of Secondary Education (CBSE)",
+        "description": "Official board examination questions, step-by-step marking rubrics, and published examiners' reports highlighting typical student conceptual errors and confusions."
+      }
+    ]
+  }
+}

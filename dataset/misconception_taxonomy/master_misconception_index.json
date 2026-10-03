@@ -1,0 +1,175 @@
+{
+  "taxonomy_version": "1.0.0",
+  "domain_coverage": "NCERT Class 10 Science (Physics)",
+  "total_misconceptions": 21,
+  "misconceptions_index": [
+    {
+      "id": "MISC-OPT-001",
+      "code": "HALF_LENS_BLOCKING",
+      "chapter": "Chapter 9: Light – Reflection and Refraction",
+      "topic": "Spherical Lenses",
+      "short_name": "Half-Lens Blocking Fallacy",
+      "severity": "High (Core conceptual barrier in ray optics)"
+    },
+    {
+      "id": "MISC-OPT-002",
+      "code": "SCREEN_REIFICATION",
+      "chapter": "Chapter 9: Light – Reflection and Refraction",
+      "topic": "Image Formation",
+      "short_name": "Screen Reification / Image Exists Only on Screen",
+      "severity": "Medium (Ontological misunderstanding of optical image)"
+    },
+    {
+      "id": "MISC-OPT-003",
+      "code": "VIRTUAL_RAY_CONVERGENCE",
+      "chapter": "Chapter 9: Light – Reflection and Refraction",
+      "topic": "Virtual Images & Mirrors",
+      "short_name": "Virtual Image Ray Convergence Fallacy",
+      "severity": "High (Conflates virtual construction lines with physical energy)"
+    },
+    {
+      "id": "MISC-OPT-004",
+      "code": "SIGN_CONVENTION_INVERSION",
+      "chapter": "Chapter 9: Light – Reflection and Refraction",
+      "topic": "Mirror & Lens Formulae",
+      "short_name": "Cartesian Sign Convention Spatial Inversion",
+      "severity": "Critical (Pervasive failure in quantitative problem solving)"
+    },
+    {
+      "id": "MISC-OPT-005",
+      "code": "GLASS_SLAB_DEVIATION",
+      "chapter": "Chapter 9: Light – Reflection and Refraction",
+      "topic": "Refraction through Glass Slab",
+      "short_name": "Glass Slab Emergent Ray Angular Deviation Fallacy",
+      "severity": "Medium (Conflates slab lateral shift with prism angular dispersion)"
+    },
+    {
+      "id": "MISC-OPT-006",
+      "code": "SPECIAL_RAY_EXCLUSIVITY",
+      "chapter": "Chapter 9: Light – Reflection and Refraction",
+      "topic": "Ray Diagrams",
+      "short_name": "Special Ray Exclusivity / Ray Reification",
+      "severity": "Medium (Rote learning barrier)"
+    },
+    {
+      "id": "MISC-EYE-001",
+      "code": "VISION_DEFECT_LENS_INVERSION",
+      "chapter": "Chapter 10: The Human Eye and the Colourful World",
+      "topic": "Defects of Vision",
+      "short_name": "Vision Defect Corrective Lens Inversion",
+      "severity": "High (Frequent board exam error)"
+    },
+    {
+      "id": "MISC-EYE-002",
+      "code": "PRISM_DEVIATION_INVERSION",
+      "chapter": "Chapter 10: The Human Eye and the Colourful World",
+      "topic": "Prism Dispersion",
+      "short_name": "Prism Dispersion Speed & Deviation Inversion",
+      "severity": "High (Confuses wavelength, refractive index, and deviation)"
+    },
+    {
+      "id": "MISC-EYE-003",
+      "code": "TWINKLING_EMISSION_ARTIFACT",
+      "chapter": "Chapter 10: The Human Eye and the Colourful World",
+      "topic": "Atmospheric Refraction",
+      "short_name": "Star Twinkling Cloud/Emission Artifact Fallacy",
+      "severity": "Low (Intuitive naive theory)"
+    },
+    {
+      "id": "MISC-EYE-004",
+      "code": "SKY_OCEAN_REFLECTION",
+      "chapter": "Chapter 10: The Human Eye and the Colourful World",
+      "topic": "Scattering of Light",
+      "short_name": "Sky Colour Reflection / Long Wavelength Fallacy",
+      "severity": "Medium (Folkloric belief resistant to instruction)"
+    },
+    {
+      "id": "MISC-ELEC-001",
+      "code": "CURRENT_ATTENUATION",
+      "chapter": "Chapter 11: Electricity",
+      "topic": "Electric Current & Circuits",
+      "short_name": "Current Attenuation / Consumption Model",
+      "severity": "Critical (Fundamental obstacle in circuit analysis)"
+    },
+    {
+      "id": "MISC-ELEC-002",
+      "code": "CONSTANT_CURRENT_BATTERY",
+      "chapter": "Chapter 11: Electricity",
+      "topic": "Potential Difference & Sources",
+      "short_name": "Battery as a Constant Current Source",
+      "severity": "Critical (Failure to distinguish dependent vs independent variables)"
+    },
+    {
+      "id": "MISC-ELEC-003",
+      "code": "PARALLEL_EQUAL_CURRENT_DIVISION",
+      "chapter": "Chapter 11: Electricity",
+      "topic": "Resistors in Parallel",
+      "short_name": "Shared Current / Equal Division Fallacy",
+      "severity": "High (Geometric symmetry bias over Ohm's Law)"
+    },
+    {
+      "id": "MISC-ELEC-004",
+      "code": "VOLTAGE_CURRENT_CONFLATION",
+      "chapter": "Chapter 11: Electricity",
+      "topic": "Potential Difference & Flow",
+      "short_name": "Voltage-Current Conflation / Voltage as Flowing Entity",
+      "severity": "Critical (Semantic and operational confusion)"
+    },
+    {
+      "id": "MISC-ELEC-005",
+      "code": "PARALLEL_RESISTANCE_ADDITION",
+      "chapter": "Chapter 11: Electricity",
+      "topic": "Resistor Combinations",
+      "short_name": "Parallel Resistance Addition Fallacy",
+      "severity": "High (Over-generalization of series arithmetic)"
+    },
+    {
+      "id": "MISC-ELEC-006",
+      "code": "POWER_FORMULA_MISSELECTION",
+      "chapter": "Chapter 11: Electricity",
+      "topic": "Joule's Heating & Power",
+      "short_name": "Power Formula Mis-selection in Parallel vs Series",
+      "severity": "High (Blind algebraic formula lookup without circuit constraints)"
+    },
+    {
+      "id": "MISC-MAG-001",
+      "code": "MAGNETIC_POLE_CHARGE_EQUIVALENCE",
+      "chapter": "Chapter 12: Magnetic Effects of Electric Current",
+      "topic": "Magnetic Fields",
+      "short_name": "Magnetic Pole = Electrostatic Charge Equivalence Fallacy",
+      "severity": "High (Conflates static electricity with magnetic dipoles)"
+    },
+    {
+      "id": "MISC-MAG-002",
+      "code": "UNIVERSAL_METALLIC_MAGNETISM",
+      "chapter": "Chapter 12: Magnetic Effects of Electric Current",
+      "topic": "Magnetic Materials",
+      "short_name": "Universal Metallic Magnetism Fallacy",
+      "severity": "Medium (Linguistic conflation of conductor with ferromagnet)"
+    },
+    {
+      "id": "MISC-MAG-003",
+      "code": "MAGNETIC_FORCE_COLLINEAR",
+      "chapter": "Chapter 12: Magnetic Effects of Electric Current",
+      "topic": "Force on Conductor in Magnetic Field",
+      "short_name": "Magnetic Force Collinear / Parallel Fallacy",
+      "severity": "Critical (Vector cross-product conceptual barrier)"
+    },
+    {
+      "id": "MISC-MAG-004",
+      "code": "FIELD_LINE_CROSSING",
+      "chapter": "Chapter 12: Magnetic Effects of Electric Current",
+      "topic": "Field Lines Properties",
+      "short_name": "Magnetic Field Line Crossing / Discontinuous Loop Fallacy",
+      "severity": "Medium (Reification of vector curves as material strings)"
+    },
+    {
+      "id": "MISC-MAG-005",
+      "code": "DIRECTIONAL_HAND_RULE_INVERSION",
+      "chapter": "Chapter 12: Magnetic Effects of Electric Current",
+      "topic": "Fleming's Left-Hand & Right-Hand Rules",
+      "short_name": "Directional Hand Rule Inversion Fallacy",
+      "severity": "High (Procedural confusion among multiple orthogonal rules)"
+    }
+  ]
+}
