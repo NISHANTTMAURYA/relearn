@@ -8,3 +8,23 @@ __pycache__/
 .idea/
 .DS_Store
 Thumbs.db
+
+# HuggingFace & PyTorch Cache
+.cache/
+checkpoint-*/
+*/checkpoint-*/
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.pkl.bak
+
+# Node modules & Vite build
+node_modules/
+dist/
+build/
+.env
+.env.local
+.env.*.local
+
+

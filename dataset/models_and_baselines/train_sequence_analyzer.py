@@ -15,33 +15,17 @@ class SequencePatternAnalyzer:
     4. Successful resolution after multimodal intervention
     """
     def __init__(self):
-        self.rules = {
-            "MISC-ELEC-001": "RECURRENT_CURRENT_ATTENUATION_PATTERN",
-            "MISC-ELEC-002": "RECURRENT_CONSTANT_CURRENT_BATTERY_PATTERN",
-            "MISC-ELEC-003": "RECURRENT_OHMS_LAW_DIRECTION_FALLACY",
-            "MISC-ELEC-005": "RECURRENT_PARALLEL_RESISTANCE_ADDITION_PATTERN",
-            "MISC-ELEC-006": "RECURRENT_POWER_FORMULA_MISSELECTION_PATTERN",
-            "MISC-OPT-001": "RECURRENT_HALF_LENS_BLOCKING_PATTERN",
-            "MISC-OPT-002": "RECURRENT_SCREEN_REIFICATION_PATTERN",
-            "MISC-OPT-003": "RECURRENT_VIRTUAL_RAY_CONVERGENCE_PATTERN",
-            "MISC-OPT-004": "PERVASIVE_SIGN_CONVENTION_INVERSION",
-            "MISC-OPT-005": "RECURRENT_GLASS_SLAB_DEVIATION_PATTERN",
-            "MISC-EYE-001": "RECURRENT_VISION_DEFECT_PATTERN",
-            "MISC-EYE-002": "RECURRENT_PRISM_DEVIATION_PATTERN",
-            "MISC-EYE-003": "RECURRENT_TWINKLING_EMISSION_PATTERN",
-            "MISC-EYE-004": "RECURRENT_SKY_OCEAN_REFLECTION_PATTERN",
-            "MISC-MAG-001": "RECURRENT_POLE_CHARGE_EQUIVALENCE_PATTERN",
-            "MISC-MAG-004": "RECURRENT_FIELD_LINE_CROSSING_PATTERN",
-            "MISC-MAG-005": "RECURRENT_DIRECTIONAL_HAND_RULE_INVERSION",
-            "MISC-MAG-006": "RECURRENT_STATIC_FIELD_EMF_FALLACY",
-            "MISC-MOT-001": "RECURRENT_SPEED_DISTANCE_INVERSION_PATTERN",
-            "MISC-MOT-002": "RECURRENT_SPEED_ACCELERATION_CONFLATION",
-            "MISC-FOR-001": "RECURRENT_IMPETUS_THEORY_PATTERN",
-            "MISC-FOR-002": "RECURRENT_ACTION_REACTION_CANCELLATION_PATTERN",
-            "MISC-GRAV-001": "RECURRENT_HEAVIER_FALLS_FASTER_PATTERN",
-            "MISC-WRK-001": "RECURRENT_WORK_DIRECTION_FALLACY",
-            "MISC-MOM-001": "RECURRENT_MOMENTUM_DESTRUCTION_FALLACY"
-        }
+        # Dynamically map all curriculum misconceptions to their exact sequence patterns
+        import sys
+        sys.path.insert(0, r"d:\relearn")
+        from dataset.scripts.curriculum_families import CURRICULUM_FAMILIES
+
+        self.rules = {}
+        for fam in CURRICULUM_FAMILIES:
+            arch_label = "RECURRENT_" + fam["family"].replace("CLASS9", "").replace("CLASS10", "").strip("_") + "_PATTERN"
+            misc_code = fam["target_misc"].split(":")[0].strip()
+            self.rules[misc_code] = arch_label
+
 
     def analyze_sequence(self, sequence_record):
         attempts = sequence_record.get("ordered_attempts", [])
