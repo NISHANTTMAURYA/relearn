@@ -23,14 +23,16 @@ class TextGenerationService:
 
     def _fallback_physics_response(self, user_input: str) -> str:
         text = user_input.lower()
-        if "lens" in text or "light" in text or "optics" in text or "half" in text:
+        if "lens" in text or "light" in text or "optics" in text or "half" in text or "mirror" in text:
             return "When you cover half of a convex lens, every exposed part still receives light rays from all points of the object. Therefore, the complete image remains intact on the screen, but its overall brightness is reduced by 50%!"
-        elif "current" in text or "bulb" in text or "electric" in text or "circuit" in text:
-            return "Electric current is the rate of flow of electric charge. In a series circuit, charge is strictly conserved! Bulbs transform electrical energy into heat and light, but they do not consume electric current."
+        elif "twinkle" in text or "star" in text or "refraction" in text or "eye" in text or "atmosphere" in text:
+            return "Stars twinkle because starlight passes through turbulent layers of the Earth's atmosphere with continuously fluctuating densities and refractive indices, causing the apparent brightness and position to shift rapidly before reaching our eyes."
+        elif "current" in text or "bulb" in text or "electric" in text or "circuit" in text or "series" in text:
+            return "Electric current is the rate of flow of electric charge. In a series circuit, charge is strictly conserved! Bulbs transform electrical potential energy into heat and light, but they never consume the electric current."
         elif "fall" in text or "gravity" in text or "heavy" in text or "mass" in text:
-            return "In free fall with negligible air resistance, all objects fall at the exact same gravitational acceleration g = GM/R^2. The mass of the falling object cancels out completely!"
+            return "In vacuum free fall, all objects accelerate at the exact same rate g = GM/R^2 regardless of their mass. The mass of the falling object cancels out completely from the equation of motion!"
         elif "magnet" in text or "field" in text:
-            return "Magnetic field lines form continuous closed loops. The density of field lines represents magnetic field strength, and the tangent to any field line gives the direction of the magnetic force."
+            return "Two magnetic field lines can never cross each other because at the point of intersection, a magnetic compass needle would have to point in two different directions at once, which is physically impossible."
         else:
             return f"Hello! I am Prof. Vikram, your 3D AI Physics Mentor. Regarding '{user_input}': in NCERT Physics, we evaluate physical phenomena by examining the underlying forces, field laws, and energy conservation principles!"
 

@@ -139,25 +139,31 @@ export default function MultimodalInputWorkspace({
             <p className="text-[11px] text-indigo-950 leading-relaxed">
               Two students can arrive at the <em>same wrong answer</em> for totally different cognitive reasons. Select either student to see how Model A differentiates them:
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-              <button
-                type="button"
-                onClick={() => setStudentResponseText('Lower half is masked, so light cannot pass through the bottom; only the top half of the candle appears on screen.')}
-                className="text-left p-2 rounded bg-white hover:bg-indigo-100/50 border border-indigo-200 text-xs text-slate-800 transition-colors"
-              >
-                <span className="font-bold text-indigo-700 block text-[11px]">Student A (Geometric Half-Lens Fallacy):</span>
-                <span className="text-[11px] text-slate-600 line-clamp-2">"Light cannot pass through bottom; only top half appears."</span>
-              </button>
+            {(() => {
+              const sampleA = currentQuestion?.sample_misconception_responses?.[0] || 'Intuitive surface heuristic answer.';
+              const sampleB = currentQuestion?.sample_misconception_responses?.[1] || (currentQuestion?.options?.find(o => !o.is_correct)?.text) || 'Alternative cognitive model answer.';
+              return (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                  <button
+                    type="button"
+                    onClick={() => setStudentResponseText(sampleA)}
+                    className="text-left p-2 rounded bg-white hover:bg-indigo-100/50 border border-indigo-200 text-xs text-slate-800 transition-colors"
+                  >
+                    <span className="font-bold text-indigo-700 block text-[11px]">Student A (Misconception Model 1):</span>
+                    <span className="text-[11px] text-slate-600 line-clamp-2">"{sampleA}"</span>
+                  </button>
 
-              <button
-                type="button"
-                onClick={() => setStudentResponseText('Rays travel straight from candle and stop at the black paper, so the image is inverted upside down and lost.')}
-                className="text-left p-2 rounded bg-white hover:bg-indigo-100/50 border border-indigo-200 text-xs text-slate-800 transition-colors"
-              >
-                <span className="font-bold text-purple-700 block text-[11px]">Student B (Linear Holistic Ray Fallacy):</span>
-                <span className="text-[11px] text-slate-600 line-clamp-2">"Rays travel straight and stop; inverted image is blocked."</span>
-              </button>
-            </div>
+                  <button
+                    type="button"
+                    onClick={() => setStudentResponseText(sampleB)}
+                    className="text-left p-2 rounded bg-white hover:bg-indigo-100/50 border border-indigo-200 text-xs text-slate-800 transition-colors"
+                  >
+                    <span className="font-bold text-purple-700 block text-[11px]">Student B (Misconception Model 2):</span>
+                    <span className="text-[11px] text-slate-600 line-clamp-2">"{sampleB}"</span>
+                  </button>
+                </div>
+              );
+            })()}
           </div>
         </div>
       )}

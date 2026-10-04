@@ -4,159 +4,374 @@
   "questions": [
     {
       "question_id": "DIAG-MAG-001",
-      "question_type": "conceptual",
+      "question_type": "typed_theory",
       "cognitive_level": "Comprehension",
-      "stem": "A stationary positive charge (proton) is placed at rest midway between the North pole and the South pole of a strong permanent horseshoe magnet. What is the magnetic force experienced by the proton?",
+      "stem": "A stationary positive electric charge (proton) is placed at rest midway between the North and South poles of a strong permanent magnet. Calculate the magnetic force experienced by the proton and explain the physical principle.",
       "options": [
         {
           "key": "A",
-          "text": "A strong attractive force directed toward the South pole, because positive charges are attracted to negative magnetic poles.",
+          "text": "A strong attractive force directed toward the South pole because positive charges attract magnetic South poles.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-MAG-001",
-          "distractor_rationale": "Reflects the Magnetic Pole = Electrostatic Charge Fallacy: treating North/South poles as positive/negative electric charges."
+          "diagnosed_misconception_id": "MISC-MAG-001"
         },
         {
           "key": "B",
-          "text": "A strong repulsive force directed away from the North pole.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-MAG-001",
-          "distractor_rationale": "Also reflects the Pole = Charge Fallacy, assuming like positive charges repel North poles."
+          "text": "Zero force, because static magnetic fields exert force strictly on moving charges (F = q * v * B * sin(theta)), and for a charge at rest v = 0.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
         },
         {
           "key": "C",
-          "text": "Zero, because a static magnetic field exerts force only on moving electric charges (F = q * v * B * sin(theta)), and for a stationary charge v = 0.",
-          "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Fundamental physics: magnetic force requires relative velocity between charge and magnetic field."
-        },
-        {
-          "key": "D",
-          "text": "A continuous downward rotational torque causing the proton to spin in place indefinitely.",
+          "text": "A continuous rotational torque causing the charge to spin in place.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-MAG-003",
-          "distractor_rationale": "Conflates macroscopic current loop torque with isolated static point charge behavior."
+          "diagnosed_misconception_id": "MISC-MAG-003"
         }
       ],
-      "correct_answer": "C",
-      "authoritative_solution": "A magnetic field does not exert any mechanical force on a stationary electric charge. Magnetic force is described by the Lorentz force equation: F = q * v * B * sin(theta), where q is the charge, v is its speed relative to the magnetic field, and theta is the angle between the velocity vector and magnetic field vector. Since the proton is explicitly at rest, its velocity v = 0 m/s. Consequently, F = q * (0) * B * sin(theta) = 0 N. A magnetic field interacts only with electric charges that are in motion relative to the field.",
-      "source": "Maloney et al. (CSEM, 2001, Item 22); NCERT Class 10 Science Section 12.3."
+      "correct_answer": "B",
+      "authoritative_solution": "Magnetic Lorentz force is given by F = q * v * B * sin(theta). Since the charge is explicitly at rest, v = 0 m/s, yielding F = q * (0) * B * sin(theta) = 0 N. Magnetic poles do not exert electrostatic Coulomb forces on stationary electric charges.",
+      "sample_misconception_responses": [
+        "Positive charge is attracted towards the South magnetic pole like opposite electric charges.",
+        "Charge is repelled by North pole."
+      ],
+      "sample_correct_responses": [
+        "Force is zero because Lorentz magnetic force requires a velocity relative to the magnetic field; since v = 0, F = 0 N."
+      ],
+      "sample_slip_responses": [
+        "Force is F = q * B without velocity factor."
+      ]
     },
     {
       "question_id": "DIAG-MAG-002",
-      "question_type": "conceptual",
+      "question_type": "typed_theory",
       "cognitive_level": "Analysis",
-      "stem": "Which of the following statements correctly describes the properties of magnetic field lines produced by a current-carrying solenoid or bar magnet?",
+      "stem": "Why can two magnetic field lines never cross (intersect) each other at any point in space?",
       "options": [
         {
           "key": "A",
-          "text": "Magnetic field lines can cross each other if the current flowing through the solenoid is made sufficiently large.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-MAG-004",
-          "distractor_rationale": "Reflects the Field Line Crossing Fallacy: viewing field lines as tangible physical wires that can collide or cross under high intensity."
+          "text": "At the point of intersection, a magnetic compass needle would have to point in two different directions simultaneously, which is physically impossible.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
         },
         {
           "key": "B",
-          "text": "Magnetic field lines are continuous closed curves; outside the magnet they emerge from North and enter South, while inside they run from South to North. Two field lines never intersect.",
-          "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Authoritative NCERT field properties: continuous closed loops; non-intersecting."
+          "text": "Magnetic field lines are physical elastic bands that bounce off each other when current is large.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-004"
         },
         {
           "key": "C",
-          "text": "Magnetic field lines originate at the North pole and permanently terminate at the South pole, leaving the interior of a bar magnet completely field-free.",
+          "text": "Lines only cross if the temperature drops below absolute zero.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-MAG-004",
-          "distractor_rationale": "Treats magnetic field lines like open electrostatic field lines that start on positive and terminate on negative charges."
-        },
-        {
-          "key": "D",
-          "text": "Magnetic field lines are circular outside the magnet and straight parallel lines outside, terminating at infinity.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-MAG-004",
-          "distractor_rationale": "Inverts internal and external spatial patterns."
-        }
-      ],
-      "correct_answer": "B",
-      "authoritative_solution": "By scientific definition, magnetic field lines are continuous closed loops. Outside the magnet, their direction is taken by convention from the North pole to the South pole. Inside the magnet, the field lines point from the South pole to the North pole, completing the closed loop (especially prominent inside a solenoid where field lines are parallel and uniform). Crucially, two field lines can never cross each other. If they did intersect at a given point, a magnetic compass placed at that intersection would simultaneously point in two distinct directions, which is physically impossible.",
-      "source": "NCERT Class 10 Science Section 12.1 (Magnetic Field and Field Lines) & Section 12.2.3."
-    },
-    {
-      "question_id": "DIAG-MAG-003",
-      "question_type": "application",
-      "cognitive_level": "Application",
-      "stem": "An electron enters a uniform magnetic field that is directed vertically downwards. The electron's initial velocity is directed horizontally from West to East. According to Fleming's Left-Hand Rule, in which direction does the magnetic force deflect the electron?",
-      "options": [
-        {
-          "key": "A",
-          "text": "Towards the South.",
-          "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct application: electron travels West to East, so conventional current is East to West (center finger points West). Field is Downwards (forefinger points Down). Thumb points South."
-        },
-        {
-          "key": "B",
-          "text": "Towards the North.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-MAG-005",
-          "distractor_rationale": "Forgets that conventional current is opposite to electron motion: took current as West-to-East, resulting in an inverted North force."
-        },
-        {
-          "key": "C",
-          "text": "Vertically downwards, accelerating along the direction of the magnetic field.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-MAG-003",
-          "distractor_rationale": "Reflects the Magnetic Force Collinear / Parallel Fallacy: assuming force acts along field lines."
-        },
-        {
-          "key": "D",
-          "text": "Horizontally forwards from West to East, increasing its forward linear speed.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-MAG-003",
-          "distractor_rationale": "Assumes magnetic force pushes charges in the direction of their own velocity."
+          "diagnosed_misconception_id": "MISC-MAG-002"
         }
       ],
       "correct_answer": "A",
-      "authoritative_solution": "Fleming's Left-Hand Rule states that when the forefinger, center finger, and thumb of the left hand are held mutually perpendicular: Forefinger = Magnetic Field (B), Center finger = Current (I, conventional current direction), Thumb = Force / Motion (F). Here, the electron (negatively charged) travels from West to East. Conventional current is defined as the direction of positive charge flow, which is strictly opposite to electron drift: therefore, Current (I) is from East to West. 1. Point the left forefinger downwards (magnetic field B). 2. Orient the left center finger towards the West (current I). 3. The outstretched left thumb points directly towards the South. Thus, the magnetic force acts towards the South.",
-      "source": "NCERT Class 10 Science Example 12.2 & CBSE Board Exam 2022 Question 18."
+      "authoritative_solution": "The direction of the magnetic field vector at any point is unique and is represented by the tangent to the field line at that point. If two field lines crossed, a compass needle placed at that intersection would point in two different directions at the same time, which is impossible. Hence, field lines never intersect.",
+      "sample_misconception_responses": [
+        "Field lines cross if solenoid current is made sufficiently large."
+      ],
+      "sample_correct_responses": [
+        "Two field lines can never cross because at the intersection point a compass would have to point in two different directions simultaneously, which is physically impossible."
+      ],
+      "sample_slip_responses": [
+        "Field lines cross inside the bar magnet."
+      ]
     },
     {
-      "question_id": "DIAG-MAG-004",
-      "question_type": "conceptual",
-      "cognitive_level": "Comprehension",
-      "stem": "A student attempts to pick up various metal objects using a strong neodymium permanent magnet. Which of the following objects will be strongly attracted to the magnet?",
+      "question_id": "DIAG-MAG-003",
+      "question_type": "mcq",
+      "cognitive_level": "Application",
+      "stem": "An electron enters a uniform magnetic field directed vertically downwards. The electrons initial velocity is directed horizontally from West to East. According to Fleming Left-Hand Rule, in which direction is the electron deflected?",
       "options": [
         {
           "key": "A",
-          "text": "A pure copper coin, a pure aluminium soda can, and a silver ring.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-MAG-002",
-          "distractor_rationale": "Reflects the Universal Metallic Magnetism Fallacy: believing all metallic electrical conductors are attracted to magnets."
+          "text": "Towards the South (conventional current is East to West, field is Downward, thumb points South)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
         },
         {
           "key": "B",
-          "text": "An iron nail, a nickel coin, and a steel paperclip.",
-          "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct physics: only ferromagnetic materials (iron, nickel, cobalt, and steel alloys) exhibit strong permanent ferromagnetism at room temperature."
+          "text": "Towards the North (neglecting the negative charge sign of the electron)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-005"
         },
         {
           "key": "C",
-          "text": "Any solid object that can conduct electrical current when placed in a circuit.",
+          "text": "Vertically Upwards (parallel to the magnetic field)",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-MAG-002",
-          "distractor_rationale": "Directly links electrical conductance with magnetic permeability."
+          "diagnosed_misconception_id": "MISC-MAG-003"
+        }
+      ],
+      "correct_answer": "A",
+      "authoritative_solution": "Since electrons carry negative charge, conventional current flows opposite to electron motion (from East to West). Aligning Flemings Left-Hand Rule: Forefinger points Downwards (field), Center finger points West (current). The thumb points South, indicating the deflecting force direction.",
+      "sample_misconception_responses": [
+        "Deflects towards the North because electron moves East."
+      ],
+      "sample_correct_responses": [
+        "Conventional current is opposite to electron motion (East to West); field is downward, so force is towards the South by Flemings Left Hand Rule."
+      ],
+      "sample_slip_responses": [
+        "Force is vertically upward."
+      ]
+    },
+    {
+      "question_id": "DIAG-MAG-004",
+      "question_type": "mcq",
+      "cognitive_level": "Comprehension",
+      "stem": "The magnetic field lines inside a long current-carrying cylindrical solenoid are parallel straight lines. What does this spatial pattern signify?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The magnetic field is completely zero inside the core of the solenoid.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-004"
         },
         {
-          "key": "D",
-          "text": "Only objects that already carry a net static positive or negative electric charge.",
+          "key": "B",
+          "text": "The magnetic field is uniform (same magnitude and direction at all points inside the core).",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "The magnetic field is weakest along the central axis of the cylinder.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-MAG-001",
-          "distractor_rationale": "Conflates ferromagnetism with electrostatic induction."
+          "diagnosed_misconception_id": "MISC-MAG-002"
         }
       ],
       "correct_answer": "B",
-      "authoritative_solution": "Permanent magnets attract ferromagnetic materials due to microscopic magnetic domain alignment. Elements that exhibit strong ferromagnetism at room temperature are iron (Fe), cobalt (Co), nickel (Ni), and alloys like steel. Non-ferromagnetic metals such as pure copper, aluminium, brass, gold, and silver have paired electron spins or lack cooperative exchange interaction; they do not experience perceptible attraction to laboratory magnets. Therefore, iron nails, nickel coins, and steel clips are strongly attracted, while copper, aluminium, and silver objects are not.",
-      "source": "NCERT Class 10 Science Activity 12.1 & Driver et al. (1994)."
+      "authoritative_solution": "Parallel, equidistant magnetic field lines indicate a uniform magnetic field: the strength and direction of the magnetic field are identical at all points inside the core of the solenoid.",
+      "sample_misconception_responses": [
+        "Field inside the solenoid is zero because lines cancel."
+      ],
+      "sample_correct_responses": [
+        "Parallel straight lines indicate that the magnetic field is uniform throughout the solenoid interior."
+      ],
+      "sample_slip_responses": [
+        "Field is strongest outside the ends."
+      ]
+    },
+    {
+      "question_id": "DIAG-MAG-005",
+      "question_type": "typed_theory",
+      "cognitive_level": "Application",
+      "stem": "State Maxwell Right-Hand Thumb Rule and explain how it determines the direction of magnetic field lines around a straight vertical wire carrying upward current.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Imagine grasping the conductor with the right hand so the thumb points along the current (Upward); the curled fingers give concentric field lines in an Anti-Clockwise direction as viewed from above.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "B",
+          "text": "Right hand thumb gives force and fingers give electric charge polarity.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-005"
+        },
+        {
+          "key": "C",
+          "text": "The rule applies only if the conductor is made of ferromagnetic iron.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-001"
+        }
+      ],
+      "correct_answer": "A",
+      "authoritative_solution": "Maxwells Right-Hand Thumb Rule: Hold the straight wire in the right hand with the thumb pointing in the direction of current (upward). The fingers curl around the wire in the direction of the magnetic field lines, forming concentric circles in an anti-clockwise direction as viewed from above.",
+      "sample_misconception_responses": [
+        "Thumb points to magnetic pole and fingers show electric voltage."
+      ],
+      "sample_correct_responses": [
+        "Thumb points along upward current; fingers curl in the direction of the magnetic field, which is anti-clockwise viewed from above."
+      ],
+      "sample_slip_responses": [
+        "Field lines are clockwise when thumb points up."
+      ]
+    },
+    {
+      "question_id": "DIAG-MAG-006",
+      "question_type": "mcq",
+      "cognitive_level": "Analysis",
+      "stem": "If the number of turns in a circular current-carrying coil is increased from 1 to N turns while keeping the current constant, what happens to the magnetic field strength at the center?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Remains unchanged because current is the same.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-002"
+        },
+        {
+          "key": "B",
+          "text": "Increases by N times (B proportional to N * I / 2R) because fields from each individual loop add up constructively in the same direction.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "Decreases to B / N due to mutual self-inductance cancellation.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-004"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "Current in every circular turn has the same direction. Therefore, the magnetic field produced by each turn adds constructively: B = N * (mu_0 * I / 2R). With N turns, the field is N times as large as that produced by a single turn.",
+      "sample_misconception_responses": [
+        "Field stays unchanged because current is identical."
+      ],
+      "sample_correct_responses": [
+        "Field increases by N times because the magnetic field from each turn adds up constructively."
+      ],
+      "sample_slip_responses": [
+        "Field drops by 1/N."
+      ]
+    },
+    {
+      "question_id": "DIAG-MAG-007",
+      "question_type": "mcq",
+      "cognitive_level": "Comprehension",
+      "stem": "A straight copper rod carrying current I is placed inside a uniform magnetic field B. At what angle theta between the rod and the magnetic field is the mechanical force on the rod at its maximum value?",
+      "options": [
+        {
+          "key": "A",
+          "text": "theta = 0 degrees (parallel to field lines)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-003"
+        },
+        {
+          "key": "B",
+          "text": "theta = 90 degrees (perpendicular to field lines, where sin(90) = 1 in F = B * I * L * sin(theta))",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "theta = 45 degrees (equal division of vectors)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "The magnetic force on a current-carrying conductor is F = B * I * L * sin(theta). The sine function reaches its maximum value of 1.0 at theta = 90 degrees. When the conductor is placed perpendicular to the field, force is maximal; when parallel (theta = 0), force is zero.",
+      "sample_misconception_responses": [
+        "Force is maximum when wire is parallel to field lines (theta = 0)."
+      ],
+      "sample_correct_responses": [
+        "Force is maximum at 90 degrees (perpendicular) because F = B * I * L * sin(theta) and sin(90) = 1."
+      ],
+      "sample_slip_responses": [
+        "Force is maximum at 180 degrees."
+      ]
+    },
+    {
+      "question_id": "DIAG-MAG-008",
+      "question_type": "typed_theory",
+      "cognitive_level": "Comprehension",
+      "stem": "A freely suspended magnetic needle always comes to rest in a North-South direction. Explain the physical reason and specify which geographic pole corresponds to Earth magnetic North pole.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Earth itself behaves like a giant bar magnet whose magnetic South pole is situated near the geographic North Pole, attracting the North-seeking pole of the needle.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "B",
+          "text": "Earth geographic North pole has a large deposit of positive electric charge attracting negative needles.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-001"
+        },
+        {
+          "key": "C",
+          "text": "The Sun gravitational field aligns all ferromagnetic compasses northward.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-003"
+        }
+      ],
+      "correct_answer": "A",
+      "authoritative_solution": "The Earth acts like a huge bar magnet. The magnetic pole of the Earth located near geographic North is magnetically a South pole (attracting the north pole of a compass needle). Thus, opposite poles attract, causing the needle to align along the geomagnetic meridian.",
+      "sample_misconception_responses": [
+        "Earth North pole is a magnetic North pole that attracts magnetic North."
+      ],
+      "sample_correct_responses": [
+        "Earth behaves like a magnet with its magnetic South pole located near the geographic North pole, attracting the North-seeking pole of the compass."
+      ],
+      "sample_slip_responses": [
+        "Needle aligns due to centrifugal force."
+      ]
+    },
+    {
+      "question_id": "DIAG-MAG-009",
+      "question_type": "mcq",
+      "cognitive_level": "Analysis",
+      "stem": "What is the phenomenon of Electromagnetic Induction discovered by Michael Faraday?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Heating a conductor until it emits electric sparks.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-006"
+        },
+        {
+          "key": "B",
+          "text": "The production of induced potential difference and electric current in a closed circuit caused by relative motion between a conductor and a magnetic field (changing magnetic flux).",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "Static charging of plastic rods by friction.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-001"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "Electromagnetic induction is the process by which a changing magnetic field in a conductor induces an electromotive force (EMF) and current across the loop. It forms the operating principle of electric generators and transformers.",
+      "sample_misconception_responses": [
+        "Electromagnetic induction means magnets attract static iron charges."
+      ],
+      "sample_correct_responses": [
+        "Induction is the production of electric current in a coil due to relative motion or changing magnetic flux."
+      ],
+      "sample_slip_responses": [
+        "Induction converts AC into DC."
+      ]
+    },
+    {
+      "question_id": "DIAG-MAG-010",
+      "question_type": "mcq",
+      "cognitive_level": "Application",
+      "stem": "Why is the metallic body of heavy household electric appliances (such as refrigerators, irons, and toasters) connected to an Earth wire (green insulation)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides a low-resistance conducting path for leakage current to flow safely into the ground, triggering the fuse and preventing lethal electric shock to users.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "B",
+          "text": "It supplies extra current to boost appliance power efficiency.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-002"
+        },
+        {
+          "key": "C",
+          "text": "It prevents appliances from magnetizing nearby steel utensils.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MAG-004"
+        }
+      ],
+      "correct_answer": "A",
+      "authoritative_solution": "The earth wire connects the metallic casing to a deep copper plate buried in the ground. If insulation fails and the live wire touches the metal body, current flows directly to earth through the low-resistance path rather than through the human body, blowing the fuse and protecting the user from fatal shock.",
+      "sample_misconception_responses": [
+        "Earthing boosts current to make heaters hotter."
+      ],
+      "sample_correct_responses": [
+        "Earthing provides a low-resistance path to the ground for any leakage current, preventing severe electric shocks and blowing the fuse."
+      ],
+      "sample_slip_responses": [
+        "Earthing filters out magnetic noise."
+      ]
     }
   ]
 }

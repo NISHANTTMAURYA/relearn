@@ -29,6 +29,7 @@ class ReLearnDataService:
             "human_eye": load_json(os.path.join("diagnostic_item_bank", "human_eye_colourful_world.json")),
             "electricity": load_json(os.path.join("diagnostic_item_bank", "electricity.json")),
             "magnetism": load_json(os.path.join("diagnostic_item_bank", "magnetic_effects.json")),
+            "mechanics": load_json(os.path.join("diagnostic_item_bank", "motion_force_gravitation.json")),
         }
         self.interventions_data = load_json(os.path.join("adaptive_interventions", "intervention_catalogue.json"))
         self.reassessment_data = load_json(os.path.join("adaptive_interventions", "reassessment_item_pairs.json"))
@@ -198,70 +199,41 @@ class ReLearnDataService:
                 "grade": "Class 9",
                 "chapter": "Motion, Force & Gravitation",
                 "summary": "Speed vs acceleration, Newton's third law pairs, inertia, and free fall gravitational mass invariance.",
-                "total_items": 4,
-                "questions": self._get_mechanics_sample_items()
+                "total_items": len(self.item_banks["mechanics"].get("questions", [])),
+                "questions": self._format_items_with_curriculum(self.item_banks["mechanics"].get("questions", []), "MECH")
             }
         ]
         return topics
 
     def _format_items_with_curriculum(self, items: list, prefix: str) -> list:
         formatted = []
-        # Keep only crisp, robust presentation formats: MCQ, Theory & Numerical (removing flaky canvas/OCR modes)
-        modalities = ["mcq", "typed_theory", "numerical"]
-        
         for idx, it in enumerate(items):
-            q_id = it.get("question_id")
+            q_id = it.get("question_id", f"DIAG-{prefix}-{idx+1:03d}")
+            # Respect authentic modality from reference NCERT textbooks
+            raw_type = it.get("question_type", "mcq")
+            if raw_type == "numerical" or it.get("numerical_meta"):
+                q_type = "numerical"
+            elif raw_type in ["typed_theory", "conceptual", "theory_based"] and ("Explain" in it.get("stem", "") or "Why" in it.get("stem", "")):
+                q_type = "typed_theory"
+            elif raw_type in ["mcq", "circuit_analysis", "application", "ray_diagram"] and it.get("options"):
+                q_type = "mcq"
+            else:
+                q_type = raw_type if raw_type in ["mcq", "typed_theory", "numerical"] else "mcq"
+
             matched_fam = next((f for f in self.curriculum_families if prefix in f.get("family", "")), None)
             formatted.append({
                 "question_id": q_id,
-                "question_type": modalities[idx % len(modalities)],
+                "question_type": q_type,
                 "cognitive_level": it.get("cognitive_level", "Comprehension"),
                 "stem": it.get("stem"),
                 "options": it.get("options", []),
                 "correct_answer": it.get("correct_answer"),
                 "authoritative_solution": it.get("authoritative_solution"),
-                "diagram_meta": matched_fam.get("diagram_meta") if matched_fam else None,
-                "sample_misconception_responses": matched_fam.get("misc_phrasings", [])[:3] if matched_fam else [],
-                "sample_correct_responses": matched_fam.get("correct_phrasings", [])[:2] if matched_fam else [],
-                "sample_slip_responses": matched_fam.get("slip_phrasings", [])[:2] if matched_fam else []
-            })
-        
-        # Ensure at least 10 questions for full comprehensive exam session
-        matching_fams = [f for f in self.curriculum_families if prefix in f.get("family", "")]
-        if not matching_fams:
-            matching_fams = self.curriculum_families
-
-        while len(formatted) < 10:
-            count = len(formatted) + 1
-            fam = matching_fams[(count - 1) % len(matching_fams)]
-            stem_template = fam.get("stem_templates", ["Explain the physical mechanism in {f}."])[0]
-            try:
-                stem = stem_template.format(
-                    f=20, u=-30, v=15, d=15, slip=30,
-                    R=10, R1=5, R2=10, I=2, V=12, P=100,
-                    m=5, a=2, t=10, s=100, F=50, B=2, N=100
-                )
-            except Exception:
-                import re
-                stem = re.sub(r'\{[a-zA-Z0-9_]+\}', '20', stem_template)
-
-            mod_type = modalities[(count - 1) % len(modalities)]
-            formatted.append({
-                "question_id": f"DIAG-{prefix}-{count:03d}",
-                "question_type": mod_type,
-                "cognitive_level": "Analysis" if count % 2 == 0 else "Application",
-                "stem": f"Question {count}: {stem}",
-                "options": [
-                    {"key": "A", "text": fam.get("misc_phrasings", ["Intuitive naive response"])[0], "is_correct": False, "diagnosed_misconception_id": fam.get("target_misc", "").split(":")[0]},
-                    {"key": "B", "text": fam.get("correct_phrasings", ["Authoritative NCERT physical law solution"])[0], "is_correct": True, "diagnosed_misconception_id": None},
-                    {"key": "C", "text": "Calculation slip due to arithmetic sign convention error.", "is_correct": False, "diagnosed_misconception_id": "MISC-CALC-SLIP"}
-                ],
-                "correct_answer": "B",
-                "authoritative_solution": fam.get("correct_base", "Apply NCERT physics principles."),
-                "diagram_meta": fam.get("diagram_meta"),
-                "sample_misconception_responses": fam.get("misc_phrasings", [])[:3],
-                "sample_correct_responses": fam.get("correct_phrasings", [])[:2],
-                "sample_slip_responses": fam.get("slip_phrasings", [])[:2]
+                "numerical_meta": it.get("numerical_meta"),
+                "diagram_meta": it.get("diagram_meta") or (matched_fam.get("diagram_meta") if matched_fam else None),
+                "sample_misconception_responses": it.get("sample_misconception_responses") or (matched_fam.get("misc_phrasings", [])[:3] if matched_fam else []),
+                "sample_correct_responses": it.get("sample_correct_responses") or (matched_fam.get("correct_phrasings", [])[:2] if matched_fam else []),
+                "sample_slip_responses": it.get("sample_slip_responses") or (matched_fam.get("slip_phrasings", [])[:2] if matched_fam else [])
             })
 
         return formatted
@@ -360,10 +332,20 @@ class ReLearnDataService:
             # Try fuzzy match
             for k, v in self.interventions_map.items():
                 if k in code or code in k:
-                    return v
-            # Fallback to default first intervention
-            return list(self.interventions_map.values())[0] if self.interventions_map else None
-        return intv
+                    intv = v
+                    break
+            if not intv:
+                intv = list(self.interventions_map.values())[0] if self.interventions_map else None
+
+        if intv:
+            res = dict(intv)
+            gls = res.get("guided_learning_sequence", {})
+            spoken = gls.get("step_4_conceptual_bridge") or gls.get("step_3_explain_cognitive_conflict")
+            if not spoken:
+                spoken = f"In NCERT Physics, we evaluate {res.get('misconception_name')} by examining the core conservation and field principles."
+            res["spoken_explanation"] = spoken
+            return res
+        return None
 
     def get_reassessment(self, misc_id: str) -> Optional[dict]:
         code = misc_id.split(":")[0].strip()

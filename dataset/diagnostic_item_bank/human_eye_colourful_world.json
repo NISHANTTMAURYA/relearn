@@ -4,159 +4,392 @@
   "questions": [
     {
       "question_id": "DIAG-EYE-001",
-      "question_type": "conceptual",
+      "question_type": "mcq",
       "cognitive_level": "Application",
-      "stem": "A student sitting on the last bench of a classroom can read the letters written in their textbook clearly but cannot read the words written on the blackboard clearly. Which defect of vision does this student have, and what kind of corrective lens must be prescribed?",
+      "stem": "A student sitting on the last bench of a classroom can read letters in their textbook clearly but cannot read words written on the blackboard clearly. Which defect of vision does this student have, and what kind of corrective lens must be prescribed?",
       "options": [
         {
           "key": "A",
-          "text": "Hypermetropia (far-sightedness), corrected by a convex lens of suitable focal length.",
+          "text": "Hypermetropia (far-sightedness), corrected by a convex lens.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-EYE-001",
-          "distractor_rationale": "Confuses myopia with hypermetropia, mistakenly concluding that because the far blackboard is blurred, the condition is far-sightedness."
+          "diagnosed_misconception_id": "MISC-EYE-001"
         },
         {
           "key": "B",
-          "text": "Myopia (near-sightedness), corrected by a convex lens because a magnifying lens is needed to enlarge distant letters.",
+          "text": "Myopia (near-sightedness), corrected by a convex lens to magnify distant letters.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-EYE-001",
-          "distractor_rationale": "Correctly diagnoses myopia but commits the Lens Inversion Fallacy by prescribing a convex lens to 'magnify' distant targets."
+          "diagnosed_misconception_id": "MISC-EYE-001"
         },
         {
           "key": "C",
           "text": "Myopia (near-sightedness), corrected by a concave lens of suitable focal length.",
           "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct NCERT diagnosis: near objects clear, distant blurred = myopia; eye lens has excessive convergence, requiring a diverging (concave) lens to shift the far point."
+          "diagnosed_misconception_id": null
         },
         {
           "key": "D",
-          "text": "Presbyopia, corrected by a bifocal lens with upper convex and lower concave segments.",
+          "text": "Presbyopia, corrected by a cylindrical bifocal lens.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-EYE-001",
-          "distractor_rationale": "Conflates student refractive defect with age-related loss of accommodation (presbyopia), with inverted bifocal specification."
+          "diagnosed_misconception_id": "MISC-EYE-001"
         }
       ],
       "correct_answer": "C",
-      "authoritative_solution": "A person who can see nearby objects distinctly (such as a textbook at ~25 cm) but cannot see distant objects clearly (such as the classroom blackboard) has myopia (near-sightedness). In a myopic eye, rays from a distant object are converged in front of the retina rather than on it. To correct this, a concave (diverging) lens is placed in front of the eye. The concave lens diverges the incoming parallel rays slightly, making them appear as if they are originating from the student's myopic far point, allowing the crystalline lens to form a sharp image on the retina.",
-      "source": "NCERT Class 10 Science Section 10.2.1 & NCERT Exemplar Problem 10.2."
+      "authoritative_solution": "Nearby objects are clear and distant blackboard is blurred: this is Myopia (near-sightedness). Parallel rays from distant objects converge in front of the retina. A concave (diverging) lens is placed in front of the eye to diverge rays so they focus sharply on the retina.",
+      "sample_misconception_responses": [
+        "Student has far-sightedness because they need to see far."
+      ],
+      "sample_correct_responses": [
+        "Student has myopia and needs a concave lens to diverge light onto the retina."
+      ],
+      "sample_slip_responses": [
+        "Student has myopia but requires a convex magnifying lens."
+      ]
     },
     {
       "question_id": "DIAG-EYE-002",
-      "question_type": "conceptual",
+      "question_type": "mcq",
       "cognitive_level": "Analysis",
-      "stem": "When a beam of narrow white light enters a triangular glass prism, it disperses into a band of distinct spectral colors (VIBGYOR). Which color of light suffers the greatest deviation from its initial path, and why?",
+      "stem": "When a narrow beam of white light enters a triangular glass prism, it disperses into a band of distinct spectral colors (VIBGYOR). Which color of light suffers the greatest deviation from its initial path, and why?",
       "options": [
         {
           "key": "A",
-          "text": "Red light suffers the greatest deviation because red photons carry the highest momentum and interact most aggressively with the glass matrix.",
+          "text": "Red light suffers the greatest deviation because red photons carry the highest momentum.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-EYE-002",
-          "distractor_rationale": "Reflects the Prism Dispersion Speed & Deviation Inversion Fallacy: assuming red light deviates most due to colloquial associations of red with high energy/force."
+          "diagnosed_misconception_id": "MISC-EYE-002"
         },
         {
           "key": "B",
           "text": "Violet light suffers the greatest deviation because it has the shortest wavelength and travels slowest in glass, experiencing the highest refractive index.",
           "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct physics: n = c / v. In dispersive media, shorter wavelength lambda corresponds to higher refractive index n, producing maximum angular deviation D."
+          "diagnosed_misconception_id": null
         },
         {
           "key": "C",
-          "text": "Green light suffers the greatest deviation because it lies exactly in the middle of the visible spectrum and resonates with silica molecules.",
+          "text": "Green light suffers greatest deviation because it is situated in the exact middle of the spectrum.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-EYE-002",
-          "distractor_rationale": "Heuristic error picking the central mean color as the extreme value."
-        },
-        {
-          "key": "D",
-          "text": "All colors suffer identical deviation inside the prism, and the color separation occurs only upon reflection at the second face.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-OPT-005",
-          "distractor_rationale": "Fails to grasp that dispersion originates at the very first refracting interface inside the dispersive medium."
+          "diagnosed_misconception_id": "MISC-EYE-002"
         }
       ],
       "correct_answer": "B",
-      "authoritative_solution": "White light consists of multiple wavelengths. In a vacuum, all colors travel with the same speed c = 3 * 10^8 m/s. However, in a transparent refracting medium like glass, different wavelengths travel with different speeds (v_red > v_violet). Since refractive index n = c / v, the refractive index of glass is greatest for violet light (n_violet > n_red). By Snell's Law and the prism deviation formula, the angle of deviation is greatest for the color with the highest refractive index. Therefore, violet light bends (deviates) the most, and red light bends the least.",
-      "source": "NCERT Class 10 Science Section 10.2 (Dispersion of White Light by a Glass Prism)."
+      "authoritative_solution": "In transparent glass, refractive index n depends on wavelength lambda (n_violet > n_red). Since violet travels slowest in glass, it bends through the greatest angle of deviation.",
+      "sample_misconception_responses": [
+        "Red bends most because red is strongest."
+      ],
+      "sample_correct_responses": [
+        "Violet light deviates most because it has shortest wavelength and slowest speed in glass."
+      ],
+      "sample_slip_responses": [
+        "All colors deviate equally inside the prism."
+      ]
     },
     {
       "question_id": "DIAG-EYE-003",
-      "question_type": "theory_based",
+      "question_type": "typed_theory",
       "cognitive_level": "Comprehension",
-      "stem": "Why do stars twinkle at night when viewed from the surface of Earth, whereas planets do not twinkle?",
+      "stem": "Explain using NCERT physical principles: Why do stars twinkle at night when viewed from the surface of Earth, whereas planets do not twinkle?",
       "options": [
         {
           "key": "A",
-          "text": "Stars periodically pulse their nuclear fusion reactions on and off, whereas planets emit steady unvarying radiation.",
+          "text": "Stars periodically turn their nuclear fusion reactions on and off, whereas planets emit steady light.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-EYE-003",
-          "distractor_rationale": "Reflects the Star Twinkling Emission Artifact Fallacy: attributing light intensity variations to intrinsic source fluctuations."
+          "diagnosed_misconception_id": "MISC-EYE-003"
         },
         {
           "key": "B",
-          "text": "Stars are point-sized sources of light situated very far away; turbulent atmospheric temperature and density gradients continuously shift the ray paths, causing flickering. Planets are extended sources where point-source fluctuations average out to zero.",
+          "text": "Stars are point-sized sources very far away; fluctuating atmospheric temperature and density continuously refract the ray path (twinkling). Planets are closer extended sources where point fluctuations average out to zero.",
           "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Authoritative NCERT explanation: atmospheric refraction of point source vs disc averaging."
+          "diagnosed_misconception_id": null
         },
         {
           "key": "C",
-          "text": "Stars twinkle because floating clouds and smog particles mechanically cut off their light beam once every few milliseconds.",
+          "text": "Floating dust and smog clouds mechanically block the beam of light once every few milliseconds.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-EYE-003",
-          "distractor_rationale": "Attributes continuous refraction effect to mechanical macroscopic particulate obstruction."
-        },
-        {
-          "key": "D",
-          "text": "Planets do not twinkle because their light is polarized by solar reflection, rendering them immune to atmospheric refraction.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-EYE-003",
-          "distractor_rationale": "Invents pseudo-scientific mechanism (polarization immunity) rather than optical angular aperture size."
+          "diagnosed_misconception_id": "MISC-EYE-003"
         }
       ],
       "correct_answer": "B",
-      "authoritative_solution": "Stars are extremely distant from Earth and act as effective optical point sources of light. The Earth's atmosphere is non-static; air currents produce continuous fluctuations in local temperature and density, altering the refractive index of air layers along the line of sight. This continuously refracts the narrow beam slightly, causing random variations in apparent star position and luminous intensity entering the eye (twinkling). Planets, being much closer to Earth, subtend larger visual angles and act as extended collections of millions of point sources. The random intensity variations from different points cancel each other out, resulting in a steady, non-twinkling appearance.",
-      "source": "NCERT Class 10 Science Section 10.3 (Atmospheric Refraction)."
+      "authoritative_solution": "Stars are extremely distant and act as point sources of light. Changing optical density and temperature of Earth atmospheric layers continuously shift the apparent position and intensity of starlight entering the eye. Planets are much closer and act as extended discs of millions of point sources, so intensity fluctuations average out to zero.",
+      "sample_misconception_responses": [
+        "Stars twinkle because they pulse their radiation on and off like a bulb.",
+        "Clouds and dust block the beam every millisecond."
+      ],
+      "sample_correct_responses": [
+        "Stars are point sources whose light continuously refracts through turbulent atmospheric layers, causing apparent brightness fluctuations. Planets are extended sources where variations average out."
+      ],
+      "sample_slip_responses": [
+        "Stars twinkle because of lunar gravitational tides."
+      ]
     },
     {
       "question_id": "DIAG-EYE-004",
-      "question_type": "application",
+      "question_type": "mcq",
       "cognitive_level": "Analysis",
-      "stem": "To an astronaut standing on the surface of the Moon, what does the daytime sky appear as, and what is the scientific reason?",
+      "stem": "To an astronaut standing on the surface of the Moon during the daytime, what does the sky appear as, and what is the scientific reason?",
       "options": [
         {
           "key": "A",
-          "text": "Bright blue, because the lunar soil reflects sunlight upward into the atmosphere.",
+          "text": "Bright blue, because lunar soil reflects sunlight upwards into the vacuum.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-EYE-004",
-          "distractor_rationale": "Reflects the Sky Surface Reflection Fallacy: attributing sky illumination to ground reflection rather than particulate scattering."
+          "diagnosed_misconception_id": "MISC-EYE-004"
         },
         {
           "key": "B",
-          "text": "Pitch dark (black), because the Moon has no atmosphere to cause Rayleigh scattering of sunlight into the observer's eyes.",
+          "text": "Pitch dark (black), because the Moon has no atmosphere to cause Rayleigh scattering of sunlight into the observers eyes.",
           "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct physics: without an atmosphere containing gas molecules or fine particles, no light is scattered sideways; empty space appears completely black."
+          "diagnosed_misconception_id": null
         },
         {
           "key": "C",
-          "text": "Deep red, because long wavelengths are the only waves capable of penetrating vacuum across interplanetary distances.",
+          "text": "Deep red, because long wavelengths are the only waves capable of penetrating vacuum.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-EYE-002",
-          "distractor_rationale": "Conflates sunrise/sunset scattering through dense atmosphere with vacuum transmission."
-        },
-        {
-          "key": "D",
-          "text": "Pure white, because without air to disperse light, white sunlight uniformly illuminates all angles of the sky dome.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-EYE-004",
-          "distractor_rationale": "Assumes sunlight naturally 'fills' empty space regardless of scattering scatterers."
+          "diagnosed_misconception_id": "MISC-EYE-002"
         }
       ],
       "correct_answer": "B",
-      "authoritative_solution": "On Earth, the blue color of the daytime sky is caused by Rayleigh scattering: sunlight interacts with atmospheric gas molecules (N2, O2) that are smaller than the wavelength of visible light, preferentially scattering shorter blue wavelengths in all directions toward an observer. The Moon has no atmosphere. In the absence of an atmosphere, there are no particles or molecules to scatter light from the solar beam into the eyes of an observer looking away from the Sun. Consequently, the daytime sky on the Moon appears completely dark and black, even while the Sun shines brightly.",
-      "source": "NCERT Class 10 Science Section 10.4.2 (Colour of the Sky)."
+      "authoritative_solution": "On the Moon there is no atmosphere containing gas molecules or fine particles. Since no light is scattered into the eyes of the observer, the sky appears completely black even during the day.",
+      "sample_misconception_responses": [
+        "The lunar sky is blue due to ground reflection."
+      ],
+      "sample_correct_responses": [
+        "The sky appears pitch dark because there is no atmosphere on the Moon to scatter sunlight."
+      ],
+      "sample_slip_responses": [
+        "The sky looks white due to solar radiation."
+      ]
+    },
+    {
+      "question_id": "DIAG-EYE-005",
+      "question_type": "numerical",
+      "cognitive_level": "Application",
+      "stem": "A person with a myopic eye cannot see objects distinctly when placed beyond 1.2 meters. Calculate the focal length and power of the corrective lens required to restore distinct vision.",
+      "options": [
+        {
+          "key": "A",
+          "text": "f = +1.2 m, P = +0.83 D (convex lens)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-001"
+        },
+        {
+          "key": "B",
+          "text": "f = -1.2 m, P = -0.83 D (concave lens)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "f = -0.83 m, P = -1.2 D (reciprocal error)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
+        }
+      ],
+      "correct_answer": "B",
+      "numerical_meta": {
+        "formula": "1/f = 1/v - 1/u, P = 1 / f (in meters)",
+        "given": "u = -infinity, v = -1.2 m (far point)",
+        "working": "1/f = 1/(-1.2) - 1/(-infinity) = -1/1.2 => f = -1.2 m; P = 1 / (-1.2) = -0.83",
+        "unit": "D"
+      },
+      "authoritative_solution": "To view distant objects, object is at infinity (u = -infinity). The concave lens must form virtual image at myopic far point (v = -1.2 m). 1/f = 1/v - 1/u = 1/(-1.2) - 0 => f = -1.2 m. Power P = 1 / f = 1 / (-1.2) = -0.83 D.",
+      "sample_misconception_responses": [
+        "Formula: 1/f = 1/v - 1/u | Given: u = -infinity, v = +1.2 m | Working: P = 1 / 1.2 = +0.83 | Unit: D"
+      ],
+      "sample_correct_responses": [
+        "Formula: 1/f = 1/v - 1/u, P = 1/f | Given: u = -infinity, v = -1.2 m | Working: 1/f = 1/(-1.2) => f = -1.2 m, P = 1/(-1.2) = -0.83 | Unit: D"
+      ],
+      "sample_slip_responses": [
+        "Formula: P = f | Given: f = -1.2 m | Working: P = -1.2 | Unit: D"
+      ]
+    },
+    {
+      "question_id": "DIAG-EYE-006",
+      "question_type": "numerical",
+      "cognitive_level": "Application",
+      "stem": "The near point of a hypermetropic eye is 1.0 m. Calculate the power of the convex lens required to read a book comfortably held at the normal near point of 25 cm (0.25 m).",
+      "options": [
+        {
+          "key": "A",
+          "text": "P = -3.0 D (concave lens prescribed)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-001"
+        },
+        {
+          "key": "B",
+          "text": "P = +3.0 D (convex lens of f = +0.33 m)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "P = +5.0 D (arithmetic addition slip)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
+        }
+      ],
+      "correct_answer": "B",
+      "numerical_meta": {
+        "formula": "1/f = 1/v - 1/u, P = 1 / f (in meters)",
+        "given": "u = -25 cm = -0.25 m, v = -1.0 m",
+        "working": "1/f = 1/(-1.0) - 1/(-0.25) = -1.0 + 4.0 = +3.0 m^-1 => P = +3.0",
+        "unit": "D"
+      },
+      "authoritative_solution": "Object is at normal near point: u = -25 cm = -0.25 m. Corrective lens must form virtual image at hypermetropic near point: v = -1.0 m. Lens formula: 1/f = 1/v - 1/u = 1/(-1.0) - 1/(-0.25) = -1 + 4 = +3 m^-1. Power P = +3.0 D.",
+      "sample_misconception_responses": [
+        "Formula: 1/f = 1/v - 1/u | Given: u = -0.25 m, v = -1.0 m | Working: 1/f = -3 => P = -3.0 (concave) | Unit: D"
+      ],
+      "sample_correct_responses": [
+        "Formula: 1/f = 1/v - 1/u, P = 1/f | Given: u = -0.25 m, v = -1.0 m | Working: 1/f = -1 + 4 = +3.0 => P = +3.0 | Unit: D"
+      ],
+      "sample_slip_responses": [
+        "Formula: P = 1/u + 1/v | Given: u = 0.25, v = 1 | Working: P = 4 + 1 = 5 | Unit: D"
+      ]
+    },
+    {
+      "question_id": "DIAG-EYE-007",
+      "question_type": "typed_theory",
+      "cognitive_level": "Comprehension",
+      "stem": "The Sun is visible to us about 2 minutes before the actual sunrise, and about 2 minutes after the actual sunset. Explain the physical mechanism causing this 4-minute elongation of daytime.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Earth changes its rotational speed near dawn and dusk due to tidal friction.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-003"
+        },
+        {
+          "key": "B",
+          "text": "Atmospheric refraction: rays from the Sun just below the horizon pass from rarer space into progressively denser air layers, bending downward and raising the apparent position above the horizon.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "Sunlight reflects off polar ice caps and redirects into the sky.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-004"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "When the Sun is slightly below the horizon, light travels from vacuum into optically denser air layers of the Earth, bending towards the normal. The apparent position of the Sun is raised by about 0.5 degrees, corresponding to an advance of ~2 minutes at sunrise and sunset.",
+      "sample_misconception_responses": [
+        "Earth rotates slower during dawn and dusk so daylight is prolonged."
+      ],
+      "sample_correct_responses": [
+        "Atmospheric refraction bends light rays downward as they enter denser air, raising the apparent sun position above the horizon by ~0.5 degrees."
+      ],
+      "sample_slip_responses": [
+        "Daylight is longer due to lunar eclipse alignment."
+      ]
+    },
+    {
+      "question_id": "DIAG-EYE-008",
+      "question_type": "mcq",
+      "cognitive_level": "Application",
+      "stem": "Why are danger signal lights at railway crossings, construction sites, and towers always colored red?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Red light has the highest frequency and therefore carries maximum penetrating power through solid barriers.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-002"
+        },
+        {
+          "key": "B",
+          "text": "Red light has the longest wavelength in the visible spectrum and is scattered least by fog, mist, and smoke particles (Rayleigh scattering I proportional to 1/lambda^4), so it travels farthest without fading.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "Red light attracts human retinal rhodopsin pigment with chemical resonance.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-001"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "By Rayleigh scattering law, intensity of scattered light is inversely proportional to the fourth power of wavelength (I proportional to 1/lambda^4). Red has the longest visible wavelength (~700 nm) and is scattered least by smoke or fog, remaining visible over the greatest distance.",
+      "sample_misconception_responses": [
+        "Red has the highest energy and punches through fog."
+      ],
+      "sample_correct_responses": [
+        "Red light has the longest wavelength and is scattered the least by fog and smoke, remaining visible from long distances."
+      ],
+      "sample_slip_responses": [
+        "Red light deviates most in air."
+      ]
+    },
+    {
+      "question_id": "DIAG-EYE-009",
+      "question_type": "typed_theory",
+      "cognitive_level": "Comprehension",
+      "stem": "Why does a normal young human eye fail to focus sharply on reading material placed closer than 25 cm from the eyes?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The ciliary muscles cannot contract further to increase the crystalline lens curvature beyond its maximum physical limit of accommodation.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "B",
+          "text": "Light rays diverge too rapidly for the cornea to refract inward.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-002"
+        },
+        {
+          "key": "C",
+          "text": "The pupils dilate completely and allow uncontrolled optical glare.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-001"
+        }
+      ],
+      "correct_answer": "A",
+      "authoritative_solution": "To see closer objects, ciliary muscles contract to increase lens curvature and decrease focal length. However, the ciliary muscles reach their maximum mechanical limit of contraction at ~25 cm (least distance of distinct vision). Objects closer than 25 cm cannot be focused onto the retina.",
+      "sample_misconception_responses": [
+        "Cornea stops refracting when objects get too close."
+      ],
+      "sample_correct_responses": [
+        "Ciliary muscles cannot contract further to increase lens curvature beyond their physical limit, so accommodation stops at 25 cm."
+      ],
+      "sample_slip_responses": [
+        "Accommodation limit is caused by pupil shrinkage."
+      ]
+    },
+    {
+      "question_id": "DIAG-EYE-010",
+      "question_type": "mcq",
+      "cognitive_level": "Analysis",
+      "stem": "Which sequence of optical phenomena correctly explains the formation of a natural rainbow in the sky after a rain shower?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Reflection -> Total Internal Reflection -> Dispersion",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-005"
+        },
+        {
+          "key": "B",
+          "text": "Refraction and Dispersion at entry -> Internal Reflection at back surface -> Refraction at exit",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "Diffraction -> Interference -> Polarization",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-EYE-002"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "A rainbow is caused by dispersion of sunlight by tiny water droplets. Sunlight entering a spherical droplet is first refracted and dispersed into colors, then internally reflected off the back wall, and finally refracted again as it exits back into air towards the observer.",
+      "sample_misconception_responses": [
+        "Rainbow is formed by pure external mirror reflection on raindrop surfaces."
+      ],
+      "sample_correct_responses": [
+        "Light undergoes refraction and dispersion upon entering the droplet, internal reflection at the back, and refraction upon leaving."
+      ],
+      "sample_slip_responses": [
+        "Rainbow occurs only due to polarization."
+      ]
     }
   ]
 }

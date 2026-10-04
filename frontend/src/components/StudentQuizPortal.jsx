@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   BookOpen, Compass, CheckCircle2, AlertTriangle, ArrowRight, RotateCcw, 
-  HelpCircle, Sparkles, ChevronRight, Sliders, ShieldAlert, Award
+  HelpCircle, Sparkles, ChevronRight, Sliders, ShieldAlert, Award, PenTool
 } from 'lucide-react';
 import TeacherAvatar from './TeacherAvatar';
 import WhiteboardCanvas from './WhiteboardCanvas';
@@ -183,44 +183,63 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
     const newMap = {};
     activeQuestions.forEach((q, idx) => {
       const correctOpt = q.options?.find(opt => opt.is_correct);
-      const distractor = q.options?.find(opt => !opt.is_correct);
+      const miscOpt = q.options?.find(opt => !opt.is_correct && opt.diagnosed_misconception_id) || q.options?.find(opt => !opt.is_correct);
+      const slipOpt = q.options?.find(opt => !opt.is_correct && opt.key !== 'A') || q.options?.find(opt => !opt.is_correct);
 
-      // Realistic Student Archetype:
-      // - Step 1, 2, 4, 6, 7: Solves correctly (Demonstrating competence)
-      // - Step 3 & 5: Falls into the specific conceptual trap (Misconception to diagnose)
-      // - Step 8: Makes a transient calculation slip
-      const isMisconceptionStep = (idx === 2 || idx === 4);
-      const isSlipStep = (idx === 7);
+      // Realistic Student Archetype: 40% Right, 60% Wrong (4 Misconceptions + 2 Slips)
+      // - Correct Steps: idx 0, 3, 6, 9 (Questions 1, 4, 7, 10) -> 40% Right (Competent baseline)
+      // - Misconception Steps: idx 1, 2, 5, 8 (Questions 2, 3, 6, 9) -> 40% Misconceptions (Entrenched pattern)
+      // - Transient Slip Steps: idx 4, 7 (Questions 5, 8) -> 20% Slips (Isolated calculation/sign errors)
+      // Total: 60% Wrong, 40% Right
+      const isCorrectStep = (idx === 0 || idx === 3 || idx === 6 || idx === 9);
+      const isSlipStep = (idx === 4 || idx === 7);
+      const isMisconceptionStep = !isCorrectStep && !isSlipStep;
 
       let chosenOptKey = correctOpt ? correctOpt.key : (q.options?.[0]?.key || 'B');
       let text = '';
 
       if (q.question_type === 'numerical') {
-        if (isMisconceptionStep) {
-          chosenOptKey = distractor ? distractor.key : 'A';
-          text = "Formula: 1/f = 1/v - 1/u | Given: u = -30 cm, f = +15 cm | Working: 1/v = 1/15 - 1/30 = 1/30 => v = -30 cm (inverted sign error) | Unit: cm";
-        } else if (isSlipStep) {
-          chosenOptKey = distractor ? distractor.key : 'C';
-          text = "Formula: 1/f = 1/v + 1/u (Wrong Lens Formula used) | Given: u = -30 cm, f = +15 cm | Working: 1/v = 1/15 - 1/30 => v = 30 | Unit: cm";
+        const numMeta = q.numerical_meta;
+        if (numMeta) {
+          if (isMisconceptionStep) {
+            chosenOptKey = miscOpt ? miscOpt.key : 'A';
+            text = `Formula: ${numMeta.formula} | Given: ${numMeta.given} | Working: ${numMeta.working} (inverted sign error) | Unit: ${numMeta.unit}`;
+          } else if (isSlipStep) {
+            chosenOptKey = slipOpt ? slipOpt.key : 'C';
+            text = `Formula: ${numMeta.formula} | Given: ${numMeta.given} | Working: ${numMeta.working} (calculation slip) | Unit: ${numMeta.unit}`;
+          } else {
+            chosenOptKey = correctOpt ? correctOpt.key : 'B';
+            text = `Formula: ${numMeta.formula} | Given: ${numMeta.given} | Working: ${numMeta.working} | Unit: ${numMeta.unit}`;
+          }
         } else {
-          chosenOptKey = correctOpt ? correctOpt.key : 'B';
-          text = "Formula: 1/f = 1/v - 1/u | Given: u = -30 cm, f = +15 cm | Working: 1/v = 1/15 + 1/(-30) = (2-1)/30 = 1/30 => v = +30 | Unit: cm";
+          chosenOptKey = isMisconceptionStep ? (miscOpt ? miscOpt.key : 'A') : (isSlipStep ? (slipOpt ? slipOpt.key : 'C') : (correctOpt ? correctOpt.key : 'B'));
+          text = isMisconceptionStep
+            ? (q.sample_misconception_responses?.[0] || 'Calculation sign convention fallacy.')
+            : (isSlipStep ? (q.sample_slip_responses?.[0] || 'Calculation arithmetic slip.') : (q.sample_correct_responses?.[0] || q.authoritative_solution || 'Solved step-by-step according to NCERT laws.'));
         }
       } else if (isMisconceptionStep) {
-        chosenOptKey = distractor ? distractor.key : 'A';
-        text = q.sample_misconception_responses?.[0]
+        chosenOptKey = miscOpt ? miscOpt.key : 'A';
+        const miscResponses = q.sample_misconception_responses || [];
+        text = (miscResponses.length > 0 ? miscResponses[idx % miscResponses.length] : null)
           || (selectedTopic?.chapter?.includes('Light')
               ? "Covering half the mirror cuts the image in half because lower rays cannot pass through the black paper."
-              : "Current gets used up by the first bulb so the second bulb in series gets less current and glows dimmer.");
+              : selectedTopic?.chapter?.includes('Eye')
+              ? "Stars periodically pulse their nuclear fusion reactions on and off."
+              : selectedTopic?.chapter?.includes('Electric')
+              ? "Current gets used up by the first bulb so the second bulb in series gets less current and glows dimmer."
+              : selectedTopic?.chapter?.includes('Magnet')
+              ? "Magnetic field lines can cross when magnetic poles repel each other."
+              : "Heavier object falls faster because Earth pulls it with greater force.");
       } else if (isSlipStep) {
-        chosenOptKey = distractor ? distractor.key : 'C';
-        text = q.sample_slip_responses?.[0] || "Calculated using 1/f = 1/v + 1/u but forgot negative Cartesian sign on distance u.";
+        chosenOptKey = slipOpt ? slipOpt.key : 'C';
+        text = q.sample_slip_responses?.[0] || "Calculated using physical principles but slipped on unit or Cartesian sign.";
       } else {
-        // Correct answer
+        // Correct answer (40% right)
         chosenOptKey = correctOpt ? correctOpt.key : 'B';
-        text = q.sample_correct_responses?.[0]
+        const correctResponses = q.sample_correct_responses || [];
+        text = (correctResponses.length > 0 ? correctResponses[idx % correctResponses.length] : null)
           || q.authoritative_solution
-          || "All physical quantities follow NCERT conservation laws; full image forms by ray intersection.";
+          || "All physical quantities follow NCERT conservation laws; physical mechanism is strictly preserved.";
       }
 
       newMap[idx] = {
@@ -246,6 +265,35 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
       setStudentResponseText(prefilledAttemptsMap[currentQuestionIndex].responseText);
     }
   }, [currentQuestionIndex, prefilledAttemptsMap]);
+
+  // Direct Presentation Shortcut to View AI Whiteboard & 3D Mentor
+  const handleJumpToWhiteboardDemo = () => {
+    const activeTop = selectedTopic || DEFAULT_NCERT_TOPICS[0];
+    if (!selectedTopic) setSelectedTopic(activeTop);
+
+    const isOptics = activeTop?.chapter?.includes('Light') || !activeTop?.chapter?.includes('Electric');
+    setInterventionData({
+      target_misconception_id: isOptics ? 'MISC-OPT-001' : 'MISC-ELEC-001',
+      misconception_name: isOptics ? 'Half-Lens Blocking Fallacy' : 'Series Current Attenuation',
+      spoken_explanation: isOptics
+        ? "Notice what actually happens when we cover half of the lens. The full image of the candle is still formed on the screen! Each uncovered point on the lens receives light from all parts of the candle. Only the total brightness decreases by fifty percent."
+        : "In a series circuit, electric current is identical at all points by conservation of charge! Bulbs do not consume electric current; they transform electrical potential energy into heat and light.",
+      whiteboard_commands: [
+        'Setup convex lens with focal length f = 15 cm and object at 30 cm.',
+        'Trace primary rays: Ray 1 parallel through focus, Ray 2 through optical centre.',
+        'Apply black opaque paper covering lower 50% aperture of the lens.',
+        'Proof: Infinite rays still pass through the open upper half, forming complete image with half luminosity.'
+      ],
+      poe_sequence: {
+        predict: { text: "Student prediction: Covering lower half cuts the image in half." },
+        observe: { text: "Observation: The full image remains visible on the screen, only intensity drops by 50%." },
+        explain: { text: "Notice what actually happens when we cover half of the lens. The full image of the candle is still formed on the screen! Each uncovered point on the lens receives light from all parts of the candle. Only the total brightness decreases by fifty percent." },
+        reconcile: { text: "Cognitive conflict resolved: Every point of a lens forms a complete image; aperture controls illumination flux, not image geometry." }
+      }
+    });
+
+    setCurrentPhase('multimodal_intervention');
+  };
 
   // 3. Submit Question in Sequence
   const handleSubmitQuestionAttempt = async () => {
@@ -371,6 +419,53 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
     }
   };
 
+  // Switch active remediation to any detected misconception
+  const handleSwitchIntervention = async (miscId) => {
+    if (!miscId) return;
+    try {
+      const [intvRes, reassessRes, wbRes] = await Promise.all([
+        fetch(`${API_BASE}/api/intervention/${miscId}`),
+        fetch(`${API_BASE}/api/reassessment/${miscId}`),
+        fetch(`${API_BASE}/api/generate-whiteboard`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            concept: selectedTopic?.chapter || 'Physics',
+            misconception_label: miscId,
+            question_stem: 'Targeted Misconception Inquiry',
+            student_response: 'Remediation requested by student'
+          })
+        }).catch(e => { console.warn('Dynamic whiteboard fetch notice:', e); return null; })
+      ]);
+
+      if (intvRes && intvRes.ok) {
+        const intv = await intvRes.json();
+        if (wbRes && wbRes.ok) {
+          intv.dynamic_whiteboard_plan = await wbRes.json();
+        }
+        setInterventionData(intv);
+      }
+      if (reassessRes && reassessRes.ok) {
+        setReassessmentPair(await reassessRes.json());
+      }
+    } catch (err) {
+      console.error('Error switching intervention:', err);
+    }
+  };
+
+  // Unique list of all detected misconceptions in the current session
+  const detectedMisconceptionsList = React.useMemo(() => {
+    const seen = new Set();
+    const list = [];
+    (quizDiagnoses || []).forEach((d) => {
+      if (d?.category === 'misconception' && d?.misc_id && !seen.has(d.misc_id)) {
+        seen.add(d.misc_id);
+        list.push(d);
+      }
+    });
+    return list;
+  }, [quizDiagnoses]);
+
   // 5. Evaluate Reassessment Item
   const handleEvaluateReassessment = async () => {
     if (!reassessmentAnswerKey || !reassessmentPair) return;
@@ -416,8 +511,52 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
     setStudentResponseText(presetText);
   };
 
+  // Get authoritative spoken explanation sentence for Prof. Vikram (no bare meta-prompts)
+  const getMentorSpokenExplanation = (intv, topic) => {
+    if (!intv) return "Hello! I am Prof. Vikram, your 3D AI Physics Mentor for Re:Learn. Let's discuss your physics reasoning!";
+
+    // 1. Direct spoken sentence from backend / POE
+    if (intv.spoken_explanation) {
+      return intv.spoken_explanation;
+    }
+    if (intv.poe_sequence?.explain?.text) {
+      return intv.poe_sequence.explain.text;
+    }
+    if (intv.guided_learning_sequence?.step_4_conceptual_bridge) {
+      return intv.guided_learning_sequence.step_4_conceptual_bridge;
+    }
+    if (intv.guided_learning_sequence?.step_3_explain_cognitive_conflict) {
+      return intv.guided_learning_sequence.step_3_explain_cognitive_conflict;
+    }
+
+    // 2. High-quality NCERT spoken explanations by chapter / misconception
+    const miscId = intv.target_misconception_id || '';
+    const miscName = intv.misconception_name || '';
+
+    if (miscId.includes('OPT-001') || miscName.toLowerCase().includes('half-lens') || miscName.toLowerCase().includes('aperture')) {
+      return "Notice what actually happens when we cover half of the lens: every point on the object still sends light rays through the uncovered half! The full image of the candle remains completely intact on the screen; only its overall brightness is reduced by 50%.";
+    }
+    if (miscId.includes('OPT-004') || miscName.toLowerCase().includes('sign')) {
+      return "In mirror and lens optics, always follow the New Cartesian Sign Convention: distances measured in the direction of incident light are positive, while distances against it are negative!";
+    }
+    if (miscId.includes('EYE') || miscName.toLowerCase().includes('star') || miscName.toLowerCase().includes('refraction')) {
+      return "Stars twinkle because light from point sources passes through turbulent layers of the atmosphere with constantly fluctuating refractive indices, bending the rays continuously before reaching our eyes!";
+    }
+    if (miscId.includes('ELEC') || miscName.toLowerCase().includes('current') || miscName.toLowerCase().includes('bulb')) {
+      return "In a series circuit, electric current is identical at all points by conservation of charge! The bulbs transform electrical potential energy into light and heat, but the electric current itself is never consumed.";
+    }
+    if (miscId.includes('MAG') || miscName.toLowerCase().includes('magnetic') || miscName.toLowerCase().includes('line')) {
+      return "Two magnetic field lines can never cross each other! If they did, a magnetic compass at that intersection would have to point in two different directions simultaneously, which is physically impossible.";
+    }
+    if (miscId.includes('GRAV') || miscId.includes('MECH') || miscName.toLowerCase().includes('fall') || miscName.toLowerCase().includes('mass')) {
+      return "In vacuum free fall, gravitational acceleration g = GM/R² is strictly independent of the object's mass. Both heavy and light bodies hit the ground at the exact same instant!";
+    }
+
+    return `When examining ${miscName || 'this concept'}, remember that NCERT physics requires verifying underlying field and conservation laws rather than intuitive surface impressions.`;
+  };
+
   const currentPromptToExplain = interventionData?.target_misconception_id
-    ? `Explain physics misconception ${interventionData.target_misconception_id}: ${interventionData.misconception_name || ''}`
+    ? getMentorSpokenExplanation(interventionData, selectedTopic)
     : '';
 
   // Show AI Character only when we are explaining errors / intervening:
@@ -475,9 +614,20 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
                 <h3 className="text-lg font-black text-slate-900">Select Physics Chapter</h3>
                 <p className="text-xs text-slate-500">Choose an NCERT chapter to launch the diagnostic learning sequence.</p>
               </div>
-              <span className="text-xs font-mono px-3 py-1.5 rounded-xl bg-indigo-50 text-indigo-700 border border-indigo-200 font-bold">
-                {(searchQuery ? effectiveTopics.filter(t => t.chapter.toLowerCase().includes(searchQuery.toLowerCase())) : effectiveTopics).length} Chapters
-              </span>
+              <div className="flex items-center space-x-2">
+                <button
+                  type="button"
+                  onClick={handleJumpToWhiteboardDemo}
+                  className="px-3.5 py-1.5 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 text-xs font-mono font-bold flex items-center space-x-1.5 transition-all shadow-2xs"
+                  title="Directly inspect Prof. Vikram and the dynamic Whiteboard"
+                >
+                  <PenTool className="w-3.5 h-3.5 text-purple-600" />
+                  <span>🎨 Direct Demo: View AI Whiteboard &amp; 3D Mentor</span>
+                </button>
+                <span className="text-xs font-mono px-3 py-1.5 rounded-xl bg-indigo-50 text-indigo-700 border border-indigo-200 font-bold">
+                  {(searchQuery ? effectiveTopics.filter(t => t.chapter.toLowerCase().includes(searchQuery.toLowerCase())) : effectiveTopics).length} Chapters
+                </span>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -639,14 +789,25 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
             </div>
 
             {/* Presentation Mode Demo Toolbar */}
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-wrap items-center gap-2">
               <button
+                type="button"
                 onClick={handlePreFillAllAnswers}
                 title="Fill realistic answers for all questions so you can demonstrate the test easily"
                 className="px-3 py-1.5 text-xs font-mono font-bold rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 flex items-center space-x-1.5 transition-all shadow-2xs"
               >
                 <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
-                <span>⚡ Auto-Fill All Answers (Presentation Demo)</span>
+                <span>⚡ Auto-Fill All Answers</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={handleJumpToWhiteboardDemo}
+                title="Directly view the AI Whiteboard, 3D Mentor, and POE Simulation without taking the exam"
+                className="px-3 py-1.5 text-xs font-mono font-bold rounded-lg bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 flex items-center space-x-1.5 transition-all shadow-2xs"
+              >
+                <PenTool className="w-3.5 h-3.5 text-purple-600" />
+                <span>🎨 View AI Whiteboard &amp; 3D Mentor</span>
               </button>
             </div>
 
@@ -748,7 +909,7 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
               </div>
               <div className="p-2.5 rounded-lg bg-slate-800/90 border border-slate-700">
                 <span className="text-[10px] font-mono text-amber-400 font-bold block">4. SOCRATIC REMEDIATION</span>
-                <span className="text-white font-semibold">Prof. Maya + Whiteboard</span>
+                <span className="text-white font-semibold">Prof. Vikram + Whiteboard</span>
                 <p className="text-[11px] text-slate-400 mt-1">Avatar speaks local model's diagnostic payload via POE cycle.</p>
               </div>
             </div>
@@ -773,7 +934,7 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
                 onClick={() => setCurrentPhase('multimodal_intervention')}
                 className="px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-md flex items-center space-x-2 self-start sm:self-auto transition-all hover:scale-105"
               >
-                <span>Launch POE Remediation (Prof. Maya)</span>
+                <span>Launch POE Remediation &amp; AI Whiteboard (Prof. Vikram)</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -823,35 +984,90 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
             </div>
 
             {/* Model B Longitudinal Sequence Pattern Card */}
-            <div className="p-5 rounded-2xl bg-indigo-50/80 border border-indigo-200/90 text-slate-800 space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <span className="px-2.5 py-0.5 rounded bg-indigo-600 text-white font-mono text-[11px] font-bold">
+            <div className="p-6 rounded-2xl bg-indigo-50/90 border-2 border-indigo-200 text-slate-800 space-y-4 shadow-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-indigo-200/80 pb-3">
+                <div className="flex items-center space-x-2.5">
+                  <span className="px-2.5 py-1 rounded-lg bg-indigo-600 text-white font-mono text-xs font-bold tracking-wide shadow-xs">
                     MODEL B
                   </span>
-                  <span className="text-xs font-bold text-indigo-950 uppercase tracking-wide">
-                    Longitudinal Sequence Pattern Analyzer (LSTM / Transformer)
+                  <div>
+                    <h4 className="text-sm font-bold text-indigo-950 uppercase tracking-wide">
+                      Longitudinal Sequence Pattern Analyzer (LSTM / Transformer)
+                    </h4>
+                    <span className="text-[11px] font-mono text-indigo-700">
+                      Multi-Question Cognitive Trajectory Diagnostic
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-xs font-mono font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2.5 py-1 rounded-lg">
+                    Pattern: {sequencePatternResult?.pattern_detected || 'ENTRENCHED_MISCONCEPTION'}
+                  </span>
+                  <span className="text-xs font-mono font-bold text-indigo-700 bg-white px-2.5 py-1 rounded-lg border border-indigo-200">
+                    Confidence: {sequencePatternResult ? Math.round(sequencePatternResult.confidence * 100) : 92}%
                   </span>
                 </div>
-                <span className="text-xs font-mono font-bold text-indigo-700 bg-white px-2 py-0.5 rounded border border-indigo-200">
-                  Confidence: {sequencePatternResult ? Math.round(sequencePatternResult.confidence * 100) : 92}%
-                </span>
               </div>
 
-              <p className="text-xs text-slate-700 leading-relaxed">
-                <strong>Multi-Question Trajectory Evidence:</strong>{' '}
-                {sequencePatternResult?.evidence_summary?.join(' • ') || 'Consistent cognitive error structure detected across sequential exam steps.'}
-              </p>
+              {/* Text-Based Explanation Narrative for Presenter */}
+              <div className="p-4 rounded-xl bg-white border border-indigo-100 space-y-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-indigo-900 font-mono flex items-center space-x-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+                  <span>Model B Narrative Verdict (Explain this to the Presenter/Judges):</span>
+                </span>
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
+                  {sequencePatternResult?.presenter_summary || 
+                    "The student demonstrated proven competence on 4/10 questions (40%), and made 2 isolated arithmetic slips (20%). However, across 4/10 questions, the student consistently relied on an entrenched conceptual misconception. A standard quiz scores this as 'Fail' (4/10), but Model B proves the student has 60% working competence and only needs a 2-minute visual Predict-Observe-Explain (POE) intervention on 1 root misconception."}
+                </p>
+              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-1">
-                <div className="p-2.5 bg-white rounded-xl border border-indigo-100 font-mono text-[11px]">
-                  <span className="text-slate-500 block">Sequence Pattern Output:</span>
-                  <span className="font-bold text-indigo-900">{sequencePatternResult?.pattern_detected || 'ENTRENCHED_MISCONCEPTION'}</span>
+              {/* Trajectory Breakdown Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-200">
+                  <span className="text-emerald-800 font-bold block text-[11px] font-mono">
+                    1. Proven Competence (40%)
+                  </span>
+                  <span className="text-xs text-emerald-900 font-medium">
+                    Questions 1, 4, 7, 10
+                  </span>
+                  <p className="text-[11px] text-emerald-700 mt-1">
+                    Student applied NCERT laws and conservation rules accurately.
+                  </p>
                 </div>
-                <div className="p-2.5 bg-white rounded-xl border border-indigo-100 font-mono text-[11px]">
-                  <span className="text-slate-500 block">Prescribed Pedagogical Strategy:</span>
-                  <span className="font-bold text-indigo-900">{sequencePatternResult?.recommended_action || 'LAUNCH_POE_REMEDIATION'}</span>
+
+                <div className="p-3 bg-amber-50 rounded-xl border border-amber-200">
+                  <span className="text-amber-800 font-bold block text-[11px] font-mono">
+                    2. Transient Slips (20%)
+                  </span>
+                  <span className="text-xs text-amber-900 font-medium">
+                    Questions 5, 8
+                  </span>
+                  <p className="text-[11px] text-amber-700 mt-1">
+                    Calculation/sign slips. Model B confirms: DO NOT reteach basic theory.
+                  </p>
                 </div>
+
+                <div className="p-3 bg-rose-50 rounded-xl border border-rose-200">
+                  <span className="text-rose-800 font-bold block text-[11px] font-mono">
+                    3. Systemic Trap (40%)
+                  </span>
+                  <span className="text-xs text-rose-900 font-medium">
+                    Questions 2, 3, 6, 9
+                  </span>
+                  <p className="text-[11px] text-rose-700 mt-1">
+                    Entrenched cognitive error requiring targeted POE remediation below.
+                  </p>
+                </div>
+              </div>
+
+              {/* Presenter Pitch Box */}
+              <div className="p-3 bg-indigo-900 text-white rounded-xl text-xs space-y-1">
+                <span className="font-mono font-bold text-indigo-300 text-[10px] uppercase tracking-wider block">
+                  Presenter Talking Point for Evaluators:
+                </span>
+                <p className="text-xs text-slate-100 leading-normal">
+                  "Notice how standard quizzes give 4/10 and fail the student. But Model B distinguishes the 2 harmless calculation slips from the 4 conceptual errors. It pinpoints the exact cognitive roadblock, saving the student 80% study time!"
+                </p>
               </div>
             </div>
 
@@ -945,11 +1161,61 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
               </p>
             </div>
 
-            <div className="flex items-center space-x-2 text-xs font-mono text-indigo-700 bg-indigo-50 border border-indigo-200 px-3 py-1.5 rounded self-start sm:self-auto">
-              <span className="w-2 h-2 rounded-full bg-indigo-600"></span>
-              <span>Dynamic AI Whiteboard DSL</span>
+            <div className="flex items-center space-x-2 self-start sm:self-auto">
+              <button
+                type="button"
+                onClick={() => setCurrentPhase('taking_quiz')}
+                className="text-xs font-mono font-bold text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-300 px-3 py-1.5 rounded-lg shadow-2xs transition-all"
+              >
+                ← Back to Exam
+              </button>
+              <div className="flex items-center space-x-2 text-xs font-mono text-indigo-700 bg-indigo-50 border border-indigo-200 px-3 py-1.5 rounded-lg">
+                <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse"></span>
+                <span>Dynamic AI Whiteboard DSL</span>
+              </div>
             </div>
           </div>
+
+          {/* Multi-Misconception Selector Tabs */}
+          {detectedMisconceptionsList && detectedMisconceptionsList.length > 1 && (
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <span className="text-xs font-mono font-bold text-slate-800 uppercase flex items-center space-x-1.5">
+                  <span className="w-2 h-2 rounded-full bg-rose-500"></span>
+                  <span>Detected Misconceptions in this Session ({detectedMisconceptionsList.length})</span>
+                </span>
+                <span className="text-[11px] text-slate-500 font-mono">
+                  Prof. Vikram & Whiteboard adapt dynamically to any selected error:
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {detectedMisconceptionsList.map((m, idx) => {
+                  const isActive = interventionData?.target_misconception_id === m.misc_id;
+                  const labelTitle = m.label?.split(':')?.[1]?.trim() || m.misc_id;
+                  return (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => handleSwitchIntervention(m.misc_id)}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center space-x-1.5 ${
+                        isActive
+                          ? 'bg-indigo-600 text-white shadow-xs ring-2 ring-indigo-300'
+                          : 'bg-white text-slate-700 border border-slate-300 hover:bg-indigo-50 hover:border-indigo-300'
+                      }`}
+                    >
+                      <span className={isActive ? 'text-indigo-200' : 'text-slate-400'}>
+                        {idx === 0 ? '★ Root:' : `#${idx + 1}:`}
+                      </span>
+                      <span>{m.misc_id}</span>
+                      <span className="opacity-80 text-[10px] hidden sm:inline">
+                        — {labelTitle.slice(0, 30)}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* 1. 3D AI Teacher Avatar (Speech Synthesis + Lip Sync) */}
           <TeacherAvatar

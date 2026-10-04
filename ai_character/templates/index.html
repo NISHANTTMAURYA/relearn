@@ -2098,11 +2098,24 @@
             }
         }
 
+        // Direct spoken explanation delivery by Prof. Vikram (as the Mentor Assistant)
+        async function deliverMentorExplanation(text) {
+            if (!text || !text.trim()) return;
+            const chatMessages = document.getElementById('chat-messages');
+            if (chatMessages && chatMessages.children.length <= 1) {
+                chatMessages.innerHTML = '';
+            }
+            addMessage('assistant', text);
+            await speak(text);
+        }
+
         // PostMessage / Query auto-speak handler for integration into Re:Learn UI
         window.addEventListener('message', (event) => {
-            if (event.data && (event.data.type === 'EXPLAIN_MISCONCEPTION' || event.data.prompt)) {
-                const prompt = event.data.prompt || `Explain physics misconception: ${event.data.misconception_id}`;
-                applyQuickPrompt(prompt);
+            if (event.data && (event.data.type === 'EXPLAIN_MISCONCEPTION' || event.data.prompt || event.data.explanation || event.data.spoken_text)) {
+                const text = event.data.explanation || event.data.spoken_text || event.data.prompt;
+                if (text) {
+                    deliverMentorExplanation(text);
+                }
             }
         });
 
@@ -2113,7 +2126,7 @@
             const params = new URLSearchParams(window.location.search);
             const autoExplain = params.get('explain') || params.get('prompt');
             if (autoExplain) {
-                setTimeout(() => applyQuickPrompt(autoExplain), 1200);
+                setTimeout(() => deliverMentorExplanation(autoExplain), 1200);
             }
             console.log('Prof. Vikram AI Physics Mentor initialized');
         });

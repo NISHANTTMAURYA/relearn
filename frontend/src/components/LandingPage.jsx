@@ -96,7 +96,7 @@ const PIPELINE_STEPS = [
   { step: '3', title: 'Model 1: Individual Diagnosis', model: 'DeBERTa-v3', desc: 'Finds the exact mental misconception causing the wrong answer across 46 classes.' },
   { step: '4', title: 'Model 2: Sequence Analysis', model: 'GRU Model', desc: 'Tracks patterns across consecutive answers to detect persistent misunderstandings.' },
   { step: '5', title: 'Synthesis & Confidence Gate', model: 'Abstention Gate', desc: 'If evidence is uncertain, asks a quick follow-up question instead of guessing.' },
-  { step: '6', title: 'Targeted Remediation', model: 'POE + Prof. Maya', desc: 'Predict-Observe-Explain cycle with 3D avatar, SVG whiteboard, and PhET simulation.' },
+  { step: '6', title: 'Targeted Remediation', model: 'POE + Prof. Vikram', desc: 'Predict-Observe-Explain cycle with 3D avatar, SVG whiteboard, and PhET simulation.' },
   { step: '7', title: 'Isomorphic Reassessment', model: 'Question Bank', desc: 'Gives a fresh near-transfer question with new numbers to test true understanding.' },
   { step: '8', title: 'BKT Mastery Tracking', model: 'BKT Engine', desc: 'Updates knowledge state P(L) in the student profile, tracking cured misconceptions.' },
 ];
@@ -491,205 +491,89 @@ export default function LandingPage({ onEnterApp }) {
           </div>
 
           {/* ========================================================================= */}
-          {/* THE MISCONCEPTION DIFFERENTIATOR: SAME WRONG ANSWER -> DIFFERENT CAUSES   */}
+          {/* THE MISCONCEPTION DIFFERENTIATOR: COMPACT NORMAL-SIZED CARD                */}
           {/* ========================================================================= */}
-          <div className="mb-12 bg-white rounded-3xl border-2 border-indigo-200 p-6 sm:p-8 shadow-md">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-6">
-              <div>
-                <div className="inline-flex items-center space-x-2 text-[11px] font-mono font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-full mb-2">
-                  <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
-                  <span>The Core Diagnostic Breakthrough</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                  The Misconception Differentiator
+          {/* ========================================================================= */}
+          {/* COMPACT DUAL-AI EXPLANATION CARD (MODEL 1 + MODEL 2)                      */}
+          {/* ========================================================================= */}
+          {/* ========================================================================= */}
+          {/* THE MISCONCEPTION DIFFERENTIATOR CARD: MODEL 1 + MODEL 2                   */}
+          {/* ========================================================================= */}
+          <div className="mb-8 bg-white rounded-2xl border-2 border-indigo-200 p-4 sm:p-5 shadow-xs space-y-3.5">
+            {/* Header + Case context in one line */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
+              <div className="flex items-center space-x-2">
+                <span className="w-2 h-2 rounded-full bg-indigo-600"></span>
+                <h3 className="text-sm sm:text-base font-bold text-slate-900">
+                  The Misconception Differentiator: Same Wrong Answer ➔ Different Causes
                 </h3>
-                <p className="text-sm text-slate-600 mt-1 max-w-2xl">
-                  <strong>Why Standard Testing Fails:</strong> Two students can choose the exact same wrong answer, but possess entirely different cognitive flaws. Standard LMS marks both "-1", while Re:Learn diagnoses the exact mental model.
-                </p>
               </div>
-
-              {/* Student Selector Buttons for Live Presentation Demo */}
-              <div className="flex items-center space-x-2 bg-slate-100 p-1.5 rounded-xl border border-slate-200 self-start md:self-auto">
-                <button
-                  type="button"
-                  onClick={() => setDiffStudent('A')}
-                  className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all ${
-                    diffStudent === 'A'
-                      ? 'bg-indigo-600 text-white shadow-sm'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                  }`}
-                >
-                  Student A (Aperture Flaw)
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setDiffStudent('B')}
-                  className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all ${
-                    diffStudent === 'B'
-                      ? 'bg-purple-600 text-white shadow-sm'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                  }`}
-                >
-                  Student B (Holistic Ray Flaw)
-                </button>
-              </div>
+              <span className="text-[11px] font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 px-2.5 py-0.5 rounded-md font-bold self-start sm:self-auto">
+                NCERT Benchmark: Covering Lens • Both Students Pick [A] "Half image forms" ❌
+              </span>
             </div>
 
-            {/* Test Case Context Header */}
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 mb-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono text-slate-500 mb-1.5">
-                <span className="font-bold text-slate-700 uppercase">NCERT Class 10 Light Question Benchmark:</span>
-                <span className="px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200 font-bold">
-                  Both Students Pick: Option A (Only half image forms) ❌ Incorrect
-                </span>
-              </div>
-              <p className="text-sm font-semibold text-slate-900">
-                "What happens to the real image formed on a screen when the lower half of a convex lens is covered with black paper?"
-              </p>
-            </div>
-
-            {/* Comparison Grid: Standard Quiz App vs Re:Learn Model 1 */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-              
-              {/* Standard LMS (Left Column - 4 cols) */}
-              <div className="lg:col-span-4 bg-slate-50 border border-slate-200 rounded-2xl p-5 flex flex-col justify-between">
+            {/* Model 1 & Model 2 Side-by-Side in 2 Columns */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 text-xs">
+              {/* Left Column: Q1 - How are two students with same wrong answer differentiated? */}
+              <div className="p-3.5 rounded-xl bg-indigo-50/70 border border-indigo-200 flex flex-col justify-between space-y-2">
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 bg-slate-200 px-2 py-0.5 rounded">
-                      Standard Quiz / LMS
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="px-2 py-0.5 rounded bg-indigo-600 text-white font-mono text-[10px] font-bold">
+                      1. SAME WRONG ANSWER DIFFERENTIATION
                     </span>
-                    <span className="text-xs font-bold text-rose-600 flex items-center gap-1">
-                      <XCircle className="w-4 h-4" /> 0 / 1 Marks
-                    </span>
+                    <span className="text-[10px] font-mono font-bold text-indigo-700">Model 1 (DeBERTa-v3)</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 text-sm mb-2">Binary Grading Only</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                    Standard platforms (Google Forms, Byju's, Kahoot) only check the final option key:
+                  <p className="text-[11px] text-slate-700 mb-2 leading-relaxed">
+                    Standard LMS gives both students 0/1 marks identically. <strong>Model 1 reads their written working</strong> to uncover two totally different mental blocks:
                   </p>
 
-                  <div className="p-3 bg-white rounded-xl border border-slate-200 text-xs font-mono space-y-1.5 text-slate-700 mb-4">
-                    <div>Selected: <strong className="text-rose-600">[A] Half image</strong></div>
-                    <div>Evaluation: <span className="text-rose-600 font-bold">Wrong (-1)</span></div>
-                    <div>Remediation: <span className="text-slate-500 italic">"Refer NCERT Chapter 10 Page 178"</span></div>
+                  <div className="space-y-1.5 text-[11px]">
+                    <div className="p-2 rounded-lg bg-white border border-indigo-100 shadow-2xs">
+                      <strong className="text-indigo-900 block font-mono text-[10px]">Student A: "Lower half masked, light blocked from bottom"</strong>
+                      <span className="text-slate-600">➔ <strong>MISC-OPT-001 (Aperture Fallacy)</strong>: Thinks lens acts like a stencil window. Remediated via Whiteboard ray tracing.</span>
+                    </div>
+                    <div className="p-2 rounded-lg bg-white border border-indigo-100 shadow-2xs">
+                      <strong className="text-purple-900 block font-mono text-[10px]">Student B: "Light travels in rigid straight beams"</strong>
+                      <span className="text-slate-600">➔ <strong>MISC-OPT-004 (Holistic Ray Fallacy)</strong>: Thinks light is rigid picture. Remediated via Wavefront curvature simulation.</span>
+                    </div>
                   </div>
-
-                  <div className="p-3 bg-rose-50 rounded-xl border border-rose-200 text-xs text-rose-900">
-                    ⚠️ <strong>Fatal Flaw:</strong> Gives the exact same generic text to both students, ignoring the fact that their underlying mental blocks are completely different!
-                  </div>
-                </div>
-
-                <div className="mt-4 pt-3 border-t border-slate-200 text-[11px] font-mono text-slate-500">
-                  Cognitive Root Cause: <strong className="text-slate-700">Undetected (Blind)</strong>
                 </div>
               </div>
 
-              {/* Re:Learn Diagnostic Engine (Right Column - 8 cols) */}
-              <div className="lg:col-span-8 bg-indigo-50/40 border-2 border-indigo-300 rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+              {/* Right Column: Q2 - How does Model 2 (Sequence Model) help? */}
+              <div className="p-3.5 rounded-xl bg-slate-900 text-white flex flex-col justify-between space-y-2">
                 <div>
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-indigo-700 bg-indigo-100 border border-indigo-200 px-2.5 py-0.5 rounded-full">
-                      Re:Learn AI Diagnosis (DeBERTa-v3)
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="px-2 py-0.5 rounded bg-emerald-500 text-slate-950 font-mono text-[10px] font-bold">
+                      2. HOW MODEL 2 (SEQUENCE MODEL) HELPS
                     </span>
-                    <span className="text-xs font-mono font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full flex items-center gap-1">
-                      <CheckCircle className="w-3.5 h-3.5" /> 98.4% Confidence
-                    </span>
+                    <span className="text-[10px] font-mono font-bold text-emerald-400">Macro Trajectory Analyzer</span>
                   </div>
+                  <p className="text-[11px] text-slate-300 mb-2 leading-relaxed">
+                    Model 1 only inspects 1 question. It cannot know if Student A made a careless slip or has a deep conceptual flaw. <strong>Model 2 tracks all 10 exam questions:</strong>
+                  </p>
 
-                  {/* Student A Details */}
-                  {diffStudent === 'A' && (
-                    <div className="space-y-4">
-                      <div>
-                        <span className="text-xs font-mono font-bold text-indigo-900 uppercase block mb-1">
-                          Student A's Natural Reasoning:
-                        </span>
-                        <div className="p-3 bg-white rounded-xl border border-indigo-200 text-sm font-mono text-slate-800 shadow-2xs">
-                          "Light cannot pass through the covered bottom, so only the top half of the candle appears on the screen."
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div className="p-3 bg-white rounded-xl border border-indigo-100 shadow-2xs">
-                          <span className="text-[10px] font-mono font-bold text-indigo-700 uppercase block mb-1">
-                            Diagnosed Misconception Tag:
-                          </span>
-                          <span className="text-xs font-bold text-indigo-950 block">
-                            MISC-OPT-001: Geometric Aperture Fallacy
-                          </span>
-                          <p className="text-[11px] text-slate-600 mt-1 leading-snug">
-                            Student believes a lens acts like a peephole/window where each half independently maps to half the object.
-                          </p>
-                        </div>
-
-                        <div className="p-3 bg-indigo-600 text-white rounded-xl shadow-2xs">
-                          <span className="text-[10px] font-mono font-bold uppercase block mb-1 text-indigo-200">
-                            Targeted Remediation (Prof. Vikram):
-                          </span>
-                          <span className="text-xs font-bold block">
-                            Whiteboard Ray-Tracing Proof
-                          </span>
-                          <p className="text-[11px] text-indigo-100 mt-1 leading-snug">
-                            Demonstrates on the dynamic whiteboard that infinite rays emanate from every single object point and pass through the top half, preserving the entire image.
-                          </p>
-                        </div>
-                      </div>
+                  <div className="grid grid-cols-3 gap-1.5 text-[10px] font-mono text-center mb-2">
+                    <div className="p-1.5 rounded bg-slate-800 border border-slate-700">
+                      <strong className="text-emerald-400 block text-xs">40%</strong>
+                      <span className="text-slate-300 text-[10px]">Competence (4 Qs)</span>
                     </div>
-                  )}
-
-                  {/* Student B Details */}
-                  {diffStudent === 'B' && (
-                    <div className="space-y-4">
-                      <div>
-                        <span className="text-xs font-mono font-bold text-purple-900 uppercase block mb-1">
-                          Student B's Natural Reasoning:
-                        </span>
-                        <div className="p-3 bg-white rounded-xl border border-purple-200 text-sm font-mono text-slate-800 shadow-2xs">
-                          "Light travels in straight rigid lines like a photo; the black paper blocks the line, cutting off the inverted tip."
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div className="p-3 bg-white rounded-xl border border-purple-100 shadow-2xs">
-                          <span className="text-[10px] font-mono font-bold text-purple-700 uppercase block mb-1">
-                            Diagnosed Misconception Tag:
-                          </span>
-                          <span className="text-xs font-bold text-purple-950 block">
-                            MISC-OPT-004: Linear Holistic Ray Fallacy
-                          </span>
-                          <p className="text-[11px] text-slate-600 mt-1 leading-snug">
-                            Student believes light travels as a rigid, pre-formed stamp rather than diverging and converging by point-wise refraction.
-                          </p>
-                        </div>
-
-                        <div className="p-3 bg-purple-700 text-white rounded-xl shadow-2xs">
-                          <span className="text-[10px] font-mono font-bold uppercase block mb-1 text-purple-200">
-                            Targeted Remediation (Prof. Vikram):
-                          </span>
-                          <span className="text-xs font-bold block">
-                            Refraction Angle Simulator
-                          </span>
-                          <p className="text-[11px] text-purple-100 mt-1 leading-snug">
-                            Animates wavefront bending at curved glass boundaries to clarify point-to-point geometric convergence.
-                          </p>
-                        </div>
-                      </div>
+                    <div className="p-1.5 rounded bg-slate-800 border border-slate-700">
+                      <strong className="text-amber-400 block text-xs">20%</strong>
+                      <span className="text-slate-300 text-[10px]">Slips (2 Qs)</span>
                     </div>
-                  )}
+                    <div className="p-1.5 rounded bg-slate-800 border border-slate-700">
+                      <strong className="text-rose-400 block text-xs">40%</strong>
+                      <span className="text-slate-300 text-[10px]">Entrenched (4 Qs)</span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Presentation Cheat Sheet Bar */}
-                <div className="mt-4 pt-3 border-t border-indigo-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono">
-                  <div className="flex items-center space-x-1.5 text-indigo-900 font-bold">
-                    <span>🎙️ Presentation Pitch:</span>
-                    <span className="text-slate-600 font-normal">
-                      "Same incorrect answer, but two distinct cognitive diseases treated with two distinct medicines."
-                    </span>
-                  </div>
-                  <span className="text-indigo-600 font-semibold text-[11px]">
-                    Disentangled Attention: 95.8% Differentiation F1
-                  </span>
+                <div className="p-2 rounded bg-indigo-950 border border-indigo-700/60 text-[11px] text-indigo-200 leading-normal">
+                  <strong>The Breakthrough:</strong> Don't fail the student (4/10) or reteach the whole chapter. Model 2 proves 60% working competence and isolates the 1 root flaw, saving 80% study time.
                 </div>
               </div>
-
             </div>
           </div>
 
@@ -1097,12 +981,12 @@ export default function LandingPage({ onEnterApp }) {
                     <span className="text-xs font-mono font-bold bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full">Intervention</span>
                     <Sparkles className="w-5 h-5 text-amber-600" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-1">Prof. Maya (POE Tutor)</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-1">Prof. Vikram (3D AI Mentor)</h3>
                   <p className="text-xs text-slate-500 mb-4 leading-relaxed">
-                    Gemini 1.5 Flash with strict NCERT RAG prompt. Powers 3D WebGL avatar lip-sync, SVG whiteboard, and bilingual EN/HI speech.
+                    NCERT Physics RAG voice counselor. Powers 3D WebGL avatar lip-sync, dynamic whiteboard, and bilingual EN/HI speech.
                   </p>
                   <div className="space-y-2 mb-4 text-xs font-mono">
-                    <div className="flex justify-between bg-slate-50 p-2 rounded-lg"><span>Base Model</span><strong>Gemini 1.5 Flash</strong></div>
+                    <div className="flex justify-between bg-slate-50 p-2 rounded-lg"><span>AI Engine</span><strong>Prof. Vikram 3D Embodied AI</strong></div>
                     <div className="flex justify-between bg-slate-50 p-2 rounded-lg"><span>Abstention Cal.</span><strong className="text-emerald-600">98.8%</strong></div>
                     <div className="flex justify-between bg-slate-50 p-2 rounded-lg"><span>Avatar Rendering</span><strong className="text-violet-600">3D WebGL / Three.js</strong></div>
                   </div>
@@ -1151,7 +1035,7 @@ export default function LandingPage({ onEnterApp }) {
             <span className="font-black text-white text-sm">Re:Learn</span>
             <span>· NCERT Physics Misconception Diagnostic Engine</span>
           </div>
-          <div>DeBERTa-v3 · GRU Sequence Analyser · Prof. Maya (Gemini 1.5 Flash)</div>
+          <div>DeBERTa-v3 · Sequence Pattern Analyzer · Prof. Vikram (3D Embodied AI Mentor)</div>
         </div>
       </footer>
     </div>

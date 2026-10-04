@@ -24,6 +24,8 @@ export default function ProfMaya3DPanel({
       try {
         iframeRef.current.contentWindow?.postMessage({
           type: 'EXPLAIN_MISCONCEPTION',
+          explanation: promptToExplain,
+          spoken_text: promptToExplain,
           prompt: promptToExplain,
           misconception_id: misconceptionId
         }, '*');

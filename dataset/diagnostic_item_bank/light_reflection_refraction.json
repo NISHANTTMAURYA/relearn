@@ -1,162 +1,395 @@
 {
-  "chapter": "Chapter 9: Light – Reflection and Refraction",
+  "chapter": "Chapter 9: Light \u2013 Reflection and Refraction",
   "authoritative_reference": "NCERT Class 10 Science",
   "questions": [
     {
       "question_id": "DIAG-OPT-001",
-      "question_type": "conceptual",
+      "question_type": "typed_theory",
       "cognitive_level": "Comprehension",
-      "stem": "A convex lens of focal length 15 cm forms a sharp real image of a burning candle on a white paper screen placed 30 cm on the opposite side. An experimenter covers the lower half of the convex lens completely with an opaque black cardboard sheet. What happens to the image seen on the screen?",
+      "stem": "A convex lens of focal length 15 cm forms a sharp real image of a burning candle on a screen. The lower half of the lens is now covered with an opaque black cardboard sheet. Explain with physical ray principles what happens to the image on the screen.",
       "options": [
         {
           "key": "A",
-          "text": "The top half of the candle flame image completely disappears from the screen.",
+          "text": "The top half of the candle flame disappears completely from the screen.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-OPT-001",
-          "distractor_rationale": "Reflects the Half-Lens Blocking Fallacy: assuming rays map geometrically 1:1 like a photographic stencil or pinhole window."
+          "diagnosed_misconception_id": "MISC-OPT-001"
         },
         {
           "key": "B",
-          "text": "The bottom half of the candle flame image completely disappears from the screen.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-OPT-001",
-          "distractor_rationale": "Also reflects the Half-Lens Blocking Fallacy, inverted due to real image inversion."
+          "text": "The complete image is still formed, but its brightness (intensity) is reduced by half.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
         },
         {
           "key": "C",
-          "text": "The complete image of the entire candle remains intact at the same position, but its brightness (intensity) is reduced by approximately half.",
-          "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct wave/ray optics: every point of an object emits light in all directions across the entire aperture. Uncovered aperture refracts a full cone from every object point."
-        },
-        {
-          "key": "D",
-          "text": "The image disappears entirely because light can no longer pass through both standard principal focal points.",
+          "text": "The image flips upside down again because rays invert twice.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-OPT-006",
-          "distractor_rationale": "Reflects the Special Ray Exclusivity misconception: believing image formation requires textbook reference rays that pass through the blocked lower half."
+          "diagnosed_misconception_id": "MISC-OPT-004"
         }
       ],
-      "correct_answer": "C",
-      "authoritative_solution": "According to geometrical optics, every single point on an illuminated object emits a diverging cone of light rays that intercepts the entire surface of the lens aperture. The unobstructed upper half of the lens intercepts approximately 50% of the light flux from every point of the candle and refracts those rays to converge at their identical conjugate image points in the focal plane. Therefore, a complete image is formed, but with roughly half the luminous intensity (brightness).",
-      "source": "NCERT Class 10 Science Activity 9.9 & Goldberg & McDermott (1987)."
+      "correct_answer": "B",
+      "authoritative_solution": "Every point on an illuminated object emits rays across the entire lens aperture. The unobstructed upper half receives rays from all points of the candle, forming the complete image with approximately 50% reduced luminous intensity.",
+      "sample_misconception_responses": [
+        "Lower half is covered so light cannot pass through bottom; only top half of flame appears.",
+        "Half the image disappears because half the glass is blocked."
+      ],
+      "sample_correct_responses": [
+        "The complete image remains intact because rays from every point of the candle still pass through the open upper half, but the image becomes dimmer."
+      ],
+      "sample_slip_responses": [
+        "Full image remains, but focal length changes from 15 cm to 7.5 cm."
+      ]
     },
     {
       "question_id": "DIAG-OPT-002",
       "question_type": "numerical",
       "cognitive_level": "Application",
-      "stem": "An object of height 5 cm is placed at a distance of 20 cm in front of a concave mirror having a radius of curvature of 30 cm. Using the New Cartesian Sign Convention, calculate the position (v) of the image and state whether it is real or virtual.",
+      "stem": "An object of height 5 cm is placed at a distance of 20 cm in front of a concave mirror having a radius of curvature of 30 cm. Using the New Cartesian Sign Convention, calculate the position (v) of the image.",
       "options": [
         {
           "key": "A",
-          "text": "v = +60 cm, and the image is virtual and erect.",
+          "text": "v = +60 cm (virtual and erect)",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-OPT-004",
-          "distractor_rationale": "Results from sign convention error: substituting u = +20 cm and f = +15 cm into 1/f = 1/v + 1/u, yielding 1/v = 1/15 - 1/20 = 1/60."
+          "diagnosed_misconception_id": "MISC-OPT-004"
         },
         {
           "key": "B",
-          "text": "v = -60 cm, and the image is real and inverted.",
+          "text": "v = -60 cm (real and inverted)",
           "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct NCERT Cartesian convention: u = -20 cm, f = R/2 = -15 cm; 1/v = 1/(-15) - 1/(-20) = -1/15 + 1/20 = -1/60 => v = -60 cm."
+          "diagnosed_misconception_id": null
         },
         {
           "key": "C",
-          "text": "v = -8.57 cm, and the image is virtual.",
+          "text": "v = -8.57 cm (calculation sign slip)",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-OPT-004",
-          "distractor_rationale": "Results from accidentally using the lens formula 1/f = 1/v - 1/u with concave mirror values: 1/v = 1/f + 1/u = -1/15 - 1/20 = -7/60 => v = -8.57 cm."
-        },
-        {
-          "key": "D",
-          "text": "v = +12 cm, and the image is real.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-OPT-004",
-          "distractor_rationale": "Results from taking u = -20 cm but treating concave focal length as positive f = +15 cm: 1/v = 1/15 - 1/(-20) = 1/15 + 1/20 = 7/60 => v = +8.57 cm, or algebraic transposition error."
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
         }
       ],
       "correct_answer": "B",
-      "authoritative_solution": "By NCERT New Cartesian Sign Convention: Object is in front of mirror: u = -20 cm. For a concave mirror, focus lies in front: f = R / 2 = -30 cm / 2 = -15 cm. Applying the Mirror Formula: 1/f = 1/v + 1/u => 1/v = 1/f - 1/u = 1/(-15) - 1/(-20) = -1/15 + 1/20 = (-4 + 3)/60 = -1/60. Hence, v = -60 cm. The negative sign signifies that the image is formed in front of the mirror (real and inverted) at a distance of 60 cm from the pole.",
-      "source": "NCERT Class 10 Science Example 9.1 & CBSE Board Examination 2020."
+      "numerical_meta": {
+        "formula": "1/f = 1/v + 1/u",
+        "given": "u = -20 cm, f = R/2 = -30/2 = -15 cm",
+        "working": "1/v = 1/f - 1/u = 1/(-15) - 1/(-20) = -1/15 + 1/20 = (-4+3)/60 = -1/60 => v = -60",
+        "unit": "cm"
+      },
+      "authoritative_solution": "By Cartesian sign convention: u = -20 cm, f = -15 cm. Mirror formula: 1/f = 1/v + 1/u => 1/v = 1/(-15) - 1/(-20) = -1/60 => v = -60 cm.",
+      "sample_misconception_responses": [
+        "Formula: 1/f = 1/v + 1/u | Given: u = +20 cm, f = +15 cm | Working: 1/v = 1/15 - 1/20 = 1/60 => v = +60 | Unit: cm"
+      ],
+      "sample_correct_responses": [
+        "Formula: 1/f = 1/v + 1/u | Given: u = -20 cm, f = -15 cm | Working: 1/v = 1/(-15) - 1/(-20) = -1/60 => v = -60 | Unit: cm"
+      ],
+      "sample_slip_responses": [
+        "Formula: 1/f = 1/v - 1/u | Given: u = -20 cm, f = -15 cm | Working: 1/v = 1/(-15) + 1/(-20) = -7/60 => v = -8.57 | Unit: cm"
+      ]
     },
     {
       "question_id": "DIAG-OPT-003",
-      "question_type": "ray_diagram",
+      "question_type": "mcq",
       "cognitive_level": "Analysis",
-      "stem": "A student looks into a flat plane mirror and observes the image of their face. Which statement accurately describes the nature of the image and the physical path of light rays?",
+      "stem": "A student looks into a plane mirror and observes their reflection. Which statement correctly describes why the image is classified as virtual in physics?",
       "options": [
         {
           "key": "A",
-          "text": "The image is real because light rays physically reflect backwards, penetrate through the glass, and converge at a point behind the mirror surface.",
+          "text": "Rays physically penetrate through the glass backing and converge behind the mirror.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-OPT-003",
-          "distractor_rationale": "Reflects the Virtual Image Ray Convergence Fallacy: believing light rays physically penetrate and meet behind reflecting barriers."
+          "diagnosed_misconception_id": "MISC-OPT-003"
         },
         {
           "key": "B",
-          "text": "The image is virtual because light rays reflect off the front surface and diverge; when produced backward by the brain, they appear to intersect behind the mirror, where no actual light exists.",
+          "text": "Reflected rays diverge from the mirror surface; when traced backward along sightlines, they appear to intersect behind the mirror where no actual light exists.",
           "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct definition of virtual image under NCERT: virtual rays are apparent backward extensions of physically diverging reflected rays."
+          "diagnosed_misconception_id": null
         },
         {
           "key": "C",
-          "text": "The image is virtual only because no physical screen has been placed behind the mirror; if a photographic film were inserted behind the silvered surface, it would capture the image.",
+          "text": "The image is virtual only because no physical screen has been placed behind the silver coating.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-OPT-002",
-          "distractor_rationale": "Reflects Screen Reification: believing virtual/real distinction is merely a technological limitation of screen placement."
-        },
-        {
-          "key": "D",
-          "text": "The image is inverted top-to-bottom and upright left-to-right because reflection always preserves horizontal parity.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-OPT-003",
-          "distractor_rationale": "Misunderstands lateral inversion in plane mirrors (front-to-back inversion perceived as lateral inversion)."
+          "diagnosed_misconception_id": "MISC-OPT-002"
         }
       ],
       "correct_answer": "B",
-      "authoritative_solution": "Light rays from an object strike the plane mirror and reflect strictly according to the law of reflection (angle of incidence = angle of reflection). The reflected rays diverge into the observer's eye. The eye and visual cortex trace these diverging rays straight backward along their lines of sight. They appear to intersect at a point behind the mirror located at the same perpendicular distance as the object in front. Because no light rays actually pass through or emanate from behind the mirror, the image cannot be projected onto a screen and is strictly virtual.",
-      "source": "NCERT Class 10 Science Section 9.1 (Reflection of Light) & Galili & Hazan (2000)."
+      "authoritative_solution": "A virtual image is formed when diverging rays only appear to intersect when extended backward. No light physically passes behind the plane mirror.",
+      "sample_misconception_responses": [
+        "Light penetrates through the mirror and focuses behind the glass."
+      ],
+      "sample_correct_responses": [
+        "Diverging reflected rays appear to meet behind mirror when traced backwards."
+      ],
+      "sample_slip_responses": [
+        "Image is virtual because mirror has negative focal length."
+      ]
     },
     {
       "question_id": "DIAG-OPT-004",
-      "question_type": "application",
+      "question_type": "mcq",
       "cognitive_level": "Comprehension",
-      "stem": "A narrow beam of monochromatic yellow light passes obliquely from air into a rectangular parallel-faced glass block of refractive index 1.5. Upon emerging from the opposite parallel face back into air, what are the direction and position of the emergent beam relative to the incident beam?",
+      "stem": "A narrow ray of yellow light passes obliquely from air into a rectangular parallel-faced glass slab. What is the orientation of the emergent ray relative to the incident ray?",
       "options": [
         {
           "key": "A",
-          "text": "The emergent beam is permanently bent at an angle towards the normal, deviating angularly by 30 degrees.",
+          "text": "The emergent ray is permanently bent towards the normal at an angle of 30 degrees.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-OPT-005",
-          "distractor_rationale": "Reflects the Glass Slab Emergent Ray Deviation Fallacy: confusing lateral displacement with angular deviation in prisms."
+          "diagnosed_misconception_id": "MISC-OPT-005"
         },
         {
           "key": "B",
-          "text": "The emergent beam is strictly parallel to the original incident beam, but shifted sideways by a perpendicular distance known as lateral displacement.",
+          "text": "The emergent ray is parallel to the incident ray, shifted sideways by lateral displacement.",
           "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct physics: at parallel interfaces, i1 = r2 and r1 = i2, so angle of emergence equals angle of incidence."
+          "diagnosed_misconception_id": null
         },
         {
           "key": "C",
-          "text": "The emergent beam is dispersed into a spectrum of seven colors because glass always disperses all light.",
+          "text": "The emergent ray splits into seven spectral colors inside the slab.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-EYE-002",
-          "distractor_rationale": "Fails to recognize monochromatic light cannot disperse, plus parallel faces recombine even polychromatic components."
-        },
-        {
-          "key": "D",
-          "text": "The emergent beam emerges exactly along the original undeviated path with zero sideways shift.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-OPT-005",
-          "distractor_rationale": "Neglects refraction inside the medium entirely, assuming light simply steps through unchanged."
+          "diagnosed_misconception_id": "MISC-EYE-002"
         }
       ],
       "correct_answer": "B",
-      "authoritative_solution": "When light enters the first face (air-to-glass), it bends towards the normal: n = sin(i) / sin(r). At the second opposing parallel face (glass-to-air), the internal angle of incidence equals r. Light refracts away from the normal into air: 1/n = sin(r) / sin(e). Equating both shows sin(e) = sin(i), so angle of emergence e equals angle of incidence i. Hence, the emergent ray is parallel to the incident ray. The refraction inside the slab creates a parallel sideways shift termed 'lateral displacement' which depends on the thickness of the slab, refractive index, and angle of incidence.",
-      "source": "NCERT Class 10 Science Section 9.3.1 (Refraction through a Rectangular Glass Slab)."
+      "authoritative_solution": "At parallel boundaries, angle of emergence equals angle of incidence (i = e). The ray emerges parallel to its incident direction with a perpendicular lateral shift.",
+      "sample_misconception_responses": [
+        "The ray stays deviated at an angle like in a prism."
+      ],
+      "sample_correct_responses": [
+        "Emergent ray is parallel to incident ray but laterally displaced."
+      ],
+      "sample_slip_responses": [
+        "Lateral shift is zero because glass cancels refraction."
+      ]
+    },
+    {
+      "question_id": "DIAG-OPT-005",
+      "question_type": "numerical",
+      "cognitive_level": "Application",
+      "stem": "A convex lens of focal length 15 cm has an object placed at a distance of 30 cm in front of it. Using the Lens Formula, calculate the image distance (v).",
+      "options": [
+        {
+          "key": "A",
+          "text": "v = -10 cm (using mirror formula by mistake)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-004"
+        },
+        {
+          "key": "B",
+          "text": "v = +30 cm (real, inverted, same size at 2F)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "v = +10 cm (sign convention error)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
+        }
+      ],
+      "correct_answer": "B",
+      "numerical_meta": {
+        "formula": "1/f = 1/v - 1/u",
+        "given": "u = -30 cm, f = +15 cm",
+        "working": "1/v = 1/f + 1/u = 1/15 + 1/(-30) = (2-1)/30 = 1/30 => v = +30",
+        "unit": "cm"
+      },
+      "authoritative_solution": "Lens formula: 1/f = 1/v - 1/u => 1/v = 1/15 + 1/(-30) = 1/30 => v = +30 cm. Image is formed at 2F on the other side.",
+      "sample_misconception_responses": [
+        "Formula: 1/f = 1/v + 1/u | Given: u = -30 cm, f = +15 cm | Working: 1/v = 1/15 - 1/(-30) = 3/30 = 1/10 => v = -10 | Unit: cm"
+      ],
+      "sample_correct_responses": [
+        "Formula: 1/f = 1/v - 1/u | Given: u = -30 cm, f = +15 cm | Working: 1/v = 1/15 + 1/(-30) = 1/30 => v = +30 | Unit: cm"
+      ],
+      "sample_slip_responses": [
+        "Formula: 1/f = 1/v - 1/u | Given: u = +30 cm, f = +15 cm | Working: 1/v = 1/15 + 1/30 = 3/30 => v = 10 | Unit: cm"
+      ]
+    },
+    {
+      "question_id": "DIAG-OPT-006",
+      "question_type": "typed_theory",
+      "cognitive_level": "Analysis",
+      "stem": "A convex lens projects a sharp real image of an object onto a cardboard screen. If the screen is abruptly removed, explain whether the real image still exists in space at that location.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The image disappears completely because images only exist when painted onto a physical screen.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-002"
+        },
+        {
+          "key": "B",
+          "text": "The real image still exists in empty space at that exact focal plane (aerial image) because light rays continue to intersect there.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "The image immediately converts into a virtual image located inside the glass.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-003"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "A real image is formed by the spatial intersection of converging rays. The screen merely scatters light diffusely so observers can view it; the aerial image exists in space independently of the screen.",
+      "sample_misconception_responses": [
+        "Without the screen there is no surface, so the image cannot exist."
+      ],
+      "sample_correct_responses": [
+        "The aerial image still exists in space at that plane because converging rays intersect there whether a screen is present or not."
+      ],
+      "sample_slip_responses": [
+        "The image exists but focal length doubles without a screen."
+      ]
+    },
+    {
+      "question_id": "DIAG-OPT-007",
+      "question_type": "mcq",
+      "cognitive_level": "Application",
+      "stem": "The absolute refractive index of a glass medium is 1.5. If the speed of light in vacuum is 3 * 10^8 m/s, what is the speed of light in this glass?",
+      "options": [
+        {
+          "key": "A",
+          "text": "4.5 * 10^8 m/s (multiplied by refractive index)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-005"
+        },
+        {
+          "key": "B",
+          "text": "2.0 * 10^8 m/s (v = c / n = 3*10^8 / 1.5)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "1.5 * 10^8 m/s (speed equals refractive index constant)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "Refractive index n = c / v => v = c / n = (3 * 10^8 m/s) / 1.5 = 2.0 * 10^8 m/s.",
+      "sample_misconception_responses": [
+        "Light speeds up in denser glass so v = c * n = 4.5 * 10^8 m/s."
+      ],
+      "sample_correct_responses": [
+        "v = c / n = 3e8 / 1.5 = 2.0e8 m/s."
+      ],
+      "sample_slip_responses": [
+        "v = 1.5e8 m/s due to division slip."
+      ]
+    },
+    {
+      "question_id": "DIAG-OPT-008",
+      "question_type": "numerical",
+      "cognitive_level": "Application",
+      "stem": "Find the power of a concave lens having a focal length of 2 meters.",
+      "options": [
+        {
+          "key": "A",
+          "text": "P = +0.5 D (concave lens treated as positive)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-004"
+        },
+        {
+          "key": "B",
+          "text": "P = -0.5 D (P = 1/f with f = -2 m)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "P = -2.0 D (confusing focal length with dioptre)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
+        }
+      ],
+      "correct_answer": "B",
+      "numerical_meta": {
+        "formula": "P = 1 / f (in meters)",
+        "given": "f = -2 m (concave lens focal length is negative)",
+        "working": "P = 1 / (-2) = -0.5",
+        "unit": "D"
+      },
+      "authoritative_solution": "Power P = 1 / f(in meters). For a concave lens, focal length is negative: f = -2 m. Hence, P = 1 / (-2) = -0.5 D (Dioptre).",
+      "sample_misconception_responses": [
+        "Formula: P = 1 / f | Given: f = +2 m | Working: P = 1 / 2 = +0.5 | Unit: D"
+      ],
+      "sample_correct_responses": [
+        "Formula: P = 1 / f (in meters) | Given: f = -2 m (concave) | Working: P = 1 / (-2) = -0.5 | Unit: D"
+      ],
+      "sample_slip_responses": [
+        "Formula: P = f | Given: f = -2 m | Working: P = -2 | Unit: D"
+      ]
+    },
+    {
+      "question_id": "DIAG-OPT-009",
+      "question_type": "mcq",
+      "cognitive_level": "Comprehension",
+      "stem": "Why are convex mirrors preferred as rear-view (wing) mirrors in automobiles?",
+      "options": [
+        {
+          "key": "A",
+          "text": "They produce magnified real images of distant vehicles on the driver eyes.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-001"
+        },
+        {
+          "key": "B",
+          "text": "They always produce an erect, diminished virtual image and have a significantly wider field of view because they are curved outwards.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "They invert the image so the driver can see behind the car upside down.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-004"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "Convex mirrors always give an erect though diminished virtual image. Since they curve outward, they provide a much wider field of view than a plane mirror.",
+      "sample_misconception_responses": [
+        "Convex mirrors magnify cars so they look closer."
+      ],
+      "sample_correct_responses": [
+        "Convex mirrors provide wider field of view and always form erect diminished images."
+      ],
+      "sample_slip_responses": [
+        "Convex mirrors form inverted images at night."
+      ]
+    },
+    {
+      "question_id": "DIAG-OPT-010",
+      "question_type": "typed_theory",
+      "cognitive_level": "Analysis",
+      "stem": "A lemon kept in water inside a cylindrical glass tumbler appears to be significantly bigger than its actual size when viewed from the sides. Explain the physical optical cause.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The glass tumbler chemically expands the lemon cells when submerged in liquid.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-005"
+        },
+        {
+          "key": "B",
+          "text": "Light rays from the lemon refract away from the normal when passing from water to air through the curved glass cylinder, which acts as a cylindrical magnifying lens.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "Water particles reflect light back onto the lemon, creating an optical double reflection.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-OPT-003"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "Light travels from denser water to rarer air, bending away from the normal. The curved outer surface of the cylindrical tumbler behaves as a convex cylindrical lens, causing virtual magnification.",
+      "sample_misconception_responses": [
+        "Water reflects light so the lemon looks doubled in size."
+      ],
+      "sample_correct_responses": [
+        "Light refracts from denser water to rarer air at the curved cylindrical interface, which acts like a magnifying lens."
+      ],
+      "sample_slip_responses": [
+        "Lemon looks bigger because focal length of water is zero."
+      ]
     }
   ]
 }

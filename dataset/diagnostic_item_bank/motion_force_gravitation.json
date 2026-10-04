@@ -1,0 +1,400 @@
+{
+  "chapter": "Class 9: Motion, Force & Gravitation",
+  "authoritative_reference": "NCERT Class 9 Science",
+  "questions": [
+    {
+      "question_id": "DIAG-MECH-001",
+      "question_type": "typed_theory",
+      "cognitive_level": "Analysis",
+      "stem": "Two solid spheres, one made of lead (mass 10 kg) and one of aluminum (mass 0.5 kg), are dropped simultaneously from a height of 25 meters in a tall evacuated vacuum cylinder. Which sphere reaches the ground first, and what physical principle governs this outcome?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The 10 kg lead sphere reaches first because gravity pulls heavier masses with much greater downward force.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-GRAV-001"
+        },
+        {
+          "key": "B",
+          "text": "Both spheres hit the ground at the exact same instant, because gravitational acceleration g = G*M/R^2 is independent of the falling body mass.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "The lighter aluminum sphere reaches first because it has less inertia resisting downward motion.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-GRAV-002"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "Although Earth exerts a greater gravitational force on the heavier object (F = m * g), the heavier object also possesses proportionally greater inertia (m). Acceleration a = F / m = (m * g) / m = g. The mass m cancels out completely, so all objects accelerate toward Earth at the exact same rate g = 9.8 m/s^2 in a vacuum.",
+      "sample_misconception_responses": [
+        "The 10 kg lead ball hits first because heavy things fall faster than light things."
+      ],
+      "sample_correct_responses": [
+        "Both spheres hit the ground at the exact same time because gravitational acceleration g = G*M/R^2 is independent of the object mass."
+      ],
+      "sample_slip_responses": [
+        "Both hit together, but lead has zero acceleration."
+      ]
+    },
+    {
+      "question_id": "DIAG-MECH-002",
+      "question_type": "typed_theory",
+      "cognitive_level": "Analysis",
+      "stem": "According to Newton Third Law of Motion, every action has an equal and opposite reaction. If Earth gravitational pull attracts an apple downward toward the ground, does the apple exert an equal gravitational pull upward on the Earth?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Yes, the apple exerts an equal and opposite gravitational force on Earth, but Earth massive inertia results in an undetectable acceleration (a = F / M_earth).",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "B",
+          "text": "No, small objects do not possess gravity; only massive planets can exert gravitational force.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-GRAV-001"
+        },
+        {
+          "key": "C",
+          "text": "No, Newton third law applies to contact pushes and pulls, not to action-at-a-distance gravity.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MOT-003"
+        }
+      ],
+      "correct_answer": "A",
+      "authoritative_solution": "Newton Universal Law of Gravitation states F = G * M_earth * m_apple / r^2. The gravitational force between the two bodies is a mutual action-reaction pair: F_apple-on-Earth = F_Earth-on-apple. However, since M_earth is ~6 * 10^24 kg, Earth acceleration a = F / M_earth is ~10^-25 m/s^2, which is imperceptible.",
+      "sample_misconception_responses": [
+        "Only the Earth pulls the apple; the apple has no gravity of its own."
+      ],
+      "sample_correct_responses": [
+        "The apple exerts an equal and opposite gravitational force on Earth, but because of Earth massive mass, its acceleration is practically zero."
+      ],
+      "sample_slip_responses": [
+        "Apple pulls Earth with force equal to mass times volume."
+      ]
+    },
+    {
+      "question_id": "DIAG-MECH-003",
+      "question_type": "numerical",
+      "cognitive_level": "Application",
+      "stem": "An astronaut has a mass of 60 kg on Earth. Given that acceleration due to gravity on Earth is g = 9.8 m/s^2 and on the Moon is g_moon = g / 6, calculate the weight of the astronaut on the Moon.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Weight = 10 kg (confusing mass with force)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-GRAV-002"
+        },
+        {
+          "key": "B",
+          "text": "Weight = 98 N (W_moon = W_earth / 6 = (60 * 9.8) / 6)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "Weight = 588 N (weight remains invariant on all planets)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-GRAV-001"
+        }
+      ],
+      "correct_answer": "B",
+      "numerical_meta": {
+        "formula": "W = m * g, W_moon = W_earth / 6",
+        "given": "m = 60 kg, g = 9.8 m/s^2, g_moon = 9.8 / 6 = 1.63 m/s^2",
+        "working": "W_earth = 60 * 9.8 = 588 N; W_moon = 588 / 6 = 98",
+        "unit": "N"
+      },
+      "authoritative_solution": "Mass is constant everywhere (m = 60 kg). Weight on Earth is W_earth = m * g = 60 * 9.8 = 588 N. Weight on Moon is W_moon = W_earth / 6 = 588 / 6 = 98 N (or W_moon = m * g_moon = 60 * 1.633 = 98 N).",
+      "sample_misconception_responses": [
+        "Formula: W = m | Given: m = 60 | Working: W_moon = 60/6 = 10 | Unit: kg"
+      ],
+      "sample_correct_responses": [
+        "Formula: W = m * g, W_moon = W_earth / 6 | Given: m = 60 kg, g = 9.8 m/s^2 | Working: W_earth = 60 * 9.8 = 588 N, W_moon = 588 / 6 = 98 | Unit: N"
+      ],
+      "sample_slip_responses": [
+        "Formula: W = m * g | Given: m = 60, g = 9.8 | Working: W = 588 | Unit: N"
+      ]
+    },
+    {
+      "question_id": "DIAG-MECH-004",
+      "question_type": "mcq",
+      "cognitive_level": "Comprehension",
+      "stem": "Which physical property is the quantitative measure of the inertia of a body?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Velocity of the body",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MOT-001"
+        },
+        {
+          "key": "B",
+          "text": "Mass of the body (larger mass offers greater resistance to change in state of motion)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "Volume and surface area of the body",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-GRAV-002"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "Inertia is the natural tendency of an object to resist changes in its state of rest or uniform motion. Mass is the quantitative measure of inertia: a heavier body requires a larger force to achieve the same acceleration.",
+      "sample_misconception_responses": [
+        "Inertia depends on how fast the object moves."
+      ],
+      "sample_correct_responses": [
+        "Mass is the measure of inertia; heavier objects have greater inertia."
+      ],
+      "sample_slip_responses": [
+        "Inertia equals momentum divided by volume."
+      ]
+    },
+    {
+      "question_id": "DIAG-MECH-005",
+      "question_type": "numerical",
+      "cognitive_level": "Application",
+      "stem": "A net force acts on a stationary cart of mass 5 kg, producing an acceleration of 4 m/s^2. Calculate the magnitude of the applied net force (F).",
+      "options": [
+        {
+          "key": "A",
+          "text": "F = 1.25 N (dividing mass by acceleration: 5 / 4)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
+        },
+        {
+          "key": "B",
+          "text": "F = 20 N (using Newton Second Law: F = m * a = 5 * 4)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "F = 9 N (adding mass and acceleration: 5 + 4)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MOT-003"
+        }
+      ],
+      "correct_answer": "B",
+      "numerical_meta": {
+        "formula": "F = m * a",
+        "given": "m = 5 kg, a = 4 m/s^2",
+        "working": "F = 5 * 4 = 20",
+        "unit": "N"
+      },
+      "authoritative_solution": "By Newton Second Law of Motion: Net Force F = mass * acceleration = 5 kg * 4 m/s^2 = 20 N (Newtons).",
+      "sample_misconception_responses": [
+        "Formula: F = m / a | Given: m = 5, a = 4 | Working: F = 5 / 4 = 1.25 | Unit: N"
+      ],
+      "sample_correct_responses": [
+        "Formula: F = m * a | Given: m = 5 kg, a = 4 m/s^2 | Working: F = 5 * 4 = 20 | Unit: N"
+      ],
+      "sample_slip_responses": [
+        "Formula: F = m + a | Given: m = 5, a = 4 | Working: F = 9 | Unit: N"
+      ]
+    },
+    {
+      "question_id": "DIAG-MECH-006",
+      "question_type": "typed_theory",
+      "cognitive_level": "Analysis",
+      "stem": "A ball is thrown vertically upward into the air. At the exact instant the ball reaches the highest peak of its trajectory, what are its velocity and its acceleration?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Both velocity and acceleration are zero because the ball is momentarily at rest.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MOT-001"
+        },
+        {
+          "key": "B",
+          "text": "Velocity is zero (v = 0 m/s), but acceleration is non-zero and directed downwards at g = 9.8 m/s^2 due to Earth continuous gravitational pull.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "Velocity is zero, but acceleration points upwards to pull the ball back.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MOT-002"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "At the top of the trajectory, the upward velocity diminishes to zero (v = 0 m/s) before reversing direction. However, gravity does not switch off: Earth continues to exert downward gravitational force F = mg, resulting in a constant downward acceleration a = -9.8 m/s^2.",
+      "sample_misconception_responses": [
+        "At the highest point, velocity is zero so acceleration must also be zero."
+      ],
+      "sample_correct_responses": [
+        "Velocity is zero at the peak, but acceleration remains constant at 9.8 m/s^2 downward due to continuous gravitational attraction."
+      ],
+      "sample_slip_responses": [
+        "Acceleration reverses to upward at the peak."
+      ]
+    },
+    {
+      "question_id": "DIAG-MECH-007",
+      "question_type": "numerical",
+      "cognitive_level": "Application",
+      "stem": "According to the Universal Law of Gravitation, the force between two bodies is F. If the distance between the two bodies is halved (r becomes r / 2), what is the new gravitational force F_new?",
+      "options": [
+        {
+          "key": "A",
+          "text": "F_new = 2F (doubled)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-GRAV-001"
+        },
+        {
+          "key": "B",
+          "text": "F_new = 4F (quadrupled, because F is inversely proportional to r^2)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "F_new = F / 4 (quartered)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
+        }
+      ],
+      "correct_answer": "B",
+      "numerical_meta": {
+        "formula": "F = G * m1 * m2 / r^2",
+        "given": "r_new = r / 2",
+        "working": "F_new = G * m1 * m2 / (r/2)^2 = G * m1 * m2 / (r^2 / 4) = 4 * (G * m1 * m2 / r^2) = 4 * F",
+        "unit": "N"
+      },
+      "authoritative_solution": "Newton Universal Law: F = G * m1 * m2 / r^2. When r is replaced by r / 2: F_new = G * m1 * m2 / (r / 2)^2 = 4 * F. Halving the distance quadruples the gravitational force.",
+      "sample_misconception_responses": [
+        "Formula: F = G * m1 * m2 / r | Given: r_new = r/2 | Working: F_new = 2 * F | Unit: N"
+      ],
+      "sample_correct_responses": [
+        "Formula: F = G * m1 * m2 / r^2 | Given: r_new = r / 2 | Working: (1/(1/2))^2 = 4 => F_new = 4F | Unit: N"
+      ],
+      "sample_slip_responses": [
+        "F_new = F / 2 due to division error."
+      ]
+    },
+    {
+      "question_id": "DIAG-MECH-008",
+      "question_type": "mcq",
+      "cognitive_level": "Comprehension",
+      "stem": "What is the fundamental scientific difference between the mass of an object and its weight?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Mass is a scalar quantity representing amount of matter (constant everywhere); weight is the gravitational vector force (W = m * g) exerted on it, varying with location.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "B",
+          "text": "Mass is measured in Newtons and weight is measured in kilograms.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-GRAV-002"
+        },
+        {
+          "key": "C",
+          "text": "There is no difference; mass and weight are identical synonyms in physics.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-GRAV-001"
+        }
+      ],
+      "correct_answer": "A",
+      "authoritative_solution": "Mass (kg) is the quantity of matter contained in a body and remains constant everywhere in the universe. Weight (N) is the force with which Earth attracts the body (W = mg), which varies depending on local gravitational acceleration g.",
+      "sample_misconception_responses": [
+        "Mass and weight are the exact same thing measured in kg."
+      ],
+      "sample_correct_responses": [
+        "Mass is scalar and invariant; weight is the vector gravitational force W = mg which depends on location."
+      ],
+      "sample_slip_responses": [
+        "Mass changes on the moon but weight stays constant."
+      ]
+    },
+    {
+      "question_id": "DIAG-MECH-009",
+      "question_type": "typed_theory",
+      "cognitive_level": "Comprehension",
+      "stem": "When dropped simultaneously in air from the same height, a flat sheet of paper falls much slower than the same paper crumpled into a tight ball. Explain why, and predict what happens if both are dropped in a vacuum.",
+      "options": [
+        {
+          "key": "A",
+          "text": "In air, the flat sheet has larger surface area experiencing greater upward air drag; in a vacuum with zero air resistance, both fall with identical acceleration g and hit simultaneously.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "B",
+          "text": "Crumpling the paper increases its gravitational mass, making Earth pull it harder.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-GRAV-001"
+        },
+        {
+          "key": "C",
+          "text": "Even in a vacuum, the crumpled ball falls faster because density increases.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-GRAV-002"
+        }
+      ],
+      "correct_answer": "A",
+      "authoritative_solution": "In air, aerodynamic drag opposes motion: the flat sheet experiences far greater upward air resistance due to its larger surface area. In an evacuated vacuum chamber where air resistance is zero, both fall freely with the identical gravitational acceleration g = 9.8 m/s^2 and hit the floor simultaneously.",
+      "sample_misconception_responses": [
+        "Crumpling the paper makes it heavier, so it falls faster."
+      ],
+      "sample_correct_responses": [
+        "In air, the flat sheet experiences greater upward aerodynamic drag due to larger surface area. In a vacuum, both experience only gravity and hit simultaneously."
+      ],
+      "sample_slip_responses": [
+        "Paper falls slower because paper has zero gravity."
+      ]
+    },
+    {
+      "question_id": "DIAG-MECH-010",
+      "question_type": "numerical",
+      "cognitive_level": "Application",
+      "stem": "The momentum of a moving body is doubled (p becomes 2p) while its mass remains constant. By what factor does its kinetic energy (KE) increase?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Kinetic energy doubles (increases by factor of 2)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-MOT-001"
+        },
+        {
+          "key": "B",
+          "text": "Kinetic energy quadruples (increases by factor of 4, since KE = p^2 / 2m)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "Kinetic energy remains unchanged",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
+        }
+      ],
+      "correct_answer": "B",
+      "numerical_meta": {
+        "formula": "KE = p^2 / (2 * m)",
+        "given": "p_new = 2 * p, m is constant",
+        "working": "KE_new = (2*p)^2 / (2*m) = 4 * (p^2 / 2m) = 4 * KE",
+        "unit": "J"
+      },
+      "authoritative_solution": "Kinetic energy in terms of momentum is KE = p^2 / (2m). If momentum is doubled: KE_new = (2p)^2 / (2m) = 4 * (p^2 / 2m) = 4 * KE. Therefore, kinetic energy increases by a factor of 4.",
+      "sample_misconception_responses": [
+        "Formula: KE = p * m | Given: p_new = 2p | Working: KE doubles | Unit: J"
+      ],
+      "sample_correct_responses": [
+        "Formula: KE = p^2 / (2m) | Given: p_new = 2p | Working: KE_new = (2p)^2 / (2m) = 4 * KE => quadruples | Unit: J"
+      ],
+      "sample_slip_responses": [
+        "KE increases by factor of 8."
+      ]
+    }
+  ]
+}

@@ -4,159 +4,392 @@
   "questions": [
     {
       "question_id": "DIAG-ELEC-001",
-      "question_type": "conceptual",
+      "question_type": "typed_theory",
       "cognitive_level": "Analysis",
-      "stem": "A circuit consists of a 6 V battery connected in series with two identical incandescent bulbs, Bulb 1 and Bulb 2. An ammeter A1 is placed between the battery's positive terminal and Bulb 1. An ammeter A2 is placed between Bulb 1 and Bulb 2. An ammeter A3 is placed between Bulb 2 and the negative terminal. Assuming ideal meters and wires, what are the readings of the three ammeters?",
+      "stem": "Two identical light bulbs B1 and B2 are connected in series with a 6 V battery. A student claims that Bulb B1 glows brighter than Bulb B2 because Bulb B1 consumes electric current first, leaving less current for B2. Explain using physical conservation laws whether this statement is correct.",
       "options": [
         {
           "key": "A",
-          "text": "A1 > A2 > A3, because each bulb consumes a portion of the electric current to produce light.",
+          "text": "The statement is correct because electric current is consumed sequentially by loads in a circuit.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-ELEC-001",
-          "distractor_rationale": "Reflects the Current Attenuation / Consumption model where current is treated as a consumable fuel used up sequentially by circuit loads."
+          "diagnosed_misconception_id": "MISC-ELEC-001"
         },
         {
           "key": "B",
-          "text": "A1 = A3 > A2, because current enters and exits the circuit at full strength but slows down between the two bulbs.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-ELEC-004",
-          "distractor_rationale": "Reflects a hybrid local bottleneck misconception where students imagine current 'clogging' or reducing velocity inside the intermediate path."
+          "text": "The statement is incorrect because electric charge is strictly conserved (I = dQ/dt is identical everywhere in a single series loop); both bulbs glow with equal brightness.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
         },
         {
           "key": "C",
-          "text": "A1 = A2 = A3, because electric charge is conserved and the rate of charge flow is identical at all points in a single series loop.",
-          "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct scientific principle: in a steady-state closed series loop, dQ/dt is uniform throughout."
-        },
-        {
-          "key": "D",
-          "text": "A1 = A2 = A3 = 0, because potential difference is entirely used up by the first bulb.",
+          "text": "The statement is correct only if the battery is connected backwards.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-ELEC-004",
-          "distractor_rationale": "Conflates potential difference with current flow, assuming voltage exhaustion arrests charge motion."
+          "diagnosed_misconception_id": "MISC-ELEC-004"
         }
       ],
-      "correct_answer": "C",
-      "authoritative_solution": "In a series circuit, there is only one continuous conducting pathway. By conservation of electric charge, the rate at which charge passes any cross-section per unit time (I = dQ/dt) must be identical everywhere. Bulbs transform electrical potential energy into thermal and radiant energy, resulting in a potential drop (V1 + V2 = V_total), but the net charge entering Bulb 1 equals the net charge leaving Bulb 1 and continuing through Bulb 2. Hence, A1 = A2 = A3.",
-      "source": "Adapted from McDermott & Shaffer (1992) / NCERT Exemplar Science Class X (Electricity Chapter)."
+      "correct_answer": "B",
+      "authoritative_solution": "In a series circuit, there is only one continuous conducting pathway. By conservation of charge, the rate of charge flow (current I) entering any component equals the current leaving it. Energy is transferred, but charge is never consumed or destroyed. Hence, current is identical at all points, and both identical bulbs glow with identical brightness.",
+      "sample_misconception_responses": [
+        "Current gets used up by Bulb 1 so Bulb 2 gets less current and glows dimmer.",
+        "Bulb 1 consumes some amperes so B2 has fewer amps left."
+      ],
+      "sample_correct_responses": [
+        "Charge is strictly conserved in a closed loop, so current is identical through both series bulbs; neither bulb consumes current."
+      ],
+      "sample_slip_responses": [
+        "Bulb 1 gets twice the voltage but same current."
+      ]
     },
     {
       "question_id": "DIAG-ELEC-002",
-      "question_type": "circuit_analysis",
+      "question_type": "mcq",
       "cognitive_level": "Application",
-      "stem": "A 12 V battery is connected to a 6-ohm resistor R1. A second resistor R2 of 3 ohms is then connected in parallel across R1. What happens to the current supplied by the 12 V battery after R2 is added?",
+      "stem": "A 12 V battery is connected to a 6-ohm resistor R1. A second resistor R2 of 3 ohms is then connected in parallel across R1. What happens to the total current drawn from the 12 V battery?",
       "options": [
         {
           "key": "A",
-          "text": "The total current remains 2 A, because the battery delivers a fixed, constant current determined by its initial rating.",
+          "text": "Total current remains constant at 2 A because batteries supply a fixed, invariant current rating.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-ELEC-002",
-          "distractor_rationale": "Reflects the Constant Current Battery fallacy, where the student views the power supply as an invariant current source regardless of external load changes."
+          "diagnosed_misconception_id": "MISC-ELEC-002"
         },
         {
           "key": "B",
-          "text": "The total current decreases from 2 A to 1.33 A, because adding another resistor increases the total circuit resistance to 9 ohms.",
+          "text": "Total current decreases to 1.33 A because adding another resistor increases overall resistance to 9 ohms.",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-ELEC-005",
-          "distractor_rationale": "Reflects the Parallel Resistance Addition fallacy, applying series addition (R_eq = 6 + 3 = 9 ohms) to a parallel branch network."
+          "diagnosed_misconception_id": "MISC-ELEC-005"
         },
         {
           "key": "C",
-          "text": "The total current increases from 2 A to 6 A, because adding a parallel branch provides an additional path, reducing total resistance to 2 ohms.",
+          "text": "Total current increases from 2 A to 6 A because adding a parallel branch reduces the equivalent circuit resistance to 2 ohms.",
           "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct scientific calculation: R_eq = (6 * 3)/(6 + 3) = 2 ohms; I_total = 12 V / 2 ohms = 6 A."
-        },
-        {
-          "key": "D",
-          "text": "The total current increases to 4 A, because the initial 2 A current is equally split into both branches as 2 A each.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-ELEC-003",
-          "distractor_rationale": "Reflects the Shared Current / Equal Division fallacy combined with naive branch addition."
+          "diagnosed_misconception_id": null
         }
       ],
       "correct_answer": "C",
-      "authoritative_solution": "Initially, with only R1 connected: I_initial = V / R1 = 12 V / 6 ohms = 2 A. When R2 = 3 ohms is connected in parallel, the equivalent resistance R_eq is given by 1/R_eq = 1/6 + 1/3 = 3/6 = 1/2, so R_eq = 2 ohms. Since the battery maintains a constant terminal potential difference of 12 V, the total current drawn from the battery becomes I_new = V / R_eq = 12 V / 2 ohms = 6 A. (Current through R1 remains 12/6 = 2 A, and current through R2 is 12/3 = 4 A; total I = 2 + 4 = 6 A).",
-      "source": "DIRECT Test (Engelhardt & Beichner, 2004, Item 18); NCERT Class 10 Section 11.6."
+      "authoritative_solution": "A battery maintains a constant terminal potential difference (12 V), not constant current. In parallel: 1/Req = 1/6 + 1/3 = 3/6 => Req = 2 ohms. Total current I = V / Req = 12 / 2 = 6 A (Branch 1 draws 2 A, Branch 2 draws 4 A; total 6 A).",
+      "sample_misconception_responses": [
+        "Batteries supply constant current so total amps stay 2 A."
+      ],
+      "sample_correct_responses": [
+        "Adding a parallel branch decreases equivalent resistance to 2 ohms, so current increases to 6 A."
+      ],
+      "sample_slip_responses": [
+        "Current decreases to 1.33 A because 6+3=9 ohms."
+      ]
     },
     {
       "question_id": "DIAG-ELEC-003",
       "question_type": "numerical",
       "cognitive_level": "Evaluation",
-      "stem": "Two electric bulbs rated '220 V, 100 W' and '220 V, 40 W' are connected in parallel to a 220 V domestic power supply. Which bulb will glow brighter, and what is the ratio of their resistances (R_100 / R_40)?",
+      "stem": "Two electric bulbs are rated 220 V, 100 W and 220 V, 40 W respectively. Calculate the ratio of their operating resistances (R_100 / R_40).",
       "options": [
         {
           "key": "A",
-          "text": "The 40 W bulb glows brighter, and R_100 / R_40 = 2.5, because higher resistance generates more heat and brightness according to P = I^2 * R.",
+          "text": "R_100 / R_40 = 2.5 (believing power is directly proportional to resistance in all appliances)",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-ELEC-006",
-          "distractor_rationale": "Reflects Power Formula Mis-selection: blindly applying P = I^2*R to a parallel circuit where voltage is constant rather than current."
+          "diagnosed_misconception_id": "MISC-ELEC-006"
         },
         {
           "key": "B",
-          "text": "The 100 W bulb glows brighter, and R_100 / R_40 = 0.4 (i.e. 2/5), because at constant voltage, P = V^2 / R, meaning the 100 W bulb has lower resistance and draws more current.",
+          "text": "R_100 / R_40 = 0.4 (i.e. 2/5, since R = V^2 / P)",
           "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct application: R = V^2 / P; R_100 = 220^2/100 = 484 ohms; R_40 = 220^2/40 = 1210 ohms; R_100/R_40 = 484/1210 = 0.4."
+          "diagnosed_misconception_id": null
         },
         {
           "key": "C",
-          "text": "Both bulbs glow with equal brightness, and R_100 / R_40 = 1.0, because in parallel they share the 220 V equally.",
+          "text": "R_100 / R_40 = 1.0 (believing both bulbs have identical resistance)",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-ELEC-003",
-          "distractor_rationale": "Conflates parallel voltage invariance with equal current/power dissipation."
-        },
-        {
-          "key": "D",
-          "text": "The 100 W bulb glows brighter, but its resistance is higher (R_100 / R_40 = 2.5), because power is directly proportional to resistance in all circuits.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-ELEC-006",
-          "distractor_rationale": "Assumes P is always directly proportional to R, failing to understand R = V^2/P at rated voltage."
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
         }
       ],
       "correct_answer": "B",
-      "authoritative_solution": "From the power formula P = V^2 / R, the resistance of an appliance rated for voltage V is R = V^2 / P. For Bulb 1: R_100 = 220^2 / 100 = 484 ohms. For Bulb 2: R_40 = 220^2 / 40 = 1210 ohms. The ratio R_100 / R_40 = 484 / 1210 = 2/5 = 0.4. When connected in parallel to the 220 V supply, both bulbs experience the full 220 V. The power consumed by each is P = V^2 / R. Therefore, the 100 W bulb consumes 100 W and glows significantly brighter than the 40 W bulb.",
-      "source": "CBSE Class 10 Science Board Examination 2019 (Physics Section) / NCERT Class 10 Exercise Problem 11.14."
+      "numerical_meta": {
+        "formula": "R = V^2 / P",
+        "given": "V = 220 V, P1 = 100 W, P2 = 40 W",
+        "working": "R1 = 220^2 / 100 = 484 \u03a9; R2 = 220^2 / 40 = 1210 \u03a9; Ratio = R1 / R2 = 484 / 1210 = 40 / 100 = 0.4",
+        "unit": "\u03a9"
+      },
+      "authoritative_solution": "Power P = V^2 / R => R = V^2 / P at rated voltage. For Bulb 1: R_100 = 220^2 / 100 = 484 ohms. For Bulb 2: R_40 = 220^2 / 40 = 1210 ohms. Ratio R_100 / R_40 = 40 / 100 = 0.4 (or 2/5). The higher wattage bulb has lower filament resistance.",
+      "sample_misconception_responses": [
+        "Formula: P = I^2 * R | Given: P1 = 100, P2 = 40 | Working: R1/R2 = 100/40 = 2.5 | Unit: \u03a9"
+      ],
+      "sample_correct_responses": [
+        "Formula: R = V^2 / P | Given: V = 220 V, P1 = 100 W, P2 = 40 W | Working: R1/R2 = P2/P1 = 40/100 = 0.4 | Unit: \u03a9"
+      ],
+      "sample_slip_responses": [
+        "Formula: R = V/P | Given: V=220, P=100 | Working: R1 = 2.2, R2 = 5.5 => 0.4 | Unit: \u03a9"
+      ]
     },
     {
       "question_id": "DIAG-ELEC-004",
-      "question_type": "application",
+      "question_type": "mcq",
       "cognitive_level": "Comprehension",
-      "stem": "A cylindrical copper conductor of length L and uniform cross-sectional area A has electrical resistance R. If the wire is stretched uniformly until its length becomes 2L without changing its density, what is the new resistance of the wire?",
+      "stem": "A cylindrical metal wire of length L and cross-sectional area A has electrical resistance R. If the wire is stretched uniformly to double its original length (2L), what is its new resistance?",
       "options": [
         {
           "key": "A",
-          "text": "2R, because resistance is directly proportional to length (R = rho * L / A) and length has doubled.",
+          "text": "2R (doubling length simply doubles resistance without affecting area)",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-ELEC-004",
-          "distractor_rationale": "Ignores volume conservation: neglects that stretching a wire to double length halves its cross-sectional area."
+          "diagnosed_misconception_id": "MISC-ELEC-005"
         },
         {
           "key": "B",
-          "text": "4R, because volume is conserved: doubling length halves cross-sectional area (A' = A/2), so R' = rho * (2L) / (A/2) = 4R.",
+          "text": "4R (because volume is conserved: when length doubles, area halves to A/2)",
           "is_correct": true,
-          "diagnosed_misconception_id": null,
-          "distractor_rationale": "Correct physics: Volume V = L * A = constant; if L' = 2L, then A' = A/2; R' = rho * 2L / (A/2) = 4 * (rho * L / A) = 4R."
+          "diagnosed_misconception_id": null
         },
         {
           "key": "C",
-          "text": "R / 2, because stretching a wire makes it thinner, allowing current to squeeze through faster.",
+          "text": "R / 2 (resistance decreases when wire becomes longer)",
           "is_correct": false,
-          "diagnosed_misconception_id": "MISC-ELEC-004",
-          "distractor_rationale": "Intuitive fluid analogy thinking narrower tubes create faster flow, confusing fluid velocity with electrical conductance."
-        },
-        {
-          "key": "D",
-          "text": "R, because resistivity rho is an intrinsic material property of copper and does not change.",
-          "is_correct": false,
-          "diagnosed_misconception_id": "MISC-ELEC-004",
-          "distractor_rationale": "Conflates material resistivity (rho, which is constant) with geometric resistance (R, which depends on L and A)."
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
         }
       ],
       "correct_answer": "B",
-      "authoritative_solution": "The initial resistance is R = rho * (L / A). When the wire is stretched uniformly to a new length L' = 2L, its mass and volume remain constant: Volume = L * A = L' * A' = (2L) * A'. Thus, the new cross-sectional area is A' = A / 2. The new resistance is R' = rho * (L' / A') = rho * (2L) / (A / 2) = 4 * [rho * (L / A)] = 4R.",
-      "source": "NCERT Class 10 Science Exemplar Problem 11.3 & CBSE Sample Paper 2023."
+      "authoritative_solution": "Volume of the wire is conserved during stretching: V = A * L = A_new * (2L) => A_new = A / 2. New resistance R_new = rho * (2L) / (A / 2) = 4 * (rho * L / A) = 4R.",
+      "sample_misconception_responses": [
+        "New resistance is 2R because R is proportional to length."
+      ],
+      "sample_correct_responses": [
+        "When wire is stretched to 2L, area becomes A/2 by volume conservation, making resistance 4R."
+      ],
+      "sample_slip_responses": [
+        "New resistance is R/4."
+      ]
+    },
+    {
+      "question_id": "DIAG-ELEC-005",
+      "question_type": "numerical",
+      "cognitive_level": "Application",
+      "stem": "Two resistors R1 = 6 \u03a9 and R2 = 3 \u03a9 are connected in parallel across a 12 V battery. Calculate the total circuit current (I) supplied by the battery.",
+      "options": [
+        {
+          "key": "A",
+          "text": "I = 1.33 A (using R_total = 6 + 3 = 9 \u03a9 by mistake)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-005"
+        },
+        {
+          "key": "B",
+          "text": "I = 6.0 A (equivalent resistance R_eq = 2 \u03a9; I = 12 / 2)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "I = 4.0 A (only calculating current in one branch)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
+        }
+      ],
+      "correct_answer": "B",
+      "numerical_meta": {
+        "formula": "1/Req = 1/R1 + 1/R2, I = V / Req",
+        "given": "R1 = 6 \u03a9, R2 = 3 \u03a9, V = 12 V",
+        "working": "1/Req = 1/6 + 1/3 = 3/6 = 1/2 => Req = 2 \u03a9; I = 12 / 2 = 6",
+        "unit": "A"
+      },
+      "authoritative_solution": "For parallel combination: 1/Req = 1/6 + 1/3 = 3/6 = 1/2 => Req = 2 \u03a9. Total current I = V / Req = 12 V / 2 \u03a9 = 6 A.",
+      "sample_misconception_responses": [
+        "Formula: I = V / (R1 + R2) | Given: R1 = 6, R2 = 3, V = 12 | Working: Req = 9 \u03a9 => I = 12/9 = 1.33 | Unit: A"
+      ],
+      "sample_correct_responses": [
+        "Formula: 1/Req = 1/R1 + 1/R2, I = V / Req | Given: R1 = 6, R2 = 3, V = 12 | Working: 1/Req = 1/2 => Req = 2 \u03a9, I = 12/2 = 6 | Unit: A"
+      ],
+      "sample_slip_responses": [
+        "Formula: I = V * Req | Given: V = 12, Req = 2 | Working: I = 24 | Unit: A"
+      ]
+    },
+    {
+      "question_id": "DIAG-ELEC-006",
+      "question_type": "typed_theory",
+      "cognitive_level": "Comprehension",
+      "stem": "In an electrical circuit experiment, an ammeter is always connected in series with the component, whereas a voltmeter is always connected in parallel. Explain why connecting an ammeter in parallel could damage the circuit.",
+      "options": [
+        {
+          "key": "A",
+          "text": "An ammeter has extremely low internal resistance; connecting it in parallel creates a short circuit, drawing dangerously large current that burns the meter.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "B",
+          "text": "An ammeter has infinite internal resistance and would block all battery current.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-004"
+        },
+        {
+          "key": "C",
+          "text": "An ammeter reverses the battery polarity when placed in parallel.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-002"
+        }
+      ],
+      "correct_answer": "A",
+      "authoritative_solution": "An ammeter is designed with nearly zero internal resistance so it does not alter current when placed in series. If connected in parallel across a voltage source, its negligible resistance causes a massive short-circuit current (I = V/R -> very high), potentially destroying the meter.",
+      "sample_misconception_responses": [
+        "An ammeter has infinite resistance and halts current."
+      ],
+      "sample_correct_responses": [
+        "An ammeter has near-zero internal resistance. Connecting it in parallel creates a short circuit drawing excessive current that can burn the meter."
+      ],
+      "sample_slip_responses": [
+        "An ammeter cannot be used in parallel because voltage equals current."
+      ]
+    },
+    {
+      "question_id": "DIAG-ELEC-007",
+      "question_type": "numerical",
+      "cognitive_level": "Application",
+      "stem": "An electric heater has a resistance of 10 \u03a9 and carries a steady current of 2 A. Calculate the amount of thermal heat energy (H) produced by the heater in 30 seconds.",
+      "options": [
+        {
+          "key": "A",
+          "text": "H = 600 J (using H = I * R * t instead of I^2)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-006"
+        },
+        {
+          "key": "B",
+          "text": "H = 1200 J (using Joule Law: H = I^2 * R * t = 4 * 10 * 30)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "H = 200 J (forgetting time factor in formula)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
+        }
+      ],
+      "correct_answer": "B",
+      "numerical_meta": {
+        "formula": "H = I^2 * R * t",
+        "given": "I = 2 A, R = 10 \u03a9, t = 30 s",
+        "working": "H = (2)^2 * 10 * 30 = 4 * 10 * 30 = 1200",
+        "unit": "J"
+      },
+      "authoritative_solution": "By Joules Law of Heating: H = I^2 * R * t. Substituting I = 2 A, R = 10 ohms, t = 30 s: H = 2^2 * 10 * 30 = 4 * 10 * 30 = 1200 Joules.",
+      "sample_misconception_responses": [
+        "Formula: H = I * R * t | Given: I = 2, R = 10, t = 30 | Working: H = 2 * 10 * 30 = 600 | Unit: J"
+      ],
+      "sample_correct_responses": [
+        "Formula: H = I^2 * R * t | Given: I = 2 A, R = 10 \u03a9, t = 30 s | Working: H = 4 * 10 * 30 = 1200 | Unit: J"
+      ],
+      "sample_slip_responses": [
+        "Formula: H = V * I | Given: I = 2, R = 10 | Working: H = 200 | Unit: J"
+      ]
+    },
+    {
+      "question_id": "DIAG-ELEC-008",
+      "question_type": "mcq",
+      "cognitive_level": "Comprehension",
+      "stem": "How much work (W) is done in moving a charge of 2 Coulombs across two points in a circuit having a potential difference of 12 Volts?",
+      "options": [
+        {
+          "key": "A",
+          "text": "6 Joules (dividing V by Q: 12 / 2)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-CALC-SLIP"
+        },
+        {
+          "key": "B",
+          "text": "24 Joules (using W = V * Q = 12 * 2)",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "C",
+          "text": "14 Joules (adding voltage and charge: 12 + 2)",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-004"
+        }
+      ],
+      "correct_answer": "B",
+      "authoritative_solution": "Potential difference V is the work done per unit charge: V = W / Q => W = V * Q = 12 V * 2 C = 24 Joules.",
+      "sample_misconception_responses": [
+        "W = V / Q = 12 / 2 = 6 J."
+      ],
+      "sample_correct_responses": [
+        "Work done W = V * Q = 12 * 2 = 24 Joules."
+      ],
+      "sample_slip_responses": [
+        "W = V + Q = 14 J."
+      ]
+    },
+    {
+      "question_id": "DIAG-ELEC-009",
+      "question_type": "typed_theory",
+      "cognitive_level": "Analysis",
+      "stem": "Explain two major practical reasons why electrical appliances in household domestic circuits are connected in parallel with each other, rather than in series.",
+      "options": [
+        {
+          "key": "A",
+          "text": "In parallel, each appliance operates at full 220 V and can be turned on/off independently without breaking the entire circuit; in series, if one appliance fails, all stop.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "B",
+          "text": "Connecting in parallel increases overall resistance so electric bills are cut in half.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-005"
+        },
+        {
+          "key": "C",
+          "text": "In series circuits, alternating current converts into direct current spontaneously.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-002"
+        }
+      ],
+      "correct_answer": "A",
+      "authoritative_solution": "In parallel connection: (1) Each appliance receives full supply voltage (220 V) ensuring rated power output. (2) Each appliance has its own independent switch; if one device fails or is turned off, other branches continue operating. In series, total resistance would be enormous and any open-circuit stops all devices.",
+      "sample_misconception_responses": [
+        "Parallel connections increase resistance to reduce electricity bills."
+      ],
+      "sample_correct_responses": [
+        "Parallel circuits provide identical rated 220 V across each appliance and allow independent switching so failure of one does not interrupt others."
+      ],
+      "sample_slip_responses": [
+        "Parallel connections prevent magnetic interference."
+      ]
+    },
+    {
+      "question_id": "DIAG-ELEC-010",
+      "question_type": "mcq",
+      "cognitive_level": "Comprehension",
+      "stem": "An electric fuse is a critical safety device installed in household circuits. What are the key physical properties of a fuse wire, and how does it protect appliances?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Made of an alloy with low melting point; excessive current produces Joule heat that melts the fuse, breaking the circuit before appliances overheat.",
+          "is_correct": true,
+          "diagnosed_misconception_id": null
+        },
+        {
+          "key": "B",
+          "text": "Made of thick copper with high melting point so it never melts under large currents.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-006"
+        },
+        {
+          "key": "C",
+          "text": "Acts as a magnetic switch that repels excess electrons back into the substation.",
+          "is_correct": false,
+          "diagnosed_misconception_id": "MISC-ELEC-001"
+        }
+      ],
+      "correct_answer": "A",
+      "authoritative_solution": "A fuse is connected in series in the live wire. It consists of a lead-tin alloy having suitable resistance and low melting point. When current exceeds safe rating (short-circuit/overload), Joule heating (H = I^2*R*t) melts the wire, opening the circuit safely.",
+      "sample_misconception_responses": [
+        "Fuse is made of thick copper with high melting point to conduct all power."
+      ],
+      "sample_correct_responses": [
+        "A fuse has a low melting point so excessive current causes it to melt and break the circuit safely."
+      ],
+      "sample_slip_responses": [
+        "Fuse acts as a voltage transformer."
+      ]
     }
   ]
 }
