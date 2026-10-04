@@ -195,7 +195,18 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
       let chosenOptKey = correctOpt ? correctOpt.key : (q.options?.[0]?.key || 'B');
       let text = '';
 
-      if (isMisconceptionStep) {
+      if (q.question_type === 'numerical') {
+        if (isMisconceptionStep) {
+          chosenOptKey = distractor ? distractor.key : 'A';
+          text = "Formula: 1/f = 1/v - 1/u | Given: u = -30 cm, f = +15 cm | Working: 1/v = 1/15 - 1/30 = 1/30 => v = -30 cm (inverted sign error) | Unit: cm";
+        } else if (isSlipStep) {
+          chosenOptKey = distractor ? distractor.key : 'C';
+          text = "Formula: 1/f = 1/v + 1/u (Wrong Lens Formula used) | Given: u = -30 cm, f = +15 cm | Working: 1/v = 1/15 - 1/30 => v = 30 | Unit: cm";
+        } else {
+          chosenOptKey = correctOpt ? correctOpt.key : 'B';
+          text = "Formula: 1/f = 1/v - 1/u | Given: u = -30 cm, f = +15 cm | Working: 1/v = 1/15 + 1/(-30) = (2-1)/30 = 1/30 => v = +30 | Unit: cm";
+        }
+      } else if (isMisconceptionStep) {
         chosenOptKey = distractor ? distractor.key : 'A';
         text = q.sample_misconception_responses?.[0]
           || (selectedTopic?.chapter?.includes('Light')
