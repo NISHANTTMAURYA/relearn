@@ -19,7 +19,7 @@ def main():
         cwd=backend_dir
     )
 
-    print("2. Starting 3D AI Character (Prof. Maya) server on http://127.0.0.1:5050...")
+    print("2. Starting 3D AI Character (Prof. Vikram) server on http://127.0.0.1:5050...")
     ai_char_proc = subprocess.Popen(
         [sys.executable, "app.py"],
         cwd=ai_char_dir,

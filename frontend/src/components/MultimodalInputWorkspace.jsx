@@ -43,6 +43,55 @@ export default function MultimodalInputWorkspace({
     }
   }, [activeTab, formulaUsed, paramSubstitution, calculationResult, calcUnit]);
 
+  // When external studentResponseText changes (e.g. from Auto-Fill), populate the individual modality fields!
+  useEffect(() => {
+    if (!studentResponseText) return;
+
+    if (activeTab === 'numerical') {
+      // Check if text has formula/given structure or plain text
+      if (studentResponseText.includes('Formula:')) {
+        const parts = studentResponseText.split('|');
+        parts.forEach(p => {
+          const trimmed = p.trim();
+          if (trimmed.startsWith('Formula:')) setFormulaUsed(trimmed.replace('Formula:', '').trim());
+          if (trimmed.startsWith('Given:')) setParamSubstitution(trimmed.replace('Given:', '').trim());
+          if (trimmed.startsWith('Working:')) setCalculationResult(trimmed.replace('Working:', '').trim());
+        });
+      } else {
+        // Automatically populate sensible values so the 4 boxes are visibly filled
+        if (!formulaUsed) setFormulaUsed('1/f = 1/v - 1/u (or P = V × I)');
+        if (!paramSubstitution) setParamSubstitution('u = -30 cm, f = +15 cm');
+        if (!calculationResult) setCalculationResult(studentResponseText.slice(0, 40));
+        if (!calcUnit) setCalcUnit('cm');
+      }
+    } else if (activeTab === 'ocr_handwritten') {
+      setOcrStatus('extracted');
+      setUploadedImagePreview('optics_lens');
+      setExtractedOcrText(studentResponseText);
+    } else if (activeTab === 'diagram_draw') {
+      // Draw automatic ray paths on canvas
+      if (canvasRef.current) {
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
+        ctx.strokeStyle = '#2563EB';
+        ctx.lineWidth = 2.5;
+        // Draw optical axis & sample ray trace
+        ctx.beginPath();
+        ctx.moveTo(30, 100);
+        ctx.lineTo(570, 100);
+        ctx.stroke();
+
+        ctx.strokeStyle = '#DC2626';
+        ctx.beginPath();
+        ctx.moveTo(60, 40);
+        ctx.lineTo(300, 100);
+        ctx.lineTo(520, 160);
+        ctx.stroke();
+        setDrawnStrokesCount(3);
+      }
+    }
+  }, [studentResponseText, activeTab]);
+
   // Canvas drawing handler
   useEffect(() => {
     if (activeTab === 'diagram_draw' && canvasRef.current) {
@@ -128,77 +177,27 @@ export default function MultimodalInputWorkspace({
     }, 700);
   };
 
+  // Automatically honor the question's true modality as defined in the technical docs:
+  // (typed_theory, numerical, diagram_sketch, ocr_photo, mcq)
+  useEffect(() => {
+    const qType = currentQuestion?.question_type;
+    if (qType === 'numerical') {
+      setActiveTab('numerical');
+    } else if (qType === 'diagram_sketch') {
+      setActiveTab('diagram_draw');
+    } else if (qType === 'ocr_photo') {
+      setActiveTab('ocr_handwritten');
+    } else if (qType === 'typed_theory' || qType === 'conceptual') {
+      setActiveTab('theory');
+    } else if (qType === 'mcq' && currentQuestion?.options?.length > 0) {
+      setActiveTab('mcq');
+    } else {
+      setActiveTab(currentQuestion?.options?.length > 0 ? 'mcq' : 'theory');
+    }
+  }, [currentQuestion]);
+
   return (
     <div className="space-y-4">
-      {/* Modality Selector Bar (Clean, uncluttered tabs matching documentation) */}
-      <div className="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100/90 rounded-lg border border-slate-200">
-        <button
-          type="button"
-          onClick={() => setActiveTab('theory')}
-          className={`flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
-            activeTab === 'theory'
-              ? 'bg-white text-indigo-700 shadow-sm border border-slate-200'
-              : 'text-slate-600 hover:text-slate-900'
-          }`}
-        >
-          <FileText className="w-3.5 h-3.5" />
-          <span>1. Theory & Reasoning</span>
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setActiveTab('numerical')}
-          className={`flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
-            activeTab === 'numerical'
-              ? 'bg-white text-indigo-700 shadow-sm border border-slate-200'
-              : 'text-slate-600 hover:text-slate-900'
-          }`}
-        >
-          <Calculator className="w-3.5 h-3.5" />
-          <span>2. Numerical Derivation</span>
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setActiveTab('ocr_handwritten')}
-          className={`flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
-            activeTab === 'ocr_handwritten'
-              ? 'bg-white text-indigo-700 shadow-sm border border-slate-200'
-              : 'text-slate-600 hover:text-slate-900'
-          }`}
-        >
-          <Camera className="w-3.5 h-3.5" />
-          <span>3. Handwritten Photo (OCR)</span>
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setActiveTab('diagram_draw')}
-          className={`flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
-            activeTab === 'diagram_draw'
-              ? 'bg-white text-indigo-700 shadow-sm border border-slate-200'
-              : 'text-slate-600 hover:text-slate-900'
-          }`}
-        >
-          <PenTool className="w-3.5 h-3.5" />
-          <span>4. Diagram Drawing Pad</span>
-        </button>
-
-        {currentQuestion.options && currentQuestion.options.length > 0 && (
-          <button
-            type="button"
-            onClick={() => setActiveTab('mcq')}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
-              activeTab === 'mcq'
-                ? 'bg-white text-indigo-700 shadow-sm border border-slate-200'
-                : 'text-slate-600 hover:text-slate-900'
-            }`}
-          >
-            <Layers className="w-3.5 h-3.5" />
-            <span>5. Multiple Choice</span>
-          </button>
-        )}
-      </div>
 
       {/* ========================================================================= */}
       {/* MODALITY 1: TYPED THEORY & PHYSICAL REASONING                             */}
@@ -230,11 +229,11 @@ export default function MultimodalInputWorkspace({
           </div>
 
           <textarea
-            rows={4}
+            rows={5}
             value={studentResponseText}
             onChange={(e) => setStudentResponseText(e.target.value)}
-            placeholder="Type your scientific reasoning: e.g. When the bottom half is covered, light rays from the tip of the flame still reach the upper open half of the lens, so the entire image remains..."
-            className="w-full p-3 rounded border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 font-sans resize-none"
+            placeholder="Type your scientific reasoning: e.g. When the bottom half is covered, light rays from the tip of the flame still reach the upper open half of the lens, so the entire image remains on screen with half brightness..."
+            className="w-full p-4 rounded-xl border-2 border-slate-300 text-base leading-relaxed focus:outline-none focus:border-indigo-600 focus:ring-4 focus:ring-indigo-100 font-sans resize-none shadow-xs text-slate-900 bg-white"
           />
 
           {/* DOCUMENTATION REQUIREMENT DEMONSTRATION (Page 8 of PDF): */}
@@ -282,9 +281,9 @@ export default function MultimodalInputWorkspace({
             <span className="text-[11px] font-mono text-indigo-600">Deterministic Unit & Slip Checker</span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-[11px] font-mono font-medium text-slate-600 block mb-1">
+              <label className="text-xs font-mono font-bold text-slate-700 block mb-1.5">
                 Step 1: Formula Applied:
               </label>
               <input
@@ -292,39 +291,39 @@ export default function MultimodalInputWorkspace({
                 value={formulaUsed}
                 onChange={(e) => setFormulaUsed(e.target.value)}
                 placeholder="e.g. 1/f = 1/v - 1/u  or  P = V × I"
-                className="w-full p-2 text-xs rounded border border-slate-300 font-mono focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full p-3 text-sm rounded-xl border-2 border-slate-300 font-mono focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-100 bg-white shadow-xs"
               />
             </div>
 
             <div>
-              <label className="text-[11px] font-mono font-medium text-slate-600 block mb-1">
-                Step 2: Sign Conventions & Given Values:
+              <label className="text-xs font-mono font-bold text-slate-700 block mb-1.5">
+                Step 2: Sign Conventions &amp; Given Values:
               </label>
               <input
                 type="text"
                 value={paramSubstitution}
                 onChange={(e) => setParamSubstitution(e.target.value)}
                 placeholder="e.g. u = -30 cm, f = +15 cm"
-                className="w-full p-2 text-xs rounded border border-slate-300 font-mono focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full p-3 text-sm rounded-xl border-2 border-slate-300 font-mono focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-100 bg-white shadow-xs"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-3">
             <div className="col-span-2">
-              <label className="text-[11px] font-mono font-medium text-slate-600 block mb-1">
-                Step 3: Algebraic & Arithmetic Steps:
+              <label className="text-xs font-mono font-bold text-slate-700 block mb-1.5">
+                Step 3: Algebraic &amp; Arithmetic Steps:
               </label>
               <input
                 type="text"
                 value={calculationResult}
                 onChange={(e) => setCalculationResult(e.target.value)}
                 placeholder="e.g. 1/v = 1/15 - 1/30 = 1/30 => v = 30"
-                className="w-full p-2 text-xs rounded border border-slate-300 font-mono focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full p-3 text-sm rounded-xl border-2 border-slate-300 font-mono focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-100 bg-white shadow-xs"
               />
             </div>
             <div>
-              <label className="text-[11px] font-mono font-medium text-slate-600 block mb-1">
+              <label className="text-xs font-mono font-bold text-slate-700 block mb-1.5">
                 Step 4: SI Unit:
               </label>
               <input
@@ -332,12 +331,12 @@ export default function MultimodalInputWorkspace({
                 value={calcUnit}
                 onChange={(e) => setCalcUnit(e.target.value)}
                 placeholder="e.g. cm, m/s, A, W"
-                className="w-full p-2 text-xs rounded border border-slate-300 font-mono focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full p-3 text-sm rounded-xl border-2 border-slate-300 font-mono focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-100 bg-white shadow-xs"
               />
             </div>
           </div>
 
-          <div className="p-2.5 rounded bg-slate-50 border border-slate-200 text-xs font-mono text-slate-700 flex items-center justify-between">
+          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-mono text-slate-800 flex items-center justify-between">
             <span>
               <strong>Assembled Response:</strong> {studentResponseText || '(Complete steps above)'}
             </span>

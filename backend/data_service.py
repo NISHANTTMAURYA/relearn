@@ -206,7 +206,8 @@ class ReLearnDataService:
 
     def _format_items_with_curriculum(self, items: list, prefix: str) -> list:
         formatted = []
-        modalities = ["mcq", "typed_theory", "numerical", "diagram_sketch", "ocr_photo"]
+        # Keep only crisp, robust presentation formats: MCQ, Theory & Numerical (removing flaky canvas/OCR modes)
+        modalities = ["mcq", "typed_theory", "numerical"]
         
         for idx, it in enumerate(items):
             q_id = it.get("question_id")
@@ -234,7 +235,15 @@ class ReLearnDataService:
             count = len(formatted) + 1
             fam = matching_fams[(count - 1) % len(matching_fams)]
             stem_template = fam.get("stem_templates", ["Explain the physical mechanism in {f}."])[0]
-            stem = stem_template.format(f=20, d=15, v=12, slip=30) if "{f}" in stem_template else stem_template
+            try:
+                stem = stem_template.format(
+                    f=20, u=-30, v=15, d=15, slip=30,
+                    R=10, R1=5, R2=10, I=2, V=12, P=100,
+                    m=5, a=2, t=10, s=100, F=50, B=2, N=100
+                )
+            except Exception:
+                import re
+                stem = re.sub(r'\{[a-zA-Z0-9_]+\}', '20', stem_template)
 
             mod_type = modalities[(count - 1) % len(modalities)]
             formatted.append({

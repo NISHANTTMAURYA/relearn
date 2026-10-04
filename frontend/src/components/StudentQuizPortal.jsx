@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   BookOpen, Compass, CheckCircle2, AlertTriangle, ArrowRight, RotateCcw, 
   HelpCircle, Sparkles, ChevronRight, Sliders, ShieldAlert, Award
@@ -11,7 +11,120 @@ import ProfMaya3DPanel from './ProfMaya3DPanel';
 
 const API_BASE = 'http://127.0.0.1:8000';
 
+const DEFAULT_NCERT_TOPICS = [
+  {
+    id: "optics",
+    grade: "Class 10",
+    chapter: "Light — Reflection and Refraction",
+    summary: "Ray optics, spherical mirrors & lenses, Cartesian sign conventions, and image formation dynamics.",
+    total_items: 10,
+    questions: [
+      {
+        question_id: "DIAG-OPTICS-001",
+        question_type: "typed_theory",
+        cognitive_level: "Comprehension",
+        stem: "A student forms a sharp image of a lighted candle on a screen using a convex lens of focal length 15 cm. The lower half of the lens is now covered with black paper. What happens to the image on the screen?",
+        options: [
+          { key: "A", text: "The upper half of the image disappears completely from the screen.", is_correct: false, diagnosed_misconception_id: "MISC-OPT-001" },
+          { key: "B", text: "The complete image is still formed, but its brightness (intensity) is reduced by half.", is_correct: true, diagnosed_misconception_id: null },
+          { key: "C", text: "The entire image flips upside down again because rays invert twice.", is_correct: false, diagnosed_misconception_id: "MISC-OPT-004" }
+        ],
+        correct_answer: "B",
+        authoritative_solution: "Every exposed point of the convex lens receives light rays from all points on the object. Covering half the lens merely cuts the total light flux by 50%, keeping the full image intact with diminished brightness.",
+        sample_misconception_responses: ["only bottom part shows up, rest cut ho gaya", "half image disappears"],
+        sample_correct_responses: ["full image forms with half brightness"],
+        sample_slip_responses: ["image gets blurry"]
+      }
+    ]
+  },
+  {
+    id: "human_eye",
+    grade: "Class 10",
+    chapter: "The Human Eye and Colourful World",
+    summary: "Defects of vision (myopia, hypermetropia), atmospheric refraction, and prism dispersion.",
+    total_items: 10,
+    questions: [
+      {
+        question_id: "DIAG-EYE-001",
+        question_type: "typed_theory",
+        cognitive_level: "Comprehension",
+        stem: "Why does a normal human eye fail to focus sharply on objects placed closer than 25 cm?",
+        options: [
+          { key: "A", text: "The ciliary muscles cannot contract further to increase the lens curvature beyond its maximum limit.", is_correct: true, diagnosed_misconception_id: null },
+          { key: "B", text: "Light rays diverge too rapidly for the cornea to refract.", is_correct: false, diagnosed_misconception_id: "MISC-EYE-002" }
+        ],
+        correct_answer: "A",
+        authoritative_solution: "The least distance of distinct vision is 25 cm. Accommodation limit is reached when ciliary muscles achieve maximum curvature."
+      }
+    ]
+  },
+  {
+    id: "electricity",
+    grade: "Class 10",
+    chapter: "Electricity & Circuit Dynamics",
+    summary: "Ohm's law, series vs parallel networks, current conservation, and electric power.",
+    total_items: 10,
+    questions: [
+      {
+        question_id: "DIAG-ELEC-001",
+        question_type: "typed_theory",
+        cognitive_level: "Analysis",
+        stem: "Two identical bulbs are connected in series with a battery. A student states that the first bulb glows brighter because current gets used up in it. Is this correct?",
+        options: [
+          { key: "A", text: "Yes, current is consumed sequentially by successive resistive loads.", is_correct: false, diagnosed_misconception_id: "MISC-ELEC-001" },
+          { key: "B", text: "No, in a series circuit electric current is identical at all points by charge conservation.", is_correct: true, diagnosed_misconception_id: null }
+        ],
+        correct_answer: "B",
+        authoritative_solution: "Electric charge is strictly conserved; current is identical everywhere in a single loop series circuit."
+      }
+    ]
+  },
+  {
+    id: "magnetism",
+    grade: "Class 10",
+    chapter: "Magnetic Effects of Electric Current",
+    summary: "Magnetic field lines, solenoid dynamics, Lorentz force, and electromagnetic induction.",
+    total_items: 10,
+    questions: [
+      {
+        question_id: "DIAG-MAG-001",
+        question_type: "typed_theory",
+        cognitive_level: "Comprehension",
+        stem: "Why can two magnetic field lines never cross each other?",
+        options: [
+          { key: "A", text: "At the point of intersection, a magnetic compass needle would have to point in two different directions simultaneously, which is physically impossible.", is_correct: true, diagnosed_misconception_id: null },
+          { key: "B", text: "Like magnetic poles repel each other, pushing the lines apart.", is_correct: false, diagnosed_misconception_id: "MISC-MAG-002" }
+        ],
+        correct_answer: "A",
+        authoritative_solution: "The magnetic field vector at any point has a unique direction. Intersection would mean two directions at one location."
+      }
+    ]
+  },
+  {
+    id: "mechanics",
+    grade: "Class 9",
+    chapter: "Motion, Force & Gravitation",
+    summary: "Speed vs acceleration, Newton's third law pairs, inertia, and free fall gravitational mass invariance.",
+    total_items: 10,
+    questions: [
+      {
+        question_id: "DIAG-MECH-001",
+        question_type: "typed_theory",
+        cognitive_level: "Analysis",
+        stem: "A 10 kg lead ball and a 0.5 kg aluminum ball are dropped simultaneously in a vacuum cylinder. Which ball hits the ground first?",
+        options: [
+          { key: "A", text: "The 10 kg lead ball because gravity exerts a larger downward pull on it.", is_correct: false, diagnosed_misconception_id: "MISC-GRAV-001" },
+          { key: "B", text: "Both hit simultaneously because acceleration due to gravity g = GM/R² is independent of falling body mass.", is_correct: true, diagnosed_misconception_id: null }
+        ],
+        correct_answer: "B",
+        authoritative_solution: "Acceleration a = F/m = (G*M*m/R²)/m = G*M/R². Object mass cancels out identically."
+      }
+    ]
+  }
+];
+
 export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, isAITutorOpen = true, searchQuery = '' }) {
+  const effectiveTopics = (topics && topics.length > 0) ? topics : DEFAULT_NCERT_TOPICS;
   // Phase of Learning Flow:
   // 'select_topic' -> 'pre_quiz_lesson' -> 'taking_quiz' -> 'diagnosis_results' -> 'multimodal_intervention' -> 'isomorphic_reassessment' -> 'mastery_summary'
   const [currentPhase, setCurrentPhase] = useState('select_topic');
@@ -60,6 +173,69 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
     setCurrentPhase('taking_quiz');
   };
 
+  // Store prefilled answers for all questions
+  const [prefilledAttemptsMap, setPrefilledAttemptsMap] = useState({});
+
+  // Presentation Mode: Realistic student attempt mix (mostly correct with targeted misconception)
+  const handlePreFillAllAnswers = () => {
+    if (!activeQuestions || activeQuestions.length === 0) return;
+
+    const newMap = {};
+    activeQuestions.forEach((q, idx) => {
+      const correctOpt = q.options?.find(opt => opt.is_correct);
+      const distractor = q.options?.find(opt => !opt.is_correct);
+
+      // Realistic Student Archetype:
+      // - Step 1, 2, 4, 6, 7: Solves correctly (Demonstrating competence)
+      // - Step 3 & 5: Falls into the specific conceptual trap (Misconception to diagnose)
+      // - Step 8: Makes a transient calculation slip
+      const isMisconceptionStep = (idx === 2 || idx === 4);
+      const isSlipStep = (idx === 7);
+
+      let chosenOptKey = correctOpt ? correctOpt.key : (q.options?.[0]?.key || 'B');
+      let text = '';
+
+      if (isMisconceptionStep) {
+        chosenOptKey = distractor ? distractor.key : 'A';
+        text = q.sample_misconception_responses?.[0]
+          || (selectedTopic?.chapter?.includes('Light')
+              ? "Covering half the mirror cuts the image in half because lower rays cannot pass through the black paper."
+              : "Current gets used up by the first bulb so the second bulb in series gets less current and glows dimmer.");
+      } else if (isSlipStep) {
+        chosenOptKey = distractor ? distractor.key : 'C';
+        text = q.sample_slip_responses?.[0] || "Calculated using 1/f = 1/v + 1/u but forgot negative Cartesian sign on distance u.";
+      } else {
+        // Correct answer
+        chosenOptKey = correctOpt ? correctOpt.key : 'B';
+        text = q.sample_correct_responses?.[0]
+          || q.authoritative_solution
+          || "All physical quantities follow NCERT conservation laws; full image forms by ray intersection.";
+      }
+
+      newMap[idx] = {
+        optionKey: chosenOptKey,
+        responseText: text
+      };
+    });
+
+    setPrefilledAttemptsMap(newMap);
+
+    // Set the current question's inputs immediately
+    const currentPre = newMap[currentQuestionIndex];
+    if (currentPre) {
+      setSelectedOptionKey(currentPre.optionKey);
+      setStudentResponseText(currentPre.responseText);
+    }
+  };
+
+  // When currentQuestionIndex changes, if prefilled answers exist, populate them automatically
+  useEffect(() => {
+    if (prefilledAttemptsMap[currentQuestionIndex]) {
+      setSelectedOptionKey(prefilledAttemptsMap[currentQuestionIndex].optionKey);
+      setStudentResponseText(prefilledAttemptsMap[currentQuestionIndex].responseText);
+    }
+  }, [currentQuestionIndex, prefilledAttemptsMap]);
+
   // 3. Submit Question in Sequence
   const handleSubmitQuestionAttempt = async () => {
     if (!studentResponseText.trim() && !selectedOptionKey) return;
@@ -80,9 +256,15 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
 
     if (currentQuestionIndex + 1 < activeQuestions.length) {
       // Move to next question in sequence
-      setCurrentQuestionIndex(prev => prev + 1);
-      setStudentResponseText('');
-      setSelectedOptionKey('');
+      const nextIdx = currentQuestionIndex + 1;
+      setCurrentQuestionIndex(nextIdx);
+      if (prefilledAttemptsMap[nextIdx]) {
+        setSelectedOptionKey(prefilledAttemptsMap[nextIdx].optionKey);
+        setStudentResponseText(prefilledAttemptsMap[nextIdx].responseText);
+      } else {
+        setStudentResponseText('');
+        setSelectedOptionKey('');
+      }
     } else {
       // Quiz Finished! Run Combined Diagnosis Service (Model A + Model B)
       await runCombinedDiagnosisService(nextAttempts);
@@ -227,90 +409,94 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
     ? `Explain physics misconception ${interventionData.target_misconception_id}: ${interventionData.misconception_name || ''}`
     : '';
 
+  // Show AI Character only when we are explaining errors / intervening:
+  // (During 'taking_quiz' or 'pre_quiz_lesson', student focuses on exam with full screen width)
+  const isInterventionPhase = currentPhase === 'multimodal_intervention' || currentPhase === 'diagnosis_results' || currentPhase === 'isomorphic_reassessment' || currentPhase === 'mastery_summary';
+  const shouldRenderTutor = isAITutorOpen && isInterventionPhase;
+
   return (
-    <div className={isAITutorOpen ? "grid grid-cols-1 lg:grid-cols-12 gap-6 items-start max-w-[1600px] mx-auto" : "max-w-4xl mx-auto space-y-6"}>
-      <div className={isAITutorOpen ? "lg:col-span-7 space-y-6" : "space-y-6"}>
+    <div className={shouldRenderTutor ? "grid grid-cols-1 lg:grid-cols-12 gap-6 items-start max-w-[1600px] mx-auto" : "max-w-5xl mx-auto space-y-6"}>
+      <div className={shouldRenderTutor ? "lg:col-span-8 space-y-6" : "space-y-6"}>
       {/* ========================================================================= */}
-      {/* PHASE 1: CHOOSE TOPIC                                                     */}
-      {/* ========================================================================= */}
-      {/* ========================================================================= */}
-      {/* PHASE 1: CHOOSE TOPIC & DASHBOARD METRICS (Coursify Design Style)          */}
+      {/* PHASE 1: CHOOSE TOPIC & DASHBOARD METRICS                                 */}
       {/* ========================================================================= */}
       {currentPhase === 'select_topic' && (
         <div className="space-y-6">
-          {/* Top 3 Pastel Metric Cards matching Coursify layout */}
+          {/* Top 3 Metric Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="p-4 rounded-2xl bg-pink-50/80 border border-pink-100 flex items-center space-x-3.5 shadow-xs">
-              <div className="w-10 h-10 rounded-xl bg-pink-500 text-white flex items-center justify-center font-bold text-sm shadow-xs">
+              <div className="w-11 h-11 rounded-xl bg-pink-500 text-white flex items-center justify-center font-bold text-lg shadow-xs">
                 🎓
               </div>
               <div>
-                <span className="block text-[11px] font-semibold text-pink-700 uppercase tracking-wider">Responses Dataset</span>
-                <span className="text-xl font-extrabold text-slate-900">21,000</span>
-                <span className="text-[10px] text-pink-600 block">42 NCERT Families</span>
+                <span className="block text-xs font-semibold text-pink-700 uppercase tracking-wider">Responses Dataset</span>
+                <span className="text-2xl font-black text-slate-900">21,000</span>
+                <span className="text-xs text-pink-600 block">42 NCERT Families</span>
               </div>
             </div>
 
             <div className="p-4 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center space-x-3.5 shadow-xs">
-              <div className="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center font-bold text-sm shadow-xs">
+              <div className="w-11 h-11 rounded-xl bg-blue-500 text-white flex items-center justify-center font-bold text-lg shadow-xs">
                 🎯
               </div>
               <div>
-                <span className="block text-[11px] font-semibold text-blue-700 uppercase tracking-wider">Model A Accuracy</span>
-                <span className="text-xl font-extrabold text-slate-900">88.59%</span>
-                <span className="text-[10px] text-blue-600 block">DeBERTa-v3 CUDA GPU</span>
+                <span className="block text-xs font-semibold text-blue-700 uppercase tracking-wider">Model A Accuracy</span>
+                <span className="text-2xl font-black text-slate-900">88.59%</span>
+                <span className="text-xs text-blue-600 block">DeBERTa-v3 CUDA GPU</span>
               </div>
             </div>
 
             <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-100 flex items-center space-x-3.5 shadow-xs">
-              <div className="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-sm shadow-xs">
+              <div className="w-11 h-11 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-lg shadow-xs">
                 📈
               </div>
               <div>
-                <span className="block text-[11px] font-semibold text-amber-800 uppercase tracking-wider">BKT Mastery Gain</span>
-                <span className="text-xl font-extrabold text-slate-900">+0.58 ΔP(L)</span>
-                <span className="text-[10px] text-amber-700 block">Isomorphic Resolution</span>
+                <span className="block text-xs font-semibold text-amber-800 uppercase tracking-wider">BKT Mastery Gain</span>
+                <span className="text-2xl font-black text-slate-900">+0.58 ΔP(L)</span>
+                <span className="text-xs text-amber-700 block">Isomorphic Resolution</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-xs space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm space-y-5">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-4">
               <div>
-                <h3 className="text-base font-bold text-slate-900">Select Physics Chapter</h3>
-                <p className="text-xs text-slate-400">Choose an NCERT chapter to launch the diagnostic learning sequence.</p>
+                <h3 className="text-lg font-black text-slate-900">Select Physics Chapter</h3>
+                <p className="text-xs text-slate-500">Choose an NCERT chapter to launch the diagnostic learning sequence.</p>
               </div>
-              <span className="text-xs font-mono px-2.5 py-1 rounded-xl bg-indigo-50 text-indigo-700 border border-indigo-100 font-bold">
-                {(searchQuery ? topics.filter(t => t.chapter.toLowerCase().includes(searchQuery.toLowerCase())) : topics).length} Chapters
+              <span className="text-xs font-mono px-3 py-1.5 rounded-xl bg-indigo-50 text-indigo-700 border border-indigo-200 font-bold">
+                {(searchQuery ? effectiveTopics.filter(t => t.chapter.toLowerCase().includes(searchQuery.toLowerCase())) : effectiveTopics).length} Chapters
               </span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {(searchQuery ? topics.filter(t => t.chapter.toLowerCase().includes(searchQuery.toLowerCase())) : topics).map((t) => (
+              {(searchQuery ? effectiveTopics.filter(t => t.chapter.toLowerCase().includes(searchQuery.toLowerCase())) : effectiveTopics).map((t) => (
                 <div
                   key={t.chapter}
                   onClick={() => handleSelectTopic(t)}
-                  className="p-5 rounded-2xl cursor-pointer hover:border-indigo-400 hover:shadow-md transition-all group bg-slate-50/60 hover:bg-white border border-slate-200/80"
+                  className="p-5 sm:p-6 rounded-2xl cursor-pointer hover:border-indigo-500 hover:shadow-md transition-all group bg-white border-2 border-slate-200 flex flex-col justify-between"
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-lg group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                      {t.chapter.includes('Light') ? '💡' : t.chapter.includes('Electric') ? '⚡' : t.chapter.includes('Magnetic') ? '🧲' : '🏃'}
+                  <div>
+                    <div className="flex items-start justify-between">
+                      <div className="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                        {t.chapter.includes('Light') ? '💡' : t.chapter.includes('Electric') ? '⚡' : t.chapter.includes('Magnetic') ? '🧲' : t.chapter.includes('Eye') ? '👁️' : '🏃'}
+                      </div>
+                      <span className="text-xs font-mono font-bold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200">
+                        {t.grade} • {t.questions?.length || 10} Questions
+                      </span>
                     </div>
-                    <span className="text-[11px] font-mono font-semibold text-slate-600 bg-white px-2 py-0.5 rounded-lg border border-slate-200">
-                      {t.grade} • {t.questions?.length || 4} Questions
-                    </span>
+
+                    <h3 className="text-base font-bold text-slate-900 mt-4 group-hover:text-indigo-600 transition-colors">
+                      {t.chapter}
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-1.5 line-clamp-2 leading-relaxed">
+                      {t.summary || `Diagnoses core secondary physics misconceptions in ${t.chapter.toLowerCase()}.`}
+                    </p>
                   </div>
 
-                  <h3 className="text-sm font-bold text-slate-900 mt-3 group-hover:text-indigo-600 transition-colors">
-                    {t.chapter}
-                  </h3>
-                  <p className="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">
-                    Diagnoses core secondary physics misconceptions in {t.chapter.toLowerCase()}.
-                  </p>
-
-                  <div className="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs text-indigo-700 font-bold">
+                  <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-indigo-700 font-bold">
                     <span>Start 10-Question Diagnostic Exam</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               ))}
@@ -431,7 +617,7 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
       {currentPhase === 'taking_quiz' && currentQ && (
         <div className="editorial-card p-6 sm:p-8 bg-white border border-border space-y-6">
           {/* Progress Header */}
-          <div className="flex items-center justify-between border-b border-border pb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-border pb-4 gap-3">
             <div className="flex items-center space-x-3">
               <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-slate-100 text-slate-800 border border-slate-200">
                 Question {currentQuestionIndex + 1} of {activeQuestions.length}
@@ -441,8 +627,20 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
               </span>
             </div>
 
+            {/* Presentation Mode Demo Toolbar */}
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={handlePreFillAllAnswers}
+                title="Fill realistic answers for all questions so you can demonstrate the test easily"
+                className="px-3 py-1.5 text-xs font-mono font-bold rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 flex items-center space-x-1.5 transition-all shadow-2xs"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+                <span>⚡ Auto-Fill All Answers (Presentation Demo)</span>
+              </button>
+            </div>
+
             {/* Stepper Dots */}
-            <div className="flex items-center space-x-1.5">
+            <div className="hidden md:flex items-center space-x-1.5">
               {activeQuestions.map((_, idx) => (
                 <div
                   key={idx}
@@ -516,6 +714,35 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
       {/* ========================================================================= */}
       {currentPhase === 'diagnosis_results' && (
         <div className="space-y-6">
+          {/* Presentation Pipeline Map (Explaining What Comes From Where) */}
+          <div className="p-4 rounded-xl bg-slate-900 text-white border border-slate-700 shadow-md">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-indigo-400 font-bold block mb-2">
+              PRESENTATION ARCHITECTURE PROVENANCE MAP:
+            </span>
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-2.5 text-xs">
+              <div className="p-2.5 rounded-lg bg-slate-800/90 border border-slate-700">
+                <span className="text-[10px] font-mono text-emerald-400 font-bold block">1. MULTIMODAL INPUT</span>
+                <span className="text-white font-semibold">Student Exam Sequence</span>
+                <p className="text-[11px] text-slate-400 mt-1">Numerical, written theory & OCR inputs across complete test.</p>
+              </div>
+              <div className="p-2.5 rounded-lg bg-slate-800/90 border border-slate-700">
+                <span className="text-[10px] font-mono text-blue-400 font-bold block">2. LOCAL MODEL A</span>
+                <span className="text-white font-semibold">DeBERTa-v3 Classifier</span>
+                <p className="text-[11px] text-slate-400 mt-1">Diagnoses exact misconception tag for each individual question.</p>
+              </div>
+              <div className="p-2.5 rounded-lg bg-slate-800/90 border border-slate-700">
+                <span className="text-[10px] font-mono text-purple-400 font-bold block">3. LOCAL MODEL B</span>
+                <span className="text-white font-semibold">Longitudinal GRU / LSTM</span>
+                <p className="text-[11px] text-slate-400 mt-1">Analyzes sequential attempt pattern: Entrenched vs Slip vs Guess.</p>
+              </div>
+              <div className="p-2.5 rounded-lg bg-slate-800/90 border border-slate-700">
+                <span className="text-[10px] font-mono text-amber-400 font-bold block">4. SOCRATIC REMEDIATION</span>
+                <span className="text-white font-semibold">Prof. Maya + Whiteboard</span>
+                <p className="text-[11px] text-slate-400 mt-1">Avatar speaks local model's diagnostic payload via POE cycle.</p>
+              </div>
+            </div>
+          </div>
+
           {/* Header Summary */}
           <div className="editorial-card p-6 bg-white border border-border space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
@@ -535,7 +762,7 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
                 onClick={() => setCurrentPhase('multimodal_intervention')}
                 className="px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-md flex items-center space-x-2 self-start sm:self-auto transition-all hover:scale-105"
               >
-                <span>Launch POE Remediation</span>
+                <span>Launch POE Remediation (Prof. Maya)</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -925,9 +1152,9 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
       )}
       </div>
 
-      {/* Right Column: 3D AI Character (Prof. Maya) Panel */}
-      {isAITutorOpen && (
-        <div className="lg:col-span-5 sticky top-20">
+      {/* Right Column: 3D AI Character (Prof. Maya) Panel - Only activated during Diagnostic & Remediation */}
+      {shouldRenderTutor && (
+        <div className="lg:col-span-4 sticky top-20">
           <ProfMaya3DPanel
             promptToExplain={currentPromptToExplain}
             misconceptionId={interventionData?.target_misconception_id || ''}

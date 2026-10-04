@@ -574,38 +574,73 @@
         @media (max-width: 800px) {
             #chat-container {
                 flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
             }
 
             #character-container {
                 flex: none;
-                height: 45vh;
-                min-height: 240px;
+                height: 320px !important;
+                min-height: 280px;
+                max-height: 360px;
                 width: 100%;
             }
 
             #chat-interface {
                 flex: 1;
                 width: 100%;
-                height: 55vh;
-                padding: 12px;
+                height: auto;
+                min-height: 0;
+                padding: 12px 16px 14px 16px;
                 border-left: none;
-                border-top: 1px solid #e2e8f0;
+                border-top: 1px solid #cbd5e1;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+
+            #chat-messages {
+                flex: 1;
+                min-height: 120px;
+                overflow-y: auto;
+                margin-bottom: 8px;
+            }
+
+            .message {
+                font-size: 15px !important;
+                line-height: 1.55 !important;
+                padding: 12px 16px !important;
+                max-width: 92% !important;
             }
 
             #input-container {
                 flex-wrap: wrap;
+                gap: 8px;
+                padding-top: 10px;
+                border-top: 1px solid #e2e8f0;
             }
 
             #user-input {
                 width: 100%;
                 flex: 1 1 100%;
+                font-size: 15px !important;
+                padding: 12px 16px !important;
+                border: 2px solid #94a3b8 !important;
+                border-radius: 12px;
+                background: #ffffff;
+            }
+
+            #user-input:focus {
+                border-color: #2563eb !important;
+                box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
             }
 
             #send-button, #pause-button, #mic-button {
                 flex: 1 1 auto;
                 justify-content: center;
-                padding: 10px 14px;
-                font-size: 13.5px;
+                padding: 11px 16px;
+                font-size: 14px;
+                font-weight: 600;
             }
         }
     </style>
@@ -616,33 +651,24 @@
         <div id="character-container"></div>
         <div id="chat-interface">
             <div id="chat-header">
-                <div class="gov-badges">
-                    <span class="gov-badge-ministry">✨ Re:Learn AI Platform</span>
-                    <span class="gov-badge-ncct">NCERT Physics</span>
-                    <span class="gov-badge-sih">Class 9-10</span>
-                    <span class="gov-badge-ss8">3D WebGL Avatar</span>
-                </div>
                 <div class="header-main-row">
                     <div>
-                        <h1 id="header-title">Prof. Vikram <span class="en-sub">(3D AI Physics Mentor)</span></h1>
-                        <p id="header-subtitle">Re:Learn Audio-Synchronized Pedagogical Mentor</p>
+                        <h1 id="header-title" style="font-size: 15px; font-weight: 700; margin: 0; color: #0f172a;">Prof. Vikram</h1>
+                        <p id="header-subtitle" style="font-size: 11px; color: #64748b; margin: 2px 0 0 0;">3D AI Physics Mentor</p>
                     </div>
                     <div class="header-actions-row">
-                        <!-- Language Selector Toggle (English Default) -->
+                        <!-- Language Selector Toggle -->
                         <div class="lang-switch" role="group" aria-label="Language selection">
-                            <button type="button" id="lang-btn-en" class="lang-btn active" onclick="setLanguage('en')">English</button>
-                            <button type="button" id="lang-btn-hi" class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
+                            <button type="button" id="lang-btn-en" class="lang-btn active" onclick="setLanguage('en')">EN</button>
+                            <button type="button" id="lang-btn-hi" class="lang-btn" onclick="setLanguage('hi')">HI</button>
                         </div>
-                        <div class="status-indicator" title="Connected to Re:Learn Physics Knowledge Base">
+                        <div class="status-indicator">
                             <span class="status-dot"></span>
-                            <span id="status-text">Online</span>
+                            <span id="status-text" style="font-size: 10px;">Online</span>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Quick Action Prompt Chips for Trainees (Populated dynamically by selected language) -->
-            <div id="quick-prompts-container"></div>
 
             <div id="chat-messages"></div>
             <div id="input-container">
@@ -668,9 +694,9 @@
         const containerWidth = container.clientWidth || 400;
         const containerHeight = container.clientHeight || 400;
 
-        // Camera setup specifically for half-body framing
-        const camera = new THREE.PerspectiveCamera(35, containerWidth / containerHeight, 0.1, 1000);
-        camera.position.set(0, 1.4, 2.2);
+        // Camera setup specifically for half-body framing - zoomed closer for large prominent avatar
+        const camera = new THREE.PerspectiveCamera(30, containerWidth / containerHeight, 0.1, 1000);
+        camera.position.set(0, 1.42, 1.65);
 
         // Renderer setup - match container size exactly
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -1963,9 +1989,9 @@
 
         const UI_TRANSLATIONS = {
             en: {
-                title: '⚡ Prof. Vikram <span class="en-sub">(Re:Learn AI Physics Mentor)</span>',
-                subtitle: '3D Embodied AI Voice Counselor & Diagnostic Tutor',
-                placeholder: 'Ask about Newton\'s Laws, Kinematics, Energy, or misconceptions...',
+                title: 'Prof. Vikram',
+                subtitle: '3D AI Physics Mentor',
+                placeholder: 'Ask a physics question or explain your reasoning...',
                 sendBtn: 'Send',
                 pauseBtn: '⏸️ Pause',
                 pauseBtnTitle: 'Pause AI voice playback',
@@ -1974,37 +2000,27 @@
                 micIdle: '🎤 Hold to Speak',
                 micRelease: '🎤 Release to Send',
                 status: 'Online',
-                welcome: "Hello! I am **Prof. Vikram** — your 3D AI Physics Mentor for **Re:Learn**.\n\nI am here to guide you through physics concepts, clarify misconceptions, and help you master Newton's Laws, Kinematics, and Energy! Use **'Hold to Speak'** or ask a question below.",
-                thinking: 'Prof. Vikram is analyzing...',
-                generatingVoice: 'Generating voice explanation...',
-                chips: [
-                    { label: '⚖️ Newton\'s 3rd Law', prompt: 'Why does normal force NOT cancel out gravity as an action-reaction pair?' },
-                    { label: '🚀 Freefall in Vacuum', prompt: 'Does a heavy ball fall faster than a feather in a vacuum chamber?' },
-                    { label: '🔄 Circular Motion Work', prompt: 'Why is work done equal to zero in uniform circular motion?' },
-                    { label: '⚡ Electric Field In Conductor', prompt: 'Why is the electric field zero inside a charged hollow conductor?' },
-                    { label: '🧲 Lenz\'s Law Energy', prompt: 'How does Lenz\'s law satisfy conservation of energy?' }
-                ]
+                welcome: "Hello! I am **Prof. Vikram**. Ask me any doubt or let's discuss your physics reasoning!",
+                thinking: 'Prof. Vikram is thinking...',
+                generatingVoice: 'Speaking...',
+                chips: []
             },
             hi: {
-                title: '⚡ प्रो. विक्रम <span class="en-sub">(Re:Learn AI भौतिकी मेंटर)</span>',
-                subtitle: '3D एम्बॉडीड AI Voice परामर्शदाता एवं डायग्नोस्टिक ट्यूटर',
-                placeholder: 'न्यूटन के नियम, गतिकी, कार्य-ऊर्जा या भ्रम संबंधी प्रश्न पूछें...',
+                title: 'प्रो. विक्रम',
+                subtitle: '3D AI भौतिकी मेंटर',
+                placeholder: 'भौतिकी का कोई भी प्रश्न या विचार पूछें...',
                 sendBtn: 'भेजें',
                 pauseBtn: '⏸️ विराम',
-                pauseBtnTitle: 'आवाज़ रोकें (विराम)',
+                pauseBtnTitle: 'आवाज़ रोकें',
                 resumeBtn: '▶️ जारी रखें',
                 resumeBtnTitle: 'आवाज़ दोबारा शुरू करें',
-                micIdle: '🎤 बोलने के लिए दबाएं',
-                micRelease: '🎤 भेजने के लिए छोड़ें',
+                micIdle: '🎤 बोलें',
+                micRelease: '🎤 छोड़ें',
                 status: 'ऑनलाइन',
-                welcome: "नमस्ते! मैं **प्रो. विक्रम** हूँ — Re:Learn पर आपकी 3D AI भौतिकी मेंटर।\n\nमैं आपको भौतिकी की अवधारणाओं को समझने, भ्रम दूर करने और न्यूटन के नियमों को स्पष्ट करने में मदद करूँगा।",
+                welcome: "नमस्ते! मैं **प्रो. विक्रम** हूँ। अपना कोई भी भौतिकी प्रश्न या संदेह पूछें!",
                 thinking: 'प्रो. विक्रम विचार कर रहे हैं...',
-                generatingVoice: 'आवाज़ तैयार की जा रही है...',
-                chips: [
-                    { label: '⚖️ न्यूटन का 3रा नियम', prompt: 'न्यूटन के तीसरे नियम के अनुसार नॉर्मल फ़ोर्स और गुरुत्वाकर्षण क्रिया-प्रतिक्रिया जोड़ी क्यों नहीं हैं?' },
-                    { label: '🚀 वैक्यूम में मुक्त पतन', prompt: 'क्या वैक्यूम में भारी वस्तु हल्की वस्तु से तेज़ गिरती है?' },
-                    { label: '🔄 वृत्तीय गति में कार्य', prompt: 'समान वृत्तीय गति में किया गया कार्य शून्य क्यों होता है?' }
-                ]
+                generatingVoice: 'बोल रहे हैं...',
+                chips: []
             }
         };
 
@@ -2099,7 +2115,7 @@
             if (autoExplain) {
                 setTimeout(() => applyQuickPrompt(autoExplain), 1200);
             }
-            console.log('Prof. Maya AI Physics Mentor initialized');
+            console.log('Prof. Vikram AI Physics Mentor initialized');
         });
     </script>
 </body>

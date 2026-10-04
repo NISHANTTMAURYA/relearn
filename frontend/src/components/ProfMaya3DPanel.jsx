@@ -50,7 +50,6 @@ export default function ProfMaya3DPanel({
                 3D AI Mentor
               </span>
             </h3>
-            <p className="text-[10px] text-slate-400 font-medium">Re:Learn Multimodal AI Voice & Lip-Sync</p>
           </div>
         </div>
 
@@ -77,9 +76,9 @@ export default function ProfMaya3DPanel({
       </div>
 
       {/* Main 3D Avatar Render Body */}
-      <div className="flex-1 relative min-h-[600px] bg-slate-900">
+      <div className="flex-1 relative min-h-[820px] h-[820px] bg-slate-900">
         {useIframe ? (
-          <div className="w-full h-full relative min-h-[600px]">
+          <div className="w-full h-full relative min-h-[820px]">
             {!iframeLoaded && !iframeError && (
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900 text-slate-300 z-10 space-y-2">
                 <Sparkles className="w-6 h-6 text-indigo-400 animate-spin" />
@@ -102,7 +101,7 @@ export default function ProfMaya3DPanel({
                 ref={iframeRef}
                 src={targetUrl}
                 title="Prof Vikram 3D AI Physics Mentor"
-                className="w-full h-full border-0 absolute inset-0 min-h-[600px]"
+                className="w-full h-full border-0 absolute inset-0 min-h-[820px]"
                 onLoad={() => setIframeLoaded(true)}
                 onError={() => setIframeError(true)}
                 allow="microphone; autoplay; clipboard-write; encrypted-media; picture-in-picture"
