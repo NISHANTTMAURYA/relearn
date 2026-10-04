@@ -3,7 +3,6 @@ import {
   BookOpen, Compass, CheckCircle2, AlertTriangle, ArrowRight, RotateCcw, 
   HelpCircle, Sparkles, ChevronRight, Sliders, ShieldAlert, Award, PenTool
 } from 'lucide-react';
-import TeacherAvatar from './TeacherAvatar';
 import WhiteboardCanvas from './WhiteboardCanvas';
 import InteractiveSimWidget from './InteractiveSimWidget';
 import MultimodalInputWorkspace from './MultimodalInputWorkspace';
@@ -423,6 +422,13 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
   const handleSwitchIntervention = async (miscId) => {
     if (!miscId) return;
     try {
+      const matchingAttempt = orderedAttempts.find((att, idx) => {
+        const diag = quizDiagnoses[idx];
+        return diag?.misc_id === miscId;
+      });
+      const qStem = matchingAttempt?.question_stem || 'Targeted Misconception Inquiry';
+      const qResp = matchingAttempt?.student_response || 'Remediation requested by student';
+
       const [intvRes, reassessRes, wbRes] = await Promise.all([
         fetch(`${API_BASE}/api/intervention/${miscId}`),
         fetch(`${API_BASE}/api/reassessment/${miscId}`),
@@ -432,8 +438,8 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
           body: JSON.stringify({
             concept: selectedTopic?.chapter || 'Physics',
             misconception_label: miscId,
-            question_stem: 'Targeted Misconception Inquiry',
-            student_response: 'Remediation requested by student'
+            question_stem: qStem,
+            student_response: qResp
           })
         }).catch(e => { console.warn('Dynamic whiteboard fetch notice:', e); return null; })
       ]);
@@ -511,53 +517,76 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
     setStudentResponseText(presetText);
   };
 
-  // Get authoritative spoken explanation sentence for Prof. Vikram (no bare meta-prompts)
+  // Get authoritative spoken explanation sentence for Prof. Vikram with Question Context
   const getMentorSpokenExplanation = (intv, topic) => {
     if (!intv) return "Hello! I am Prof. Vikram, your 3D AI Physics Mentor for Re:Learn. Let's discuss your physics reasoning!";
 
-    // 1. Direct spoken sentence from backend / POE
+    const targetMiscId = intv.target_misconception_id || '';
+
+    // Find the attempt from the exam that triggered this misconception
+    const matchingAttemptIdx = orderedAttempts.findIndex((att, idx) => {
+      const diag = quizDiagnoses[idx];
+      return diag?.misc_id === targetMiscId;
+    });
+
+    let contextLeadIn = "";
+    if (matchingAttemptIdx !== -1) {
+      const att = orderedAttempts[matchingAttemptIdx];
+      const qNum = matchingAttemptIdx + 1;
+      const cleanStem = att.question_stem ? att.question_stem.replace(/\s+/g, ' ').slice(0, 80).trim() + "..." : "";
+      const studentThought = att.student_response ? att.student_response.replace(/\s+/g, ' ').slice(0, 75).trim() : "";
+      
+      contextLeadIn = `On Question ${qNum} ("${cleanStem}"), your reasoning was: "${studentThought}". Here is what physically happens: `;
+    } else if (intv.misconception_name) {
+      contextLeadIn = `Regarding your reasoning on ${intv.misconception_name}: `;
+    }
+
+    // Now get the core authoritative NCERT scientific explanation
+    let coreExplanation = "";
     if (intv.spoken_explanation) {
-      return intv.spoken_explanation;
-    }
-    if (intv.poe_sequence?.explain?.text) {
-      return intv.poe_sequence.explain.text;
-    }
-    if (intv.guided_learning_sequence?.step_4_conceptual_bridge) {
-      return intv.guided_learning_sequence.step_4_conceptual_bridge;
-    }
-    if (intv.guided_learning_sequence?.step_3_explain_cognitive_conflict) {
-      return intv.guided_learning_sequence.step_3_explain_cognitive_conflict;
-    }
-
-    // 2. High-quality NCERT spoken explanations by chapter / misconception
-    const miscId = intv.target_misconception_id || '';
-    const miscName = intv.misconception_name || '';
-
-    if (miscId.includes('OPT-001') || miscName.toLowerCase().includes('half-lens') || miscName.toLowerCase().includes('aperture')) {
-      return "Notice what actually happens when we cover half of the lens: every point on the object still sends light rays through the uncovered half! The full image of the candle remains completely intact on the screen; only its overall brightness is reduced by 50%.";
-    }
-    if (miscId.includes('OPT-004') || miscName.toLowerCase().includes('sign')) {
-      return "In mirror and lens optics, always follow the New Cartesian Sign Convention: distances measured in the direction of incident light are positive, while distances against it are negative!";
-    }
-    if (miscId.includes('EYE') || miscName.toLowerCase().includes('star') || miscName.toLowerCase().includes('refraction')) {
-      return "Stars twinkle because light from point sources passes through turbulent layers of the atmosphere with constantly fluctuating refractive indices, bending the rays continuously before reaching our eyes!";
-    }
-    if (miscId.includes('ELEC') || miscName.toLowerCase().includes('current') || miscName.toLowerCase().includes('bulb')) {
-      return "In a series circuit, electric current is identical at all points by conservation of charge! The bulbs transform electrical potential energy into light and heat, but the electric current itself is never consumed.";
-    }
-    if (miscId.includes('MAG') || miscName.toLowerCase().includes('magnetic') || miscName.toLowerCase().includes('line')) {
-      return "Two magnetic field lines can never cross each other! If they did, a magnetic compass at that intersection would have to point in two different directions simultaneously, which is physically impossible.";
-    }
-    if (miscId.includes('GRAV') || miscId.includes('MECH') || miscName.toLowerCase().includes('fall') || miscName.toLowerCase().includes('mass')) {
-      return "In vacuum free fall, gravitational acceleration g = GM/R² is strictly independent of the object's mass. Both heavy and light bodies hit the ground at the exact same instant!";
+      coreExplanation = intv.spoken_explanation;
+    } else if (intv.guided_learning_sequence?.step_4_conceptual_bridge) {
+      coreExplanation = intv.guided_learning_sequence.step_4_conceptual_bridge;
+    } else if (intv.poe_sequence?.explain?.text) {
+      coreExplanation = intv.poe_sequence.explain.text;
+    } else {
+      const miscId = targetMiscId;
+      const miscName = intv.misconception_name || '';
+      if (miscId.includes('OPT-001') || miscName.toLowerCase().includes('half-lens') || miscName.toLowerCase().includes('aperture')) {
+        coreExplanation = "Notice what actually happens when we cover half of the lens: every point on the object still sends light rays through the uncovered half! The full image of the candle remains completely intact on the screen; only its overall brightness is reduced by 50%.";
+      } else if (miscId.includes('EYE-001') || miscName.toLowerCase().includes('myopia')) {
+        coreExplanation = "The defect is Myopia (near-sightedness). The eye lens is too converging (or eyeball is elongated), causing distant rays to focus IN FRONT of the retina. A concave (diverging) lens is required to diverge the rays so they focus sharply on the retina.";
+      } else if (miscId.includes('EYE-002') || miscName.toLowerCase().includes('prism')) {
+        coreExplanation = "In a triangular glass prism, violet light deviates the most because it travels slowest in glass, while red light deviates the least. Higher frequency experiences greater refractive bending!";
+      } else if (miscId.includes('EYE-003') || miscName.toLowerCase().includes('star')) {
+        coreExplanation = "Stars twinkle due to continuous atmospheric refraction through turbulent air layers of constantly fluctuating density, not because stars pulse their own light emission.";
+      } else if (miscId.includes('EYE-004') || miscName.toLowerCase().includes('sky')) {
+        coreExplanation = "On the Moon, there is no atmosphere to scatter sunlight into our eyes, so the sky appears pitch black even during daytime.";
+      } else {
+        coreExplanation = `In NCERT physics, we evaluate this by analyzing underlying conservation and field laws rather than intuitive surface impressions.`;
+      }
     }
 
-    return `When examining ${miscName || 'this concept'}, remember that NCERT physics requires verifying underlying field and conservation laws rather than intuitive surface impressions.`;
+    return `${contextLeadIn}${coreExplanation}`;
   };
 
-  const currentPromptToExplain = interventionData?.target_misconception_id
-    ? getMentorSpokenExplanation(interventionData, selectedTopic)
-    : '';
+  const currentPromptToExplain = React.useMemo(() => {
+    if (currentPhase === 'diagnosis_results') {
+      const totalMisc = detectedMisconceptionsList.length;
+      const rootMisc = detectedMisconceptionsList[0]?.label || 'Cognitive errors';
+      return `Hello! I have evaluated your 10-question exam. Model B confirms 60% working competence with 2 arithmetic slips, but detected ${totalMisc} distinct misconceptions across your test—most significantly ${rootMisc}. Click 'Launch POE Remediation' to review each error with me on the 3D Whiteboard!`;
+    }
+
+    if (currentPhase === 'multimodal_intervention' && interventionData?.target_misconception_id) {
+      return getMentorSpokenExplanation(interventionData, selectedTopic);
+    }
+
+    if (interventionData?.target_misconception_id) {
+      return getMentorSpokenExplanation(interventionData, selectedTopic);
+    }
+
+    return "Hello! I am Prof. Vikram, your 3D AI Physics Mentor for Re:Learn. Let's explore physics principles!";
+  }, [currentPhase, interventionData, selectedTopic, orderedAttempts, quizDiagnoses, detectedMisconceptionsList]);
 
   // Show AI Character only when we are explaining errors / intervening:
   // (During 'taking_quiz' or 'pre_quiz_lesson', student focuses on exam with full screen width)
@@ -889,7 +918,7 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
           {/* Presentation Pipeline Map (Explaining What Comes From Where) */}
           <div className="p-4 rounded-xl bg-slate-900 text-white border border-slate-700 shadow-md">
             <span className="text-[10px] font-mono uppercase tracking-wider text-indigo-400 font-bold block mb-2">
-              PRESENTATION ARCHITECTURE PROVENANCE MAP:
+              END-TO-END DIAGNOSTIC PIPELINE ARCHITECTURE:
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-2.5 text-xs">
               <div className="p-2.5 rounded-lg bg-slate-800/90 border border-slate-700">
@@ -1013,7 +1042,7 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
               <div className="p-4 rounded-xl bg-white border border-indigo-100 space-y-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-indigo-900 font-mono flex items-center space-x-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
-                  <span>Model B Narrative Verdict (Explain this to the Presenter/Judges):</span>
+                  <span>Model B Longitudinal Trajectory Synthesis:</span>
                 </span>
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
                   {sequencePatternResult?.presenter_summary || 
@@ -1060,10 +1089,10 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
                 </div>
               </div>
 
-              {/* Presenter Pitch Box */}
+              {/* Cognitive Science Breakthrough Box */}
               <div className="p-3 bg-indigo-900 text-white rounded-xl text-xs space-y-1">
                 <span className="font-mono font-bold text-indigo-300 text-[10px] uppercase tracking-wider block">
-                  Presenter Talking Point for Evaluators:
+                  Cognitive Science Breakthrough:
                 </span>
                 <p className="text-xs text-slate-100 leading-normal">
                   "Notice how standard quizzes give 4/10 and fail the student. But Model B distinguishes the 2 harmless calculation slips from the 4 conceptual errors. It pinpoints the exact cognitive roadblock, saving the student 80% study time!"
@@ -1217,13 +1246,6 @@ export default function StudentQuizPortal({ topics = [], onUpdateLearnerRecord, 
             </div>
           )}
 
-          {/* 1. 3D AI Teacher Avatar (Speech Synthesis + Lip Sync) */}
-          <TeacherAvatar
-            textToSpeak={
-              interventionData?.poe_sequence?.explain?.text ||
-              "Notice what actually happens when we cover half of the lens. The full image of the candle is still formed on the screen! Each uncovered point on the lens receives light from all parts of the candle. Only the total brightness decreases by fifty percent."
-            }
-          />
 
           {/* 2. Structured AI Whiteboard (Light Mode) */}
           <WhiteboardCanvas

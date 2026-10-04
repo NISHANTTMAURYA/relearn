@@ -57,7 +57,7 @@ export default function Header({
           </div>
           <div className="hidden sm:block text-left leading-tight">
             <span className="block text-xs font-bold text-slate-800">Prof. Vikram</span>
-            <span className="block text-[10px] text-slate-400 font-medium">Evaluator View</span>
+            <span className="block text-[10px] text-slate-400 font-medium">Diagnostic Studio</span>
           </div>
         </div>
       </div>
