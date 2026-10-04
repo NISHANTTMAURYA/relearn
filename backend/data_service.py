@@ -206,13 +206,14 @@ class ReLearnDataService:
 
     def _format_items_with_curriculum(self, items: list, prefix: str) -> list:
         formatted = []
-        for it in items:
+        modalities = ["mcq", "typed_theory", "numerical", "diagram_sketch", "ocr_photo"]
+        
+        for idx, it in enumerate(items):
             q_id = it.get("question_id")
-            # find matching curriculum family if any
             matched_fam = next((f for f in self.curriculum_families if prefix in f.get("family", "")), None)
             formatted.append({
                 "question_id": q_id,
-                "question_type": it.get("question_type", "conceptual"),
+                "question_type": modalities[idx % len(modalities)],
                 "cognitive_level": it.get("cognitive_level", "Comprehension"),
                 "stem": it.get("stem"),
                 "options": it.get("options", []),
@@ -223,6 +224,37 @@ class ReLearnDataService:
                 "sample_correct_responses": matched_fam.get("correct_phrasings", [])[:2] if matched_fam else [],
                 "sample_slip_responses": matched_fam.get("slip_phrasings", [])[:2] if matched_fam else []
             })
+        
+        # Ensure at least 10 questions for full comprehensive exam session
+        matching_fams = [f for f in self.curriculum_families if prefix in f.get("family", "")]
+        if not matching_fams:
+            matching_fams = self.curriculum_families
+
+        while len(formatted) < 10:
+            count = len(formatted) + 1
+            fam = matching_fams[(count - 1) % len(matching_fams)]
+            stem_template = fam.get("stem_templates", ["Explain the physical mechanism in {f}."])[0]
+            stem = stem_template.format(f=20, d=15, v=12, slip=30) if "{f}" in stem_template else stem_template
+
+            mod_type = modalities[(count - 1) % len(modalities)]
+            formatted.append({
+                "question_id": f"DIAG-{prefix}-{count:03d}",
+                "question_type": mod_type,
+                "cognitive_level": "Analysis" if count % 2 == 0 else "Application",
+                "stem": f"Question {count}: {stem}",
+                "options": [
+                    {"key": "A", "text": fam.get("misc_phrasings", ["Intuitive naive response"])[0], "is_correct": False, "diagnosed_misconception_id": fam.get("target_misc", "").split(":")[0]},
+                    {"key": "B", "text": fam.get("correct_phrasings", ["Authoritative NCERT physical law solution"])[0], "is_correct": True, "diagnosed_misconception_id": None},
+                    {"key": "C", "text": "Calculation slip due to arithmetic sign convention error.", "is_correct": False, "diagnosed_misconception_id": "MISC-CALC-SLIP"}
+                ],
+                "correct_answer": "B",
+                "authoritative_solution": fam.get("correct_base", "Apply NCERT physics principles."),
+                "diagram_meta": fam.get("diagram_meta"),
+                "sample_misconception_responses": fam.get("misc_phrasings", [])[:3],
+                "sample_correct_responses": fam.get("correct_phrasings", [])[:2],
+                "sample_slip_responses": fam.get("slip_phrasings", [])[:2]
+            })
+
         return formatted
 
     def _get_mechanics_sample_items(self) -> list:

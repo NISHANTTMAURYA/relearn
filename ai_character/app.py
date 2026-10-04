@@ -26,6 +26,13 @@ app.secret_key = os.getenv("SECRET_KEY", "ai-character-standalone-secret-key")
 # Enable CORS for cross-origin embedding & frontend access
 CORS(app)
 
+@app.after_request
+def allow_iframe_embedding(response):
+    response.headers['X-Frame-Options'] = 'ALLOWALL'
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization'
+    return response
+
 # Initialize AI and Voice services
 text_generation_service = TextGenerationService()
 voice_service = VoiceService()
@@ -52,12 +59,9 @@ def popup():
 def health():
     return jsonify({
         "status": "ok",
-        "service": "sahakar-sathi",
-        "name": "Sahakar Sathi (सहकार साथी) — 3D Embodied AI Voice Counselor & ERP Tutor",
-        "ecosystem": "SAHAKAR-SETU",
-        "ministry": "Ministry of Cooperation, Government of India",
-        "apex_organization": "NCCT (National Council for Cooperative Training)",
-        "sih_problem_id": "26087",
+        "service": "prof-vikram",
+        "name": "Prof. Vikram — 3D Embodied AI Physics Mentor",
+        "system": "Re:Learn Multimodal Diagnostic Engine",
         "version": "2.0.0"
     })
 
@@ -97,7 +101,7 @@ def get_response():
             "response": response_text,
             "audio": audio_base64,
             "language": language,
-            "speaker": "Sahakar Sathi (सहकार साथी)"
+            "speaker": "Prof. Vikram"
         })
 
     except Exception as e:
@@ -105,30 +109,33 @@ def get_response():
         return jsonify({"error": str(e)}), 500
 
 
-@app.route('/explain_cas_error', methods=['POST'])
-@app.route('/ai/explain_cas_error/', methods=['POST'])
-def explain_cas_error():
+@app.route('/explain_misconception', methods=['POST'])
+@app.route('/ai/explain_misconception/', methods=['POST'])
+def explain_misconception():
     """
-    In-Sandbox Accounting Co-Pilot endpoint:
-    Provides real-time verbal coaching when a trainee violates NABARD Common Accounting System (CAS) rules.
+    Physics Misconception Remediation Endpoint:
+    Provides real-time verbal 3D character coaching when a student makes a conceptual error.
     """
     try:
         data = request.get_json(silent=True) if request.is_json else request.form.to_dict()
         data = data or {}
         language = data.get('language', 'en').lower()
-        
-        explanation = text_generation_service.explain_cas_error(data, language=language)
+        misconception_id = data.get('misconception_id', 'UNKNOWN_MISCONCEPTION')
+        question_stem = data.get('question_stem', '')
+        student_answer = data.get('student_answer', '')
+
+        explanation = text_generation_service.explain_misconception(misconception_id, question_stem, student_answer, language=language)
         audio_base64, _ = voice_service.text_to_speech(explanation)
 
         return jsonify({
             "response": explanation,
             "audio": audio_base64,
             "language": language,
-            "event": "CAS_COACH_REMEDIATION",
-            "speaker": "Sahakar Sathi (सहकार साथी)"
+            "event": "MISCONCEPTION_REMEDIATION",
+            "speaker": "Prof. Vikram"
         })
     except Exception as e:
-        print(f"[app] Error in explain_cas_error: {e}")
+        print(f"[app] Error in explain_misconception: {e}")
         return jsonify({"error": str(e)}), 500
 
 
@@ -215,7 +222,7 @@ if __name__ == '__main__':
     host = os.getenv("HOST", "0.0.0.0")
     debug = os.getenv("DEBUG", "True").lower() in ("true", "1", "yes")
 
-    print(f"🌾 Sahakar Sathi (सहकार साथी) — SAHAKAR-SETU AI Assistant")
-    print(f"🏛️ Ministry of Cooperation | NCCT | SIH-26087")
-    print(f"🚀 Running at http://localhost:{port}/ (http://{host}:{port}/) ...")
+    print(f"Re:Learn 3D AI Physics Mentor Server")
+    print(f"Running at http://localhost:{port}/ ...")
     app.run(host=host, port=port, debug=debug)
+

@@ -1,5 +1,8 @@
 import os
 import json
+import pickle
+import torch
+import numpy as np
 from collections import Counter
 
 BASE_DIR = r"d:\relearn\dataset\sequence_dataset"
@@ -8,24 +11,55 @@ MODEL_DIR = r"d:\relearn\dataset\models_and_baselines"
 class SequencePatternAnalyzer:
     """
     Re:Learn Model B: Sequence & Pattern Analysis Component.
-    Analyzes ordered attempts across a student quiz/learning session to identify:
-    1. Recurrent single misconceptions (e.g. repeated current attenuation, speed-acceleration conflation)
-    2. Misconception shifts or cascades
-    3. Transient calculation slips vs genuine misconceptions
-    4. Successful resolution after multimodal intervention
+    Now uses a trained Machine Learning model.
     """
     def __init__(self):
-        # Dynamically map all curriculum misconceptions to their exact sequence patterns
+        # Fallback rules
         import sys
-        sys.path.insert(0, r"d:\relearn")
+        if r"d:\relearn" not in sys.path:
+            sys.path.insert(0, r"d:\relearn")
+        if r"d:\relearn\dataset\models_and_baselines" not in sys.path:
+            sys.path.insert(0, r"d:\relearn\dataset\models_and_baselines")
         from dataset.scripts.curriculum_families import CURRICULUM_FAMILIES
-
+        
         self.rules = {}
         for fam in CURRICULUM_FAMILIES:
             arch_label = "RECURRENT_" + fam["family"].replace("CLASS9", "").replace("CLASS10", "").strip("_") + "_PATTERN"
             misc_code = fam["target_misc"].split(":")[0].strip()
             self.rules[misc_code] = arch_label
-
+            
+        self.model_type = None
+        self.model = None
+        self.extractor = None
+        self.label_encoder = None
+        
+        # Load ML components
+        type_file = os.path.join(MODEL_DIR, "sequence_model_type.txt")
+        ext_file = os.path.join(MODEL_DIR, "sequence_feature_extractor.pkl")
+        enc_file = os.path.join(MODEL_DIR, "sequence_label_encoder.pkl")
+        
+        if os.path.exists(type_file) and os.path.exists(ext_file) and os.path.exists(enc_file):
+            with open(type_file, "r") as f:
+                self.model_type = f.read().strip()
+                
+            with open(ext_file, "rb") as f:
+                self.extractor = pickle.load(f)
+                
+            with open(enc_file, "rb") as f:
+                self.label_encoder = pickle.load(f)
+                
+            if self.model_type == "sklearn":
+                with open(os.path.join(MODEL_DIR, "sequence_model_v2.pkl"), "rb") as f:
+                    self.model = pickle.load(f)
+            elif self.model_type == "pytorch_gru":
+                from dataset.models_and_baselines.train_sequence_model_v2 import SequenceGRU
+                input_dim = len(self.extractor.get_feature_names())
+                num_classes = len(self.label_encoder.classes_)
+                
+                self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+                self.model = SequenceGRU(input_dim, 128, num_classes).to(self.device)
+                self.model.load_state_dict(torch.load(os.path.join(MODEL_DIR, "sequence_gru_model.pt"), map_location=self.device))
+                self.model.eval()
 
     def analyze_sequence(self, sequence_record):
         attempts = sequence_record.get("ordered_attempts", [])
@@ -42,12 +76,63 @@ class SequencePatternAnalyzer:
                 "status": "uncertain",
                 "next_action": "administer_diagnostic_quiz"
             }
-
-        # Extract per-step diagnoses and confidences
+            
+        if self.model is not None and self.extractor is not None:
+            # ML Model Prediction
+            X = self.extractor.transform([sequence_record], return_labels=False)
+            confidence = 0.0
+            
+            if self.model_type == "sklearn":
+                preds = self.model.predict(X)
+                pred_label = self.label_encoder.inverse_transform(preds)[0]
+                
+                if hasattr(self.model, "predict_proba"):
+                    probs = self.model.predict_proba(X)[0]
+                    confidence = float(np.max(probs))
+                else:
+                    confidence = 0.90
+                    
+            elif self.model_type == "pytorch_gru":
+                X_t = torch.tensor(X, dtype=torch.float32).unsqueeze(1).to(self.device)
+                with torch.no_grad():
+                    outputs = self.model(X_t)
+                    probs = torch.softmax(outputs, dim=1)[0]
+                    confidence = float(torch.max(probs).item())
+                    pred_idx = torch.argmax(probs).item()
+                    pred_label = self.label_encoder.inverse_transform([pred_idx])[0]
+                    
+            status, next_action = self._map_label_to_action(pred_label)
+            return {
+                "sequence_id": seq_id,
+                "student_id": student_id,
+                "predicted_pattern": pred_label,
+                "confidence": confidence,
+                "evidence": [f"Predicted by ML Model: {self.model_type}"],
+                "status": status,
+                "next_action": next_action
+            }
+            
+        else:
+            return self._rule_based_fallback(sequence_record)
+            
+    def _map_label_to_action(self, label):
+        if "SUCCESSFUL" in label:
+            return "resolved_with_transfer", "advance_to_next_topic"
+        elif "TRANSIENT" in label:
+            return "no_conceptual_misconception", "provide_arithmetic_feedback_only"
+        elif "RECURRENT" in label:
+            return "unresolved_persistent_misconception", "trigger_targeted_multimodal_intervention"
+        else:
+            return "uncertain", "administer_disambiguation_probe"
+            
+    def _rule_based_fallback(self, sequence_record):
+        attempts = sequence_record.get("ordered_attempts", [])
+        student_id = sequence_record.get("student_id", "UNKNOWN_STUDENT")
+        seq_id = sequence_record.get("sequence_id", "UNKNOWN_SEQ")
+        
         diagnoses = [a.get("individual_diagnosis", a.get("diagnosis", "UNKNOWN")) for a in attempts]
         steps_count = len(attempts)
 
-        # Detect Post-Intervention Remediation
         has_conflict_reconciled = any("COGNITIVE_CONFLICT" in d for d in diagnoses)
         last_step_correct = ("CORRECT" in diagnoses[-1])
         first_step_error = any("MISC-" in d for d in diagnoses[:-1])
@@ -68,7 +153,6 @@ class SequencePatternAnalyzer:
                 "next_action": "advance_to_next_topic"
             }
 
-        # Check for Recurrent Conceptual Misconceptions
         misc_keys = []
         for d in diagnoses:
             for k in self.rules:
@@ -91,7 +175,6 @@ class SequencePatternAnalyzer:
                     "next_action": "trigger_targeted_multimodal_intervention"
                 }
 
-        # Check for Transient Calculation / Unit Slips
         slip_count = sum(1 for d in diagnoses if ("CALCULATION" in d or "UNIT" in d))
         correct_count = sum(1 for d in diagnoses if "CORRECT" in d)
 
@@ -106,7 +189,6 @@ class SequencePatternAnalyzer:
                 "next_action": "provide_arithmetic_feedback_only"
             }
 
-        # Default Fallback / Ambiguous Pattern
         return {
             "sequence_id": seq_id,
             "student_id": student_id,
@@ -119,10 +201,13 @@ class SequencePatternAnalyzer:
 
 def run_sequence_evaluation():
     print("=" * 60)
-    print("RE:LEARN MODEL B: SEQUENCE & PATTERN ANALYZER")
+    print("RE:LEARN MODEL B: SEQUENCE & PATTERN ANALYZER (ML MODEL)")
     print("=" * 60)
 
-    seq_path = os.path.join(BASE_DIR, "student_sequences.json")
+    seq_path_v2 = os.path.join(BASE_DIR, "test_sequences_v2.json")
+    seq_path_v1 = os.path.join(BASE_DIR, "test_sequences.json")
+    seq_path = seq_path_v2 if os.path.exists(seq_path_v2) else seq_path_v1
+    
     with open(seq_path, "r", encoding="utf-8") as f:
         sequences = json.load(f)
 
@@ -137,18 +222,10 @@ def run_sequence_evaluation():
         if matched:
             correct_matches += 1
 
-        print(f"\n[Sequence: {seq['sequence_id']}] Student: {seq['student_id']} | Topic: {seq.get('topic')}")
-        print(f"  Ground Truth Pattern: {expected}")
-        print(f"  Predicted Pattern:    {predicted} (Confidence: {result['confidence']:.2f})")
-        print(f"  Status:               {result['status']}")
-        print(f"  Recommended Action:   {result['next_action']}")
-        print(f"  Evidence:             {result['evidence']}")
-        print(f"  Match:                {'PASS' if matched else 'FAIL'}")
-
     accuracy = (correct_matches / len(sequences)) * 100
     print("\n" + "=" * 60)
-    print(f"Sequence Pattern Model Accuracy: {accuracy:.2f}% ({correct_matches}/{len(sequences)})")
+    print(f"Sequence Pattern Model Accuracy on Test Set: {accuracy:.2f}% ({correct_matches}/{len(sequences)})")
     print("=" * 60)
-
+    
 if __name__ == "__main__":
     run_sequence_evaluation()

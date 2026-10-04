@@ -23,7 +23,7 @@ export default function AICharacterTeacher({
   misconceptionId = '',
   compact = false,
   onClose = null,
-  title = 'Prof. Maya — AI Physics Mentor'
+  title = 'Prof. Vikram — 3D AI Physics Mentor'
 }) {
   const containerRef = useRef(null);
   const [speechText, setSpeechText] = useState(textToSpeak);

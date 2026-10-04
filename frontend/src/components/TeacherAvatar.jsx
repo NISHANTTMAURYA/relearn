@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Volume2, VolumeX, RotateCcw, Sparkles } from 'lucide-react';
 
-export default function TeacherAvatar({ textToSpeak = '', teacherName = 'Prof. Maya (AI Physics Mentor)' }) {
+export default function TeacherAvatar({ textToSpeak = '', teacherName = 'Prof. Vikram (3D AI Physics Mentor)' }) {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [mouthOpen, setMouthOpen] = useState(0);
